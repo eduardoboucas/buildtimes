@@ -1,0 +1,34 @@
+---
+title: Home
+---
+
+<div id="background">
+	<video id="video1" class="backgroundVideo" preload="auto">
+		<source src="assets/videos/Part1.webm" type="video/webm">
+		<source src="assets/videos/Part1.mp4" type="video/mp4">
+	</video>
+	
+	<video id="video2" class="backgroundVideo" preload="auto">
+		<source src="assets/videos/Part2.webm" type="video/webm">
+		<source src="assets/videos/Part2.mp4" type="video/mp4">
+	</video>
+
+	<video id="video3" class="backgroundVideo" preload="auto">
+		<source src="assets/videos/Part3.webm" type="video/webm">
+		<source src="assets/videos/Part3.mp4" type="video/mp4">
+	</video>
+</div>
+
+<nav class="mainMenu" id="menu">
+	<div id="mobileLogo">
+		<img alt="Drawing of Eduardo's bust" src="assets/images/bust.png"/>
+	</div>
+	{% assign menuItems = site.html_pages | sort: 'menuOrder' %}
+	{% for page in menuItems %}
+		{% if page.menuOrder %}
+			<a href="#/{{ page.route }}" class="menuItem hoverFade">{{ page.title }}</a>
+		{% endif %}
+	{% endfor %}
+</nav>
+
+<div id="container"></div>

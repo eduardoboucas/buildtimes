@@ -1,0 +1,24 @@
+# Site settings
+title: Eduardo saying things.
+asauthor: Eduardo Bouças
+email: mail@eduardoboucas.com
+description: > # this means to ignore newlines until "baseurl:"
+  My blog about web, my experience as a sharp programmer and terrible dancer
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://eduardoboucas.com" # the base hostname & protocol for your site
+twitter_username: eduardoboucas
+github_username:  eduardoboucas
+
+# Build settings
+markdown: kramdown
+
+collections:
+  - projects
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      author: "Eduardo Bouças"  

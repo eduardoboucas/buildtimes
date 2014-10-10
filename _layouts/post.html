@@ -1,0 +1,62 @@
+---
+layout: default
+---
+{% include blog/head.html %}
+{% include blog/header.html %}
+
+<meta content="{{ site.title }}" property="og:site_name">
+{% if page.title %}
+  <meta content="{{ page.title }}" property="og:title">
+{% else %}
+  <meta content="{{ site.title }}" property="og:title">
+{% endif %}
+{% if page.title %}
+  <meta content="article" property="og:type">
+{% else %}
+  <meta content="website" property="og:type">
+{% endif %}
+{% if page.description %}
+  <meta content="{{ page.description }}" property="og:description">
+{% else %}
+  <meta content="{{ site.description }}" property="og:description">
+{% endif %}
+{% if page.url %}
+  <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+{% endif %}
+{% if page.date %}
+  <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+{% endif %}
+{% if page.author %}
+	<meta content="{{ page.author }}" property="article:author">
+{% else %}
+	<meta content="{{ site.asauthor }} ({{ site.email }})" property="article:author">
+{% endif %}
+{% if page.image %}
+  <meta content="{{ site.url }}/assets/posts/{{ page.image }}" property="og:image">
+{% else %}
+  <meta content="{{ site.url }}/assets/images/thumbnail.jpg" property="og:image">
+{% endif %}
+{% if page.categories %}
+  {% for category in page.categories limit:1 %}
+  <meta content="{{ category }}" property="article:section">
+  {% endfor %}
+{% endif %}
+{% if page.tags %}
+  {% for tag in page.tags %}
+  <meta content="{{ tag }}" property="article:tag">
+  {% endfor %}
+{% endif %}
+
+<div id="container">
+<article class="post single site">
+  <a href="/blog"><h2>&#8592; Back to all posts</h2></a>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p class="postMeta"><span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ page.date | date: "%b %-d, %Y" }}</span>{% if page.tags %}<span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in page.tags %} <em>{{ tag }}</em>{% endfor %}{% endif %}</span></p>
+  </header>
+  <div class="body">
+    {{ content | replace: '<!--tomb-->', ' &#8718;'}}
+  </div>
+</article>
+</div>
+

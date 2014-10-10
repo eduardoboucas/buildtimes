@@ -1,0 +1,121 @@
+/**
+*
+* Original mixin by @sheiko (http://dsheiko.com)
+* Modified by @eduardoboucas (http://eduardoboucas.com) to allow custom breakpoints
+*
+**/
+
+@function translate-media-condition($c) {
+  $condMap: (
+    "screen": "only screen",
+    "print": "only print",
+    "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+    ">phone": "(min-width: #{$breakpoint-phone + 1})",
+    "<phone": "(max-width: #{$breakpoint-phone})",        
+    ">tablet": "(min-width: #{$breakpoint-tablet + 1})",
+    "<tablet": "(max-width: #{$breakpoint-tablet})",    
+    ">desktop": "(min-width: #{$breakpoint-desktop + 1})",
+    "<desktop": "(max-width: #{$breakpoint-desktop})"
+  );
+  
+  @if map-has-key($condMap, $c) {
+    @return map-get( $condMap, $c );
+  } @else {
+    $operator: str-slice($c, 1, 1);
+    $size: number(str-slice($c, 2));
+    $rule: "";
+
+    @if ($operator == ">") {
+      $rule: "(min-width: #{$size + 1})";
+    } @else {
+      $rule: "(max-width: #{$size})";
+    }
+
+    @return $rule;
+  }
+}
+
+@mixin media($args...) {
+  $query: "";
+  
+  @each $arg in $args {
+    $op: "";
+    $translation: translate-media-condition($arg);
+    
+    @if ($query != "" ) {
+      $op: " and ";
+    }
+
+    $query: $query + $op + $translation;
+  }
+
+  @media #{$query}  { @content; }
+}
+
+/**
+*
+* Mixin by @HugoGiraudel described in http://hugogiraudel.com/2014/01/15/sass-string-to-number/
+*
+**/
+
+@function _length($number, $unit) {
+  $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw' 'vh' 'vmin' 'vmax';
+  $units:   1px  1cm  1mm  1%  1ch  1pica  1in  1em  1rem  1pt  1pc  1ex  1vw  1vh  1vmin  1vmax;
+  $index: index($strings, $unit);
+  
+  @if not $index {
+    @warn "Unknown unit `#{$unit}`.";
+    @return false;
+  }
+  
+  @return $number * nth($units, $index);
+}
+
+@function number($string) {
+  // Matrices
+  $strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+  $numbers:  0   1   2   3   4   5   6   7   8   9;
+  
+  // Result
+  $result: 0;
+  $divider: 0;
+  $minus: false;
+
+  // Looping through all characters
+  @for $i from 1 through str-length($string) {
+    $character: str-slice($string, $i, $i);
+    $index: index($strings, $character);
+    
+  
+    @if $character == '-' {
+      $minus: true;
+    }
+    
+    @else if $character == '.' {
+      $divider: 1;
+    }
+    
+    @else {
+      @if not $index {
+        $result: if($minus, $result * -1, $result);
+        @return _length($result, str-slice($string, $i));
+      }
+
+      $number: nth($numbers, $index);
+      
+      @if $divider == 0 {
+        $result: $result * 10;
+      }
+      
+      @else {
+        // Move the decimal dot to the left
+        $divider: $divider * 10;
+        $number: $number / $divider;
+      }
+      
+      $result: $result + $number;
+    }
+  }
+  
+  @return if($minus, $result * -1, $result);
+}
