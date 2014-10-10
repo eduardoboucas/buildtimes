@@ -254,6 +254,12 @@ article.post {
 		span {
 			margin-right: 20px;
 		}
+
+		@include media("screen", "<tablet") {
+			span {
+				display: block;
+			}
+		}
 	}
 
 	.postIcon {

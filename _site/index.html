@@ -1,13 +1,5 @@
-<?php
-
-include 'vendor/Mobile-Detect-2.8.3/Mobile_Detect.php';
-$detect = new Mobile_Detect;
-$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
-
-?>
-
 <!DOCTYPE html>
-<html class="<?= $deviceType ?>">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Eduardo Bouças php html5 javascript web developer">
