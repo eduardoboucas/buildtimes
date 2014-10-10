@@ -17,8 +17,10 @@ layout: default
 {% endif %}
 {% if page.description %}
   <meta content="{{ page.description }}" property="og:description">
+{% elsif content contains '<!--more-->' %}
+  <meta content="{{ content | remove: '<p>' | remove: '</p>' | split:'<!--more-->' | first }}" property="og:description">
 {% else %}
-  <meta content="{{ site.description }}" property="og:description">
+  <meta content="{{ content | remove: '<p>' | remove: '</p>' }}" property="og:description">
 {% endif %}
 {% if page.url %}
   <meta content="{{ site.url }}{{ page.url }}" property="og:url">
