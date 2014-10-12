@@ -15,6 +15,7 @@ define([
 				case 'about':
 					callback = function () {
 						$('code').each(function () {
+							console.log('Percentage found: ' + $(this).text());
 							$(this).width($(this).text() + '%');
 						});
 					};
@@ -37,7 +38,6 @@ define([
 					});
 
 					$(document).on("click", 'a.backToAllPosts', function () {
-						console.log('Hihack');
 						$("#blogPost").hide();
 						$("#blogPosts").fadeIn("slow");
 
