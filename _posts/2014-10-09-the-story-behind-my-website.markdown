@@ -68,6 +68,6 @@ In the end, I was happy with the result. There are obvious problems and downside
 _Check out the website at [http://eduardoboucas.com](http://eduardoboucas.com)_
 
 [sagmeister]: http://www.sagmeisterwalsh.com/ "Sagmeister & Walsh website"
-[videolooper]: http://test.com "VideoLooper.js library"
+[videolooper]: https://github.com/eduardoboucas/eduardoboucas.github.io/blob/master/js/VideoLooper.js "VideoLooper.js library"
 [backbonejs]: http://backbonejs.org/ "Backbone.js website"
 [caniusehtml5video]: http://caniuse.com/#feat=video "HTML5 video browser support from caniuse.com"
