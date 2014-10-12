@@ -125,6 +125,7 @@ section.about {
 				border-radius: 8px;
 				margin-top: 3px;
 				opacity: 0.8;
+				width: 0;
 			}
 
 			@include media("screen", "<tablet") {

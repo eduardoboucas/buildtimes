@@ -17,7 +17,9 @@ define([
 						$('code').each(function () {
 							var percentage = parseInt($(this).text());
 
-							$(this).css('width', percentage + '%');
+							$(this).animate({
+								width: percentage + '%'
+							}, 2000);
 						});
 					};
 					
