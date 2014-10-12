@@ -228,7 +228,7 @@ section.about {
 **/
 
 article.post {
-	margin: 10px 0 20px 0;
+	margin: 0 0 20px 0;
 	
 	p {
 		line-height: 23px;
@@ -319,7 +319,7 @@ header.blogHeader {
 	overflow: hidden;
 	max-width: $base-maxWidth;
 	min-width: $base-minWidth;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 20px auto;
 	border-bottom: 1px solid black;
 
 	.backToMenu {
@@ -355,7 +355,7 @@ header.blogHeader {
 // "Back to all posts" button
 #container.singlePost {
 	h2.backToAllPosts {
-		margin-top: -20px;
+		margin-top: -10px;
 	}	
 }
 
