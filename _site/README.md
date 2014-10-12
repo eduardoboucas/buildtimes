@@ -1,1 +1,0 @@
-My Backbone.js + Jekyll website. Yay!
