@@ -17,9 +17,12 @@ define([
 						$('code').each(function () {
 							var percentage = parseInt($(this).text());
 							var a = percentage + '%';
-							console.log(a);
 
 							$(this).width(a);
+
+							console.log("Parent width: " + $(this).parent().width());
+							console.log("Element width: " + $(this).width());
+							console.log("");
 						});
 					};
 					
