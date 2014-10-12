@@ -16,13 +16,8 @@ define([
 					callback = function () {
 						$('code').each(function () {
 							var percentage = parseInt($(this).text());
-							var a = percentage + '%';
 
-							$(this).width(a);
-
-							console.log("Parent width: " + $(this).parent().width());
-							console.log("Element width: " + $(this).width());
-							console.log("");
+							$(this).css('width', percentage + '%');
 						});
 					};
 					
