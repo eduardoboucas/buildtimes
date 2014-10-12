@@ -15,8 +15,9 @@ define([
 				case 'about':
 					callback = function () {
 						$('code').each(function () {
-							console.log('Percentage found: ' + $(this).text());
-							$(this).width($(this).text() + '%');
+							var percentage = parseInt($(this).text());
+
+							$(this).width(percentage + '%');
 						});
 					};
 					
