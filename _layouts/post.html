@@ -50,18 +50,27 @@ layout: default
 
 </head>
 
-{% include blog/header.html %}
-
-<div id="container">
-<article class="post single site">
-  <a href="/blog"><h2>&#8592; Back to all posts</h2></a>
-  <header>
-    <h1>{{ page.title }}</h1>
-    <p class="postMeta"><span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ page.date | date: "%b %-d, %Y" }}</span>{% if page.tags %}<span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in page.tags %} <em>{{ tag }}</em>{% endfor %}{% endif %}</span></p>
-  </header>
-  <div class="body">
-    {{ content | replace: '<!--tomb-->', ' &#8718;'}}
+<body>
+  {% include blog/header.html %}
+  
+  <div id="container" class="singlePost">
+  <a href="/blog"><h2 class="backToAllPosts">&#8592; Back to all posts</h2></a>
+  <article class="post single">
+    <header>
+      <h1>{{ page.title }}</h1>
+      <p class="postMeta">
+        <span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ page.date | date: "%b %-d, %Y" }}</span>
+        {% if page.tags %}
+          <span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in page.tags %} <em>{{ tag }}</em>{% endfor %}</span>
+        {% endif %}
+        <span class="permalink"><img src="/assets/images/icons/link.svg" class="postIcon"/> <a href="{{ page.url }}">Permalink</a></span>
+      </p>
+    </header>
+    <div class="body">
+      {{ content | replace: '<!--tomb-->', ' &#8718;'}}
+    </div>
+  </article>
   </div>
-</article>
-</div>
 
+
+</body>

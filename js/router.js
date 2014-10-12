@@ -39,8 +39,7 @@ define([
 			request.done(function (data) {
 				var pageView = new PageView({el : $("#container")});
 				pageView.render(route, data);
-				pageView.showPage();
-
+				
 				if ($(window).width() >= videoMinWidth) {
 					if (window.userCameFromIndex === true) {
 						pageView.showPageAndPlayVideo();

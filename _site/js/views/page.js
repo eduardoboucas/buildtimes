@@ -10,7 +10,7 @@ define([
 
 		getCallbackForRoute: function (route) {
 			var callback;
-
+			
 			switch (route) {
 				case 'about':
 					callback = function () {
@@ -19,6 +19,31 @@ define([
 						});
 					};
 					
+					break;
+
+				case 'blog':
+					$('a.readPost').on('click', function () {
+						$.get($(this).attr('href'), function (data) {
+							var goBackCode = '<a class="backToAllPosts" href="/#/blog"><h2 class="backToAllPosts">&#8592; Back to all posts</h2></a>';
+							var $fullArticle = $(data).find('article');
+
+							if ($fullArticle) {
+								$("#blogPosts").hide();
+								$("#blogPost").html(goBackCode).append($fullArticle).fadeIn('slow');
+							}
+						});
+
+						return false;
+					});
+
+					$(document).on("click", 'a.backToAllPosts', function () {
+						console.log('Hihack');
+						$("#blogPost").hide();
+						$("#blogPosts").fadeIn("slow");
+
+						return false;
+					}); 
+
 					break;
 
 				case 'findme':

@@ -4,19 +4,8 @@ route: blog
 menuOrder: 3
 ---
 {% include navigation.html %}
-{% for post in site.posts %}
-  <article class="post list">
-    <header>
-      <a href="{{ post.url | prepend: site.baseurl }}"><h1>{{ post.title }}</h1></a>
-      <p class="postMeta"><span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ post.date | date: "%b %-d, %Y" }}</span>{% if post.tags %}<span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in post.tags %} <em>{{ tag }}</em>{% endfor %}{% endif %}</span></p>
-    </header>
-    <div class="excerpt">
-      {% if post.content contains '<!--more-->' %}
-        <a href="{{ post.url }}">{{ post.content | split:'<!--more-->' | first }}</a>
-        <h2><a href="{{ post.url }}">Read full post</a></h2>
-      {% else %}
-        {{ post.content }}
-      {% endif %}
-    </div>
-  </article>
-{% endfor %}
+<section id="blogPosts">
+{% include blog/posts.html %}
+</section>
+<section id="blogPost">
+</section>
