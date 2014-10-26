@@ -64,6 +64,13 @@ p {
 	a {
 		text-decoration: underline;
 	}
+
+	&.cta {
+		font-family: $font-economica;
+		text-transform: uppercase;
+		@include font-size(18);
+		margin: 30px 0 10px 0;			
+	}
 }
 
 a {
@@ -229,7 +236,7 @@ section.about {
 **/
 
 article.post {
-	margin: 0 0 20px 0;
+	margin: 0 0 30px 0;
 	
 	p {
 		line-height: 23px;
@@ -240,7 +247,14 @@ article.post {
 		@include font-size(30);
 	}
 
+	h2 {
+		font-family: inherit;
+		text-transform: none;
+		@include font-size(25);
+	}
+
 	ul, ol {
+		list-style: disc;
 		padding-left: 15px;
 		margin: 0 0 15px 15px;
 
@@ -292,14 +306,25 @@ article.post {
 	&.single {
 		margin-top: 0;
 
-		p:first-child:first-letter { 
-			float: left; 
-			@include font-size(75);
-			line-height: 63px; 
-			padding-top: 4px; 
-			padding-right: 8px; 
-			padding-left: 3px; 
-			font-family: Georgia; 
+		.body {
+			>p:first-of-type:first-letter { 
+				float: left; 
+				@include font-size(75);
+				line-height: 63px; 
+				padding-top: 4px; 
+				padding-right: 8px; 
+				padding-left: 3px; 
+				font-family: Georgia; 
+			}
+		}
+	}
+
+	blockquote {
+		p {
+			font-style: italic;
+			border-left: 1px solid black;
+			opacity: 0.5;
+			padding-left: 10px;			
 		}
 	}
 
@@ -342,6 +367,20 @@ header.blogHeader {
 		float: right;
 	}
 
+	.rss {
+		width: 30px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		opacity: 0.3;
+		transition: opacity 0.8s ease;
+
+		&:hover {
+			opacity: 1;
+			transition: opacity 0.8s ease;
+		}
+	}
+
 	@include media( "screen", "<tablet" ) {
 	    h1 {
 	    	padding-left: 0;
@@ -350,7 +389,7 @@ header.blogHeader {
 	    .bust {
 	    	display: none;
 	    }
-  	};
+  	}
 }
 
 // "Back to all posts" button
@@ -362,6 +401,21 @@ header.blogHeader {
 
 h2.backToAllPosts {
 	margin: 10px 0 15px 0;	
+}
+
+body.blogSite {
+	#container {
+		position: static;
+	}
+}
+
+footer {
+	width: 100%;
+	max-width: $base-maxWidth;
+	margin: 0 auto;
+	text-align: center;
+	padding: 5px 0;
+	opacity: 0.3;	
 }
 
 /**

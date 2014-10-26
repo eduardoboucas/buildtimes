@@ -14,7 +14,7 @@
       <div class="excerpt">
         {% if post.content contains '<!--more-->' %}
           <a class="readPost" href="{{ post.url }}">{{ post.content | split:'<!--more-->' | first }}</a>
-          <h2><a class="readPost" href="{{ post.url }}">Read full post &#8594;</a></h2>
+          <p class="cta"><a class="readPost" href="{{ post.url }}">Read full post &#8594;</a></p>
         {% else %}
           {{ post.content }}
         {% endif %}

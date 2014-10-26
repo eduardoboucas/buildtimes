@@ -17,9 +17,9 @@ layout: default
 {% if page.description %}
   <meta content="{{ page.description }}" property="og:description">
 {% elsif content contains '<!--more-->' %}
-  <meta content="{{ content | remove: '<p>' | remove: '</p>' | split:'<!--more-->' | first }}" property="og:description">
+  <meta content="{{ content | strip_html | split:'<!--more-->' | first }}" property="og:description">
 {% else %}
-  <meta content="{{ content | remove: '<p>' | remove: '</p>' }}" property="og:description">
+  <meta content="{{ content | strip_html }}" property="og:description">
 {% endif %}
 {% if page.url %}
   <meta content="{{ site.url }}{{ page.url }}" property="og:url">
@@ -50,8 +50,9 @@ layout: default
 
 </head>
 
-<body>
+<body class="blogSite">
   {% include blog/header.html %}
+  {% include googleTagManager.html %}
   
   <div id="container" class="singlePost">
   <a href="/blog"><h2 class="backToAllPosts">&#8592; Back to all posts</h2></a>
@@ -72,5 +73,6 @@ layout: default
   </article>
   </div>
 
-
+  {% include googleAnalytics.html %}
+  {% include blog/footer.html %}
 </body>

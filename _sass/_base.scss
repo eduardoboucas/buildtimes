@@ -73,6 +73,15 @@ code {
 
 code {
     padding: 1px 5px;
+    margin: 0 5px;
+
+    .lineno {
+      opacity: 0.2;
+
+      &::after {
+        content: ":";
+      }
+    }
 }
 
 pre {
@@ -85,4 +94,8 @@ pre {
         padding-right: 0;
         padding-left: 0;
     }
+}
+
+.highlight {
+  margin-bottom: 20px;
 }
