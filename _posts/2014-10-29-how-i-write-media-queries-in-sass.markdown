@@ -2,7 +2,7 @@
 layout: post
 title:  "How I write media queries in SASS"
 handle: "how-i-write-media-queries-in-sass"
-date:   2014-10-27 22:29:00
+date:   2014-10-29 21:34:00
 categories: blog
 tags: sass css media queries
 ---
