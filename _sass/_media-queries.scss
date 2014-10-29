@@ -5,17 +5,21 @@
 *
 **/
 
+$breakpoint-phone: 480px !default;
+$breakpoint-tablet: 768px !default;
+$breakpoint-desktop: 1024px !default;
+
 @function translate-media-condition($c) {
   $condMap: (
     "screen": "only screen",
     "print": "only print",
     "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
-    ">phone": "(min-width: #{$breakpoint-phone + 1})",
-    "<phone": "(max-width: #{$breakpoint-phone})",        
-    ">tablet": "(min-width: #{$breakpoint-tablet + 1})",
-    "<tablet": "(max-width: #{$breakpoint-tablet})",    
-    ">desktop": "(min-width: #{$breakpoint-desktop + 1})",
-    "<desktop": "(max-width: #{$breakpoint-desktop})"
+    ">phone": "(min-width: #{$breakpoint-phone})",
+    "<phone": "(max-width: #{$breakpoint-phone - 1})",        
+    ">tablet": "(min-width: #{$breakpoint-tablet})",
+    "<tablet": "(max-width: #{$breakpoint-tablet - 1})",    
+    ">desktop": "(min-width: #{$breakpoint-desktop})",
+    "<desktop": "(max-width: #{$breakpoint-desktop - 1})"
   );
   
   @if map-has-key($condMap, $c) {
