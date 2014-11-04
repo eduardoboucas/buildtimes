@@ -3,12 +3,14 @@ title: Eduardo saying things - Eduardo Bouças' blog
 ---
 <!DOCTYPE html>
 <html>
-{% include blog/head.html %}
-{% include blog/header.html %}
-<body class="blogSite">
-	{% include googleTagManager.html %}
-	{% include blog/posts.html %}
-	{% include googleAnalytics.html %}
-	{% include blog/footer.html %}
-</body>
+	{% include blog/head.html %}
+	{% include blog/header.html %}
+	<body class="blogSite">
+		{% include googleTagManager.html %}
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		{% include blog/posts.html %}
+		{% include googleAnalytics.html %}
+		{% include blog/footer.html %}
+	</body>
 </html>

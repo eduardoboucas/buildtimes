@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    {% if paginator.previous_page %}
+        {% if paginator.page == 2 %}
+            <link rel="prev" href="{{ site.url }}/blog" />
+        {% else %}
+            <link rel="prev" href="{{ site.url }}/blog/page{{ paginator.previous_page }}" />
+        {% endif %}
+    {% endif %}
+
+    {% if paginator.next_page %}
+        <link rel="next" href="{{ site.url }}/blog/page{{ paginator.next_page }}" />
+    {% endif %}
+
 {% if include.overwriteOpengraph == null %}
     <meta content="{{ site.title }}" property="og:title">
     <meta content="website" property="og:type">
@@ -17,4 +29,3 @@
     <meta content="{{ site.url }}/assets/images/thumbnail.jpg" property="og:image">
 </head>
 {% endif %}
-

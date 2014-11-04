@@ -1,5 +1,11 @@
-<div id="container">
-  {% for post in site.posts %}
+{% if paginator.page %}
+  {% assign offset = paginator.page | minus:1 | times:paginator.per_page %}
+{% else %}
+  {% assign offset = 0 %}
+{% endif %}
+
+<div id="blogContainer" class="postContainer" data-page="1" data-totalPages="{{ paginator.total_pages }}">
+  {% for post in site.posts limit:site.paginate offset:offset %}
     <article class="post list">
       <header>
         <a class="readPost" href="{{ post.url | prepend: site.baseurl }}"><h1>{{ post.title }}</h1></a>
@@ -22,3 +28,13 @@
     </article>
   {% endfor %}
 </div>
+
+{% assign postCount = site.posts | size %}
+{% assign postsCovered = site.paginate | plus:offset %}
+{% if postsCovered < postCount %}
+  <button class="loadMore">Load more posts</button>
+{% endif %}
+
+<script>
+  {% include blog/pagination.js %}
+</script>

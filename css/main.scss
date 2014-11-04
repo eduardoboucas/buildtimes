@@ -29,6 +29,12 @@ $breakpoint-phone: 479px;
 $breakpoint-tablet: 767px;
 $breakpoint-desktop: 1023px;
 
+%constrain {
+	max-width: $base-maxWidth + 20px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
 /**
 *
 * General rules
@@ -381,7 +387,7 @@ header.blogHeader {
 		}
 	}
 
-	@include media( "screen", "<tablet" ) {
+	@include media("screen", "<tablet") {
 	    h1 {
 	    	padding-left: 0;
 	    }
@@ -392,21 +398,46 @@ header.blogHeader {
   	}
 }
 
-// "Back to all posts" button
-#container.singlePost {
-	h2.backToAllPosts {
-		margin-top: -10px;
+.postContainer {
+	@extend %constrain;
+
+	&.singlePost {
+		h2.backToAllPosts {
+			margin-top: -10px;
+		}	
+	}
+}
+
+.loadMore {
+	border: 0;
+	background: none;
+	font-family: $base-fontFamily;
+	@include font-size($base-fontSize);
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	outline: 0;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&.loading {
+		&::after {
+			position: absolute;
+			left: 0;
+			right: 0;
+			background-color: white;
+			width: 100%;
+			content: 'Loading...';
+			color: #bcbcbc;
+		}
 	}	
 }
 
 h2.backToAllPosts {
 	margin: 10px 0 15px 0;	
-}
-
-body.blogSite {
-	#container {
-		position: static;
-	}
 }
 
 footer {

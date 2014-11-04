@@ -2,8 +2,7 @@
 title: Eduardo saying things.
 author: Eduardo Bouças
 email: mail@eduardoboucas.com
-description: > # this means to ignore newlines until "baseurl:"
-  My blog about web, my experience as a sharp programmer and a terrible dancer.
+description: "My blog about web, my experience as a sharp programmer and a terrible dancer."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://eduardoboucas.com" # the base hostname & protocol for your site
 twitter_username: eduardoboucas
@@ -12,6 +11,10 @@ googleAnalyticsId: UA-54012006-1
 
 # Build settings
 markdown: kramdown
+
+# Pagination
+paginate: 5
+paginate_path: "blog/page:num"
 
 collections:
   - projects
