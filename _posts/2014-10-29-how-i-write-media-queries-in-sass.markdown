@@ -99,3 +99,5 @@ This allows me to do things like:
 {% endhighlight %}
 
 That's it! What do you think of this approach? Erm, I guess I need to implement some sort of commenting system before I start asking questions, right? More on that later.<!--tomb-->
+
+*[SASS Media queries on GitHub](https://github.com/eduardoboucas/sass-media-queries)*
