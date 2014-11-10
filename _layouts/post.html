@@ -56,8 +56,8 @@ layout: default
   {% include blog/header.html %}
   {% include googleTagManager.html %}
   
-  <div id="blogContainer" class="postContainer singlePost">
-    <a href="/blog"><h2 class="backToAllPosts">&#8592; Back to all posts</h2></a>
+  <div id="blogContainer" class="blogContainer singlePost">
+    {% include blog/blogNavigation.html %}
     <article class="post single">
       <header>
         <h1>{{ page.title }}</h1>

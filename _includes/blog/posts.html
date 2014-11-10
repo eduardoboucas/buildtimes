@@ -1,18 +1,20 @@
 {% if paginator.page %}
   {% assign offset = paginator.page | minus:1 | times:paginator.per_page %}
+  {% assign currentPage = paginator.page %}
 {% else %}
   {% assign offset = 0 %}
+  {% assign currentPage = 1 %}
 {% endif %}
 
-<div id="blogContainer" class="postContainer" data-page="1" data-totalPages="{{ paginator.total_pages }}">
+<div id="blogContainer" class="blogContainer" data-page="{{ currentPage }}" data-totalPages="{{ paginator.total_pages }}">
   {% for post in site.posts limit:site.paginate offset:offset %}
     <article class="post list">
       <header>
-        <a class="readPost" href="{{ post.url | prepend: site.baseurl }}"><h1>{{ post.title }}</h1></a>
+        <h1><a class="readPost" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
         <p class="postMeta">
           <span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ post.date | date: "%b %-d, %Y" }}</span>
           {% if post.tags %}
-            <span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in post.tags %} <em>{{ tag }}</em>{% endfor %}</span>
+            <span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in post.tags %} <em><a href="/blog/tags.html#{{ tag }}">{{ tag }}</a></em>{% endfor %}</span>
           {% endif %}
           <span class="permalink"><img src="/assets/images/icons/link.svg" class="postIcon"/> <a href="{{ post.url }}">Permalink</a></span>
         </p>
@@ -20,7 +22,7 @@
       <div class="excerpt">
         {% if post.content contains '<!--more-->' %}
           <a class="readPost" href="{{ post.url }}">{{ post.content | split:'<!--more-->' | first }}</a>
-          <p class="cta"><a class="readPost" href="{{ post.url }}">Read full post &#8594;</a></p>
+          <p class="cta"><a class="readPost rightArrow" href="{{ post.url }}">Read full post</a></p>
         {% else %}
           {{ post.content }}
         {% endif %}

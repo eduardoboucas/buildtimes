@@ -72,7 +72,7 @@ code {
 }
 
 code {
-    padding: 1px 5px;
+    padding: 1px;
 
     .lineno {
       opacity: 0.2;
@@ -97,4 +97,34 @@ pre {
 
 .highlight {
   margin-bottom: 20px;
+}
+
+/**
+*
+* Left and right arrows
+*
+**/
+
+.leftArrow {
+  &::before {
+    content: "\2190  ";
+  }
+}
+
+.rightArrow {
+  &::after {
+    content: " \2192";
+  }
+}
+
+.upArrow {
+  &::before {
+    content: "\2191  ";
+  }
+}
+
+.downArrow {
+  &::before {
+    content: "\2193  ";
+  }
 }

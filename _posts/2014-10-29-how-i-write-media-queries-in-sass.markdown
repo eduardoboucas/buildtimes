@@ -78,9 +78,9 @@ $breakpoint-desktop: 1024px !default;
 }
 {% endhighlight %}
 
-I start by defining default values for the breakpoints (lines 1 to 3), which can be overwritten at any point in the code since I'm using `!default`. I then parse the conditions and see if they match one of the default breakpoint expressions (line 46); if not, then we're dealing with a custom breakpoint.
+I start by defining default values for the breakpoints (lines 1 to 3), which can be overwritten at any point in the code since I'm using `!default`. I then parse the conditions and see if they match one of the default breakpoint expressions (line 19); if not, then we're dealing with a custom breakpoint.
 
-In that case, I check if the first character matches a "greater than" or "less than" (lines 53 and 55), parse the number (using [Hugo Giraudel's](http://hugogiraudel.com/2014/01/15/sass-string-to-number/) function, line 50) and return the expression. Easy peasy.
+In that case, I check if the first character matches a "greater than" or "less than" (lines 26 and 28), parse the number (using [Hugo Giraudel's](http://hugogiraudel.com/2014/01/15/sass-string-to-number/) function, line 23) and return the expression. Easy peasy.
 
 This allows me to do things like:
 

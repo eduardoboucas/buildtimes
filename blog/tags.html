@@ -1,0 +1,26 @@
+---
+ 
+---
+<!DOCTYPE html>
+<html>
+	{% include blog/head.html %}
+	{% include blog/header.html %}
+	<body class="blogSite">
+		{% include googleTagManager.html %}
+
+		<div class="blogContainer">
+			{% include blog/blogNavigation.html %}
+			{% for tag in site.tags %}
+				<h2><a name="{{ tag[0] }}">{{ tag[0] }}</a></h2>
+				<ul>
+					{% for post in tag[1] %}
+						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endfor %}
+		</div>
+		
+		{% include googleAnalytics.html %}
+		{% include blog/footer.html %}
+	</body>
+</html>

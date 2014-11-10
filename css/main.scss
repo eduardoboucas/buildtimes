@@ -41,6 +41,25 @@ $breakpoint-desktop: 1023px;
 *
 **/
 
+%noLinkUnderline {
+	a {
+		text-decoration: none;
+	}
+}
+
+%textButton {
+	border: 0;
+	background: none;
+	font-family: $base-fontFamily;
+	@include font-size($base-fontSize);	
+	outline: 0;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}	
+}
+
 html {
   font-size: 62.5%;
 }
@@ -54,12 +73,14 @@ body {
 h1 {
 	margin-bottom: 30px;
 	@include font-size(40);
+	@extend %noLinkUnderline;
 }
 
 h2 {
 	font-family: $font-economica;
 	text-transform: uppercase;
 	@include font-size(18);
+	@extend %noLinkUnderline;
 	margin: 30px 0 10px 0;	
 }
 
@@ -75,12 +96,16 @@ p {
 		font-family: $font-economica;
 		text-transform: uppercase;
 		@include font-size(18);
-		margin: 30px 0 10px 0;			
+		margin: 30px 0 10px 0;
+
+		a {
+			text-decoration: none;
+		}		
 	}
 }
 
 a {
-	text-decoration: none;
+	//text-decoration: none;
 	color: inherit;
 }
 
@@ -226,11 +251,11 @@ section.about {
 
 	@include media("screen", "<400px") {
 		img {
+			width: 100%;
+
 			&:not(:first-child) {
 				display: none;
 			}
-
-			width: 100%;
 		}
 	}
 }
@@ -241,9 +266,7 @@ section.about {
 *
 **/
 
-article.post {
-	margin: 0 0 30px 0;
-	
+.blogContainer {
 	p {
 		line-height: 23px;
 	}
@@ -272,6 +295,10 @@ article.post {
 	p, ul, ol {
 		@include font-size(18);
 	}	
+}
+
+article.post {
+	margin: 0 0 30px 0;
 
 	.postMeta {
 		opacity: 0.5;
@@ -398,31 +425,20 @@ header.blogHeader {
   	}
 }
 
-.postContainer {
+.blogContainer {
 	@extend %constrain;
 
-	&.singlePost {
-		h2.backToAllPosts {
-			margin-top: -10px;
-		}	
+	.backToAllPosts {
+		margin-top: -10px;
 	}
 }
 
 .loadMore {
-	border: 0;
-	background: none;
-	font-family: $base-fontFamily;
-	@include font-size($base-fontSize);
+	@extend %textButton;
 	position: relative;
 	display: block;
 	margin: 0 auto;
-	outline: 0;
-	cursor: pointer;
-
-	&:hover {
-		text-decoration: underline;
-	}
-
+	
 	&.loading {
 		&::after {
 			position: absolute;
@@ -476,6 +492,7 @@ section.mediaIcons {
 **/
 
 #menu {
+	@extend %noLinkUnderline;
 	position: absolute;
 	min-width: $base-minWidth;
 	left: 0;
@@ -500,8 +517,8 @@ section.mediaIcons {
 }
 
 .menuItem {
-	font-family: $font-economica;
 	@include font-size(28);
+	font-family: $font-economica;
 	margin: 0px 15px 0px 15px;
 }
 
@@ -538,13 +555,13 @@ section.mediaIcons {
 }
 
 nav.goBack {
-	h2 {
+	p {
 		display: none;
 		margin-top: 0;
 	}
 
 	@include media("screen", "<tablet") {
-		h2 {
+		p {
 			display: block;
 		}
 

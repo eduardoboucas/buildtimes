@@ -1,6 +1,8 @@
-$(".loadMore").click(function () {
+$(".loadMore").click(loadMorePosts);
+
+function loadMorePosts() {
   var _this = this;
-  $blogContainer = $("#blogContainer");
+  var $blogContainer = $("#blogContainer");
   var nextPage = parseInt($blogContainer.attr("data-page")) + 1;
   var totalPages = parseInt($blogContainer.attr("data-totalPages"));
 
@@ -17,5 +19,5 @@ $(".loadMore").click(function () {
     }
 
     $(_this).removeClass("loading");
-  });
-});
+  });  
+}
