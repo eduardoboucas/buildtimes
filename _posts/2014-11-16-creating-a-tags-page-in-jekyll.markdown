@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Creating a tags page in Jekyll"
-date: 2014-11-16 18:29:00
+date: 2014-11-16 11:46:00
 categories: blog
 tags: jekyll tags html5 details
 ---
