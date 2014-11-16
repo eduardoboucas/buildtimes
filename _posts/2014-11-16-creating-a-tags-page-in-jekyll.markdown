@@ -5,7 +5,7 @@ date: 2014-11-16 11:46:00
 categories: blog
 tags: jekyll tags html5 details
 ---
-Jekyll supports post tagging by default, but you have to do some work to get something out of it. It reads tags directly from the front matter on posts, but then what? Does it allow users to search posts by tag? Does it create a tags aggregation page? No sir. You'd probably need plugins to achieve that kind of functionality, but there are still some things you can achieve without them.<!--more-->
+Jekyll supports post tagging by default, but you have to do some work to get something out of it. It reads tags directly from the front matter on posts, but then what? Does it allow users to search posts by tag? Does it create a tags aggregation page? No sir. You'd probably need plugins to achieve that level of functionality, but there are still some things you can achieve without them.<!--more-->
 
 In this post I'll describe how I implemented tags on my blog, from including them in posts to creating a tags page, with some cool new HTML5 stuff along the way. Buckle up!
 
@@ -88,4 +88,4 @@ The [browser support for the `details` element](http://caniuse.com/#feat=details
 
 As for the tags page itself, it works. Conventional blog platforms would probably provide a more advanced system with a tag search system or a tag cloud, but these are trickier to achieve in Jekyll, especially without plugins. To me, this solution is a good enough implementation of tags and it helps keeping the system simple and effective.<!--tomb-->
 
-*Check out the result of this implementation [on my tags page](http://eduardoboucas.com/tags.html).*
+*Check out the result of this implementation [on my tags page](http://eduardoboucas.com/blog/tags.html).*
