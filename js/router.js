@@ -58,10 +58,19 @@ define([
 				console.log(error);
 			});
 		});
+
+		app_router.on('route', function (route) {
+			_trackPageview();
+		});
 		
 		Backbone.history.start();	
 	};
-	
+
+	var _trackPageview = function () {
+		var url = Backbone.history.getFragment()
+
+		ga('send', 'pageview', "/#/" + url);
+	};
 	return {
 		initialize: initialize
 	};

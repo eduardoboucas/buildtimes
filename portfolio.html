@@ -8,7 +8,7 @@ menuOrder: 2
 {% for project in projects %}
 	<article>
 		{% if project.link %}
-			<a href="{{ project.link }}" target="_blank"><h1>{{ project.title }}</h1></a>
+			<h1><a href="{{ project.link }}" target="_blank">{{ project.title }}</a></h1>
 		{% else %}
 			<h1>{{ project.title }}</h1>
 		{% endif %}
@@ -21,7 +21,7 @@ menuOrder: 2
 		{{ project.content }}
 
 		{% if project.link %}
-			<a href="{{ project.link }}" target="_blank"><h2>Open website</h2></a>
+			<p class="cta"><a class="rightArrow" href="{{ project.link }}" target="_blank">Open website</a></p>
 		{% endif %}
 	</article>
 {% endfor %}
