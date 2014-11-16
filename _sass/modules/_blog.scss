@@ -1,0 +1,198 @@
+.blogContainer {
+	p {
+		line-height: 23px;
+	}
+
+	h1 {
+		margin: 0;
+		@include font-size(30);
+	}
+
+	h2 {
+		font-family: inherit;
+		text-transform: none;
+		@include font-size(25);
+	}
+
+	ul, ol {
+		list-style: disc;
+		padding-left: 15px;
+		margin: 0 0 15px 15px;
+
+		li {
+			margin-bottom: 5px;
+		}	
+	}
+
+	p, ul, ol {
+		@include font-size(18);
+	}	
+}
+
+article.post {
+	margin: 0 0 30px 0;
+
+	.postMeta {
+		opacity: 0.5;
+
+		span {
+			margin-right: 20px;
+		}
+
+		@include media("screen", "<tablet") {
+			span {
+				display: block;
+			}
+		}
+	}
+
+	.postIcon {
+		display: inline;
+		margin: 0;
+		width: 15px;
+	}
+
+	img {
+		display: block;
+		margin: 20px auto 5px auto;
+		max-width: 100%;
+	}
+
+	figure {
+		margin-bottom: 15px;
+
+		figcaption {
+			text-align: center;
+			font-style: italic;
+			@include font-size(13);
+		}		
+	}
+
+	&.single {
+		margin-top: 0;
+
+		.body {
+			>p:first-of-type:first-letter { 
+				float: left; 
+				@include font-size(75);
+				line-height: 63px; 
+				padding-top: 4px; 
+				padding-right: 8px; 
+				padding-left: 3px; 
+				font-family: Georgia; 
+			}
+		}
+	}
+
+	blockquote {
+		p {
+			font-style: italic;
+			border-left: 1px solid black;
+			opacity: 0.5;
+			padding-left: 10px;			
+		}
+	}
+
+	.excerpt {
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+#blogPost {
+	display: none;
+}
+
+header.blogHeader {
+	@extend %clearfix;
+	position: relative;
+	overflow: hidden;
+	max-width: $base-maxWidth;
+	min-width: $base-minWidth;
+	margin: 0 auto 20px auto;
+	border-bottom: 1px solid black;
+
+	.backToMenu {
+		position: absolute;
+	}
+
+	h1 {
+		text-align: center;
+		margin: 0;
+		margin: 50px 0;
+		padding-left: 70px;
+	}
+
+	.bust {
+		position: absolute;
+		top: 0;
+		left: 70px;
+		height: 150px;
+		float: right;
+	}
+
+	.rss {
+		width: 30px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		opacity: 0.3;
+		transition: opacity 0.8s ease;
+
+		&:hover {
+			opacity: 1;
+			transition: opacity 0.8s ease;
+		}
+	}
+
+	@include media("screen", "<tablet") {
+	    h1 {
+	    	padding-left: 0;
+	    }
+
+	    .bust {
+	    	display: none;
+	    }
+  	}
+}
+
+.blogContainer {
+	@extend %constrain;
+
+	.backToAllPosts {
+		margin-top: -10px;
+	}
+}
+
+.loadMore {
+	@extend %textButton;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	
+	&.loading {
+		&::after {
+			position: absolute;
+			left: 0;
+			right: 0;
+			background-color: white;
+			width: 100%;
+			content: 'Loading...';
+			color: #bcbcbc;
+		}
+	}	
+}
+
+h2.backToAllPosts {
+	margin: 10px 0 15px 0;	
+}
+
+footer {
+	width: 100%;
+	max-width: $base-maxWidth;
+	margin: 0 auto;
+	text-align: center;
+	padding: 5px 0;
+	opacity: 0.3;	
+}

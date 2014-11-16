@@ -1,0 +1,79 @@
+#menu {
+	@extend %noLinkUnderline;
+	position: absolute;
+	min-width: $base-minWidth;
+	left: 0;
+	right: 0;
+	padding-right: 60px;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	z-index: 400;
+	text-transform: uppercase;
+}
+
+#mobileLogo {
+	text-align: center;
+
+	img {
+		width: 200px;
+		border-bottom: 1px solid black;
+		padding: 0 40px;
+		box-sizing: content-box;			
+	}
+}
+
+.menuItem {
+	@include font-size(28);
+	font-family: $font-economica;
+	margin: 0px 15px 0px 15px;
+}
+
+@include media("screen", ">tablet") {
+	#mobileLogo {
+		display: none;
+	}
+
+	#menu {
+		display: none;
+		margin-bottom: -40px;
+	}
+}
+
+@include media("screen", "<tablet") {
+	#menu {
+		padding-right: 0;
+		position: static;
+		overflow: hidden;
+		height: 1000px;
+		transition: height 1s;
+
+		.menuItem {
+			display: block;
+			@include font-size(40);
+			margin: 10px 0;
+		}
+
+		&.hidden {
+			height: 0;
+			transition: height 1s;
+		}
+	}
+}
+
+nav.goBack {
+	p {
+		display: none;
+		margin-top: 0;
+	}
+
+	@include media("screen", "<tablet") {
+		p {
+			display: block;
+		}
+
+		img {
+			display: none;
+		}
+	}
+}

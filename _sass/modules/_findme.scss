@@ -1,0 +1,13 @@
+section.mediaIcons {
+	margin-bottom: 20px;
+
+	a {
+		&:not(:last-child) {
+			margin-right: 20px;	
+		}
+
+		img {
+			width: 80px;
+		}		
+	}
+}

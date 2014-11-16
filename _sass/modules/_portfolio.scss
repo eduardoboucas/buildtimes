@@ -1,0 +1,43 @@
+.screenshots {
+	@extend %clearfix;
+	margin-bottom: 20px;
+
+	img {
+		float: left;
+		border: 3px solid black;
+	}
+
+	@include media("screen", ">tablet") {
+		img {
+			width: 32%;
+
+			&:not(:last-child) {
+				margin-right: 2%;
+			}			
+		}
+	}
+
+	@include media("screen", "<tablet") {
+		img {
+			width: 49%;
+			
+			&:first-child {
+				margin-right: 2%;
+			}
+			
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+
+	@include media("screen", "<400px") {
+		img {
+			width: 100%;
+
+			&:not(:first-child) {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,89 @@
+section.about {
+	@extend %clearfix;
+	
+	position: relative;
+
+	p {
+		width: 75%;
+	}
+
+	img[title='drawing'] {
+		position: absolute;
+		top: 50px;
+		right: 50px;
+	}
+
+	// Skills
+	$skills-leftColumn: 25%;
+
+	ul:first-of-type {
+		li {
+			@extend %clearfix;
+
+			em {
+				float: left;
+
+				&:first-child {
+					width: $skills-leftColumn;
+					text-align: right;
+					padding-right: 20px;
+				}
+
+				&:last-child {
+					width: 100% - $skills-leftColumn;
+				}
+			}
+
+			code {
+				display: block;
+				font-size: 7px;
+				background: black;
+				border-radius: 8px;
+				margin-top: 3px;
+				opacity: 0.8;
+				width: 0;
+			}
+
+			@include media("screen", "<tablet") {
+				em {
+					&:first-child,
+					&:last-child {
+						width: 100%;
+						text-align: left;
+					}
+				}						
+			}			
+		}
+	}
+
+	h3 {
+		@include font-size(9);
+		border-bottom: 1px solid black;
+		margin-left: $skills-leftColumn;
+		margin-bottom: 5px;
+		padding-top: 10px;
+
+		em {
+			font-style: normal;
+			text-transform: uppercase;
+
+			&:last-child {
+				float: right;
+			}
+		}
+	}
+
+	@include media("screen", "<tablet") {
+		p {
+			width: 100%;
+		}
+
+		img[title='drawing'] {
+			display: none;
+		}
+
+		h3 {
+			margin-left: 0;
+		}
+	}	
+}
