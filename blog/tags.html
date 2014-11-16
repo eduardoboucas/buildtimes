@@ -10,17 +10,37 @@
 
 		<div class="blogContainer">
 			{% include blog/blogNavigation.html %}
-			{% for tag in site.tags %}
-				<h2><a name="{{ tag[0] }}">{{ tag[0] }}</a></h2>
-				<ul>
-					{% for post in tag[1] %}
-						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-					{% endfor %}
-				</ul>
+			
+			<h2>Tags</h2>
+			{% assign sortedTags = (site.tags | sort:0) %}
+			{% for tag in sortedTags %}
+				<details id="tag-{{ tag[0] }}">
+					<summary>
+						<a name="{{ tag[0] }}">{{ tag[0] }} <span>({{ tag[1].size }})</span></a>
+					</summary>
+					<ul>
+						{% for post in tag[1] %}
+							<li><a href="{{ post.url }}">{{ post.title }}</a> — {{ post.date | date_to_string }}</li>
+						{% endfor %}
+					</ul>					
+				</details>
 			{% endfor %}
 		</div>
 		
 		{% include googleAnalytics.html %}
 		{% include blog/footer.html %}
+
+		<script>
+		window.addEventListener("load", function () {
+			if (window.location.hash != "") {
+				var tagId = "tag-" + window.location.hash.slice(1);
+				var tagObject = document.getElementById(tagId);
+				var attribute = document.createAttribute("open");
+				attribute.value = "open";
+
+				tagObject.setAttributeNode(attribute);
+			}
+		});
+		</script>
 	</body>
 </html>

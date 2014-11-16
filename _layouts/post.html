@@ -46,7 +46,7 @@ layout: default
 {% endif %}
 {% if page.tags %}
   {% for tag in page.tags %}
-  <meta content="{{ tag }}" property="article:tag">
+    <meta content="{{ tag }}" property="article:tag">
   {% endfor %}
 {% endif %}
 
@@ -64,7 +64,7 @@ layout: default
         <p class="postMeta">
           <span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ page.date | date: "%b %-d, %Y" }}</span>
           {% if page.tags %}
-            <span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in page.tags %} <em>{{ tag }}</em>{% endfor %}</span>
+            <span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in page.tags %} <em><a href="/blog/tags.html#{{ tag }}">{{ tag }}</a></em>{% endfor %}</span>
           {% endif %}
           <span class="permalink"><img src="/assets/images/icons/link.svg" class="postIcon"/> <a href="{{ page.url }}">Permalink</a></span>
         </p>
