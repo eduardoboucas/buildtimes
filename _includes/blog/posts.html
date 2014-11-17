@@ -7,6 +7,9 @@
 {% endif %}
 
 <div id="blogContainer" class="blogContainer" data-page="{{ currentPage }}" data-totalPages="{{ paginator.total_pages }}">
+  {% if include.standalone %}
+    <p class="cta backToAllPosts"><a href="http://eduardoboucas.com" class="rightArrow">Visit main site</a></p>
+  {% endif %}
   {% for post in site.posts limit:site.paginate offset:offset %}
     <article class="post list">
       <header>
