@@ -6,17 +6,22 @@
   {% assign currentPage = 1 %}
 {% endif %}
 
-<div id="blogContainer" class="blogContainer" data-page="{{ currentPage }}" data-totalPages="{{ paginator.total_pages }}">
-  {% if include.standalone %}
-    <p class="cta backToAllPosts"><a href="http://eduardoboucas.com" class="rightArrow">Visit main site</a></p>
+<div id="blogContainer" class="blogContainer {{ include.origin }}" data-page="{{ currentPage }}" data-totalPages="{{ paginator.total_pages }}">
+  {% if include.origin == 'standalone' %}
+    <p class="cta topLink"><a href="http://eduardoboucas.com" class="rightArrow">Visit main site</a></p>
   {% endif %}
+
+  {% if include.origin == 'mainsite' %}
+    <p class="cta topLink"><a href="http://eduardoboucas.com/blog" class="rightArrow">Open standalone version</a></p>
+  {% endif %}
+
   {% for post in site.posts limit:site.paginate offset:offset %}
     <article class="post list">
       <header>
         <h1><a class="readPost" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
         <p class="postMeta">
           <span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ post.date | date: "%b %-d, %Y" }}</span>
-          {% if post.tags %}
+          {% if (post.tags and (include.origin != 'mainsite')) %}
             <span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in post.tags %} <em><a href="/blog/tags.html#{{ tag }}">{{ tag }}</a></em>{% endfor %}</span>
           {% endif %}
           <span class="permalink"><img src="/assets/images/icons/link.svg" class="postIcon"/> <a href="{{ post.url }}">Permalink</a></span>

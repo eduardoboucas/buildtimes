@@ -110,7 +110,7 @@ header.blogHeader {
 	overflow: hidden;
 	max-width: $base-maxWidth;
 	min-width: $base-minWidth;
-	margin: 0 auto 20px auto;
+	margin: 0 auto 10px auto;
 	border-bottom: 1px solid black;
 
 	.backToMenu {
@@ -160,8 +160,8 @@ header.blogHeader {
 .blogContainer {
 	@extend %constrain;
 
-	.backToAllPosts {
-		margin-top: -10px;
+	.topLink {
+		margin-top: 0;
 	}
 }
 
