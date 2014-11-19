@@ -6,6 +6,7 @@ description: "My blog about web, my experience as a sharp programmer and a terri
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://eduardoboucas.com" # the base hostname & protocol for your site
 blog_url: "/blog/"
+feed_url: "http://feeds.eduardoboucas.com/eduardoboucas"
 twitter_username: eduardoboucas
 github_username:  eduardoboucas
 googleAnalyticsId: UA-54012006-1
