@@ -29,7 +29,7 @@ layout: default
 {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
 {% endif %}
-<meta content="{{ site.facebook_url }})" property="article:author">
+<meta content="{{ site.facebook_url }}" property="article:author">
 {% if page.image %}
   <meta content="{{ site.url }}/assets/posts/{{ page.image }}" property="og:image">
 {% else %}
