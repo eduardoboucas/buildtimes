@@ -7,6 +7,7 @@ baseurl: ""
 url: "http://eduardoboucas.com"
 blog_url: "/blog/"
 feed_url: "http://feeds.eduardoboucas.com/eduardoboucas"
+facebook_url: "https://www.facebook.com/eduardoboucas"
 twitter_username: eduardoboucas
 github_username:  eduardoboucas
 googleAnalyticsId: UA-54012006-1
