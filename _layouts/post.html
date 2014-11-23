@@ -29,15 +29,11 @@ layout: default
 {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
 {% endif %}
-{% if page.author %}
-  <meta content="{{ page.author }}" property="article:author">
-{% else %}
-  <meta content="{{ site.author }} ({{ site.email }})" property="article:author">
-{% endif %}
+<meta content="{{ site.facebook_url }})" property="article:author">
 {% if page.image %}
   <meta content="{{ site.url }}/assets/posts/{{ page.image }}" property="og:image">
 {% else %}
-  <meta content="{{ site.url }}/assets/images/thumbnail.jpg" property="og:image">
+  <meta content="{{ site.url }}/assets/images/bust.png" property="og:image">
 {% endif %}
 {% if page.categories %}
   {% for category in page.categories limit:1 %}
