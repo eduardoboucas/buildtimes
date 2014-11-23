@@ -3,8 +3,8 @@ title: Eduardo saying things
 author: Eduardo Bouças
 email: mail@eduardoboucas.com
 description: "My blog about web, my experience as a sharp programmer and a terrible dancer."
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://eduardoboucas.com" # the base hostname & protocol for your site
+baseurl: ""
+url: "http://eduardoboucas.com"
 blog_url: "/blog/"
 feed_url: "http://feeds.eduardoboucas.com/eduardoboucas"
 twitter_username: eduardoboucas
