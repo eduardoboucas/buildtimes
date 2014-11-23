@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "The story behind my website"
-handle: "the-story-behind-my-website"
 date:   2014-10-09 16:57:00
 categories: blog
 tags: eduardoboucas.com video backbonejs

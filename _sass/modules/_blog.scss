@@ -196,3 +196,30 @@ footer {
 	padding: 5px 0;
 	opacity: 0.3;	
 }
+
+.highlight {
+	$highlightHeight: 23px;
+
+	max-height: $highlightHeight;
+	overflow: hidden;
+
+	&::before {
+		content: "\2198  Code snippet: click to expand";
+		height: $highlightHeight;
+		font-weight: bold;
+		cursor: pointer;
+		@include font-size(18);
+	}
+
+	pre {
+		margin-top: 15px;
+	}
+
+	&.expanded {
+		max-height: none;
+
+		&::before {
+			display: none;
+		}
+	}
+}

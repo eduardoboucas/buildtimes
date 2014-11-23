@@ -1,0 +1,98 @@
+<!-- Charset and IE stuff -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- RSS feed -->
+<link rel="alternate" type="application/rss+xml" title="{{ site.blog_title }}" href="{{ site.feed_url }}" />
+
+<!-- Description -->
+{% if page.dir contains site.blog_url %}
+  <meta name="description" content="{{ site.blog_description }}">
+{% else %}
+  <meta name="description" content="{{ site.site_description }}">
+{% endif %}
+
+<!-- Viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+<!-- Open graph: site name -->
+{% if page.dir contains site.blog_url %}
+  <meta content="{{ site.blog_title }}" property="og:site_name">
+{% else %}
+  <meta content="{{ site.site_title }}" property="og:site_name">
+{% endif %}
+
+<!-- Open graph: title -->
+{% if page.dir contains site.blog_url %}
+  {% if page.title %}
+    <meta content="{{ page.title }}" property="og:title">
+  {% else %}
+    <meta content="{{ site.blog_title }}" property="og:title">
+  {% endif %}
+{% else %}
+  <meta content="{{ site.site_title }}" property="og:title">
+{% endif %}
+
+<!-- Open graph: image -->
+{% if page.image %}
+  <meta content="{{ site.site_url }}/assets/posts/{{ page.image }}" property="og:image">
+{% else %}
+  <meta content="{{ site.site_url }}/assets/images/bust.png" property="og:image">
+{% endif %}
+
+<!-- Open graph: type -->
+{% if page.dir contains site.blog_url %}
+  <meta content="blog" property="og:type">
+{% else %}
+  <meta content="website" property="og:type">
+{% endif %}
+
+<!-- Open graph: description -->
+{% if page.dir contains site.blog_url %}
+  {% if page.dir == "/blog" %}
+    <meta content="{{ site.blog_description }}" property="og:description">
+  {% else %}
+    {% if page.description %}
+      <meta content="{{ page.description }}" property="og:description">
+    {% elsif content contains '<!--more-->' %}
+      <meta content="{{ content | split: '<!--more-->' | first | strip_html }}" property="og:description">
+    {% else %}
+      <meta content="{{ content | strip_html }}" property="og:description">
+    {% endif %}
+  {% endif %}
+{% else %}
+  <meta content="{{ site.site_description }}" property="og:description">  
+{% endif %}
+
+<!-- Open graph: URL -->
+{% if page.dir contains site.blog_url %}
+  {% if page.url %}
+    <meta content="{{ site.site_url }}{{ page.url | replace:'index.html','' }}" property="og:url">
+  {% endif %}
+{% else %}
+  <meta content="{{ site.site_url }}" property="og:url">
+{% endif %}
+
+{% if page.dir contains site.blog_url %}
+  <!-- Article: published time -->
+  {% if page.date %}
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+  {% endif %}
+
+  <!-- Article: author -->
+  <meta content="{{ site.facebook_url }}" property="article:author">
+
+  <!-- Article: section -->
+  {% if page.categories %}
+    {% for category in page.categories limit:1 %}
+      <meta content="{{ category }}" property="article:section">
+    {% endfor %}
+  {% endif %}
+
+  <!-- Article: tags -->
+  {% if page.tags %}
+    {% for tag in page.tags %}
+      <meta content="{{ tag }}" property="article:tag">
+    {% endfor %}
+  {% endif %}
+{% endif %}
