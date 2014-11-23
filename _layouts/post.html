@@ -32,8 +32,10 @@ layout: default
 <meta content="{{ site.facebook_url }}" property="article:author">
 {% if page.image %}
   <meta content="{{ site.url }}/assets/posts/{{ page.image }}" property="og:image">
+  <meta content="{{ site.url }}/assets/posts/{{ page.image }}" property="og:thumbnail">
 {% else %}
   <meta content="{{ site.url }}/assets/images/bust.png" property="og:image">
+  <meta content="{{ site.url }}/assets/images/bust.png" property="og:thumbnail">
 {% endif %}
 {% if page.categories %}
   {% for category in page.categories limit:1 %}
