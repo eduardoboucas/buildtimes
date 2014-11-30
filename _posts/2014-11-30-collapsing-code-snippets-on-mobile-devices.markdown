@@ -3,7 +3,7 @@ layout: post
 title:  "Collapsing code snippets on mobile devices"
 date:   2014-11-30 22:35:00
 categories: blog
-tags: code snippet expandable html5 javascript
+tags: code snippet expandable html5 javascript mobile
 ---
 If you have a blog about coding — GOSH, aren't you geeky — you probably find yourself showing your readers portions of code to guide them through specific problems and to outline the solutions. Taking the time to change how you display these code snippets can be the difference between a good and a terrible user experience for your readers.<!--more-->
 
