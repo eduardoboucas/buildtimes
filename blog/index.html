@@ -7,10 +7,11 @@
 	{% include blog/header.html %}
 	<body class="blogSite">
 		{% include googleTagManager.html %}
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+		
 		{% include blog/posts.html origin="standalone" %}
 		{% include googleAnalytics.html %}
 		{% include blog/footer.html %}
+
+		{% include blog/scripts.html %}
 	</body>
 </html>

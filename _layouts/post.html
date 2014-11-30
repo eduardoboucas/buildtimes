@@ -10,7 +10,7 @@ layout: default
   {% include googleTagManager.html %}
   
   <div id="blogContainer" class="blogContainer singlePost">
-    {% include blog/blogNavigation.html %}
+    {% include blog/navigation.html %}
     <article class="post single">
       <header>
         <h1>{{ page.title }}</h1>
@@ -30,5 +30,6 @@ layout: default
 
   {% include googleAnalytics.html %}
   {% include blog/footer.html %}
+  {% include blog/scripts.html %}
 </body>
 </html>

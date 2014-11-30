@@ -197,29 +197,24 @@ footer {
 	opacity: 0.3;	
 }
 
-.highlight {
-	$highlightHeight: 23px;
+@include media("screen", "<tablet") {
+	.highlight:not(.expanded) {
+		$highlightHeight: 23px;
 
-	max-height: $highlightHeight;
-	overflow: hidden;
-
-	&::before {
-		content: "\2198  Code snippet: click to expand";
-		height: $highlightHeight;
-		font-weight: bold;
-		cursor: pointer;
-		@include font-size(18);
-	}
-
-	pre {
-		margin-top: 15px;
-	}
-
-	&.expanded {
-		max-height: none;
+		max-height: $highlightHeight;
+		overflow: hidden;
+		position: relative;
 
 		&::before {
-			display: none;
+			content: "</> Code snippet: click to expand";
+			height: $highlightHeight;
+			font-weight: bold;
+			cursor: pointer;
+			@include font-size(18);
+		}
+
+		pre {
+			margin-top: 15px;
 		}
 	}
 }

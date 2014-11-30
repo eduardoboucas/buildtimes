@@ -37,11 +37,11 @@ Jekyll is _blog-aware_ in the sense that it looks for text files in a specific d
 How does this work, exactly? Well, let me give you an example. Let's say we want two pages on your website, _About me_ and _Contact me_, with roughly the same structure: a header with the page title, a hero image, the copy and a footer.
 We start by creating the page layout.
 
-***_layouts/pageSimple.html:***
 {% highlight html linenos %}
 ---
 layout: pageSimple
 ---
+<!-- _layouts/pageSimple.html -->
 <html>
   <head>
     // Your meta tags
@@ -58,8 +58,8 @@ layout: pageSimple
 
 And then the text files with our content.
 
-***aboutme.md:***
 {% highlight text %}
+(aboutme.md)
 ---
 layout: pageSimple
 title: About me
@@ -70,8 +70,8 @@ I'm a lonely boy
 Oh, oh-oh I got a love that keeps me waiting
 {% endhighlight %}
 
-***contactme.md:***
 {% highlight text %}
+(contactme.md)
 ---
 layout: pageSimple
 title: Contact me

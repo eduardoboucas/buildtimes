@@ -88,8 +88,6 @@ The plan is to have the first page displaying the 5 most recent posts. If there 
 
 Let's write some code then.
 
-***posts.html:***
-
 {% highlight html linenos %}
 {{ "{%" }} if paginator.page %}
   {{ "{%" }} assign offset = paginator.page | minus:1 | times:paginator.per_page %}
@@ -138,8 +136,6 @@ I then start by adding two data attributes to my post container, `data-page` and
 
 I then need to evaluate if all the posts have been covered or if there are still more pages to show (lines 31 to 33) and, based on that, I'll show or hide the *Load more posts button*. Finally, I include the JavaScript file that will handle the Ajax requests, shown below.
 
-***pagination.js:***
-
 {% highlight javascript linenos %}
 $(".loadMore").click(loadMorePosts);
 
@@ -175,7 +171,6 @@ If the new page number is the same as the total number of pages, then we don't h
 Finally, you may notice that we're appending and removing the class `loading` from our link (lines 9 and 21). The idea is that when the user clicks on the link, its text changes to *Loading...*, giving the indication that the page is waiting for new content to be appended. As soon as the response from the Ajax request comes back and the posts are appended to the page, the link goes back to its original state.
 This is the CSS behind it.
 
-***main.scss:***
 {% highlight sass linenos %}
 .loadMore {
   @extend %textButton;

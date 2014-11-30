@@ -43,14 +43,12 @@ After setting up the feed, it's time to add it to the website. Sure, we could ju
 
 I started by adding a line to my Jekyll config file with the full URL of my feed:
 
-***_config.yml:***
 {% highlight text %}
 feed_url: "http://feeds.eduardoboucas.com/eduardoboucas"
 {% endhighlight %}
 
-And then the meta tag:
+Then I added the meta tag:
 
-***_includes/blog/head.html:***
 {% highlight html %}
 <link rel="alternate" type="application/rss+xml" title="{{ "{{" }} site.title }}" href="{{ "{{" }} site.feed_url }}" />
 {% endhighlight %}

@@ -24,8 +24,8 @@ tags: jekyll tags html5 details
 
 In line 6, I define all the tags I want to use. Then it's time to display them in my post layout:
 
-***_layouts/post.html:***
 {% highlight html linenos %}
+<!-- _layouts/post.html -->
 {{ "{%" }} if page.tags %}
   <span class="tags">
     <img src="/assets/images/icons/tag.svg" class="postIcon"/> 
@@ -41,8 +41,8 @@ Iterating through all the tags in the post and printing the tag name. Nice and s
 ## Creating a tags page
 Jekyll stores all tags in an array called `site.tags` where to each index (the tag name) corresponds an array containing all the posts associated with the given tag. I created a new page inside my *blog/* folder and used that array to create a tag aggregation page:
 
-***blog/tags.html:***
 {% highlight html linenos %}
+<!-- blog/tags.html -->
 ...
 
 <h2>Tags</h2>
