@@ -29,7 +29,7 @@
       </header>
       <div class="excerpt">
         {% if post.content contains '<!--more-->' %}
-          <a class="readPost" href="{{ post.url }}">{{ post.content | split:'<!--more-->' | first }}</a>
+          {{ post.content | split:'<!--more-->' | first }}
           <p class="cta"><a class="readPost rightArrow" href="{{ post.url }}">Read full post</a></p>
         {% else %}
           {{ post.content }}
