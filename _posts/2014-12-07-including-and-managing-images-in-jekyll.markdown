@@ -14,7 +14,7 @@ This post attemps to solve two problems. Firstly, I wanted to display a caption 
 
 The second problem we attempt to solve is file organisation. Where to store the images? It looks ugly to use a folder for all post images, or even worse, have them in the same folder where you have your layout images. File names will get messy at some point, and you'll eventually try to save a picture of a nice calendar (*date.jpg*) on the same folder you have that photo you took on your first day with Josephine (*date.jpg*). You see my point.
 
-I would prefer a main `assets` folder, with a sub-folder for every post. Something like this:
+I would prefer a `posts` folder with a sub-folder for every post. Something like this:
 
 {% highlight text %}
 .
