@@ -15,13 +15,20 @@
 	}
 
 	ul, ol {
-		list-style: disc;
 		padding-left: 15px;
 		margin: 0 0 15px 15px;
 
 		li {
 			margin-bottom: 5px;
 		}	
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
 	}
 
 	p, ul, ol {

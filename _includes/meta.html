@@ -35,7 +35,7 @@
 
 <!-- Open graph: image -->
 {% if page.image %}
-  <meta content="{{ site.site_url }}/assets/posts/{{ page.image }}" property="og:image">
+  <meta content="{{ site.site_url }}/assets/posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ page.image }}" property="og:image">
 {% else %}
   <meta content="{{ site.site_url }}/assets/images/bust.png" property="og:image">
 {% endif %}
