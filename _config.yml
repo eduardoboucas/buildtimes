@@ -30,6 +30,8 @@ blog_description: "My blog about web, my experience as a sharp programmer and a 
 blog_url: "/blog"
 markdown: kramdown
 
+comment_post_url: http://pooleapp.com/stash/10de6ec7-27c4-469f-824a-8c0eee3ec105/
+
 # Pagination
 paginate: 5
 paginate_path: "blog/page:num"
@@ -43,4 +45,5 @@ defaults:
       path: ""
       type: "posts"
     values:
-      author: "Eduardo Bouças"  
+      author: "Eduardo Bouças"
+      enable_comments: true  

@@ -1,0 +1,9 @@
+<form action="{{ site.comment_post_url }}" method="post">
+  <input type="hidden" name="redirect_to" value="{{ page.url }}#comments" />
+  <input type="hidden" name="page" value="{{ page.url }}" />
+  <input type="text" name="name" placeholder="Name"/>
+  <input type="email" name="email" placeholder="Email address"/>
+  <input type="text" name="honey"/>
+  <textarea rows="10" name="message" placeholder="Comment"></textarea>
+  <input type="submit" value="Send" />
+</form>

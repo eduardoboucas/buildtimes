@@ -225,3 +225,53 @@ footer {
 		}
 	}
 }
+
+.comments {
+	h2 {
+		margin: 15px 0;	
+	}
+
+	h3 {
+		margin-top: 25px;
+	}
+
+	input,
+	textarea {
+		box-sizing: border-box;
+		font-family: inherit;
+		@include font-size(16);
+		outline: 0;
+		display: block;
+		width: 50%;
+		border: 1px solid #ddd;
+		margin: 10px 0;
+		padding: 5px;
+		background-color: transparent;
+
+		&[type="submit"] {
+			&:hover {
+				background-color: black;
+				color: white;
+			}
+		}
+
+		&[name="honey"] {
+			display: none;
+		}
+	}
+
+	@include media("screen", "<tablet") {
+		input,
+		textarea {
+			width: 100%;
+		}
+	}
+
+	.comment {
+		margin-top: 25px;
+	}
+
+	.header {
+		margin-bottom: 5px;
+	}
+}

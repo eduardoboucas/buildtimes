@@ -1,4 +1,12 @@
 var blog = {
+	initComments: function (data) {
+		if (data.length > 0) {
+			$("#comments").html(data);	
+		} else {
+			$("#comments").html('<p>This post doesn\'t have any comments yet.');
+		}
+	},
+
 	loadMorePosts: function () {
 		var _this = this;
 		var $blogContainer = $("#blogContainer");

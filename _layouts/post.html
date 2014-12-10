@@ -26,10 +26,22 @@ layout: default
         {{ content | replace: '<!--tomb-->', ' &#8718;'}}
       </div>
     </article>
+
+    {% if page.enable_comments %}
+      <hr/>
+      <section class="comments">
+        <h2>Comments</h2>
+        <div id="comments">
+          <p>Loading comments...</p>
+        </div>
+        <h3>Have something to say?</h3>
+        {% include blog/newComment.html %}
+      </section>
+    {% endif %}
   </div>
 
   {% include googleAnalytics.html %}
   {% include blog/footer.html %}
-  {% include blog/scripts.html %}
+  {% include blog/scripts.html comments="true" %}
 </body>
 </html>
