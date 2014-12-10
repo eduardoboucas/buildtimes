@@ -249,9 +249,10 @@ footer {
 		background-color: transparent;
 
 		&[type="submit"] {
+			color: #bbb;
+
 			&:hover {
-				background-color: black;
-				color: white;
+				color: black;
 			}
 		}
 
