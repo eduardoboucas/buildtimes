@@ -30,7 +30,7 @@ var blog = {
 	},
 
 	bindUiEvents: function () {
-		$(".highlight").click(function () {
+		$("body").on("click", "pre", function () {
 			$(this).toggleClass("expanded");
 		});
 	},
