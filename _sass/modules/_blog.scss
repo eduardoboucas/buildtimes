@@ -33,7 +33,30 @@
 
 	p, ul, ol {
 		@include font-size(18);
-	}	
+	}
+
+	@include media("screen", "<tablet") {
+		pre:not(.expanded) {
+			$highlightHeight: 23px;
+
+			max-height: $highlightHeight;
+			overflow: hidden;
+			position: relative;
+			padding: 0;
+			background: none;
+			border: 0;
+
+			&::before {
+				display: block;
+				content: "</> Code snippet: click to expand";
+				height: $highlightHeight + 1;
+				font-family: $base-fontFamily;
+				font-weight: bold;
+				@include font-size(18);
+				cursor: pointer;
+			}
+		}
+	}		
 }
 
 article.post {
@@ -202,29 +225,6 @@ footer {
 	text-align: center;
 	padding: 5px 0;
 	opacity: 0.3;	
-}
-
-@include media("screen", "<tablet") {
-	pre:not(.expanded) {
-		$highlightHeight: 23px;
-
-		max-height: $highlightHeight;
-		overflow: hidden;
-		position: relative;
-		padding: 0;
-		background: none;
-		border: 0;
-
-		&::before {
-			display: block;
-			content: "</> Code snippet: click to expand";
-			height: $highlightHeight + 1;
-			font-family: $base-fontFamily;
-			font-weight: bold;
-			@include font-size(18);
-			cursor: pointer;
-		}
-	}
 }
 
 .comments {
