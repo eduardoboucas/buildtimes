@@ -28,15 +28,7 @@ layout: default
     </article>
 
     {% if page.enable_comments %}
-      <hr/>
-      <section class="comments">
-        <h2>Comments</h2>
-        <div id="comments">
-          <p>Loading comments...</p>
-        </div>
-        <h3>Have something to say?</h3>
-        {% include blog/newComment.html %}
-      </section>
+      {% include blog/comments.html %}
     {% endif %}
   </div>
 

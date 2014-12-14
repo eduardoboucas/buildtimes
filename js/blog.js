@@ -3,7 +3,7 @@ var blog = {
 		if (data.length > 0) {
 			$("#comments").html(data);	
 		} else {
-			$("#comments").html('<p>This post doesn\'t have any comments yet.');
+			$("#comments").html('<p>This post doesn\'t have any comments yet.</p>');
 		}
 	},
 

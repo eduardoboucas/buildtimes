@@ -250,7 +250,7 @@ footer {
 		background-color: transparent;
 
 		&[type="submit"] {
-			color: #bbb;
+			color: #BAABA9;
 
 			&:hover {
 				color: black;
@@ -260,6 +260,15 @@ footer {
 		&[name="honey"] {
 			display: none;
 		}
+	}
+
+	textarea {
+		margin-bottom: 0;
+	}
+
+	textarea + span {
+		@include font-size(11);
+		color: #BAABA9;
 	}
 
 	@include media("screen", "<tablet") {
