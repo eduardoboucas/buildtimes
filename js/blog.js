@@ -34,9 +34,16 @@ var blog = {
 			$(this).toggleClass("expanded");
 		});
 	},
+
+	bindGAEvents: function () {
+		$("section.comments form").submit(function () {
+			ga('send', 'event', 'Comments', 'New comment');
+		});
+	},
 	
 	init: function () {
 		blog.bindUiEvents();
+		blog.bindGAEvents();
 	}
 };
 
