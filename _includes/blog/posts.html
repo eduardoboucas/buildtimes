@@ -1,12 +1,19 @@
 {% if paginator.page %}
   {% assign offset = paginator.page | minus:1 | times:paginator.per_page %}
   {% assign currentPage = paginator.page %}
+  {% assign totalPages = paginator.total_pages %}
 {% else %}
   {% assign offset = 0 %}
   {% assign currentPage = 1 %}
+  
+  {% if (size.posts | size | modulo:site.paginate) > 0 %}
+    {% assign totalPages = site.posts | size | divided_by:site.paginate | plus:1 %}
+  {% else %}
+    {% assign totalPages = site.posts | size | divided_by:site.paginate %}
+  {% endif %}
 {% endif %}
 
-<div id="blogContainer" class="blogContainer {{ include.origin }}" data-page="{{ currentPage }}" data-totalPages="{{ paginator.total_pages }}">
+<div id="blogContainer" class="blogContainer {{ include.origin }}" data-page="{{ currentPage }}" data-totalPages="{{ totalPages }}">
   {% if include.origin == 'standalone' %}
     <p class="cta topLink"><a href="http://eduardoboucas.com" class="rightArrow">Visit main site</a></p>
   {% endif %}
