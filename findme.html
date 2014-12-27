@@ -8,11 +8,9 @@ menuOrder: 4
 	<div class="innerWrapper">
 		<h1>Find me <span class="activePlatform"></span></h1>
 		<section class="mediaIcons">
-			<a href="http://uk.linkedin.com/in/eduardoboucas/" target="_blank"><img data-title="LinkedIn" src="assets/images/icons/linkedin.svg"/></a>
-			<a href="https://github.com/eduardoboucas/" target="_blank"><img data-title="GitHub" src="assets/images/icons/github.svg"/></a>
-			<a href="https://twitter.com/eduardoboucas" target="_blank"><img data-title="Twitter" src="assets/images/icons/twitter.svg"/></a>
-			<a href="http://bastronomy.tumblr.com" target="_blank"><img data-title="Tumblr" src="assets/images/icons/tumblr.svg"/></a>	
-			<a href="https://www.facebook.com/eduardoboucas" target="_blank"><img data-title="Facebook" src="assets/images/icons/facebook.svg"/></a>
+			{% for platform in site.data.contactPlatforms %}
+				<a href="{{ platform.url }}" target="_blank"><img data-title="{{ platform.name }}" src="{{ platform.icon }}"/></a>
+			{% endfor %}
 		</section>
 		<p>... or drop me an <a href="mailto:mail@eduardoboucas.com">e-mail</a>.</p>
 	</div>
