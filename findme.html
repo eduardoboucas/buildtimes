@@ -8,7 +8,7 @@ menuOrder: 4
 	<div class="innerWrapper">
 		<h1>Find me <span class="activePlatform"></span></h1>
 		<section class="mediaIcons">
-			{% for platform in site.data.contactPlatforms %}
+			{% for platform in site.data.social %}
 				<a href="{{ platform.url }}" target="_blank"><img data-title="{{ platform.name }}" src="{{ platform.icon }}"/></a>
 			{% endfor %}
 		</section>

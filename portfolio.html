@@ -4,8 +4,7 @@ route: portfolio
 menuOrder: 2
 ---
 {% include navigation.html %}
-{% assign projects = site.projects | sort: 'order' %}
-{% for project in projects %}
+{% for project in site.data.portfolio %}
 	<article>
 		{% if project.link %}
 			<h1><a href="{{ project.link }}" target="_blank">{{ project.title }}</a></h1>
@@ -18,7 +17,7 @@ menuOrder: 2
 				<img src="assets/images/{{ image }}"/>
 			{% endfor %}		
 		</div>
-		{{ project.content }}
+		{{ project.text }}
 
 		{% if project.link %}
 			<p class="cta"><a class="rightArrow" href="{{ project.link }}" target="_blank">Open website</a></p>
