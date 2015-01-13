@@ -115,7 +115,7 @@ Instead, I wanted to group equivalent classes together to have a more compressed
 }
 {% endhighlight %}
 
-This example isn't the best to show the benefits of this compression, but it would also group `.col-1-3` with `.col-2-6` and `.col-1-2` with `.col-3-6` from the example above. Let's see the implementation then. 
+This example isn't the best to show the benefits of this compression, but basically I would also want to group `.col-1-3` with `.col-2-6` and `.col-1-2` with `.col-3-6` from the example above. Can we implement this in Sass?
 
 {% highlight sass linenos %}
 @mixin grid-columns($granularity: 2, $breakpoints: ()) {
@@ -157,7 +157,7 @@ This example isn't the best to show the benefits of this compression, but it wou
 }
 {% endhighlight %}
 
-Pretty, huh? In a nutshell, we're putting everything in a map where the widths are the keys (so 2/6 and 1/3 will have the same key). So how to use it?
+Definitely! Pretty, right? In a nutshell, we're putting everything in a map where the widths are the keys (so 2/6 and 1/3 will have the same key). So how to use it?
 
 {% highlight sass %}
 @include grid-columns((1, 2, 4));
