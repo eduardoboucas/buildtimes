@@ -115,7 +115,7 @@ Instead, I wanted to group equivalent classes together to have a more compressed
 }
 {% endhighlight %}
 
-This example isn't the best to show the benefits of this compression, but basically I would also want to group `.col-1-3` with `.col-2-6` and `.col-1-2` with `.col-3-6` from the example above. Can we implement this in Sass?
+See how we group `.col-1-1`, `.col-2-2` and `.col-3-3` together with the same set of rules? I would also want to group `.col-1-3` with `.col-2-6` and `.col-1-2` with `.col-3-6` from the example I mentioned before. How can we implement something like this in Sass?
 
 {% highlight sass linenos %}
 @mixin grid-columns($granularity: 2, $breakpoints: ()) {
