@@ -7,7 +7,7 @@ tags: retina include-media media-query
 ---
 Devices with Retina displays have been with us for a while, and now Retina 3x is a thing. So how to write media queries to target devices with those pixel densities?<!--more-->
 
-If you use [include-media](http://include-media.com), a Sass library for writing simple, elegant and maintainable media queries that I've talked about [here](http://css-tricks.com/approaches-media-queries-sass/) and [here](http://davidwalsh.name/sass-media-query), you'll just need a line of code.
+If you use [include-media](http://include-media.com), a Sass library for writing simple, elegant and maintainable media queries that I've talked about [here](http://css-tricks.com/approaches-media-queries-sass/) and [here](http://davidwalsh.name/sass-media-query), then all you'll need is:
 
 {% highlight sass linenos %}
 /* Retina 2x */
