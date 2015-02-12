@@ -7,7 +7,7 @@ tags: ie8 html5 shiv svg
 ---
 Today I sent out a test link for a website my team is building and someone dropped me a message saying that it looks terribly broken in Internet Explorer, attaching a screenshot. And my, did it look broken. The majority of the elements didn't seem to have any styling applied to them at all!<!--more-->
 
-I quickly realised that the person was running IE8 and the elements were not being styled because we were using HTML5 tags such as `<header>`, `<footer>` or `<article>` which are not supported in IE8. So I knew right away that this would be a quick fix: «we just need the shiv», I said, referring to [The HTML5 Shiv](https://github.com/aFarkas/html5shiv) file, which is a small file that enables support for modern elements on ancient browsers.
+I quickly realised that the person was running IE8 and the elements were not being styled because we were using HTML5 tags such as `<header>`, `<footer>` or `<article>` which are not supported in IE8. So I knew right away that this would be a quick fix: *«we just need the shiv»*, I said, referring to [The HTML5 Shiv](https://github.com/aFarkas/html5shiv), a small file that enables support for modern elements on ancient browsers.
 
 To install the shiv you wrap the call to the JS file in a conditional comment so that only the browsers that actually need the file will actually load it.
 
@@ -38,4 +38,4 @@ To overcome that, I simply wrapped all the SVG declarations with conditional com
 <!--<![endif]-->
 {% endhighlight %}
 
-It works, but I'm not too convinced about this solution. It doesn't cause any harm because modern browsers will treat the conditions as plain comments and ignore them, but I don't like the idea of having to wrap every SVG declaration with that piece of legacy code. What are your thoughts?
+It works, but I'm not too convinced about this solution. It doesn't cause any harm because modern browsers will treat the conditions as plain comments and ignore them, but I don't like the idea of having to wrap every SVG declaration with that piece of legacy code. What are your thoughts?<!--tomb-->
