@@ -55,8 +55,18 @@ define([
 		
 		bindUiEvents : function () {
 			$(".hoverFade").unbind("mouseenter").mouseenter(function () {
-				$(this).fadeOut(100);
-				$(this).fadeIn(400);				
+				$(this).fadeOut(100).fadeIn(400);				
+			});
+
+			$('.menuItem:not([href^="#"])').click(function () {
+				$('#menu').fadeOut('slow');
+				var link = $(this).attr('href');
+
+				VideoLooper.end(function () {	
+					window.location.href = link;
+				});
+
+				return false;
 			});
 		}
 	});	

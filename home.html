@@ -23,12 +23,10 @@ title: Home
 	<div id="mobileLogo">
 		<img alt="Drawing of Eduardo's bust" src="assets/images/bust.png"/>
 	</div>
-	{% assign menuItems = site.html_pages | sort: 'menuOrder' %}
-	{% for page in menuItems %}
-		{% if page.menuOrder %}
-			<a href="#/{{ page.route }}" class="menuItem hoverFade">{{ page.title }}</a>
-		{% endif %}
-	{% endfor %}
+	<a href="#/about" class="menuItem hoverFade">About me</a>
+	<a href="#/portfolio" class="menuItem hoverFade">Portfolio</a>
+	<a href="/blog" class="menuItem hoverFade">Blog</a>
+	<a href="#/findme" class="menuItem hoverFade">Find me</a>
 </nav>
 
 <div id="container"></div>

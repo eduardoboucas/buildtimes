@@ -95,7 +95,7 @@ var VideoLooper = (function () {
 			}, transitionDelay);
 			
 			if (endCallback !== undefined) {
-				endCallback();	
+				video2EndCallback = endCallback;	
 			}
 		}	
 	};
@@ -120,6 +120,10 @@ var VideoLooper = (function () {
 			$(videos[1]).hide();
 			$(videos[0]).hide();
 			scheduledStop = false;
+
+			if (video2EndCallback !== undefined) {
+				video2EndCallback();
+			}
 		});
 	};
 	

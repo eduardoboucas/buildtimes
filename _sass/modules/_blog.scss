@@ -133,11 +133,30 @@ header.blogHeader {
 	margin: 0 auto 10px auto;
 	border-bottom: 1px solid black;
 
+	.backToSite {
+		$transition-duration: 0.5s;
+
+		display: inline-block;
+		overflow: hidden;		
+		float: left;
+		margin: 75px 30px 0 0;
+		width: 48px;
+		transition: width $transition-duration ease-in-out;
+
+		&:hover {
+			width: 88px;
+			transition: width $transition-duration ease-in-out;
+		}
+	}
+
 	.backToMenu {
 		position: absolute;
 	}
 
 	h1 {
+		position: absolute;
+		left: 0;
+		right: 0;		
 		text-align: center;
 		margin: 0;
 		margin: 50px 0;
@@ -145,11 +164,9 @@ header.blogHeader {
 	}
 
 	.bust {
-		position: absolute;
-		top: 0;
-		left: 70px;
+		display: inline-block;
 		height: 150px;
-		float: right;
+		float: left;
 	}
 
 	.rss {
@@ -167,7 +184,15 @@ header.blogHeader {
 	}
 
 	@include media("screen", "<tablet") {
+	    .backToSite {
+			position: absolute;
+			margin: 0;
+			top: 95px;
+			left: 5px;	    	
+	    }
+
 	    h1 {
+	    	position: static;
 	    	padding-left: 0;
 	    }
 

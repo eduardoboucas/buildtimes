@@ -40,8 +40,13 @@ var blog = {
 			ga('send', 'event', 'Comments', 'New comment');
 		});
 	},
+
+	processUrl: function () {
+		var url = window.location.href;
+	},
 	
 	init: function () {
+		$('body').animate({opacity: 1}, 'slow');
 		blog.bindUiEvents();
 		blog.bindGAEvents();
 	}
@@ -49,3 +54,7 @@ var blog = {
 
 $(".loadMore").click(blog.loadMorePosts);
 $(document).ready(blog.init);
+
+if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#') {
+	document.body.style.opacity = 0;
+}

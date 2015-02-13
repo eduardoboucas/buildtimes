@@ -14,14 +14,6 @@
 {% endif %}
 
 <div id="blogContainer" class="blogContainer {{ include.origin }}" data-page="{{ currentPage }}" data-totalPages="{{ totalPages }}">
-  {% if include.origin == 'standalone' %}
-    <p class="cta topLink"><a href="http://eduardoboucas.com" class="rightArrow">Visit main site</a></p>
-  {% endif %}
-
-  {% if include.origin == 'mainsite' %}
-    <p class="cta topLink"><a href="http://eduardoboucas.com/blog" class="rightArrow">Open standalone version</a></p>
-  {% endif %}
-
   {% for post in site.posts limit:site.paginate offset:offset %}
     <article class="post list">
       <header>
