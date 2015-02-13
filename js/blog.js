@@ -46,7 +46,7 @@ var blog = {
 	},
 	
 	init: function () {
-		$('body').animate({opacity: 1}, 'slow');
+		$('#fade-overlay').fadeOut();
 		blog.bindUiEvents();
 		blog.bindGAEvents();
 	}
@@ -55,6 +55,15 @@ var blog = {
 $(".loadMore").click(blog.loadMorePosts);
 $(document).ready(blog.init);
 
-if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
-	document.body.style.opacity = 0;
+if ((document.referrer == 'http://localhost:4000/') || (document.referrer == 'http://eduardoboucas.com/#')) {
+	var overlay = document.createElement('div');
+	overlay.style.width = '100%';
+	overlay.style.height = '100%';
+	overlay.style.position = 'fixed';
+	overlay.style.left = 0;
+	overlay.style.top = 0;
+	overlay.style.backgroundColor = 'white';
+	overlay.id = 'fade-overlay';
+
+	document.body.appendChild(overlay);
 }
