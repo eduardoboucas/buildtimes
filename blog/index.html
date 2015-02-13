@@ -5,13 +5,13 @@
 <html>
 	{% include blog/head.html %}
 	<body class="blogSite">
+		{% include blog/scripts.html %}
+		
 		{% include blog/header.html %}
 		{% include googleTagManager.html %}
 		
 		{% include blog/posts.html origin="standalone" %}
 		{% include googleAnalytics.html %}
 		{% include blog/footer.html %}
-
-		{% include blog/scripts.html %}
 	</body>
 </html>

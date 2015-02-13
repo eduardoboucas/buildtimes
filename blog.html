@@ -3,6 +3,9 @@ title: Blog
 route: blog
 menuOrder: 3
 ---
+<script>
+	{% include_relative js/blog.js %}
+</script>
 {% include navigation.html %}
 <section id="blogPosts">
 	{% include blog/posts.html origin="mainsite" %}
@@ -10,7 +13,3 @@ menuOrder: 3
 <section>
 	<div id="blogPost" class="blogContainer hidden"></div>	
 </section>
-	
-<script>
-	{% include_relative js/blog.js %}
-</script>
