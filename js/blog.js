@@ -55,7 +55,7 @@ var blog = {
 $(".loadMore").click(blog.loadMorePosts);
 $(document).ready(blog.init);
 
-if ((document.referrer == 'http://localhost:4000/') || (document.referrer == 'http://eduardoboucas.com/#')) {
+if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
 	var overlay = document.createElement('div');
 	overlay.style.width = '100%';
 	overlay.style.height = '100%';
