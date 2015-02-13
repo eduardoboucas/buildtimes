@@ -55,6 +55,6 @@ var blog = {
 $(".loadMore").click(blog.loadMorePosts);
 $(document).ready(blog.init);
 
-if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#') {
+if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
 	document.body.style.opacity = 0;
 }
