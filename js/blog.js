@@ -39,33 +39,18 @@ var blog = {
 		$("section.comments form").submit(function () {
 			ga('send', 'event', 'Comments', 'New comment');
 		});
+
+		$(".loadMore").click(blog.loadMorePosts);
 	},
 
-	processUrl: function () {
-		var url = window.location.href;
-	},
-	
 	init: function () {
-		$('#fade-overlay').fadeOut();
+		if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
+			$('body').hide().fadeIn('slow');
+		}
+
 		blog.bindUiEvents();
 		blog.bindGAEvents();
 	}
 };
 
-$(".loadMore").click(blog.loadMorePosts);
 $(document).ready(blog.init);
-
-window.onload = function () {
-	if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
-		var overlay = document.createElement('div');
-		overlay.style.width = '100%';
-		overlay.style.height = '100%';
-		overlay.style.position = 'fixed';
-		overlay.style.left = 0;
-		overlay.style.top = 0;
-		overlay.style.backgroundColor = 'white';
-		overlay.id = 'fade-overlay';
-
-		document.body.appendChild(overlay);
-	}
-};

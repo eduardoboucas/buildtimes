@@ -101,7 +101,7 @@ var VideoLooper = (function () {
 	};
 	
 	var bindEvents = function () {
-		$(videos[0]).off("ended").on("ended", function (a) {
+		$(videos[0]).off("ended.looper").on("ended.looper", function (a) {
 			startLoop();
 			
 			if (video0EndCallback !== undefined) {
@@ -109,17 +109,19 @@ var VideoLooper = (function () {
 			}			
 		});
 		
-		$(videos[1]).off("ended").on("ended", function () {
+		$(videos[1]).off("ended.looper").on("ended.looper", function () {
 			if (scheduledStop) {
 				endLoop();
 			}
 		});
 
-		$(videos[2]).off("ended").on("ended", function () {
+		$(videos[2]).off("ended.looper").on("ended.looper", function () {
 			$(videos[2]).hide();
 			$(videos[1]).hide();
 			$(videos[0]).hide();
 			scheduledStop = false;
+
+			console.log('Ended');
 
 			if (video2EndCallback !== undefined) {
 				video2EndCallback();
