@@ -33,6 +33,16 @@ var blog = {
 		$("body").on("click", "pre", function () {
 			$(this).toggleClass("expanded");
 		});
+
+		$('.backToSite a').click(function () {
+			var _this = this;
+
+			$('body').fadeOut('slow', function () {
+				window.location.href = $(_this).attr('href');
+			});
+
+			return false;
+		});
 	},
 
 	bindGAEvents: function () {
