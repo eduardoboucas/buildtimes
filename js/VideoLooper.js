@@ -121,8 +121,6 @@ var VideoLooper = (function () {
 			$(videos[0]).hide();
 			scheduledStop = false;
 
-			console.log('Ended');
-
 			if (video2EndCallback !== undefined) {
 				video2EndCallback();
 			}
