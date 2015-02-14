@@ -87,16 +87,16 @@ var VideoLooper = (function () {
 	
 	var endLoop = function (endCallback) {
 		scheduledStop = true;
+
+		if (endCallback !== undefined) {
+			video2EndCallback = endCallback;	
+		}		
 		
 		if (getVideoElement(1).paused) {
 			getVideoElement(2).play();
 			setTimeout(function () {
 				$(videos[2]).show();
 			}, transitionDelay);
-			
-			if (endCallback !== undefined) {
-				video2EndCallback = endCallback;	
-			}
 		}	
 	};
 	
