@@ -63,6 +63,7 @@ define([
 				var link = $(this).attr('href');
 
 				VideoLooper.end(function () {	
+					console.log('VideoLooper callback');
 					window.location.href = link;
 				});
 
