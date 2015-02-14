@@ -55,15 +55,17 @@ var blog = {
 $(".loadMore").click(blog.loadMorePosts);
 $(document).ready(blog.init);
 
-if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
-	var overlay = document.createElement('div');
-	overlay.style.width = '100%';
-	overlay.style.height = '100%';
-	overlay.style.position = 'fixed';
-	overlay.style.left = 0;
-	overlay.style.top = 0;
-	overlay.style.backgroundColor = 'white';
-	overlay.id = 'fade-overlay';
+window.onload = function () {
+	if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
+		var overlay = document.createElement('div');
+		overlay.style.width = '100%';
+		overlay.style.height = '100%';
+		overlay.style.position = 'fixed';
+		overlay.style.left = 0;
+		overlay.style.top = 0;
+		overlay.style.backgroundColor = 'white';
+		overlay.id = 'fade-overlay';
 
-	document.body.appendChild(overlay);
-}
+		document.body.appendChild(overlay);
+	}
+};
