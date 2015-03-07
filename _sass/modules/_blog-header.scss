@@ -42,11 +42,13 @@
 	display: inline-block;
 	float: left;
 	width: $collapsed-width;
+	margin-top: 70px;
 	transition: $transition;
 	height: 100%;
 	position: relative;
 	overflow: hidden;
 	z-index: $z-index-level-1;
+	font-size: 0;
 
 	img {
 		position: relative;
@@ -75,7 +77,7 @@
 
 	.blog-header__back-to-site {
 		position: absolute;
-		bottom: -25px;
+		bottom: -90px;
 	}
 }
 
@@ -87,10 +89,6 @@
 
 	.blog-header__title {
 		@include font-size(30);
-	}
-
-	.blog-header__icon--rss {
-		display: none;
 	}
 
 	.blog-header__back-to-site {
