@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 11
 collection: portfolio
 layout: portfolio
 title: "Lazy Boy"

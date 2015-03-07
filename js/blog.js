@@ -30,8 +30,9 @@ var blog = {
 	},
 
 	bindUiEvents: function () {
-		$('body').on('click', 'pre', function () {
+		$('pre').click(function () {
 			$(this).toggleClass('expanded');
+			console.log('Click');
 		});
 
 		$('.blog__back-to-site').click(function () {
@@ -57,6 +58,8 @@ var blog = {
 		if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
 			$('body').hide().fadeIn('slow');
 		}
+
+		console.log('BLOG JS');
 		
 		blog.bindUiEvents();
 		blog.bindGAEvents();
