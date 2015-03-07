@@ -50,7 +50,7 @@ define([
 		bindUiEvents: function () {
 			// Handling external links on main menu
 			$('html.videoautoplay .menu__item--external').click(function () {
-				$('#menu').removeClass('visible');
+				$('#menu').removeClass('menu--visible');
 				var link = $(this).attr('href');
 
 				VideoLooper.end(function () {	
