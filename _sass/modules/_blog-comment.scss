@@ -1,0 +1,14 @@
+.comment {
+	@include font-size(15);
+
+	margin-top: 25px;
+
+	input,
+	textarea {
+		width: 50%;
+	}
+}
+
+.comment__header {
+	margin-bottom: 5px;
+}

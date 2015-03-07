@@ -2,31 +2,36 @@
 title: Home
 ---
 
-<div id="background">
-	<video id="video1" class="backgroundVideo" preload="auto">
+{% include svg/defs.html %}
+
+<div id="background" class="background">
+	<video id="video1" class="background__video" preload="auto" data-video-id="1">
 		<source src="assets/videos/Part1.webm" type="video/webm">
 		<source src="assets/videos/Part1.mp4" type="video/mp4">
 	</video>
 	
-	<video id="video2" class="backgroundVideo" preload="auto">
+	<video id="video2" class="background__video" preload="auto" data-video-id="2">
 		<source src="assets/videos/Part2.webm" type="video/webm">
 		<source src="assets/videos/Part2.mp4" type="video/mp4">
 	</video>
 
-	<video id="video3" class="backgroundVideo" preload="auto">
+	<video id="video3" class="background__video" preload="auto" data-video-id="3">
 		<source src="assets/videos/Part3.webm" type="video/webm">
 		<source src="assets/videos/Part3.mp4" type="video/mp4">
 	</video>
+
+	<img class="background__image" src="/assets/images/animation.gif"/>
 </div>
 
-<nav class="mainMenu" id="menu">
-	<div id="mobileLogo">
-		<img alt="Drawing of Eduardo's bust" src="assets/images/bust.png"/>
-	</div>
-	<a href="#/about" class="menuItem hoverFade">About me</a>
-	<a href="#/portfolio" class="menuItem hoverFade">Portfolio</a>
-	<a href="#/findme" class="menuItem hoverFade">Find me</a>
-	<a href="/blog" class="menuItem hoverFade">Blog</a>
+<div class="bust">
+	<img alt="Drawing of Eduardo's bust" src="assets/images/bust.png"/>
+</div>
+
+<nav class="menu" id="menu">
+	<a href="/#/about" class="menu__item cta">About me</a>
+	<a href="/#/portfolio" class="menu__item cta">Portfolio</a>
+	<a href="/#/findme" class="menu__item cta">Find me</a>
+	<a href="/blog" class="menu__item menu__item--external cta">Blog</a>
 </nav>
 
-<div id="container"></div>
+<div class="content" id="content"></div>

@@ -1,21 +1,15 @@
--
-  name: Twitter
+- name: Twitter
   url: https://twitter.com/eduardoboucas
   icon: assets/images/icons/twitter.svg
--
-  name: GitHub
+- name: GitHub
   url: https://github.com/eduardoboucas/
   icon: assets/images/icons/github.svg
--
-  name: LinkedIn
+- name: Codepen
+  url: http://codepen.io/eduardoboucas/
+  icon: assets/images/icons/codepen.svg
+- name: LinkedIn
   url: http://uk.linkedin.com/in/eduardoboucas/
   icon: assets/images/icons/linkedin.svg
--
-  name: Tumblr
+- name: Tumblr
   url: http://bastronomy.tumblr.com
   icon: assets/images/icons/tumblr.svg
-
--
-  name: Facebook
-  url: https://www.facebook.com/eduardoboucas
-  icon: assets/images/icons/facebook.svg

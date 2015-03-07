@@ -1,0 +1,45 @@
+/**
+*
+* Video
+*
+**/
+
+.background {
+	position: relative;
+	left: 0;
+	transition: left $mobile-menu--transition;
+
+	@include media('>=tablet') {
+		html:not(.videoautoplay) & {
+			margin-top: 10%;
+		}	
+	}
+
+	@include media('<tablet') {
+		display: none;
+	}
+}
+
+.background__video {
+	position: absolute;
+	display: none;
+	margin: 0;
+	left: 0;
+	top: 0;
+
+	&[data-video-id="1"] {
+		z-index: 150;
+	}
+
+	&[data-video-id="2"] {
+		z-index: 200;
+	}
+
+	&[data-video-id="3"] {
+		z-index: 250;
+	}
+
+	html:not(.videoautoplay) & {
+		display: none !important;
+	}	
+}

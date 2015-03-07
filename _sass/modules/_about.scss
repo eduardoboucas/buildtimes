@@ -1,89 +1,78 @@
-section.about {
-	@extend %clearfix;
-	
-	position: relative;
+.bio {
+	@extend .cf;
+}
 
-	p {
-		width: 75%;
+.bio__copy {
+	@include media('<tablet') {
+		width: 100%;
 	}
+}
 
-	img[title='drawing'] {
-		position: absolute;
-		top: 50px;
-		right: 50px;
+.bio__image {
+	text-align: center;
+
+	@include media('<tablet') {
+		display: none;
 	}
+}
 
-	// Skills
-	$skills-leftColumn: 25%;
+.skills {
+	width: 90%;
+	margin: 0 auto;
 
-	ul:first-of-type {
-		li {
-			@extend %clearfix;
-
-			em {
-				float: left;
-
-				&:first-child {
-					width: $skills-leftColumn;
-					text-align: right;
-					padding-right: 20px;
-				}
-
-				&:last-child {
-					width: 100% - $skills-leftColumn;
-				}
-			}
-
-			code {
-				display: block;
-				font-size: 7px;
-				background: black;
-				border-radius: 8px;
-				margin-top: 3px;
-				opacity: 0.8;
-				width: 0;
-			}
-
-			@include media("screen", "<tablet") {
-				em {
-					&:first-child,
-					&:last-child {
-						width: 100%;
-						text-align: left;
-					}
-				}						
-			}			
-		}
-	}
-
-	h3 {
+	thead {
 		@include font-size(9);
-		border-bottom: 1px solid black;
-		margin-left: $skills-leftColumn;
+
 		margin-bottom: 5px;
 		padding-top: 10px;
 
-		em {
+		th:last-of-type {
+			border-bottom: 1px solid black;
+		}
+
+		span {
 			font-style: normal;
 			text-transform: uppercase;
+			float: left;
 
 			&:last-child {
 				float: right;
 			}
+		}			
+	}
+
+	tbody {
+		span {
+			display: block;
+			background-color: black;
+			font-size: 8px;
+			border-radius: 8px;
+			overflow: hidden;
+		}
+
+		.skills__title {
+			@include font-size(12);
+
+			text-transform: uppercase;
+			text-align: right;
+			padding: 5px 15px 5px 5px;
+			width: 1%;
+			white-space: nowrap;
 		}
 	}
 
-	@include media("screen", "<tablet") {
-		p {
-			width: 100%;
-		}
-
-		img[title='drawing'] {
+	@include media('<500px') {
+		thead {
 			display: none;
 		}
+		
+		tbody {
+			span {
+				@include font-size(12);
 
-		h3 {
-			margin-left: 0;
+				background: none;
+				overflow: visible;
+			}
 		}
-	}	
+	}
 }

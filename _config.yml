@@ -16,7 +16,7 @@ googleAnalyticsId: UA-54012006-1
 #  Main site settings	#
 #						#
 #########################
-site_title: Eduardo Boucas
+site_title: Eduardo Boucas - Web Developer from London
 site_description: "A passionate and creative full-stack web developer that thinks code and numbers, but breathes art and design. Responsible and responsive. Terrible dancer."
 site_url: "http://eduardoboucas.com"
 
@@ -36,6 +36,10 @@ comment_post_url: http://pooleapp.com/stash/10de6ec7-27c4-469f-824a-8c0eee3ec105
 paginate: 5
 paginate_path: "blog/page:num"
 
+collections:
+  portfolio:
+    output: true
+
 defaults:
   -
     scope:
@@ -43,4 +47,4 @@ defaults:
       type: "posts"
     values:
       author: "Eduardo Bouças"
-      enable_comments: true  
+      enable_comments: true

@@ -10,13 +10,22 @@ require.config({
 		backbone: {
 			deps: ['underscore', 'jquery'],
 			exports: 'Backbone'
+		},
+		spinner: {
+			deps: ['jquery'],
+			exports: 'Spinner'
+		},
+		modernizr: {
+			exports: 'Modernizr'
 		}
 	},
 	paths: {
 		jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min',
 		underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min',
 		backbone: '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min',
-		templates: '/templates'
+		templates: '/templates',
+		spinner: '/js/vendor/spinner.min',
+		modernizr: '/js/vendor/modernizr.min'
 	}
 });
 

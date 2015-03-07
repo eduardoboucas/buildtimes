@@ -1,0 +1,63 @@
+/**
+*
+* Code formatting
+*
+**/
+
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: #eee;
+    white-space: pre;
+    font-family: monospace;
+}
+
+code {
+    padding: 1px;
+
+    .lineno {
+      opacity: 0.2;
+
+      &:after {
+        content: ':';
+      }
+    }
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+    margin-bottom: 15px;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@include media('screen', '<tablet') {
+    pre:not(.expanded) {
+        $highlightHeight: 23px;
+
+        max-height: $highlightHeight;
+        overflow: hidden;
+        position: relative;
+        padding: 0;
+        background: none;
+        border: 0;
+
+        &:before {
+            @include font-size(18);
+
+            display: block;
+            content: '</> Code snippet: click to expand';
+            height: $highlightHeight + 1;
+            font-family: $base__fontPrimary;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}

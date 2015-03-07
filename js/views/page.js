@@ -4,15 +4,15 @@ define([
 	'backbone'
 ], function ($, _, Backbone) {
 	var PageView = Backbone.View.extend({
-		el : $("#container"),
+		el : $('#content'),
 
-		route: "",
+		route: '',
 
 		getCallbackForRoute: function (route) {
 			var callback;
 			
 			switch (route) {
-				case 'about':
+				case 'about.html':
 					callback = function () {
 						$('code').each(function () {
 							var percentage = parseInt($(this).text());
@@ -25,40 +25,17 @@ define([
 					
 					break;
 
-				case 'blog':
-					$('a.readPost').on('click', function () {
-						$.get($(this).attr('href'), function (data) {
-							var goBackCode = '<a class="backToAllPosts" href="/#/blog"><h2 class="backToAllPosts">&#8592; Back to all posts</h2></a>';
-							var $fullArticle = $(data).find('article');
-
-							if ($fullArticle) {
-								$("#blogPosts").hide();
-								$("#blogPost").html(goBackCode).append($fullArticle).fadeIn('slow');
-							}
-						});
-
-						return false;
-					});
-
-					$(document).on("click", 'a.backToAllPosts', function () {
-						$("#blogPost").hide();
-						$("#blogPosts").fadeIn("slow");
-
-						return false;
-					}); 
-
-					break;
-
-				case 'findme':
+				case 'findme.html':
 					callback = function () {
-						var $icons = $(".mediaIcons img");
+						var $icons = $('.social__icon');
+						var $activePlatform = $('.social__active-platform');
 
 						$icons.hover(
 							function () {
-								$(".activePlatform").text(' on ' + $(this).data("title"));
+								$activePlatform.text(' on ' + $(this).data('title'));
 							},
 							function () {
-								$(".activePlatform").text('');
+								$activePlatform.text('');
 							}
 						);
 
@@ -69,18 +46,18 @@ define([
 							var _this = this;
 
 							setTimeout(function () {
-								$(".activePlatform").text(' on ' + $(_this).data("title"));
+								$activePlatform.text(' on ' + $(_this).data('title'));
 							}, (index * rollInterval));
 
 							numberOfPlatforms = (index + 1);
 						});
 
 						setTimeout(function () {
-							$(".activePlatform").text('');
+							$activePlatform.text('');
 						}, numberOfPlatforms * rollInterval);
 					};
 					
-					break;				
+					break;
 			}
 
 			return callback;
@@ -98,9 +75,10 @@ define([
 			var _this = this;
 			var videoDelay = 3100;
 
-			$("#menu").fadeOut("slow");
+			$('#menu').removeClass('menu--visible');
+
 			setTimeout(function () {
-				$("#container").fadeIn("slow");
+				$('#content').fadeIn('slow');
 
 				var callback = _this.getCallbackForRoute(_this.route);
 
@@ -112,8 +90,7 @@ define([
 		},
 
 		render: function (route, pageContent) {
-			this.$el.html(pageContent);
-			this.$el.removeClass().addClass(route);
+			this.$el.html(pageContent).attr('data-page', route);
 
 			this.route = route;
 		}

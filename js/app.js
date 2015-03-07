@@ -1,15 +1,24 @@
 // Filename: app.js
 define([
 	'jquery',
-	'underscore',
+	'modernizr',
 	'backbone',
 	'router',
-], function ($, _, Backbone, Router) {
-	// The minimum viewport width for the video to be played (pixels)
+], function ($, Modernizr, Backbone, Router) {
 	var videoMinWidth = 768;
 
 	var initialize = function () {
-		Router.initialize(videoMinWidth);
+		bindUiVideoEvents();
+
+		Router.initialize(Modernizr.videoautoplay, videoMinWidth);
+	}
+
+	var bindUiVideoEvents = function () {
+		$('body').on('click', 'a[data-hashlink]', function () {
+			window.location.href = $(this).attr('data-hashlink');
+
+			return false;
+		});
 	}
 
 	return {

@@ -4,12 +4,13 @@
 <!DOCTYPE html>
 <html>
 	{% include blog/head.html %}
-	<body class="blogSite">
-		{% include blog/header.html %}
-		{% include googleTagManager.html %}
-		
-		{% include blog/posts.html origin="standalone" %}
-		{% include googleAnalytics.html %}
-		{% include blog/footer.html %}
+	<body class="body--blog">
+		{% include svg/defs.html %}
+		<div class="content content--blog">
+			{% include blog/header.html %}
+			{% include blog/posts.html %}
+			{% include googleAnalytics.html %}
+			{% include blog/footer.html %}	
+		</div>
 	</body>
 </html>

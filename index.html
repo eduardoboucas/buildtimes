@@ -3,24 +3,21 @@ title: Index
 ---
 <!DOCTYPE html>
 <html>
-<head>
-	{% include meta.html %}
-	<title>Eduardo Bouças</title>
-	<link rel="stylesheet" href="css/main.css">
-	<script data-main="js/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>	
-</head>
+	<head>
+		{% include meta.html %}
+		{% include stylesheets.html %}
+		<script data-main="js/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+	</head>
 
-<body>
-	<!-- Google Tag Manager -->
-	{% include googleTagManager.html %}
+	<body>
+		{% include svg/defs.html %}
+		<div id="content">
+			<p class="loader">Hold on, let me grab a seat...</p>
+		</div>
+
+		<script src="js/VideoLooper.js"></script>
 		
-	<div id="container">
-		<h2 class="loading">Hold on, let me grab a seat...</h6>
-	</div>
-
-	<script src="js/VideoLooper.js"></script>
-	
-	<!-- Google Analytics -->
-	{% include googleAnalytics.html %}	
-</body>
+		<!-- Google Analytics -->
+		{% include googleAnalytics.html %}	
+	</body>
 </html>

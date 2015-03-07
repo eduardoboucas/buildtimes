@@ -1,79 +1,47 @@
-#menu {
-	@extend %noLinkUnderline;
+.menu {
+	$menu--transition: 1s ease-in-out !global;
+
 	position: absolute;
-	min-width: $base-minWidth;
-	left: 0;
-	right: 0;
-	padding-right: 60px;
-	margin: 0 auto;
 	width: 100%;
+	z-index: $z-index-level-3;
 	text-align: center;
-	z-index: 400;
+	padding-right: 60px; // To compensate for the video not being totally centered
+	transition: opacity $menu--transition;
+
+	@include media('>=tablet') {
+		html.videoautoplay & {
+			opacity: 0;
+		}
+	}
+
+	@include mobile-flow() {
+		position: relative;
+		top: 0;
+		left: 0;
+		transition: left $mobile-menu--transition;
+		padding: 0 0 20px 0;
+	}
+}
+
+.menu--visible {
+	opacity: 1 !important;
+	transition: opacity $menu--transition !important;	
+}
+
+.menu__item {
+	@include font-size(23);
+
+	margin: 0 15px;
+	text-decoration: none;
 	text-transform: uppercase;
-}
-
-#mobileLogo {
-	text-align: center;
-
-	img {
-		width: 200px;
-		border-bottom: 1px solid black;
-		padding: 0 40px;
-		box-sizing: content-box;			
-	}
-}
-
-.menuItem {
-	@include font-size(28);
 	font-family: $font-economica;
-	margin: 0px 15px 0px 15px;
-}
 
-@include media("screen", ">tablet") {
-	#mobileLogo {
-		display: none;
-	}
+	@include media('<tablet') {
+		@include font-size(30);
 
-	#menu {
-		display: none;
-		margin-bottom: -40px;
-	}
-}
-
-@include media("screen", "<tablet") {
-	#menu {
-		padding-right: 0;
 		position: static;
-		overflow: hidden;
-		height: 1000px;
-		transition: height 1s;
-
-		.menuItem {
-			display: block;
-			@include font-size(40);
-			margin: 10px 0;
-		}
-
-		&.hidden {
-			height: 0;
-			transition: height 1s;
-		}
-	}
-}
-
-nav.goBack {
-	p {
-		display: none;
-		margin-top: 0;
-	}
-
-	@include media("screen", "<tablet") {
-		p {
-			display: block;
-		}
-
-		img {
-			display: none;
-		}
+		display: block;
+		width: 100%;
+		margin: 30px 0;
 	}
 }

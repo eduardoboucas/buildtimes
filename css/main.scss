@@ -1,220 +1,39 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+
 ---
-@charset "utf-8";
-@import "base";
-@import "media-queries";
-@import "syntax-highlighting";
+@charset 'utf-8';
 
-/**
-*
-* Typography
-*
-**/
+// Base
+@import 'base/_reset';
+@import 'base/_base';
 
-@import url("http://fonts.googleapis.com/css?family=Economica:700");
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
+// Mixins
+@import 'mixins/_font-size';
+@import 'mixins/_include-media';
 
-/**
-*
-* Variables
-*
-**/
+// Global
+@import 'global/_typography';
+@import 'global/_global';
+@import 'global/_grid';
 
-$font-lato: 'Lato', Helvetica, Arial, sans-serif;
-$font-economica: 'Economica', sans-serif;
-
-$base-fontFamily: $font-lato;
-$base-fontSize: 16;
-$base-maxWidth: 940px;
-$base-minWidth: 320px;
-
-$breakpoint-phone: 479px;
-$breakpoint-tablet: 767px;
-$breakpoint-desktop: 1023px;
-
-%constrain {
-	max-width: $base-maxWidth + 20px;
-	margin: 0 auto;
-	padding: 0 10px;
-}
-
-/**
-*
-* General rules
-*
-**/
-
-%noLinkUnderline {
-	a {
-		text-decoration: none;
-	}
-}
-
-%textButton {
-	border: 0;
-	background: none;
-	font-family: $base-fontFamily;
-	@include font-size($base-fontSize);	
-	outline: 0;
-	cursor: pointer;
-
-	&:hover {
-		text-decoration: underline;
-	}	
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-	margin: 20px 0 0 0;
-	font-family: $base-fontFamily;
-	@include font-size($base-fontSize);
-}
-
-h1 {
-	margin-bottom: 30px;
-	@include font-size(40);
-	@extend %noLinkUnderline;
-}
-
-h2 {
-	font-family: $font-economica;
-	text-transform: uppercase;
-	@include font-size(18);
-	@extend %noLinkUnderline;
-	margin: 30px 0 10px 0;	
-}
-
-p {
-	margin-bottom: 15px;
-	@include font-size(16);
-
-	a {
-		text-decoration: underline;
-	}
-
-	&.cta {
-		font-family: $font-economica;
-		text-transform: uppercase;
-		@include font-size(18);
-		margin: 30px 0 10px 0;
-
-		a {
-			text-decoration: none;
-		}		
-	}
-}
-
-a {
-	//text-decoration: none;
-	color: inherit;
-}
-
-.loading {
-	text-align: center;
-	margin-top: 50%;
-}
-
-.hidden {
-	display: none;
-}
-
-/**
-*
-* Container and page-specific rules
-*
-**/
-
-#container {
-	position: absolute;
-	left: 0;
-	right: 0;
-	width: 100%;
-	max-width: $base-maxWidth;
-	//min-width: $base-minWidth;
-	margin: 0 auto;
-	padding: 0 10px 40px 10px;
-	z-index: 999;
-
-	&.portfolio {
-		h1 {
-			margin-left: -3px;
-		}
-
-		p {
-			text-align: justify;
-		}
-
-		article {
-			margin-bottom: 30px;
-		}
-	}
-
-	&.findme {
-		.outerWrapper {
-			text-align: center;
-
-			.innerWrapper {
-				display: inline-block;
-				text-align: left;
-			}
-		}
-
-		h1 {
-			margin-bottom: 20px;
-
-			@include media("screen", "<phone") {
-				.activePlatform {
-					display: none;
-				}
-			}
-		}
-	}	
-}
-
-/**
-*
-* Video
-*
-**/
-
-#background {
-	position: relative;
-}
-
-.backgroundVideo {
-	display: none;
-	margin: 0px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-#video1 {
-	z-index: 150;
-}
-
-#video2 {
-	z-index: 200;
-}
-
-#video3 {
-	z-index: 250;
-}
-
-@include media("screen", "<tablet") {
-	#background {
-		display: none;
-	}
-}
+// Vendor
+@import 'vendor/_syntax-highlighting';
 
 // Modules
-@import "modules/_about";
-@import "modules/_blog";
-@import "modules/_findme";
-@import "modules/_menu";
-@import "modules/_portfolio";
-@import "modules/_tags";
+@import 'modules/_mobile-flow';
+
+@import 'modules/_404';
+@import 'modules/_about';
+@import 'modules/_static-background';
+@import 'modules/_blog-comment';
+@import 'modules/_blog-footer';
+@import 'modules/_blog-header';
+@import 'modules/_blog-post';
+@import 'modules/_blog';
+@import 'modules/_code';
+@import 'modules/_content';
+@import 'modules/_menu';
+@import 'modules/_portfolio';
+@import 'modules/_navigation';
+@import 'modules/_social';
+@import 'modules/_video';

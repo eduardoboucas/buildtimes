@@ -1,0 +1,33 @@
+$mobile-menu--transition: 0.7s ease-in-out;
+
+@mixin mobile-flow() {
+	.no-videoautoplay & {
+		@content;
+	}
+
+	@include media('<tablet') {
+		@content;
+	}	
+}
+
+body.body--mobile-flow {
+	@include mobile-flow() {
+		.bust,
+		.menu,
+		.background {
+			left: -100%;
+			transition: left $mobile-menu--transition;
+		}
+
+		.content {
+			width: 100% !important;
+			margin-left: 0 !important;
+			transition: margin-left $mobile-menu--transition !important;
+
+			&:not(.content--allow-expansion) {
+				padding-left: 10px !important;
+				padding-right: 10px !important;
+			}
+		}
+	}
+}

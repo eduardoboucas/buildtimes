@@ -2,6 +2,16 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<!-- Favicon -->
+<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+<!-- Title -->
+{% if page.dir contains site.blog_url %}
+  <title>{% if page.title %}{{ page.title }} - {{ site.blog_title }}{% else %}{{ site.blog_title }}{% endif %}</title>
+{% else %}
+  <title>{{ site.site_title }}</title>
+{% endif %}
+
 <!-- RSS feed -->
 <link rel="alternate" type="application/rss+xml" title="{{ site.blog_title }}" href="{{ site.feed_url }}" />
 

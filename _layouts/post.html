@@ -3,26 +3,26 @@ layout: default
 ---
 <!DOCTYPE html>
 <html>
-{% include blog/head.html %}
+{% include blog/head.html getcomments="true" %}
 
-<body class="blogSite">
-  {% include blog/header.html %}
-  {% include googleTagManager.html %}
-  
-  <div id="blogContainer" class="blogContainer singlePost">
+<body class="body--blog">
+  {% include svg/defs.html %}
+  <div class="content content--blog">
+    {% include blog/header.html %}
     {% include blog/navigation.html %}
-    <article class="post single">
-      <header>
-        <h1>{{ page.title }}</h1>
-        <p class="postMeta">
-          <span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ page.date | date: "%b %-d, %Y" }}</span>
+    
+    <article class="post">
+      <header class="post__header">
+        <h1 class="post__title">{{ page.title }}</h1>
+        <ul class="post__meta">
+          <li class="post__date"><img src="/assets/images/icons/time.svg" class="post__icon"/> {{ page.date | date: "%b %-d, %Y" }}</li>
           {% if page.tags %}
-            <span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in page.tags %} <em><a href="/blog/tags.html#{{ tag }}">{{ tag }}</a></em>{% endfor %}</span>
+          <li class="post__tags"><img src="/assets/images/icons/tag.svg" class="post__icon"/> {% for tag in page.tags %} <em><a href="/blog/tags.html#{{ tag }}">{{ tag }}</a></em>{% endfor %}</li>
           {% endif %}
-          <span class="permalink"><img src="/assets/images/icons/link.svg" class="postIcon"/> <a href="{{ page.url }}">Permalink</a></span>
-        </p>
+          <li class="post__permalink"><img src="/assets/images/icons/link.svg" class="post__icon"/> <a href="{{ page.url }}">Permalink</a></li>
+        </ul>
       </header>
-      <div class="body">
+      <div class="post__body">
         {{ content | replace: '<!--tomb-->', ' &#8718;'}}
       </div>
     </article>
@@ -30,10 +30,8 @@ layout: default
     {% if page.enable_comments %}
       {% include blog/comments.html %}
     {% endif %}
-  </div>
 
-  {% include googleAnalytics.html %}
-  {% include blog/footer.html %}
-  {% include blog/scripts.html comments="true" %}
+    {% include googleAnalytics.html %}
+    {% include blog/footer.html %}
 </body>
 </html>

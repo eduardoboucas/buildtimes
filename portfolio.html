@@ -1,26 +1,4 @@
 ---
-title: Portfolio
 route: portfolio
-menuOrder: 2
+layout: portfolio
 ---
-{% include navigation.html %}
-{% for project in site.data.portfolio %}
-	<article>
-		{% if project.link %}
-			<h1><a href="{{ project.link }}" target="_blank">{{ project.title }}</a></h1>
-		{% else %}
-			<h1>{{ project.title }}</h1>
-		{% endif %}
-		
-		<div class="screenshots">
-			{% for image in project.images %}
-				<img src="assets/images/{{ image }}"/>
-			{% endfor %}		
-		</div>
-		{{ project.text }}
-
-		{% if project.link %}
-			<p class="cta"><a class="rightArrow" href="{{ project.link }}" target="_blank">Open website</a></p>
-		{% endif %}
-	</article>
-{% endfor %}

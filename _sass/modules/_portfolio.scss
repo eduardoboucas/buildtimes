@@ -1,43 +1,213 @@
-.screenshots {
-	@extend %clearfix;
-	margin-bottom: 20px;
+.project {
+	position: relative;
+	min-height: 150px;
+}
+
+.project-nav {
+	position: relative;
+	background-color: #eee;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.project-nav__thumbnails {
+	width: 100%;
+	padding: 0 0 15px 15px;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+	text-align: center;
+
+	&.scrolled {
+		.project-nav__swipe-icon {
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+		}
+	}
+}
+
+.project-nav__swipe-icon {
+	width: 27px;
+	position: absolute;
+	right: -30px;
+	top: 40px;
+	padding: 3px;
+	-webkit-animation: swipe-grow 2s infinite ease-in-out;
+	animation: swipe-grow 2s infinite ease-in-out;
+
+	@include media('<1020px') {
+		right: 0;
+		top: -20px;
+	}
+}
+
+@-webkit-keyframes swipe-grow {
+	0% {
+		padding: 3px;
+	}
+
+	50% {
+		padding: 0;
+	}
+
+	100% {
+		padding: 3px;
+	}
+}
+
+@keyframes swipe-grow {
+	0% {
+		padding: 3px;
+	}
+
+	50% {
+		padding: 0;
+	}
+
+	100% {
+		padding: 3px;
+	}
+}
+
+.project {
+	@extend .cf;
+	margin-top: 15px;
+}
+
+.project__title {
+	a {
+		text-decoration: none;
+	}
+}
+
+.project__video {
+	float: left;
+	width: 65%;
+
+	// Compensating for the white space around the video
+	margin: -8px 0 0 -20px;
+
+	video {
+		width: 100%;
+	}
+
+	@include media('<=tablet') {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.project__copy {
+	float: left;
+	width: 35%;
+
+	p:first-of-type {
+		@extend .dropped-cap;	
+	}
+
+	li + li {
+		margin-top: 10px;
+	}
+
+	ul {
+		margin-bottom: 15px;
+	}
+
+	h1 {
+		@include font-size(30);
+		
+		margin-top: 5px;
+	}
+
+	@include media('<=tablet') {
+		width: 100%;
+	}
+}
+
+.project-thumbnails {
+	display: inline-block;
+	margin-top: 15px;
+	font-size: 0;
+	white-space: nowrap;
+
+	> * + * {
+		margin-left: 5px;
+	}
+
+	a {
+		display: inline-block;
+	}
+}
+
+.project-thumbnail {
+	$transition: all 0.4s ease-in-out;
+
+	position: relative;
+	width: 111px;
+	border: 1px solid black;
+	display: inline-block;
+	box-sizing: content-box;
+	white-space: normal;
+
+	a {
+		display: block;
+		position: relative;
+
+		&:before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.85);
+			z-index: $z-index-level-2;
+		}
+	}
+
+	p {
+		@include font-size(13);
+
+		position: absolute;
+		top: 20%;
+		padding: 0 3px;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: $font-weight--bold;
+		z-index: $z-index-level-2;
+	}
 
 	img {
-		float: left;
-		border: 3px solid black;
+		display: block;
+		width: 100%;
 	}
 
-	@include media("screen", ">tablet") {
-		img {
-			width: 32%;
+	p,
+	a:before {
+		opacity: 0;
+		transition: opacity 0.6s ease-in-out;
+	}
 
-			&:not(:last-child) {
-				margin-right: 2%;
-			}			
+	&:hover {
+		p,
+		a:before {
+			opacity: 1;
+			transition: $transition;
 		}
 	}
 
-	@include media("screen", "<tablet") {
-		img {
-			width: 49%;
-			
-			&:first-child {
-				margin-right: 2%;
-			}
-			
-			&:last-child {
-				display: none;
-			}
+	&.project-thumbnail--active {
+		p {
+			opacity: 1;
+			color: white;
 		}
-	}
 
-	@include media("screen", "<400px") {
-		img {
-			width: 100%;
-
-			&:not(:first-child) {
-				display: none;
-			}
+		a:before {
+			opacity: 1;
+			transition: $transition;
+			background-color: rgba(0, 0, 0, 0.70);
 		}
 	}
 }

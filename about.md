@@ -2,48 +2,11 @@
 layout: about
 title: About me
 route: about
-menuOrder: 2
-header: "I live in science, but I breathe art."
+header: "Hello world"
 permalink: /about.html
 ---
-I remember all my friends from school having heroic answers to the big question of "what do you want to be when you grow up?". Soccer players, firefighters or astronauts were the popular choices. As for me, I made my mind when I was around 8 years old: I wanted to be a computers engineer. My first computer had brought me to the breathtaking world of technology, which has been amazing me ever since.
+That's how it all begins, isn't it? To me, it started when I was around 11 and I became friends with the new and overwhelming world of the Internet. My first contact with programming happened in the next couple of years as I spent endless hours relentlessly trying to extend the functionalities of mIRC using its built-in programming language. Even though I was still a kid, I became addicted to the thrill of experimenting with code and creating things with it.
 
-My other great passion started to grow slowly as I explored my dad's records and later started to perform in front of my family, singing my own words on top of pre-recorded songs coming from a children's keyboard. Playing music eventually became a significant part of my life and the creative process of making songs is one of the things that fulfills me the most.
-		
-This everlasting battle between left brain and right brain led me to pursue a career as a programmer, creating a bridge between my two worlds and allowing me to focus on what I am truly meant to do: imagining things and bringing them to life.
-		
-I love numbers, but I adore words. My brain thinks code, but my eyes scream aesthetics. I live in science, but I breathe art.
+That thrill completely shaped the rest of my life, as it made me pursue an education in computer science and a career as a developer. I was exposed to an immense number of programming languages, paradigms, principles and tools, and even after all these years I still feel that same thrill and rush when I learn a new language or platform and open a text editor to write a new **Hello world**.
 
-![Drawing](/assets/images/drawing.png "drawing")
-
-Skills
-------
-
-### _Eh..._ _Ultimate ninja!_
-
-- _HTML5/Responsive design_ *`100`*
-- _CSS3/SASS/LESS_ *`100`*
-- _JavaScript/jQuery_ *`100`*
-- _Backbone.js_ *`70`*
-- _Jekyll_ *`90`*
-- _PHP_ *`96`*
-- _Slim Framework_ *`90`*
-- _REST API_ *`85`*
-- _MongoDB_ *`85`*
-- _MySQL_ *`83`*
-- _Photoshop_ *`50`*
-- _Dancing/moonwalking_ *`3`*
-
-Education
----------
-- 2012-2013: MSc degree (with Distinction) in Web Development, Kingston University, London.
-- _Awarded The School of Computing and Information Systems Prize for best Masters project._
-- 2006-2011: BSc degree in Computers Engineering, University of Minho, Braga.
-
-Training and certifications
----------------------------
-- 2013: Professional Scrum Master I, London
-- 2013: Agile Foundation Certification, London
-- 2012: Specialized Course in Motion Design, Lisbon
-- 2010: Avid Pro Tools 110 and 201, New York City
-- 2010: Avid Pro Tools 101, London
+I since developed an OCD for code that is elegant, robust, reusable and maintainable. I have a passion for the web and I firmly believe in open source and open standards. I love great design, photography and typography fascinate me. I love writing code, but see myself as a creative developer rather than a code monkey. My slogan used to be *«I live in science, but I breathe art»*. I was told it sounds too cheesy.

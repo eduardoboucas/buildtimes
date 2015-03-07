@@ -1,17 +1,28 @@
 ---
 title: Find me
 route: findme
-menuOrder: 4
 ---	
-{% include navigation.html %}
-<div class="outerWrapper">
-	<div class="innerWrapper">
-		<h1>Find me <span class="activePlatform"></span></h1>
-		<section class="mediaIcons">
-			{% for platform in site.data.social %}
-				<a href="{{ platform.url }}" target="_blank"><img data-title="{{ platform.name }}" src="{{ platform.icon }}"/></a>
-			{% endfor %}
-		</section>
-		<p>... or drop me an <a href="mailto:mail@eduardoboucas.com">e-mail</a>.</p>
-	</div>
-</div>
+<html>
+	<head>
+		{% include stylesheets.html %}
+		{% include meta.html %}
+	</head>
+	<body>
+		{% include svg/defs.html %}
+		<div id="content" class="content">
+			{% include navigation.html %}
+
+			<div class="social-wrapper">
+				<section class="social">
+					<h1>Find me <span class="social__active-platform"></span></h1>
+					<div class="social__icons">
+						{% for platform in site.data.social %}
+							<a href="{{ platform.url }}" target="_blank"><img class="social__icon" data-title="{{ platform.name }}" src="{{ platform.icon }}"/></a>
+						{% endfor %}
+					</div>
+					<p>... or drop me an <a href="mailto:mail@eduardoboucas.com">e-mail</a>.</p>
+				</section>
+			</div>		
+		</div>
+	</body>
+</html>

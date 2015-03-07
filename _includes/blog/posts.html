@@ -1,45 +1,32 @@
-{% if paginator.page %}
-  {% assign offset = paginator.page | minus:1 | times:paginator.per_page %}
-  {% assign currentPage = paginator.page %}
-  {% assign totalPages = paginator.total_pages %}
-{% else %}
-  {% assign offset = 0 %}
-  {% assign currentPage = 1 %}
-  
-  {% if (size.posts | size | modulo:site.paginate) > 0 %}
-    {% assign totalPages = site.posts | size | divided_by:site.paginate | plus:1 %}
-  {% else %}
-    {% assign totalPages = site.posts | size | divided_by:site.paginate %}
-  {% endif %}
-{% endif %}
-
-<div id="blogContainer" class="blogContainer {{ include.origin }}" data-page="{{ currentPage }}" data-totalPages="{{ totalPages }}">
-  {% for post in site.posts limit:site.paginate offset:offset %}
-    <article class="post list">
-      <header>
-        <h1><a class="readPost" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-        <p class="postMeta">
-          <span class="date"><img src="/assets/images/icons/time.svg" class="postIcon"/> {{ post.date | date: "%b %-d, %Y" }}</span>
+<section id="blog" class="blog" data-page="{{ paginator.page }}" data-totalPages="{{ paginator.total_pages }}">
+  {% for post in paginator.posts %}
+    <article class="post">
+      <header class="post__header">
+        <h1 class="post__title"><a class="read-post" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <ul class="post__meta">
+          <li class="post__date"><img src="/assets/images/icons/time.svg" class="post__icon"/> {{ post.date | date: "%b %-d, %Y" }}</li>
           {% if (post.tags and (include.origin != 'mainsite')) %}
-            <span class="tags"><img src="/assets/images/icons/tag.svg" class="postIcon"/> {% for tag in post.tags %} <em><a href="/blog/tags.html#{{ tag }}">{{ tag }}</a></em>{% endfor %}</span>
+          <li class="post__tags"><img src="/assets/images/icons/tag.svg" class="post__icon"/> {% for tag in post.tags %} <em><a href="/blog/tags.html#{{ tag }}">{{ tag }}</a></em>{% endfor %}</li>
           {% endif %}
-          <span class="permalink"><img src="/assets/images/icons/link.svg" class="postIcon"/> <a href="{{ post.url }}">Permalink</a></span>
-        </p>
+          <li class="post__permalink"><img src="/assets/images/icons/link.svg" class="post__icon"/> <a href="{{ post.url }}">Permalink</a></li>
+        </ul>
       </header>
-      <div class="excerpt">
+      <div class="post__excerpt">
         {% if post.content contains '<!--more-->' %}
           {{ post.content | split:'<!--more-->' | first }}
-          <p class="cta"><a class="readPost rightArrow" href="{{ post.url }}">Read full post</a></p>
+          <p class="cta"><a class="read-post arrow arrow--right" href="{{ post.url }}">Read full post</a></p>
         {% else %}
           {{ post.content }}
         {% endif %}
       </div>
     </article>
   {% endfor %}
-</div>
+</section>
 
 {% assign postCount = site.posts | size %}
 {% assign postsCovered = site.paginate | plus:offset %}
+{% assign offset = paginator.page | minus:1 | times:paginator.per_page %}
+
 {% if postsCovered < postCount %}
-  <button class="loadMore">Load more posts</button>
+  <button class="load-more-posts cta">Load more posts</button>
 {% endif %}

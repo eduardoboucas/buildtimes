@@ -40,7 +40,7 @@ app_router.on('route:index', function () {
 
 	var videoPlayedCallback = function () {
 		$("#menu").fadeIn("slow");
-		$("#container").removeClass().addClass("home");
+		$("#content").removeClass().addClass("home");
 	};
 
 	indexView.beginVideo(videoPlayedCallback);

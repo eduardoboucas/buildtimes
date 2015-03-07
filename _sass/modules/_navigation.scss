@@ -1,0 +1,38 @@
+.page-navigation {
+	padding-top: 5px;
+}
+
+.page-navigation__anchor {
+	display: block;
+	font-size: 0;
+
+	svg {
+		width: 40px;
+	}
+
+	.page-navigation__chair {
+		-webkit-animation: page-navigation--bounce 0.4s ease-in-out reverse;
+		transition: transform 0.2s ease-in-out;
+	}
+
+	&:hover {
+		.page-navigation__chair {
+			transform: scale(1.1);
+			transition: transform 0.2s ease-in-out;
+		}
+	}
+}
+
+@-webkit-keyframes page-navigation--bounce {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}

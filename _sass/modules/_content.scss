@@ -1,0 +1,31 @@
+.content {
+  @extend %constrain;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 10px 30px 10px;
+  z-index: $z-index-level-3;
+
+  &:not(.content--blog) {
+    @include mobile-flow() {
+        padding: 0 0 30px 0;
+        width: 0;
+        top: 0;
+        overflow: hidden;
+        margin-left: 100%;
+        transition: margin-left $mobile-menu--transition, width 0s 1.2s;  
+    }
+  }
+}
+
+.content--allow-expansion {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+
+  >:not(.content--expandable) {
+    @extend %constrain;
+  }
+}
