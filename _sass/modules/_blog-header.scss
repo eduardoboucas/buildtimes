@@ -33,22 +33,6 @@
 	z-index: $z-index-level-1;
 }
 
-.blog-header__icon--rss {
-	$transition: opacity 0.8s ease-in-out;
-
-	width: 30px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	opacity: 0.3;
-	transition: $transition;
-
-	&:hover {
-		opacity: 1;
-		transition: $transition;
-	}
-}
-
 .blog-header__back-to-site {
 	$collapsed-width: 55px;
 	$expanded-width: 102px;
