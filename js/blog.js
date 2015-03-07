@@ -43,14 +43,14 @@ var blog = {
 
 			return false;
 		});
+
+		$('.load-more-posts').click(blog.loadMorePosts);
 	},
 
 	bindGAEvents: function () {
 		$('section.comments form').submit(function () {
 			ga('send', 'event', 'Comments', 'New comment');
 		});
-
-		$('.loadMore').click(blog.loadMorePosts);
 	},
 
 	init: function () {
