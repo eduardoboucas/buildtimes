@@ -15,7 +15,7 @@ var blog = {
 
 		$(this).addClass('loading');
 
-		$.get('/blog/page' + nextPage, function (data) {
+		$.get('https://eduardoboucas.com/blog/page' + nextPage, function (data) {
 			var htmlData = $.parseHTML(data);
 			var $articles = $(htmlData).find('article');
 
@@ -55,12 +55,11 @@ var blog = {
 	},
 
 	init: function () {
-		if ((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) {
+		if (((document.referrer == 'http://eduardoboucas.com/') || (document.referrer == 'http://eduardoboucas.com/#')) ||
+		   ((document.referrer == 'https://eduardoboucas.com/') || (document.referrer == 'https://eduardoboucas.com/#'))) {
 			$('body').hide().fadeIn('slow');
 		}
 
-		console.log('BLOG JS');
-		
 		blog.bindUiEvents();
 		blog.bindGAEvents();
 	}
