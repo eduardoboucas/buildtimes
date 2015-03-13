@@ -32,7 +32,6 @@ var blog = {
 	bindUiEvents: function () {
 		$('pre').click(function () {
 			$(this).toggleClass('expanded');
-			console.log('Click');
 		});
 
 		$('.blog__back-to-site').click(function () {
