@@ -15,7 +15,7 @@ var blog = {
 
 		$(this).addClass('loading');
 
-		$.get('https://eduardoboucas.com/blog/page' + nextPage, function (data) {
+		$.get('/blog/page' + nextPage + '/', function (data) {
 			var htmlData = $.parseHTML(data);
 			var $articles = $(htmlData).find('article');
 
