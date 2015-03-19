@@ -32,18 +32,27 @@
 			padding-left: 10px;			
 		}
 	}
+}
 
+.post__body,
+.post__excerpt {
 	ul {
-	  list-style: disc inside none;
+	  list-style: disc outside none;
 	}
 
 	ol {
-	  list-style: decimal inside none;
+	  list-style: decimal outside none;
 	}
 
 	li {
 	  margin-bottom: 15px;
-	}		
+	}
+
+	h2 {
+		@include font-size(25);
+		
+		text-transform: none;
+	}	
 }
 
 .post__meta {
