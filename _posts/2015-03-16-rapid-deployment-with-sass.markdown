@@ -7,7 +7,7 @@ tags: sass scaffold grunt
 ---
 A CSS processor like Sass is nowadays a must-have tool for web projects with a large codebase — maintaining a large website in pure CSS simply doesn’t cross my mind these days, personally. But what about medium-sized and small projects? <!--more-->My job involves rapidly deploying relatively small sites almost every week and all of them are using Sass. 
 
-We don’t use any CSS frameworks or UI libraries, but we’ve been creating our own small library of reusable functions and mixins that we can just throw in a project and start using right away. We also keep our code modular, having separate files for our BEM blocks, a file for typography, another one for colours and so on. To be able to quickly implement this entire structure on new projects, I created a very simple scaffolding Sass template containing all the pieces we need and that anyone can just pull and start modifying right away.
+We don’t use any CSS frameworks or UI libraries, but we’ve been creating our own small library of reusable functions and mixins that we can just throw in a project and start using right away. We also keep our code modular, having separate files for our BEM blocks, a file for typography, another one for colours and so on. To be able to quickly implement this entire structure on new projects, I created [a very simple scaffolding Sass template](https://github.com/eduardoboucas/sass-scaffold) containing all the pieces we need and that anyone can just pull and start modifying right away.
 
 Here’s the structure:
 
