@@ -1,15 +1,15 @@
 ---
-- title: "HTML5/Responsive design"
+- title: "HTML5/Responsive"
   strength: 100
 - title: "JavaScript"
   strength: 100
-- title: "CSS3/Sass"
+- title: "Sass/CSS"
   strength: 100
 - title: "PHP"
+  strength: 100
+- title: "APIs"
   strength: 95
 - title: "Jekyll"
-  strength: 95
-- title: "REST API"
   strength: 85
 - title: "MongoDB"
   strength: 85
@@ -19,5 +19,7 @@
   strength: 70
 - title: "Symfony"
   strength: 70
+- title: "Node.js"
+  strength: 60 
 - title: "Dancing/moonwalking"
   strength: 3
