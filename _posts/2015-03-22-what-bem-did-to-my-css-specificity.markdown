@@ -52,8 +52,6 @@ To measure that I used Jonas Ohlsson's [CSS Specificity Graph Generator](http://
 
 {% include image width="600" name="graph-after.png" caption="CSS specificity graph after BEM" %}
 
-(*«Spikes are bad, and the general trend should be towards higher specificity later in the stylesheet.»* — [More info](http://csswizardry.com/2014/10/the-specificity-graph/))
-
 ## Here's what I make of it
 
 As Ohlsson points out in his website, *«spikes are bad, and the general trend should be towards higher specificity later in the stylesheet.»* so I guess it worked alright for me. But I'm sure I would see even better results if I could rigidly enforce BEM on every element on the site, which I can't. 
