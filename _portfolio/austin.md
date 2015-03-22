@@ -10,7 +10,6 @@ thumbnail: austin.jpg
 ---
 # Austin, Texas
 
-- **Date:** February 2015
 - **Role:** Lead Developer
 - **URL:** [http://bouc.as/austin-nme](http://bouc.as/austin-nme)
 

@@ -11,7 +11,6 @@ thumbnail: monocleworldcup.jpg
 ---
 # Monocle World Cup special
 
-- **Date:** June 2014
 - **Role:** Front-end developer
 - **URL:** [http://bouc.as/monocle-worldcup](http://bouc.as/monocle-worldcup)
 

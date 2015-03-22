@@ -11,7 +11,6 @@ thumbnail: hyundai.jpg
 ---
 # Hyundai
 
-- **Date:** November 2013
 - **Role:** Front-end developer
 - **URL:** [http://bouc.as/monocle-hyundai](http://bouc.as/monocle-hyundai)
 

@@ -11,7 +11,6 @@ thumbnail: monocle.jpg
 ---
 # Monocle
 
-- **Date:** October 2013 - July 2014
 - **Role:** Full-stack developer
 - **URL:** [http://bouc.as/monocle-magazine](http://bouc.as/monocle-magazine)
 

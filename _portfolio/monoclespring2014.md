@@ -11,7 +11,6 @@ thumbnail: monoclespring2014.jpg
 ---
 # Monocle Style Directory / Spring 2014
 
-- **Date:** June 2012
 - **Role:** Front-end developer
 - **URL:** [http://bouc.as/monocle-spring2014](http://bouc.as/monocle-spring2014)
 

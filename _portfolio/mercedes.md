@@ -11,7 +11,6 @@ thumbnail: mercedes.jpg
 ---
 # Mercedes-Benz
 
-- **Date:** May 2014
 - **Role:** Front-end developer
 - **URL:** [http://bouc.as/monocle-mercedes](http://bouc.as/monocle-mercedes)
 

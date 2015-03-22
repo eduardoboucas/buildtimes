@@ -11,7 +11,6 @@ thumbnail: monoclecafe.jpg
 ---
 # The Monocle Cafe
 
-- **Date:** December 2013
 - **Role:** Front-end developer
 - **URL:** [http://bouc.as/monocle-cafe](http://bouc.as/monocle-cafe)
 

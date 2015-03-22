@@ -11,7 +11,6 @@ thumbnail: lazyboy.jpg
 ---
 # Lazy Boy
 
-- **Date:** June 2012
 - **Role:** Full-stack developer
 - **URL:** [http://bouc.as/lazy-boy](http://bouc.as/lazy-boy)
 

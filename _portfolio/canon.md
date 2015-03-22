@@ -10,7 +10,6 @@ thumbnail: canon.jpg
 ---
 # Canon
 
-- **Date:** November 2014
 - **Role:** Lead Developer
 - **URL:** [http://bouc.as/canon-hub](http://bouc.as/canon-hub)
 

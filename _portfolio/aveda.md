@@ -10,7 +10,6 @@ thumbnail: aveda.jpg
 ---
 # Aveda
 
-- **Date:** December 2014
 - **Role:** Lead Developer
 - **URL:** [http://bouc.as/aveda-marieclaire](http://bouc.as/aveda-marieclaire)
 
