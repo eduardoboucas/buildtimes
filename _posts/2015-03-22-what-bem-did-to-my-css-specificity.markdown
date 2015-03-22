@@ -44,7 +44,7 @@ And here's how it looks after BEM:
 </article>
 {% endhighlight %}
 
-Right off the bat, it makes the DOM elements more structured and tightly coupled. But what about the CSS? If every element in the page can be targeted by a unique and unambiguous class name, then in theory I should be able to reduce the amount of nesting in my Sass code and see a lighter, more compact and less specific resulting CSS.
+Right off the bat, it makes DOM elements more structured and tightly coupled. But what about the CSS? If every element in the page can be targeted by a unique and unambiguous class name, then in theory I should be able to reduce the amount of nesting in my Sass code and see a lighter, more compact and less specific resulting CSS.
 
 To measure that I used Jonas Ohlsson's [CSS Specificity Graph Generator](http://jonassebastianohlsson.com/specificity-graph/) to see how the specificity of my shiny new BEM-powered stylesheet looked like when compared to the previous version using the plain old habit of naming things randomly. Here's how it looks:
 
@@ -54,8 +54,48 @@ To measure that I used Jonas Ohlsson's [CSS Specificity Graph Generator](http://
 
 (*«Spikes are bad, and the general trend should be towards higher specificity later in the stylesheet.»* — [More info](http://csswizardry.com/2014/10/the-specificity-graph/))
 
-Not bad, I guess. As Philip points out in his article, turning a blind eye to some of BEM's rules and therefore dilluting it with your own rules can be dangerous, but I'm knowingly doing that and on every instance I have a solid reason. My website is powered by Jekyll and it takes care of converting Markdown into HTML, so Jekyll gets to create a lot of the markup for me. The result? I can't tell Jekyll to attach BEM-friendly classes to the elements it creates. In that case, I sometimes have to style things by element type and not class name.
+## Here's what I make of it
 
-My second exception happens because I'm setting global rules for headings, lists and paragraphs because it just doesn't seem practical to me to be adding classes to all instances of those elements. Things like font families, line heights and colours will be pretty much global so I shouldn't have a problem there.
+As Ohlsson points out in his website, *«spikes are bad, and the general trend should be towards higher specificity later in the stylesheet.»* so I guess it worked alright for me. But I'm sure I would see even better results if I could rigidly enforce BEM on every element on the site, which I can't. 
+
+I use Jekyll to power my site and it actually generates a lot of the markup for me, which means that I don't have full control of what goes into my DOM tree — i.e. I can't ask Jekyll to append BEM-friendly classes to elements. For this reason, I sometimes have to turn a blind eye to some of BEM's rules and do things like styling elements by tag name and not by class.
+
+Also, because my website relies on a HTML5 video sequence, I have to cater for devices that a) don't have a big enough screen to show the video sequence in a way that makes sense or b) can't automatically play HTML5 videos without user interaction (I'm speaking iOS here). As a result, I have to use Modernizr to detect some features and create a whole new experience for certain users. That means saying things like "apply these rules **if** the device is smaller than a tablet **or** there's no support for HTML5 video autoplay".
+
+{% highlight sass linenos %}
+@mixin mobile-flow() {
+	.no-videoautoplay & {
+		@content;
+	}
+
+	@include media('<tablet') {
+		@content;
+	}	
+}
+
+body.body--mobile-flow {
+	@include mobile-flow() {
+		.bust,
+		.menu,
+		.background {
+			left: -100%;
+			transition: left $mobile-menu--transition;
+		}
+
+		.content {
+			width: 100% !important;
+			margin-left: 0 !important;
+			transition: margin-left $mobile-menu--transition !important;
+
+			&:not(.content--allow-expansion) {
+				padding-left: 10px !important;
+				padding-right: 10px !important;
+			}
+		}
+	}
+}
+{% endhighlight %}
+
+Yes, you see some overly-specific selectors, you see `!important` and you see nesting. That was all necessary to deal with the very specific case I had in hands and I reckon that's what stops me from having an even better specificity graph. I would say that BEM definitely helped and it did as much for me as it possibly could.
 
 I've been using BEM in production on all my projects and I don't look back.<!--tomb-->
