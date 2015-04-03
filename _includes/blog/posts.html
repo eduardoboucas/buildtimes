@@ -2,21 +2,37 @@
   {% for post in paginator.posts %}
     <article class="post">
       <header class="post__header">
-        <h1 class="post__title"><a class="read-post" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        {% if post.external-url %}
+          <h1 class="post__title"><a class="read-post" href="{{ post.external-url | prepend: site.baseurl }}">{{ post.title }}</a>
+            {% include svg/use.html viewbox="0 0 1024 1024" id="icon--external" class="post__external-title-icon" %}
+          </h1>
+        {% else %}
+          <h1 class="post__title"><a class="read-post" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        {% endif %}
         <ul class="post__meta">
           <li class="post__date"><img src="/assets/images/icons/time.svg" class="post__icon"/> {{ post.date | date: "%b %-d, %Y" }}</li>
-          {% if (post.tags and (include.origin != 'mainsite')) %}
+          {% if post.tags %}
           <li class="post__tags"><img src="/assets/images/icons/tag.svg" class="post__icon"/> {% for tag in post.tags %} <em><a href="/blog/tags.html#{{ tag }}">{{ tag }}</a></em>{% endfor %}</li>
           {% endif %}
-          <li class="post__permalink"><img src="/assets/images/icons/link.svg" class="post__icon"/> <a href="{{ post.url }}">Permalink</a></li>
+
+          {% if post.external-url == null %}
+            <li class="post__permalink"><img src="/assets/images/icons/link.svg" class="post__icon"/> <a href="{{ post.url }}">Permalink</a></li>
+          {% endif %}
         </ul>
       </header>
       <div class="post__excerpt">
-        {% if post.content contains '<!--more-->' %}
-          {{ post.content | split:'<!--more-->' | first }}
-          <p class="cta"><a class="read-post arrow arrow--right" href="{{ post.url }}">Read full post</a></p>
-        {% else %}
+        {% if post.external-url %}
+          <p class="cta"><a class="read-post arrow arrow--right" href="{{ post.external-url }}">Read post on {{ post.external-name }}</a></p>
+
           {{ post.content }}
+        {% else %}
+          {% if post.content contains '<!--more-->' %}
+            {{ post.content | split:'<!--more-->' | first }}
+
+            <p class="cta"><a class="read-post arrow arrow--right" href="{{ post.url }}">Read full post</a></p>
+          {% else %}
+            {{ post.content }}
+          {% endif %}
         {% endif %}
       </div>
     </article>

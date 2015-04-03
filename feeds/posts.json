@@ -1,7 +1,0 @@
----
----
-{% assign numberOfPosts = 10 %}
-
-[{% for post in site.posts | limit:numberOfPosts %}
-	{{ post | jsonify }}
-{% endfor %}]

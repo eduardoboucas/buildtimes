@@ -84,6 +84,14 @@
 	}
 }
 
+.post__external-title-icon {
+	$size: 25px;
+
+	width: $size;
+	height: $size;
+	margin-left: 10px;
+}
+
 .post__icon {
 	display: inline;
 	margin: 0;
