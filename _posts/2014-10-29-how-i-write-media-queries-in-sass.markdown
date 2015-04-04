@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "How I write media queries in SASS"
+title:  "How I write media queries in Sass"
 handle: "how-i-write-media-queries-in-sass"
 date:   2014-10-29 21:34:00
 categories: blog
 tags: sass css media queries
 ---
-Once you SASS, you never go... ah, damn it. I can't make the pun work, but you get the idea. [SASS](http://sass-lang.com/) is a really powerful tool for front-end developers that I would really struggle to live without. CSS pre-processors, like any kind of power, come with great responsibility. They enable poor, lazy and inefficient designs, but they also allow you to write some really cool stuff with little to no effort.<!--more-->
+Once you Sass, you never go... ah, damn it. I can't make the pun work, but you get the idea. [Sass](http://sass-lang.com/) is a really powerful tool for front-end developers that I would really struggle to live without. CSS pre-processors, like any kind of power, come with great responsibility. They enable poor, lazy and inefficient designs, but they also allow you to write some really cool stuff with little to no effort.<!--more-->
 
 One example of that is media queries. There are a lot of mixins out there that allow you to easily write media queries in a nice way, such as [Chris Coyier's approach](http://css-tricks.com/conditional-media-query-mixins/) or [Dmitry Sheiko's technique](http://codepen.io/dsheiko/pen/KeLGy). I started by using the latter, which allows you to do define global breakpoints and combine them to form the media query expression.
 
@@ -100,4 +100,4 @@ This allows me to do things like:
 
 That's it! What do you think of this approach? Erm, I guess I need to implement some sort of commenting system before I start asking questions, right? More on that later.<!--tomb-->
 
-*[SASS Media queries on GitHub](https://github.com/eduardoboucas/include-media)*
+*[Sass Media queries on GitHub](https://github.com/eduardoboucas/include-media)*
