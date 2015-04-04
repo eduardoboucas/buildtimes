@@ -4,7 +4,7 @@
       <header class="post__header">
         {% if post.external-url %}
           <h1 class="post__title"><a class="read-post" href="{{ post.external-url | prepend: site.baseurl }}">{{ post.title }}</a>
-            {% include svg/use.html viewbox="0 0 1024 1024" id="icon--external" class="post__external-title-icon" %}
+            {% include svg/use.html id="icn--external" class="post__external-title-icon" %}
           </h1>
         {% else %}
           <h1 class="post__title"><a class="read-post" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
