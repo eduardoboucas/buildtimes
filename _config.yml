@@ -33,7 +33,7 @@ markdown: kramdown
 comment_post_url: http://pooleapp.com/stash/10de6ec7-27c4-469f-824a-8c0eee3ec105/
 
 # Pagination
-paginate: 5
+paginate: 10
 paginate_path: "blog/page:num"
 
 collections:
