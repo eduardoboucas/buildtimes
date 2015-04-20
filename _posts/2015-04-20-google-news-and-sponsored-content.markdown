@@ -6,6 +6,7 @@ categories: blog
 tags: google-news robotstxt seo
 ---
 If your website — or a website you're working on — is on Google News, that's really good news (ha!). It allows your content to be indexed by Google's news platform and be shown to millions of readers around the globe interested in stories on a certain subject or category.
+
 Getting a site into the platform is supposedly not that difficult — a good read through the [this page](https://support.google.com/news/publisher/answer/40787?hl=en) should point you to the technical and editorial requirements you need to put in place before you [submit your site](https://partnerdash.google.com/partnerdash/d/news#p:id=pfehome) to the platform. Within those pages, there's a very important piece of information: **«Stick to the news--we mean it!»**.<!--more-->
 
 > Google News is not a marketing service. We don't want to send users to sites created primarily for promoting a product or organization, or to sites that engage in commerce journalism. (...) Otherwise, if we find non-news content mixed with news content, we may exclude your entire publication from Google News.
