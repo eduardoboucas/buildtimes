@@ -7,13 +7,13 @@ tags: google-news robotstxt seo
 ---
 If your website — or a website you're working on — is on Google News, that's really good news (ha!). It allows your content to be indexed by Google's news platform and be shown to millions of readers around the globe interested in stories on a certain subject or category.
 
-Getting a site into the platform is supposedly not that difficult — a good read through the [this page](https://support.google.com/news/publisher/answer/40787?hl=en) should point you to the technical and editorial requirements you need to put in place before you [submit your site](https://partnerdash.google.com/partnerdash/d/news#p:id=pfehome) to the platform. Within those pages, there's a very important piece of information: **«Stick to the news--we mean it!»**.<!--more-->
+Getting a site into the platform is supposedly not that difficult — a good read through [this page](https://support.google.com/news/publisher/answer/40787?hl=en) should point you to the technical and editorial requirements you need to put in place before you [submit your site](https://partnerdash.google.com/partnerdash/d/news#p:id=pfehome) to the platform. Within those pages, there's a very important piece of information: **«Stick to the news--we mean it!»**.<!--more-->
 
 > Google News is not a marketing service. We don't want to send users to sites created primarily for promoting a product or organization, or to sites that engage in commerce journalism. (...) Otherwise, if we find non-news content mixed with news content, we may exclude your entire publication from Google News.
 
-It's a common practice for news sites and blogs to have sponsored articles, often visually camouflaged as editorial content. If you're doing this and your website is on Google News, you might be breaching their guidelines and that can have your content removed from the platform.
+It's a common practice for news sites and blogs to have sponsored articles, often visually camouflaged as editorial content. If you're doing this and your website is on Google News, you might be breaching their guidelines and that can get your content removed from the platform.
 
-## What do I need to do then?
+## Blocking Google News robot
 
 You need to flag all your sponsored/advertorial content appropriately to web crawlers — more specifically, Google News' robot — telling them not to index your page. You have two options here:
 
@@ -21,7 +21,7 @@ You need to flag all your sponsored/advertorial content appropriately to web cra
 
 {% highlight text %}
 User-Agent: Googlebot-News
-Disallow: /
+Disallow: /some-directory
 {% endhighlight %}
 
 - **meta tag**: You can add a meta tag to the pages you wish to exclude from Google News. With this option is easier to define which pages should be excluded.
