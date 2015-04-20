@@ -19,16 +19,16 @@ You need to flag all your sponsored/advertorial content appropriately to web cra
 
 - **robots.txt**: You can add a rule to your `robots.txt` excluding all the pages within a certain directory from being indexed by Google News. This works best if all your advertorial pages are within the same directory.
 
-``` text
+{% highlight text %}
 User-Agent: Googlebot-News
 Disallow: /
-```
+{% endhighlight %}
 
 - **meta tag**: You can add a meta tag to the pages you wish to exclude from Google News. With this option is easier to define which pages should be excluded.
 
-``` html
+{% highlight html %}
 <meta name="Googlebot-News" content="noindex, nofollow">
-```
+{% endhighlight %}
 
 ## Or block all the robots
 
