@@ -57,6 +57,11 @@
 		padding-bottom: 5px;
 	}
 
+	svg {
+		width: 45px;
+		height: 60px;
+	}
+
 	@include media(">=tablet") {
 		&:hover {
 			width: $expanded-width;
