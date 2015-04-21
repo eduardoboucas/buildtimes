@@ -1,108 +1,95 @@
-<!-- Charset and IE stuff -->
+{% if page.dir contains site.blog_url %}
+  {% capture title %}{% if page.title %}{{ page.title }} - {{ site.blog_title }}{% else %}{{ site.blog_title }}{% endif %}{% endcapture %}
+
+  {% assign description = site.blog_description %}
+
+  {% assign og_site_name = site.blog_title %}
+
+  {% if page.title %}
+    {% assign og_title = page.title %}
+  {% else %}
+    {% assign og_title = site.blog_title %}
+  {% endif %}
+
+  {% assign og_type = 'blog' %}
+
+  {% if page.dir == "/blog" %}
+    {% assign og_description = site.blog_description | strip_html %}
+  {% else %}
+    {% if page.description %}
+      {% assign og_description = page.description | strip_html %}
+    {% else %}
+      {% assign og_description = page.excerpt | strip_html %}
+    {% endif %}
+  {% endif %}
+
+  {% if page.url %}
+    {% capture og_url %}{{ site.site_url }}{{ page.url | replace:'index.html','' }}{% endcapture %}
+  {% endif %}
+{% else %}
+  {% capture title %}{{ site.site_title }}{% endcapture %}
+
+  {% assign description = site.site_description %}
+
+  {% assign og_site_name = site.site_title %}
+
+  {% assign og_title = site.site_title %}
+
+  {% assign og_type = 'website' %}
+
+  {% assign og_description = site.site_description | strip_html %}
+
+  {% assign og_url = site.site_url %}
+{% endif %}
+
+{% if page.image %}
+  {% capture image %}{{ site.site_url }}/assets/posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ page.image }}{% endcapture %}
+{% else %}
+  {% capture image %}{{ site.site_url }}/assets/images/bust.png{% endcapture %}
+{% endif %}
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<!-- Favicon -->
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.blog_title }}" href="{{ site.feed_url }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
-<!-- Title -->
+<!-- Open graph -->
+<meta content="{{ og_site_name }}" property="og:site_name">
+<meta content="{{ og_title }}" property="og:title">
+<meta content="{{ image }}" property="og:image">
+<meta content="{{ og_type }}" property="og:type">
+<meta content="{{ og_description }}" property="og:description">
+<meta content="{{ og_url }}" property="og:url">
+
+<!-- Facebook stuff -->
 {% if page.dir contains site.blog_url %}
-  <title>{% if page.title %}{{ page.title }} - {{ site.blog_title }}{% else %}{{ site.blog_title }}{% endif %}</title>
-{% else %}
-  <title>{{ site.site_title }}</title>
-{% endif %}
-
-<!-- RSS feed -->
-<link rel="alternate" type="application/rss+xml" title="{{ site.blog_title }}" href="{{ site.feed_url }}" />
-
-<!-- Description -->
-{% if page.dir contains site.blog_url %}
-  <meta name="description" content="{{ site.blog_description }}">
-{% else %}
-  <meta name="description" content="{{ site.site_description }}">
-{% endif %}
-
-<!-- Viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-
-<!-- Open graph: site name -->
-{% if page.dir contains site.blog_url %}
-  <meta content="{{ site.blog_title }}" property="og:site_name">
-{% else %}
-  <meta content="{{ site.site_title }}" property="og:site_name">
-{% endif %}
-
-<!-- Open graph: title -->
-{% if page.dir contains site.blog_url %}
-  {% if page.title %}
-    <meta content="{{ page.title }}" property="og:title">
-  {% else %}
-    <meta content="{{ site.blog_title }}" property="og:title">
-  {% endif %}
-{% else %}
-  <meta content="{{ site.site_title }}" property="og:title">
-{% endif %}
-
-<!-- Open graph: image -->
-{% if page.image %}
-  <meta content="{{ site.site_url }}/assets/posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ page.image }}" property="og:image">
-{% else %}
-  <meta content="{{ site.site_url }}/assets/images/bust.png" property="og:image">
-{% endif %}
-
-<!-- Open graph: type -->
-{% if page.dir contains site.blog_url %}
-  <meta content="blog" property="og:type">
-{% else %}
-  <meta content="website" property="og:type">
-{% endif %}
-
-<!-- Open graph: description -->
-{% if page.dir contains site.blog_url %}
-  {% if page.dir == "/blog" %}
-    <meta content="{{ site.blog_description }}" property="og:description">
-  {% else %}
-    {% if page.description %}
-      <meta content="{{ page.description }}" property="og:description">
-    {% elsif content contains '<!--more-->' %}
-      <meta content="{{ content | split: '<!--more-->' | first | strip_html }}" property="og:description">
-    {% else %}
-      <meta content="{{ content | strip_html }}" property="og:description">
-    {% endif %}
-  {% endif %}
-{% else %}
-  <meta content="{{ site.site_description }}" property="og:description">  
-{% endif %}
-
-<!-- Open graph: URL -->
-{% if page.dir contains site.blog_url %}
-  {% if page.url %}
-    <meta content="{{ site.site_url }}{{ page.url | replace:'index.html','' }}" property="og:url">
-  {% endif %}
-{% else %}
-  <meta content="{{ site.site_url }}" property="og:url">
-{% endif %}
-
-{% if page.dir contains site.blog_url %}
-  <!-- Article: published time -->
   {% if page.date %}
     <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
   {% endif %}
 
-  <!-- Article: author -->
   <meta content="{{ site.facebook_url }}" property="article:author">
 
-  <!-- Article: section -->
   {% if page.categories %}
     {% for category in page.categories limit:1 %}
       <meta content="{{ category }}" property="article:section">
     {% endfor %}
   {% endif %}
 
-  <!-- Article: tags -->
   {% if page.tags %}
     {% for tag in page.tags %}
       <meta content="{{ tag }}" property="article:tag">
     {% endfor %}
   {% endif %}
 {% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@{{ site.twitter_username }}" />
+<meta name="twitter:image" content="{{ image }}" />
+<meta name="twitter:title" content="{{ og_title }}" />
+<meta name="twitter:description" content="{{ og_description }}" />
+<meta name="twitter:url" content="{{ og_url }}" />
