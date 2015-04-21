@@ -48,3 +48,5 @@ defaults:
     values:
       author: "Eduardo Bouças"
       enable_comments: true
+
+excerpt_separator: <!--more-->
