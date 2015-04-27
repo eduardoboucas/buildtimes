@@ -111,7 +111,7 @@ Then we're off to the **That** part. In this example, I'm setting up the feed fo
 
 {% include image name="IFTTT-2.png" caption="Setting up my Facebook feed on IFTTT (step 6 of 7)" %}
 
-## One step further: the Twitter case
+## Going one step further: the Twitter case
 We're pretty much done, you just need to repeat the above steps for each of the social media platforms you want to use. But we could go one step further. When posting things to Twitter, it's a common practice to include hashtags to make the tweet easier to find by people who are interested in the topics you're writing about. So if you're using tags in your posts, wouldn't it make sense to add them to your tweet as hashtags?
 
 This is actually easier said than done because it isn't just a matter of grabbing all the tags from a post and appending them to the tweet. There's a limit on the number of characters in a tweet, so we need to check how many will fit — depending on the post's title and tags, we might be able to fit just one of them, all of them or even none at all.
