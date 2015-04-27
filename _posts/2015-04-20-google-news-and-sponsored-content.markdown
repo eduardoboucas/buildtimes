@@ -32,4 +32,4 @@ Disallow: /some-directory
 
 ## Or block all the robots
 
-If you prefer to hide your page from all Google robots, including the one used by Google Web Search, use one of the options above and replace `Googlebot-News` with just `Googlebot`.
+If you prefer to hide your page from all Google robots, including the one used by Google Web Search, use one of the options above and replace `Googlebot-News` with just `Googlebot`.<!--tomb-->
