@@ -37,6 +37,8 @@ paginate: 10
 paginate_path: "blog/page:num"
 
 collections:
+  share-on:
+    output: true
   portfolio:
     output: true
 
