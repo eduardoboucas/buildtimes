@@ -3,7 +3,8 @@ layout: post
 title:  "Sharing Jekyll posts on social media using front matter and IFTTT"
 date:   2015-04-28 09:32:00
 categories: blog
-tags: jekyll social media ifttt
+tags: jekyll social media ifttt abcdeft whatever
+share: facebook --twitter-hashtags
 ---
 Whenever I write a post on my blog, I like to share it on the different social media platforms I have a presence on. I started by doing that manually, creating updates myself with links to my posts, but soon realised that something like [IFTTT](https://ifttt.com/) would be perfect to automate the process. Jekyll comes with an RSS feed out of the box so it's just a matter of creating a recipe where you say *"whenever there's a new post on this feed, publish an update to A, B and C"*.
 
@@ -95,7 +96,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      share: twitter linkedin # Sharing on Twitter and LinkedIn by default
+      share: facebook linkedin # Sharing on Facebook and LinkedIn by default
 {% endhighlight %}
 
 ## Setting up IFTTT
@@ -110,5 +111,19 @@ Then we're off to the **That** part. In this example, I'm setting up the feed fo
 
 {% include image name="IFTTT-2.png" caption="Setting up my Facebook feed on IFTTT (step 6 of 7)" %}
 
+## One step further: the Twitter case
+We're pretty much done, you just need to repeat the above steps for each of the social media platforms you want to use. But we could go one step further. When posting things to Twitter, it's a common practice to include hashtags to make the tweet easier to find by people who are interested in the topics you're writing about. So if you're using tags in your posts, wouldn't it make sense to add them to your tweet as hashtags?
+
+This is actually easier said than done because it isn't just a matter of grabbing all the tags from a post and appending them to the tweet. There's a limit on the number of characters in a tweet, so we need to check how many will fit — depending on the post's title and tags, we might be able to fit just one of them, all of them or even none at all.
+
+My solution was to create a separate feed file for Twitter using its own logic rather than inheriting the `social-feed` layout. In a nutshell, here's what it does:
+
+1. Check if the author wants to include hashtags by checking for the presente of `--twitter-hashtags` in the `share` property of a post;
+2. Calculate how much space there is left in the tweet for tags;
+3. Go through the list of tags, in order of appearence, and add it to the post title until there's no more space;
+4. Generate a tweet following a pre-defined format using the post's title, link and tags.
+
+I'm not going through the specifics of how to implement this because this post would become huge, so I've created [a GitHub repository](https://github.com/eduardoboucas/jekyll-social) where you can find more information about the full implementation and grab the code to use in your project.
+
 ## Wrapping up
-That's pretty much it. You just need to repeat the above steps for each of the social media platforms you want to use and you're set. Now just sit down and write, you don't even need to be social anymore because Jekyll and IFTTT will take care of that for you. You're welcome.<!--tomn-->
+And that's it! Now just sit down, find the inspiration and write your posts — you don't even need to be social anymore because Jekyll and IFTTT will take care of that for you. You're welcome.<!--tomb-->
