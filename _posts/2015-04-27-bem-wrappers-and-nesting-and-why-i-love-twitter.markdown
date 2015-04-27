@@ -53,4 +53,4 @@ And this is how each element fits in the BEM naming convention:
 The first step is to pick your block, a self-contained and independent element. If you need to wrap it in another element, that element needs to be a block itself, never an element or a modifier of your block. You can adopt a naming convention for it like `.block-wrapper` or `.block-container` to make it clear that it relates to your block, but their will be two interdependent elements in the BEM world.
 Any wrappers or containers **inside** your block become elements (e.g. `.block__inner`), independently of how deeply nested they are.
 
-And BEM! It works, it's clean and it makes sense, so happy and still a big fan of BEM. Ah, and this is why I love Twitter and the awesome web development community.<!--tomb-->
+And BEM! It works, it's clean and it makes sense, so I'm happy and still a big fan of BEM. Ah, and this is why I love Twitter and the awesome web development community.<!--tomb-->
