@@ -13,7 +13,11 @@ But I wanted a bit more flexibility. Maybe I'm writing a post that is way too te
 This is something that I had been thinking for a while and I even considered creating a my own service people could use to do this, but actually it can be done with IFTTT and a bit of creativity on the Jekyll side.
 
 ## The idea
-Instead of using the normal RSS feed as the trigger for our IFTTT, we can have one feed for each social platform. For example, `feed-facebook.xml` would contain all the posts we want to share on Facebook. If we want to share a post on Twitter and LinkedIn, then it would appear in both `feed-twitter.xml` and `feed-linkedin.xml`. Then we can use those feeds as the source for the individual IFTTT recipes.
+Instead of using the normal RSS feed as the trigger for our IFTTT, we can have one feed for each social platform. For example, `feed-facebook.xml` would contain all the posts we want to share on Facebook. If we want to share a post on Twitter and LinkedIn, then it would appear in both `feed-twitter.xml` and `feed-linkedin.xml`. Then we can use those feeds as the source for the individual IFTTT recipes. 
+
+Here's the idea:
+
+{% include image name="jekyll-social-after.png" caption="Serving separate feeds to different IFTTT channels" %}
 
 ## Creating the feeds
 The first step is to create the RSS feeds for the different platforms. Instead of duplicating the code over and over again for each platform, we can define a layout that all feeds will inherit.
