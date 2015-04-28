@@ -1,0 +1,29 @@
+body:after {
+	content: ' ';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.search {
+	position: absolute;
+	top: 30px;
+	width: 100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	padding: 0 20px;
+	z-index: 2;
+}
+
+.search__field {
+	@include font-size(35);
+
+	border-width: 0 0 3px 0;
+	border-style: solid;
+	border-color: white;
+	color: white;
+}
