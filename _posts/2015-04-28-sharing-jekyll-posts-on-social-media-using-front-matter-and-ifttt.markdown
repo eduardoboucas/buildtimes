@@ -3,8 +3,7 @@ layout: post
 title:  "Sharing Jekyll posts on social media using front matter and IFTTT"
 date:   2015-04-28 12:16:00
 categories: blog
-tags: jekyll social media ifttt abcdeft whatever
-share: facebook --twitter-hashtags
+tags: jekyll social media ifttt
 ---
 Whenever I write a post on my blog, I like to share it on the different social media platforms I have a presence on. I started by doing that manually, creating updates myself with links to my posts, but soon realised that something like [IFTTT](https://ifttt.com/) would be perfect to automate the process. Jekyll comes with an RSS feed out of the box so it's just a matter of creating a recipe where you say *"whenever there's a new post on this feed, publish an update to A, B and C"*.
 
