@@ -3,14 +3,14 @@ layout: default
 ---
 <!DOCTYPE html>
 <html>
-{% include blog/head.html getcomments="true" %}
+{% include blog/head.html %}
 
 <body class="body--blog">
   {% include svg/defs.html %}
   <div class="content content--blog">
     {% include blog/header.html %}
     {% include blog/navigation.html %}
-    
+
     <article class="post">
       <header class="post__header">
         <h1 class="post__title">{{ page.title }}</h1>
@@ -26,10 +26,6 @@ layout: default
         {{ content | replace: '<!--tomb-->', ' &#8718;'}}
       </div>
     </article>
-
-    <!--{% if page.enable_comments %}
-      {% include blog/comments.html %}
-    {% endif %}-->
 
     {% include googleAnalytics.html %}
     {% include blog/footer.html %}
