@@ -1,9 +1,8 @@
 <head>
     {% include meta.html %}
-    
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    {% include stylesheets.html %}
     <link rel="canonical" href="{{ site.site_url }}{{ site.blog_url }}">
-    
+
     {% if paginator.previous_page %}
         {% if paginator.page == 2 %}
             <link rel="prev" href="{{ site.site_url }}{{ site.blog_url }}" />
