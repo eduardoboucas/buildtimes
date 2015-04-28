@@ -70,6 +70,33 @@
 	}
 }
 
+.blog-header__search {
+	$transition: opacity 0.3s ease-in-out;
+
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	padding: 0;	
+	opacity: 1;
+	transition: $transition;
+
+	&:hover {
+		opacity: 0.3;
+		transition: $transition;
+	}
+
+	@include media('<375px') {
+		position: static;
+		margin-top: 10px;		
+	}
+}
+
+.blog-header__search-icon {
+	width: 30px;
+	height: 30px;
+	fill: black;
+}
+
 @include media("<tablet") {
 	.blog-header__title {
 		position: static;
@@ -94,6 +121,8 @@
 
 	.blog-header__title {
 		@include font-size(30);
+
+		text-align: left;
 	}
 
 	.blog-header__back-to-site {
