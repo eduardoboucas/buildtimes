@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Sharing Jekyll posts on social media using front matter and IFTTT"
-date:   2015-04-28 09:32:00
+date:   2015-04-28 12:16:00
 categories: blog
 tags: jekyll social media ifttt abcdeft whatever
 share: facebook --twitter-hashtags
