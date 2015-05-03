@@ -4,6 +4,7 @@
 
 .body--search {
 	overflow: hidden;
+	height: 100%;
 	
 	.search-overlay {
 		@extend %search-transition;
@@ -15,7 +16,7 @@
 .search-overlay {
 	@extend %search-transition;
 
-	position: fixed;
+	position: absolute;
 	top: -100%;
 	left: 0;
 	width: 100%;
