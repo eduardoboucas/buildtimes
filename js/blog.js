@@ -48,6 +48,7 @@ var blog = {
 
 		$('#blog-header__search').click(function () {
 			$('body').addClass('body--search');
+			$('#search__field').focus();
 		});
 
 		$('#search__close').click(function () {
