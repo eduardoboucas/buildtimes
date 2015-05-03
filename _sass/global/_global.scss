@@ -8,6 +8,11 @@ $base__fontPrimary: $font-lato;
 $base__fontSize: 18;
 $base__maxWidth: 960px;
 
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   @include font-size($base__fontSize);
 

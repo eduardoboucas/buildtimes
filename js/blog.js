@@ -45,11 +45,36 @@ var blog = {
 		});
 
 		$('.load-more-posts').click(blog.loadMorePosts);
+
+		$('#blog-header__search').click(function () {
+			$('body').addClass('body--search');
+		});
+
+		$('#search__close').click(function () {
+			$('body').removeClass('body--search');
+		});
 	},
 
 	bindGAEvents: function () {
 		$('section.comments form').submit(function () {
 			ga('send', 'event', 'Comments', 'New comment');
+		});
+	},
+
+	bindKeys: function () {
+		$(document).keyup(function(e) {
+			if (e.keyCode == 27) {
+				$('body').removeClass('body--search')
+			}
+		});
+	},
+
+	initSearch: function () {
+		SimpleJekyllSearch.init({
+			searchInput: document.getElementById('search__field'),
+			resultsContainer: document.getElementById('search__results'),
+			dataSource: '/feeds/search.json',
+			searchResultTemplate: '<li class="search__result"><a href="{url}">{title}</a> — ({date})</li>'
 		});
 	},
 
@@ -59,8 +84,10 @@ var blog = {
 			$('body').hide().fadeIn('slow');
 		}
 
+		blog.bindKeys();
 		blog.bindUiEvents();
 		blog.bindGAEvents();
+		blog.initSearch();
 	}
 };
 
