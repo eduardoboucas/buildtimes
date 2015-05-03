@@ -2,15 +2,19 @@
 	transition: top 0.15s ease-in-out;	
 }
 
-.body--search {
+.search-mode {
 	overflow: hidden;
-	height: 100%;
 	
+	body {
+		overflow: hidden;
+		height: 100%;		
+	}
+
 	.search-overlay {
 		@extend %search-transition;
 
 		top: 0;
-	}
+	}	
 }
 
 .search-overlay {

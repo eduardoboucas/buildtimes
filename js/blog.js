@@ -47,12 +47,12 @@ var blog = {
 		$('.load-more-posts').click(blog.loadMorePosts);
 
 		$('#blog-header__search').click(function () {
-			$('body').addClass('body--search');
+			$('html').addClass('search-mode');
 			$('#search__field').focus();
 		});
 
 		$('#search__close').click(function () {
-			$('body').removeClass('body--search');
+			$('html').removeClass('search-mode');
 		});
 	},
 
@@ -65,7 +65,7 @@ var blog = {
 	bindKeys: function () {
 		$(document).keyup(function(e) {
 			if (e.keyCode == 27) {
-				$('body').removeClass('body--search')
+				$('html').removeClass('search-mode')
 			}
 		});
 	},
