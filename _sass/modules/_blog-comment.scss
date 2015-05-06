@@ -1,14 +1,51 @@
-.comment {
-	@include font-size(15);
+$comment__avatar-size: 80px;
 
-	margin-top: 25px;
-
-	input,
-	textarea {
-		width: 50%;
-	}
+%comments-constrain {
+	max-width: 650px;
+	margin: 0 auto;
 }
 
-.comment__header {
-	margin-bottom: 5px;
+.comments__separator {
+	margin: 20px 0;
+	border-color: $light-gray;
+	border-width: 1px 0 0 0;
+}
+
+.comments__title {
+	text-transform: none;
+}
+
+.comments__new {
+	@extend %comments-constrain;
+
+	margin-top: 25px;
+}
+
+.comment {
+	@extend .cf;
+	@extend %comments-constrain;
+
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid $light-gray;
+}
+
+.comment + .comment {
+	margin-top: 20px;
+}
+
+.comment__avatar {
+	width: $comment__avatar-size;
+	margin: 0 10px 0 0;
+	float: left;
+}
+
+.comment__author {
+	text-transform: none;
+	font-weight: bold;
+	margin: 0;
+}
+
+.comment__date {
+	@include font-size(14);
 }
