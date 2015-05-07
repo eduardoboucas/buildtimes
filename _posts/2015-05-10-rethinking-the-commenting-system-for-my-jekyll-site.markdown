@@ -126,4 +126,56 @@ git push --quiet origin master > /dev/null 2>&1
 
 ## Part 2: The PHP handler
 
-On the PHP side, 
+With the bash script ready, we need something that triggers it from an HTTP request — in my case, a PHP script. All it does is a basic validation on the data received and, if everything is correct, run the bash script using `exec()`. It then parses the message as Markdown and returns the result, along with the email hash, as JSON format so the front-end can generate a preview of the comment without forcing a page reload.
+
+{% highlight php linenos %}
+$app = new \Slim\Slim();
+
+$app->post('/comments', function () use ($app) {
+    $data = $app->request()->post();
+
+    // Checking for the honey pot
+    if ((isset($data['company'])) && (!empty($data['company']))) {
+        return;
+    }
+
+    // Checking for mandatory fields
+    if ((!isset($data['name'])) ||
+        (!isset($data['email'])) ||
+        (!isset($data['message'])) ||
+        (!isset($data['post'])))
+    {
+        echo('Mandatory fields are missing.');
+        return;
+    }
+
+    // Create email hash
+    $emailHash = md5(trim(strtolower($data['email'])));
+
+    // Parse markdown
+    $Parsedown = new Parsedown();
+    $message = escapeshellarg($Parsedown->text($data['message']));
+
+    $shellCommand = './new-comment.sh';
+    $shellCommand .= ' --name ' . escapeshellarg($data['name']);
+    $shellCommand .= ' --hash \'' . $emailHash . '\'';
+    $shellCommand .= ' --post ' . escapeshellarg($data['post']);
+    $shellCommand .= ' --message ' . $message;
+
+    if (isset($data['url'])) {
+        $shellCommand .= ' --url ' . escapeshellarg($data['url']);
+    }
+
+    exec($shellCommand, $output);
+
+    $response['hash'] = $emailHash;
+    $response['message'] = $message;
+
+    echo(json_encode($response));
+});
+
+$app->run();
+{% endhighlight %}
+
+## Part 3: Displaying comments
+
