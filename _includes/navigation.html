@@ -1,5 +1,11 @@
+{% if page.url == '/404.html' %}
+	{% assign backLink = '/' %}
+{% else %}
+	{% assign backLink = '#/' %}
+{% endif %}
+
 <nav class="page-navigation">
-	<a href="#/" class="page-navigation__anchor">
+	<a href="{{ backLink }}" class="page-navigation__anchor">
 		{% include svg/use.html id="icn--arrow" class="page-navigation__arrow" %}
 		{% include svg/use.html id="icn--chair" class="page-navigation__chair" %}
 	</a>
