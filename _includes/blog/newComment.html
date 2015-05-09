@@ -1,10 +1,11 @@
-<form action="{{ site.comment_post_url }}" method="post">
-  <input type="hidden" name="redirect_to" value="{{ page.url }}#comments" />
-  <input type="hidden" name="page" value="{{ page.url }}" />
-  <input type="text" name="name" placeholder="Name" required/>
-  <input type="text" name="contact" placeholder="Email address or website"/>
-  <input type="text" name="honey"/>
-  <textarea rows="10" name="message" placeholder="Comment" required></textarea>
-  <span>You can use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> in your comment.</span>
-  <input type="submit" value="Send" />
+<form id="comments-form" class="comments__new" action="{{ site.comment_post_url }}" method="post">
+    <p>Leave a comment</p>
+    <input type="hidden" name="post" value="{{ post_slug }}">
+    <input type="text" name="company" class="honey">
+    <input type="text" name="name" placeholder="Name" required/>
+    <input type="email" name="email" placeholder="Email address (will not be public)" required/>
+    <input type="url" name="url" placeholder="Website (optional)"/>
+    <textarea rows="10" name="message" placeholder="Comment" required></textarea>
+    <span>You can use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> in your comment.</span>
+    <input type="submit" value="Send" />
 </form>

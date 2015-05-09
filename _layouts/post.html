@@ -27,6 +27,10 @@ layout: default
       </div>
     </article>
 
+    {% if page.enable_comments %}
+      {% include blog/comments.html %}
+    {% endif %}
+
     {% include googleAnalytics.html %}
     {% include blog/footer.html %}
 </body>

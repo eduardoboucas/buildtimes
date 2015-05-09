@@ -1,9 +1,22 @@
-<hr/>
 <section class="comments">
-	<h2>Comments</h2>
-	<div id="comments">
-	  <p>Loading comments...</p>
-	</div>
-	<h3>Have something to say?</h3>
+	{% capture post_slug %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}{% endcapture %}
+	
+	<hr class="comments__separator">
+	<h2 class="comments__title">Comments</h2>
+	
+	{% for comment in site.data.comments[post_slug] %}
+		{% assign hash = comment[1].hash %}
+		{% assign name = comment[1].name %}
+		{% assign url = comment[1].url %}
+		{% assign date = comment[1].date %}
+		{% assign message = comment[1].message %}
+
+		{% include blog/comment.html index=forloop.index hash=hash name=name url=url date=date message=message %}
+	{% endfor %}
+
 	{% include blog/newComment.html %}
 </section>
+
+<script type="text/template" id="template--new-comment">
+	{% include blog/comment.html hash="@hash" name="@name" url="@url" date="@date" message="@message" %}
+</script>

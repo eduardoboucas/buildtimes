@@ -54,6 +54,28 @@ var blog = {
 		$('#search__close').click(function () {
 			$('html').removeClass('search-mode');
 		});
+
+		$('#comments-form').submit(function () {
+			var url = $(this).attr('action');
+			var data = $(this).serialize();
+
+			var formName = $(this).find('[name="name"]').val().trim();
+			var formUrl = $(this).find('[name="url"]').val().trim();
+			var formEmail = $(this).find('[name="email"]').val().trim();
+
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				success: function (data) {
+					var parsedData = JSON.parse(data);
+
+					blog.addComment(parsedData.hash, parsedData.date, formName, formUrl, parsedData.message);
+				}
+			});	
+
+			return false;
+		});
 	},
 
 	bindGAEvents: function () {
@@ -68,6 +90,21 @@ var blog = {
 				$('html').removeClass('search-mode')
 			}
 		});
+	},
+
+	addComment: function (hash, date, name, url, message) {
+		var template = document.getElementById('template--new-comment').innerHTML;
+
+		template = template.replace('@hash', hash)
+						   .replace('@date', date)
+						   .replace('@name', name)
+						   .replace('@message', message);
+
+		if (url != '') {
+			template = template.replace('@url', url);
+		}
+
+		$(template).insertBefore('.comments__new');
 	},
 
 	initSearch: function () {
