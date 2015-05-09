@@ -1,8 +1,7 @@
-$comment__avatar-size: 80px;
+$comment__avatar-size: 90px;
 
 %comments-constrain {
-	max-width: 650px;
-	margin: 0 auto;
+	max-width: 48000px;
 }
 
 .comments__separator {
@@ -25,9 +24,12 @@ $comment__avatar-size: 80px;
 	@extend .cf;
 	@extend %comments-constrain;
 
-	margin: 0 auto;
 	padding: 10px;
 	border: 1px solid $light-gray;
+
+	p {
+		line-height: 24px;
+	}
 }
 
 .comment + .comment {
@@ -35,9 +37,12 @@ $comment__avatar-size: 80px;
 }
 
 .comment__avatar {
-	width: $comment__avatar-size;
-	margin: 0 10px 0 0;
 	float: left;
+	width: $comment__avatar-size;
+}
+
+.comment__content-wrapper {
+	margin-left: $comment__avatar-size + 20px;
 }
 
 .comment__author {
