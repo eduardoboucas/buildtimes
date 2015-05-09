@@ -3,8 +3,8 @@
 	
 	<hr class="comments__separator">
 	<h2 class="comments__title">Comments</h2>
-	
-	{% for comment in site.data.comments[post_slug] %}
+
+	{% for comment in site.data.comments[post_slug] | sort: 0 %}
 		{% assign hash = comment[1].hash %}
 		{% assign name = comment[1].name %}
 		{% assign url = comment[1].url %}
