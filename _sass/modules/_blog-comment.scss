@@ -1,29 +1,18 @@
 $comment__avatar-size: 90px;
 
-%comments-constrain {
-	max-width: 48000px;
-}
-
 .comments__separator {
 	margin: 20px 0;
 	border-color: $light-gray;
 	border-width: 1px 0 0 0;
 }
 
-.comments__title {
-	text-transform: none;
-}
-
 .comments__new {
-	@extend %comments-constrain;
-
 	margin-top: 25px;
 }
 
 .comment {
 	@extend .cf;
-	@extend %comments-constrain;
-
+	
 	padding: 10px;
 	border: 1px solid $light-gray;
 
