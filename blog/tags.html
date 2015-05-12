@@ -36,7 +36,7 @@
 		<script>
 		window.addEventListener("load", function () {
 			if (window.location.hash != "") {
-				var tagId = "tag-" + window.location.hash.slice(1);
+				var tagId = window.location.hash.slice(1);
 				var tagObject = document.getElementById(tagId);
 				var attribute = document.createAttribute("open");
 				attribute.value = "open";
