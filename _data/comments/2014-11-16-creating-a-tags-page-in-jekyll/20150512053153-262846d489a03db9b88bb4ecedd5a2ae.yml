@@ -1,0 +1,5 @@
+name: "Ron"
+date: "May 12, 2015, 6:31 am"
+hash: 262846d489a03db9b88bb4ecedd5a2ae
+message: "<p>Your link to the tag on the tags page is not matching the link id on the tags page - so if I click on jekyll in the tags on an article about jekyll, it just takes me to  the top of the tags page - not to the jekyll tag. </p>
+<p>On the tag page the id is tag-0x0p+0g
