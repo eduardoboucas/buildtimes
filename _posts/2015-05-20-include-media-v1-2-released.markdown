@@ -7,7 +7,7 @@ tags: include-media sass media queries
 ---
 Five months ago, I released [include-media](http://include-media.com), a library for writing simple, elegant and maintainable media queries in Sass. What started as a simple solution to solve my own problems quickly became a tool used and discussed by fellow developers around the world.<!--more-->
 
-The beauty of making a project open sourced is that it gets out of your control in a way, becoming something with a life of its own. Bugs and fixes are now discovered and discussed by an entire community of developers, and the roadmap for future features is shaped to the needs and opinions of the collective rather than the author.
+The beauty of making a project open sourced is that it kind of gets out of your control in a way, becoming something with a life of its own. Bugs and fixes are now discovered and discussed by an entire community of developers, and the roadmap for future features is shaped by the needs and opinions of the collective rather than the author's.
 
 As a result, 1.2 was the first version of the library that has been released purely based on feedback from the community. Nothing major has changed, but I thought it'd be nice to write a post to accompany each release to keep everyone informed of what's happening with the project.
 
