@@ -1,6 +1,6 @@
 ---
 layout: external-post
-title:  "An Introduction to Static Site Generators"
+title:  "An introduction to static site generators"
 date:   2015-05-21 10:07:00
 categories: blog
 tags: jekyll static site generator
