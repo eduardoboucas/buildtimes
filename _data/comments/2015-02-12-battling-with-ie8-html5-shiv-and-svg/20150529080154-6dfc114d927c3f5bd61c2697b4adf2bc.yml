@@ -1,0 +1,5 @@
+name: "Tigt"
+date: "May 29, 2015, 9:01 am"
+hash: 6dfc114d927c3f5bd61c2697b4adf2bc
+url: "http://ti.gt/"
+message: "<p>Old IE is known to flip out with self-closing elements; try using <code>&lt;/path&gt;</code> to terminate, instead.</p>"
