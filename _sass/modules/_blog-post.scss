@@ -96,7 +96,8 @@
 .post__icon {
 	display: inline;
 	margin: 0;
-	width: 15px;	
+	width: 15px;
+	height: 15px;	
 }
 
 @include media('<tablet') {

@@ -15,11 +15,11 @@ layout: default
       <header class="post__header">
         <h1 class="post__title">{{ page.title }}</h1>
         <ul class="post__meta">
-          <li class="post__date"><img src="/assets/images/icons/time.svg" class="post__icon"/> {{ page.date | date: "%b %-d, %Y" }}</li>
+          <li class="post__date">{% include svg/use.html id="icn--time" class="post__icon" %} {{ page.date | date: "%b %-d, %Y" }}</li>
           {% if page.tags %}
-          <li class="post__tags"><img src="/assets/images/icons/tag.svg" class="post__icon"/> {% for tag in page.tags %} <em><a href="/blog/tags.html#tag-{{ tag }}">{{ tag }}</a></em>{% endfor %}</li>
+          <li class="post__tags">{% include svg/use.html id="icn--tag" class="post__icon" %} {% for tag in page.tags %} <em><a href="/blog/tags.html#tag-{{ tag }}">{{ tag }}</a></em>{% endfor %}</li>
           {% endif %}
-          <li class="post__permalink"><img src="/assets/images/icons/link.svg" class="post__icon"/> <a href="{{ page.url }}">Permalink</a></li>
+          <li class="post__permalink">{% include svg/use.html id="icn--link" class="post__icon" %} <a href="{{ page.url }}">Permalink</a></li>
         </ul>
       </header>
       <div class="post__body">

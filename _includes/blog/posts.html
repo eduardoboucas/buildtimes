@@ -11,13 +11,13 @@
           <h1 class="post__title"><a class="read-post" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
         {% endif %}
         <ul class="post__meta">
-          <li class="post__date"><img src="/assets/images/icons/time.svg" class="post__icon"/> {{ post.date | date: "%b %-d, %Y" }}</li>
+          <li class="post__date">{% include svg/use.html id="icn--time" class="post__icon" %} {{ post.date | date: "%b %-d, %Y" }}</li>
           {% if post.tags %}
-          <li class="post__tags"><img src="/assets/images/icons/tag.svg" class="post__icon"/> {% for tag in post.tags %} <em><a href="/blog/tags.html#tag-{{ tag }}">{{ tag }}</a></em>{% endfor %}</li>
+          <li class="post__tags">{% include svg/use.html id="icn--tag" class="post__icon" %} {% for tag in post.tags %} <em><a href="/blog/tags.html#tag-{{ tag }}">{{ tag }}</a></em>{% endfor %}</li>
           {% endif %}
 
           {% if post.external-url == null %}
-            <li class="post__permalink"><img src="/assets/images/icons/link.svg" class="post__icon"/> <a href="{{ post.url }}">Permalink</a></li>
+            <li class="post__permalink">{% include svg/use.html id="icn--link" class="post__icon" %} <a href="{{ post.url }}">Permalink</a></li>
           {% endif %}
         </ul>
       </header>
