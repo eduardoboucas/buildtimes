@@ -17,7 +17,10 @@ route: findme
 					<h1>Find me <span class="social__active-platform"></span></h1>
 					<div class="social__icons">
 						{% for platform in site.data.social %}
-							<a href="{{ platform.url }}" target="_blank"><img class="social__icon" data-title="{{ platform.name }}" src="{{ platform.icon }}"/></a>
+							<a href="{{ platform.url }}" target="_blank">
+							<svg class="social__icon" data-title="{{ platform.name }}">
+  								<use xlink:href="{{ platform.icon }}" />
+							</svg>
 						{% endfor %}
 					</div>
 					<p>... or drop me an <a href="mailto:mail@eduardoboucas.com">e-mail</a>.</p>

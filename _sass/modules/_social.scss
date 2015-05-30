@@ -9,11 +9,13 @@
 
 .social__icons {
 	margin-bottom: 15px;
+	font-size: 0;
 }
 
 .social__icon {
 	width: 80px;
-	margin: 0 10px;
+	height: 80px;
+	margin: 0 15px;
 }
 
 .social__active-platform {

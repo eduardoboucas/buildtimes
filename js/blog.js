@@ -1,12 +1,4 @@
 var blog = {
-	initComments: function (data) {
-		if (data.length > 0) {
-			$('#comments').html(data);	
-		} else {
-			$('#comments').html('<p>This post doesn\'t have any comments yet.</p>');
-		}
-	},
-
 	loadMorePosts: function () {
 		var _this = this;
 		var $blogContainer = $('#blog');
@@ -72,15 +64,11 @@ var blog = {
 
 					blog.addComment(parsedData.hash, parsedData.date, formName, formUrl, parsedData.message);
 				}
-			});	
+			});
+
+			ga('send', 'event', 'Comments', 'New comment');
 
 			return false;
-		});
-	},
-
-	bindGAEvents: function () {
-		$('section.comments form').submit(function () {
-			ga('send', 'event', 'Comments', 'New comment');
 		});
 	},
 
@@ -124,7 +112,6 @@ var blog = {
 
 		blog.bindKeys();
 		blog.bindUiEvents();
-		blog.bindGAEvents();
 		blog.initSearch();
 	}
 };
