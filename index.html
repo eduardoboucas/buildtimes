@@ -6,7 +6,8 @@ title: Index
 	<head>
 		{% include meta.html %}
 		{% include stylesheets.html %}
-		<script data-main="js/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+		{% include serviceWorker.html %}
+		<script data-main="js/main" src="/js/vendor/require.min.js"></script>
 	</head>
 
 	<body>
