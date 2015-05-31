@@ -36,11 +36,11 @@ var urlsToCache = [
     '/js/VideoLooper.js',
     '/assets/videos/Part1.mp4',
     '/assets/videos/Part2.mp4',
-    '/assets/videos/Part3.mp4'
+    '/assets/videos/Part3.mp4',
 
     // Typography
-    //'https://fonts.googleapis.com/css?family=Lato:400,700',
-    //'https://fonts.googleapis.com/css?family=Economica:700'
+    'https://fonts.googleapis.com/css?family=Lato:400,700',
+    'https://fonts.googleapis.com/css?family=Economica:700'
 ];
 
 self.addEventListener('install', function(event) {
@@ -51,7 +51,7 @@ self.addEventListener('install', function(event) {
 			.then(function(cache) {
 		    	console.log('* Opened cache');
 		    	return cache.addAll(urlsToCache).then(function () {
-		    		console.log('** [!] Files have been cached!');
+		    		console.log('* [!] Files have been cached!');
 		    	});
 		  	})
 		);
@@ -61,13 +61,12 @@ self.addEventListener('fetch', function(event) {
 	event.respondWith(
 		caches.match(event.request)
 			.then(function(response) {
-				// Cache hit - return response
 				if (response) {
-					console.log('** [CACHED]: ' + event.request.url);
+					console.log('* [CACHED]: ' + event.request.url);
 					return response;
 				}
 
-				console.log('** [Fetching]: ' + event.request.url);
+				console.log('* [Fetching]: ' + event.request.url);
 				return fetch(event.request);
 			}
 		)
