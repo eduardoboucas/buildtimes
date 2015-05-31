@@ -4,7 +4,7 @@ define([
 	'text!/../home.html'
 ], function ($, Backbone, HomeTemplate) {
 	var IndexView = Backbone.View.extend({
-		el : $('body'),
+		el : $('#main'),
 
 		initialize: function () {
 			$(window).on('resize', this.resizeVideo);
