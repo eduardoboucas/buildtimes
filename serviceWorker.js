@@ -36,11 +36,11 @@ var urlsToCache = [
     '/js/VideoLooper.js',
     '/assets/videos/Part1.mp4',
     '/assets/videos/Part2.mp4',
-    '/assets/videos/Part3.mp4',
+    '/assets/videos/Part3.mp4'
 
     // Typography
-    'https://fonts.googleapis.com/css?family=Lato:400,700',
-    'https://fonts.googleapis.com/css?family=Economica:700'
+    //'https://fonts.googleapis.com/css?family=Lato:400,700',
+    //'https://fonts.googleapis.com/css?family=Economica:700'
 ];
 
 self.addEventListener('install', function(event) {
