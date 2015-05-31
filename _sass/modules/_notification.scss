@@ -1,0 +1,30 @@
+.notification-wrapper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.notification {
+	display: inline-block;
+	border: 1px solid $light-gray;
+	padding: 10px 10px 0 5px;
+	margin-bottom: 10px;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		background-image: url('/assets/images/bust.png');
+		background-size: 100%;
+		margin-bottom: -2px;
+	}
+}
+
+.notification__copy {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 5px;
+}

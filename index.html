@@ -6,18 +6,19 @@ title: Index
 	<head>
 		{% include meta.html %}
 		{% include stylesheets.html %}
-		<script data-main="js/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+		{% include serviceWorker.html %}
+		<script data-main="js/main" src="/js/vendor/require.min.js"></script>
 	</head>
 
 	<body>
 		{% include svg/defs.html %}
-		<div id="content">
+		<div id="main">
 			<p class="loader">Hold on, let me grab a seat...</p>
 		</div>
 
 		<script src="js/VideoLooper.js"></script>
 		
 		<!-- Google Analytics -->
-		{% include googleAnalytics.html %}	
+		{% include googleAnalytics.html %}
 	</body>
 </html>
