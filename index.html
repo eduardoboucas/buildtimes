@@ -11,12 +11,16 @@ title: Index
 
 	<body>
 		{% include svg/defs.html %}
+
 		<div id="main">
 			<p class="loader">Hold on, let me grab a seat...</p>
 		</div>
 
 		<script src="js/VideoLooper.js"></script>
-		
+
+		<!-- Service Worker -->
+		{% include serviceWorker.html %}
+
 		<!-- Google Analytics -->
 		{% include googleAnalytics.html %}
 	</body>
