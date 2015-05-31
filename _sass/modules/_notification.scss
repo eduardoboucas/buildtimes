@@ -1,11 +1,16 @@
-.notification {
+.notification-wrapper {
 	position: fixed;
-	bottom: 20px;
-	left: 50%;
-	transform: translateX(-50%);
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.notification {
 	display: inline-block;
 	border: 1px solid $light-gray;
 	padding: 10px 10px 0 5px;
+	margin-bottom: 10px;
 
 	&:before {
 		content: '';
