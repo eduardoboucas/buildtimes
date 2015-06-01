@@ -1,0 +1,29 @@
+<div id="notification-wrapper" class="notification-wrapper"></div>
+
+<script>
+	window.showNotification = function (message) {
+		var notificationWrapper = document.getElementById('notification-wrapper');
+		var html = '';
+
+		html += '<div class="notification">';
+		html += '	<p class="notification__copy">' + message + '</p>';
+		html += '</div>';
+
+		notificationWrapper.innerHTML += html;
+
+		setTimeout(function () {
+			notificationWrapper.innerHTML = '';
+		}, 5000);
+	}
+
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/serviceWorker.js')
+			.then(function(registration) {
+				showNotification('Site cached for offline use. <a href="#">More info...</a>');
+				console.log('ServiceWorker registration successful');
+			})
+			.catch(function(err) {
+				console.log('ServiceWorker registration failed: ', err);
+			});
+	}	
+</script>

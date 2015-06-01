@@ -7,7 +7,7 @@ var blog = {
 
 		$(this).addClass('loading');
 
-		$.get('/blog/page' + nextPage + '/', function (data) {
+		$.get('/blog/page' + nextPage + '/index.html', function (data) {
 			var htmlData = $.parseHTML(data);
 			var $articles = $(htmlData).find('article');
 
