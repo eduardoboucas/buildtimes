@@ -19,7 +19,7 @@
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('/serviceWorker.js')
 			.then(function(registration) {
-				showNotification('Site cached for offline use. <a href="#">More info...</a>');
+				//showNotification('Site cached for offline use. <a href="#">More info...</a>');
 				console.log('ServiceWorker registration successful');
 			})
 			.catch(function(err) {
