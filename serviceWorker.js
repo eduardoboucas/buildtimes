@@ -25,7 +25,6 @@ var filesToCache = [
 	{% endif %}{% endfor %}
 
 	// Blog posts
-	'/blog',
 	'/feeds/search.json',
     {% for post in site.posts %}'{{ post.url }}',
 	{% endfor %}
@@ -47,6 +46,10 @@ self.addEventListener('fetch', function(event) {
 					console.log('* [Serving cached]: ' + event.request.url);
 					return response;
 				}
+
+                if (event.request.url.match('/blog[/]*$')) {
+                    return fetch('/blog/index.html');
+                }
 
 				console.log('* [Fetching]: ' + event.request.url);
 				return fetch(event.request);
