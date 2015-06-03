@@ -3,58 +3,39 @@ layout: null
 ---
 importScripts('js/vendor/serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'eduardoboucas.com-cache-v1';
-var urlsToCache = [
+var cacheName = 'eduardoboucas.com-cache-v2';
+var filesToCache = [
     // Stylesheets
     '/css/main.css',
 
-    // RequireJS files
-    '/js/app.js',
-    '/js/main.js',
-    '/js/router.js',
-    '/js/text.js',
-
-    // Error page
-	'/404.html',
+    // Pages and assets
+    {% for page in site.html_pages %}
+    '{{ page.url }}',{% endfor %}
     '/assets/images/glitch.png',
+	'/assets/images/drawing.png',  
+	'/assets/images/bust.png',
+	'/assets/images/background.gif',
 
-    // Pages and essential assets
-    '/index.html',
-    '/home.html',
-    '/about.html',
-    '/assets/images/drawing.png',
-    '/findme.html',
+	// Portfolio pages
+    {% for project in site.portfolio %}'{{ project.url }}',
+    {% endfor %}    
 
-    // Portfolio assets
-    '/portfolio.html',
-    {% for project in site.portfolio %}'/assets/images/portfolio/thumbnails/{{ project.thumbnail }}',
-    '/assets/images/portfolio/screenshots/{{ project.screenshot }}',
-    '/portfolio/{{ project.handle }}.html',
-    {% endfor %}
+    // JS files, Portfolio assets and main video
+	{% for file in site.static_files %}{% if file.extname == '.js' or file.path contains '/portfolio/screenshots' or file.path contains '/portfolio/thumbnails' %}'{{ file.path }}',
+	{% endif %}{% endfor %}
 
-    // Video
-    '/js/VideoLooper.js',
-    '/assets/videos/Part1.mp4',
-    '/assets/videos/Part2.mp4',
-    '/assets/videos/Part3.mp4'
-
-    // Typography
-    //'https://fonts.googleapis.com/css?family=Lato:400,700',
-    //'https://fonts.googleapis.com/css?family=Economica:700'
+	// Blog posts
+	'/feeds/search.json',
+    {% for post in site.posts %}'{{ post.url }}',
+	{% endfor %}
 ];
 
 self.addEventListener('install', function(event) {
-	console.log('* Installing Service Worker...');
-
 	event.waitUntil(
-		caches.open(CACHE_NAME)
-			.then(function(cache) {
-		    	console.log('* Opened cache');
-		    	return cache.addAll(urlsToCache).then(function () {
-		    		console.log('* [!] Files have been cached!');
-		    	});
-		  	})
-		);
+		caches.open(cacheName).then(function(cache) {
+			return cache.addAll(filesToCache);
+		})
+	);
 });
 
 self.addEventListener('fetch', function(event) {
@@ -62,9 +43,13 @@ self.addEventListener('fetch', function(event) {
 		caches.match(event.request)
 			.then(function(response) {
 				if (response) {
-					console.log('* [CACHED]: ' + event.request.url);
+					console.log('* [Serving cached]: ' + event.request.url);
 					return response;
 				}
+
+                if (event.request.url.match('/blog[/]*$')) {
+                    return fetch('/blog/index.html');
+                }
 
 				console.log('* [Fetching]: ' + event.request.url);
 				return fetch(event.request);
