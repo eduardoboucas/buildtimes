@@ -43,23 +43,22 @@ self.addEventListener('fetch', function(event) {
 
     if (requestUrl.host == 'fonts.gstatic.com') {
         event.respondWith(
-            caches.match(event.request)
-                .then(function (match) {
-                    if (match) {
-                        console.log('* [Serving cached font]: ' + event.request.url);
-                        return match;
-                    }
+            caches.open('eduardoboucas.com-fonts')
+                .then(function (cache) {
+                    return cache.match(event.request).then(function (match) {
+                        if (match) {
+                            console.log('[*] Serving cached font: ' + event.request.url);
 
-                    return fetch(event.request.clone())
-                            .then(function (response) {
-                                caches.open('eduardoboucas.com-fonts')
-                                    .then(function (cache) {
-                                        console.log('[*] Adding font to cache: ' + event.request.url);
-                                        cache.put(event.request, response.clone());
+                            return match;
+                        }
 
-                                        return response;
-                                    })
-                            });
+                        return fetch(event.request).then(function (response) {
+                            cache.put(event.request, response.clone());
+                            console.log('[*] Adding font to cache: ' + event.request.url);
+
+                            return response;
+                        });
+                    });
                 })
         );
     } else {
