@@ -39,6 +39,11 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
+	var requestUrl = new URL(event.request.url);
+
+	// Handling Google Fonts
+	//if (requestUrl.host == 'fonts.gstatic.com') {}
+
 	event.respondWith(
 		caches.match(event.request)
 			.then(function(response) {
@@ -47,12 +52,19 @@ self.addEventListener('fetch', function(event) {
 					return response;
 				}
 
-                if (event.request.url.match('/blog[/]*$')) {
+				// Redirecting /blog to /blog/index.html
+                if ((requestUrl.pathname == '/blog') || (requestUrl.pathname == '/blog/')) {
                     return fetch('/blog/index.html');
                 }
 
 				console.log('* [Fetching]: ' + event.request.url);
-				return fetch(event.request);
+				return fetch(event.request).then(function (response) {
+					caches.open('eduardoboucas.com-fonts').then(function (cache) {
+						cache.put(event.request.clone(), response.clone());
+					});
+
+					return response;
+				});
 			}
 		)
 	);
