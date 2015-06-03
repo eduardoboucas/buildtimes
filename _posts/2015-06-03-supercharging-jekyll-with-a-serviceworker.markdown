@@ -166,6 +166,10 @@ The `install` event is fired when the ServiceWorker is triggered for the first t
 
 The star of the show, however, is our `fetch` event, which gets fired whenever a request is made. When we intercept the request, we can check if the file exists in the cache — if it does, we can serve a cached version, otherwise we request it from the network.
 
+## Dealing with Google Fonts
+
+
+
 ## Demo
 
 Here's a quick demo of the thing working. 
@@ -176,6 +180,6 @@ Here's a quick demo of the thing working.
 
 The implementation described in this article is just my first experimentation with a ServiceWorker, but I will most likely tweak things as I go along. For example, it probably doesn't make sense to cache all the posts, as they'll eventually be too many. Instead, it might be better to cache a limited number of posts (the three most recent pages?) along with their assets. That's probably a better experience for the user.
 
-Unfortunately, all this is not for everyone just yet. The ServiceWorker is on Chrome, but the Cache API is yet to be nativelty supported. Firefox is working on its implementation as well and, as for the other browsers, we'll have to wait and see. I would absolutely love to see this available on mobile browsers where all this stuff could be used to its full potential — that's already possible on Mobile Chrome (Android), but who knows when (and if) it'll land on iOS.
+Unfortunately, all this is not for everyone just yet. The ServiceWorker is on Chrome, but the Cache API is yet to be natively supported. Firefox is working on its implementation as well and, as for the other browsers, we'll have to wait and see. I would absolutely love to see this available on mobile browsers where all this stuff could be used to its full potential — that's already possible on Mobile Chrome (Android), but who knows when (and if) it'll land on iOS.
 
 Come one, browsers. Let's move the web forward! We're all here waiting anxiously.<!--tomb-->
