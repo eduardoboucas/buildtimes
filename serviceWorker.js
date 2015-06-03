@@ -39,21 +39,61 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-	event.respondWith(
-		caches.match(event.request)
-			.then(function(response) {
-				if (response) {
-					console.log('* [Serving cached]: ' + event.request.url);
-					return response;
-				}
+	var requestUrl = new URL(event.request.url);
 
-                if (event.request.url.match('/blog[/]*$')) {
-                    return fetch('/blog/index.html');
+    if (requestUrl.host == 'fonts.gstatic.com') {
+        event.respondWith(
+            caches.match(event.request)
+                .then(function (match) {
+                    if (match) {
+                        console.log('* [Serving cached font]: ' + event.request.url);
+                        return match;
+                    }
+
+                    return fetch(event.request.clone())
+                            .then(function (response) {
+                                caches.open('eduardoboucas.com-fonts')
+                                    .then(function (cache) {
+                                        console.log('[*] Adding font to cache: ' + event.request.url);
+                                        cache.put(event.request, response.clone());
+
+                                        return response;
+                                    })
+                            });
+                })
+        );
+    } else {
+        event.respondWith(
+            caches.match(event.request)
+                .then(function(match) {
+                    if (match) {
+                        console.log('* [Serving cached]: ' + event.request.url);
+                        return match;
+                    }
+
+                    // Redirecting /blog to /blog/index.html
+                    if ((requestUrl.pathname == '/blog') || (requestUrl.pathname == '/blog/')) {
+                        return fetch('/blog/index.html');
+                    }
+
+                    console.log('* [Fetching]: ' + event.request.url);
+                    return fetch(event.request);
                 }
-
-				console.log('* [Fetching]: ' + event.request.url);
-				return fetch(event.request);
-			}
-		)
-	);
+            )
+        );
+    }
 });
+
+/**
+*
+* Taken from https://github.com/jakearchibald/svgomg/blob/master/src/js/sw/index.js
+*
+**/
+/*async function handleFontRequest(request) {
+  var match = await caches.match(request);
+  if (match) return match;
+  var response = await fetch(request.clone());
+  var fontCache = await caches.open('eduardoboucas.com-fonts');
+  fontCache.put(request, response.clone());
+  return response;
+}*/
