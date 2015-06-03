@@ -82,17 +82,3 @@ self.addEventListener('fetch', function(event) {
         );
     }
 });
-
-/**
-*
-* Taken from https://github.com/jakearchibald/svgomg/blob/master/src/js/sw/index.js
-*
-**/
-/*async function handleFontRequest(request) {
-  var match = await caches.match(request);
-  if (match) return match;
-  var response = await fetch(request.clone());
-  var fontCache = await caches.open('eduardoboucas.com-fonts');
-  fontCache.put(request, response.clone());
-  return response;
-}*/
