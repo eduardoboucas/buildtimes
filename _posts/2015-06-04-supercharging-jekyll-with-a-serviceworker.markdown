@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Supercharging Jekyll with a ServiceWorker"
-date:   2015-06-03 09:30:00
+date:   2015-06-04 19:30:00
 categories: blog
 tags: serviceworker javascript jekyll offline cache
 ---
@@ -168,7 +168,9 @@ The star of the show, however, is our `fetch` event, which gets fired whenever a
 
 ## Dealing with Google Fonts
 
-Caching external font files from third-party providers, in my case Google Fonts, can be a bit tricky. At first, I tried to just include the URLs for the fonts on the list of files to cache (e.g. `https://fonts.googleapis.com/css?family=Lato:400,700`), which throws an error because it involves a redirect and that's considered unsecure. That redirect happens because Google Fonts API does some User Agent sniffing to determine which file format to serve. For example, when I open the URL above on my browser I get something like this:
+Caching external font files from third-party providers, in my case Google Fonts, can be a bit tricky. At first, I tried to just include the URLs for the fonts on the list of files to cache (e.g. `https://fonts.googleapis.com/css?family=Lato:400,700`), which throws an error because it involves a redirect and that's considered unsecure. That redirect happens because Google Fonts API does some User Agent sniffing to determine which file format to serve. 
+
+For example, when I open the URL above on my browser I get something like this:
 
 {% highlight css linenos %}
 @font-face {
@@ -180,7 +182,9 @@ Caching external font files from third-party providers, in my case Google Fonts,
 }
 {% endhighlight %}
 
-Because I'm running the most recent version of Chrome, it serves me a WOFF2 font file. Now, I could simply take that URL and add it to the ServiceWorker and it should work fine, because that's a direct link and not a redirect anymore. The problem with that approach is that I would be caching a font format that not everyone can see. Another option would be to download the files and store them locally, but I don't want to start moving things from CDNs back to the server.
+Because I'm running the most recent version of Chrome, it serves me a WOFF2 font file. Now, I could simply take that URL and add it to the ServiceWorker and it should work fine, because that's a direct link and not a redirect anymore. The problem with that approach is that I would be caching a font format that not everyone can see. 
+
+Another option would be to download the files and store them locally, but I don't want to start moving things from CDNs back to the server.
 
 A more elegant solution is to cache the fonts at a later stage and not during the installation process. We can use the `fetch` event to sniff all the requests and detect when a request for a font has been made and simply cache that file — instead of going "let's cache the WOFF2 version and hope that users support it", we go "let's wait to see what font files they need and cache them for future visits".
 
@@ -220,9 +224,9 @@ self.addEventListener('fetch', function(event) {
 
 ## Demo
 
-Here's a demo of the thing working. It's good because you get to see the ServiceWorker in action even if you're not running a recent version of Chrome — actually, not that good because I'm terrible with screencasts.
+Here's a demo of the thing working. It's good because you get to see the ServiceWorker in action even if you're not running a recent version of Chrome, but bad because I'm terrible with screencasts.
 
-{% include video url="https://www.youtube.com/embed/9nCGEhwtSgI" width="420" height="315" %}
+{% include video url="https://www.youtube.com/embed/wCoUZXBlJWI" width="420" height="315" %}
 
 The console errors I've mentioned are caused by calls to Google Analytics and there's a really elegant way of handling this. [This sample](https://googlechrome.github.io/samples/service-worker/offline-analytics/) shows how those calls can be stored in IndexedDB and sent to the server once a working internet connection is found. Yes, this means having analytics for offline visits, how cool is that?
 
