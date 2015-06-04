@@ -168,13 +168,63 @@ The star of the show, however, is our `fetch` event, which gets fired whenever a
 
 ## Dealing with Google Fonts
 
+Caching external font files from third-party providers, in my case Google Fonts, can be a bit tricky. At first, I tried to just include the URLs for the fonts on the list of files to cache (e.g. `https://fonts.googleapis.com/css?family=Lato:400,700`), which throws an error because it involves a redirect and that's considered unsecure. That redirect happens because Google Fonts API does some User Agent sniffing to determine which file format to serve. For example, when I open the URL above on my browser I get something like this:
 
+{% highlight css linenos %}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/8qcEw_nrk_5HEcCpYdJu8BTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+{% endhighlight %}
+
+Because I'm running the most recent version of Chrome, it serves me a WOFF2 font file. Now, I could simply take that URL and add it to the ServiceWorker and it should work fine, because that's a direct link and not a redirect anymore. The problem with that approach is that I would be caching a font format that not everyone can see. Another option would be to download the files and store them locally, but I don't want to start moving things from CDNs back to the server.
+
+A more elegant solution is to cache the fonts at a later stage and not during the installation process. We can use the `fetch` event to sniff all the requests and detect when a request for a font has been made and simply cache that file — instead of going "let's cache the WOFF2 version and hope that users support it", we go "let's wait to see what font files they need and cache them for future visits".
+
+Here's how we can modify our ServiceWorker to do just that:
+
+{% highlight javascript linenos %}
+self.addEventListener('fetch', function(event) {
+    var requestUrl = new URL(event.request.url);
+
+    // Is this a request for a font?
+    if (requestUrl.host == 'fonts.gstatic.com') {
+        event.respondWith(
+            caches.open('eduardoboucas.com-fonts')
+                .then(function (cache) {
+                    return cache.match(event.request).then(function (match) {
+                        if (match) {
+                            console.log('[*] Serving cached font: ' + event.request.url);
+
+                            return match;
+                        }
+
+                        return fetch(event.request).then(function (response) {
+                            cache.put(event.request, response.clone());
+                            console.log('[*] Adding font to cache: ' + event.request.url);
+
+                            return response;
+                        });
+                    });
+                })
+        );
+    } else {
+        // It's not a font, handle the request normally
+        // as we were doing before
+    }
+});
+{% endhighlight %}
 
 ## Demo
 
-Here's a quick demo of the thing working. 
+Here's a demo of the thing working. It's good because you get to see the ServiceWorker in action even if you're not running a recent version of Chrome — actually, not that good because I'm terrible with screencasts.
 
 {% include video url="https://www.youtube.com/embed/9nCGEhwtSgI" width="420" height="315" %}
+
+The console errors I've mentioned are caused by calls to Google Analytics and there's a really elegant way of handling this. [This sample](https://googlechrome.github.io/samples/service-worker/offline-analytics/) shows how those calls can be stored in IndexedDB and sent to the server once a working internet connection is found. Yes, this means having analytics for offline visits, how cool is that?
 
 ## Final thoughts
 
