@@ -34,6 +34,11 @@
 			padding-left: 10px;			
 		}
 	}
+
+	iframe {
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 .post__body,
@@ -119,4 +124,18 @@
 // Embedded tweet
 .twitter-tweet {
 	margin: 30px auto !important;
+}
+
+.post__video-wrapper {
+	position: relative;
+	height: 0;
+	margin-bottom: 20px;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 }
