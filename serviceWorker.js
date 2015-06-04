@@ -27,7 +27,9 @@ var filesToCache = [
 	// Blog posts
 	'/feeds/search.json',
     {% for post in site.posts %}'{{ post.url }}',
-	{% endfor %}
+	{% endfor %},
+
+    'https://fonts.googleapis.com/css?family=Economica:700'
 ];
 
 self.addEventListener('install', function(event) {
