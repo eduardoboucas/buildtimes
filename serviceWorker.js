@@ -29,6 +29,7 @@ var filesToCache = [
     {% for post in site.posts %}'{{ post.url }}',
 	{% endfor %},
 
+    'https://fonts.googleapis.com/css?family=Lato:400,700',
     'https://fonts.googleapis.com/css?family=Economica:700'
 ];
 
