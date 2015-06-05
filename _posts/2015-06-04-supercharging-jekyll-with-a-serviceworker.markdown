@@ -55,7 +55,7 @@ Right, let's get to the implementation then. The first step is to register a Ser
 <!-- serviceWorker.html -->
 <script>
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('/sw.js').then(function(reg) {
+	navigator.serviceWorker.register('/serviceWorker.js').then(function(reg) {
 	    if (!reg.installing) return;
 	    console.log("[*] ServiceWorker is installing...");
 
