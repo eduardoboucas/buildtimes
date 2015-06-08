@@ -5,7 +5,7 @@ date:   2015-06-08 12:23:00
 categories: blog
 tags: include-media sass media queries
 ---
-Version 1.3 of [include-media](http://include-media.com) is out and I'm quite excited to say it's quite a big one. For the past couple of weeks, [Hugo Giraudel](http://hugogiraudel.com/) has been doing some of his Sass wizardry on the project, refactoring some parts and adding new features.<!--more-->
+Version 1.3 of [include-media](http://include-media.com) is out and I'm excited to say it's quite a big one. For the past couple of weeks, [Hugo Giraudel](http://hugogiraudel.com/) has been doing some of his Sass wizardry on the project, refactoring some parts and adding new features.<!--more-->
 
 If you ever read an article about Sass, there's a good chance that it was written by Hugo. He authors and maintains projects like [Sass Guidelines](http://sass-guidelin.es/), [SassDoc](http://sassdoc.com/), [Sass Compatibility](http://sass-compatibility.github.io/) and [others](https://github.com/HugoGiraudel/awesome-sass), so it was a no-brainer when he told me that he started using include-media on a big project and that he had a couple of ideas on how to improve it.
 
