@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "include-media v1.3 released"
-date:   2015-06-07 14:30:00
+date:   2015-06-08 12:23:00
 categories: blog
 tags: include-media sass media queries
 ---
