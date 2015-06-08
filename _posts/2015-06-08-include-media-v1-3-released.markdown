@@ -13,7 +13,9 @@ The keyword for what we've been doing is *simplicity*. Some big parts of the log
 
 ## Content-specific breakpoints (or tweakpoints)
 
-With content-specific media queries — or tweakpoints, as coined by [Jeremy Keith on Adactio](https://adactio.com/journal/6044) — you can refer to breakpoints or media expressions that only exist within a certain module or component. In its essence, the idea is the same as defining on-the-fly breakpoints, where breakpoint values that only make sense for a certain element shouldn't pollute the global breakpoint list. However, it takes it one step further and allow those values to be defined an reused multiple times within the component. Here's an example.
+With content-specific media queries — or tweakpoints, as coined by [Jeremy Keith on Adactio](https://adactio.com/journal/6044) — you can refer to breakpoints or media expressions that only exist within a certain module or component. In its essence, the idea is the same as defining on-the-fly breakpoints, where breakpoint values that only make sense for a certain element shouldn't pollute the global breakpoint list. However, it takes it one step further and allow those values to be defined an reused multiple times within the component. 
+
+Here's an example.
 
 {% highlight sass linenos %}
 // _my-component.scss
@@ -47,7 +49,7 @@ Hugo initially wrote about this on [his SitePoint article](http://www.sitepoint.
 
 ## Ligatured operators
 
-This might seem a small one, but it follows the library's key principle of a clean and natural syntax. As of v1.3, the `<=` and `>=` operators can be replaced by the `≤` and `≥` operators.
+This might seem a small one, but it follows the library's key principle of a clean and natural syntax. As of v1.3, the `≤` and `≥` operators can be used can be used in conjunction with the previous `<=` and `>=` ones.
 
 {% highlight sass linenos %}
 @include media('≥phone', '≤tablet') {
