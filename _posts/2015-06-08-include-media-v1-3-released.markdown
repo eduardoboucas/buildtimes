@@ -17,7 +17,7 @@ With content-specific media queries — or tweakpoints, as coined by [Jeremy Kei
 
 Here's an example.
 
-{% highlight sass linenos %}
+{% highlight scss linenos %}
 // _my-component.scss
 @include media-context(('custom': 678px)) {
     .my-component {
@@ -51,7 +51,7 @@ Hugo initially wrote about this on [his SitePoint article](http://www.sitepoint.
 
 This might seem a small one, but it follows the library's key principle of a clean and natural syntax. As of v1.3, the `≤` and `≥` operators can be used can be used in conjunction with the previous `<=` and `>=` ones.
 
-{% highlight sass linenos %}
+{% highlight scss linenos %}
 @include media('≥phone', '≤tablet') {
     color: tomato;
 }
