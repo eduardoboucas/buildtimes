@@ -13,7 +13,7 @@ The keyword for what we've been doing is *simplicity*. Some big parts of the log
 
 ## Content-specific breakpoints (or tweakpoints)
 
-With content-specific media queries — or tweakpoints, as coined by Hugo on [his SitePoint article](http://www.sitepoint.com/breakpoints-tweakpoints-sass/) — you can refer to breakpoints or media expressions that only exist within a certain module or component. In its essence, the idea is the same as defining on-the-fly breakpoints, where breakpoint values that only make sense for a certain element shouldn't pollute the global breakpoint list. However, it takes it one step further and allow those values to be defined an reused multiple times within the component. Here's an example.
+With content-specific media queries — or tweakpoints, as coined by [Jeremy Keith on Adactio](https://adactio.com/journal/6044) — you can refer to breakpoints or media expressions that only exist within a certain module or component. In its essence, the idea is the same as defining on-the-fly breakpoints, where breakpoint values that only make sense for a certain element shouldn't pollute the global breakpoint list. However, it takes it one step further and allow those values to be defined an reused multiple times within the component. Here's an example.
 
 {% highlight sass linenos %}
 // _my-component.scss
@@ -43,6 +43,8 @@ With content-specific media queries — or tweakpoints, as coined by Hugo on [hi
 }
 {% endhighlight %}
 
+Hugo initially wrote about this on [his SitePoint article](http://www.sitepoint.com/breakpoints-tweakpoints-sass/) and now it's available on include-media.
+
 ## Ligatured operators
 
 This might seem a small one, but it follows the library's key principle of a clean and natural syntax. As of v1.3, the `<=` and `>=` operators can be replaced by the `≤` and `≥` operators.
@@ -62,9 +64,9 @@ This way, any expression can be written with just a single-character operator.
 
 ## Improved development workflow
 
-We used to Grunt, but now we Gulp. Gulp is automating a lot of things for us now, such as generating and publishing the latest SassDoc document, automatically printing the library version on the distribution file, or running some tests (more on this in a second).
+We used to Grunt, but now we Gulp. Gulp is automating a lot of things for us now, such as generating and publishing the latest [SassDoc document](http://include-media.com/documentation/), automatically printing the library version on the distribution file, or running some tests (more on this in a second).
 
-There's also a new [CONTRIBUTING.md](https://github.com/eduardoboucas/include-media/blob/master/CONTRIBUTING.md) which is a great reference for people that wish to contribute to the project (which we obviously welcome!).
+There's also a new [CONTRIBUTING.md](https://github.com/eduardoboucas/include-media/blob/master/CONTRIBUTING.md) file which is a great reference for people that wish to contribute to the project (which we obviously welcome!).
 
 ## Testing and QA
 
