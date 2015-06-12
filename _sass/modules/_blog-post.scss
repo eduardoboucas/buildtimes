@@ -3,6 +3,8 @@
 }
 
 .post__body {
+	word-wrap: break-word;
+	
 	>p:first-of-type {
 		@extend .dropped-cap;	
 	}
