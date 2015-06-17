@@ -126,6 +126,11 @@
 	margin: 30px auto !important;
 }
 
+// Embedded CodePen
+iframe[src*="codepen"] {
+	margin-bottom: 15px;
+}
+
 .post__video-wrapper {
 	position: relative;
 	height: 0;
