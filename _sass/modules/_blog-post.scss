@@ -3,6 +3,8 @@
 }
 
 .post__body {
+	word-wrap: break-word;
+	
 	>p:first-of-type {
 		@extend .dropped-cap;	
 	}
@@ -131,6 +133,7 @@ iframe[src*="codepen"] {
 	margin-bottom: 15px;
 }
 
+// Embedded video
 .post__video-wrapper {
 	position: relative;
 	height: 0;

@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "include-media v1.3 released"
-date:   2015-06-07 14:30:00
+date:   2015-06-08 12:23:00
 categories: blog
 tags: include-media sass media queries
 ---
-Version 1.3 of [include-media](http://include-media.com) is out and I'm quite excited to say it's quite a big one. For the past couple of weeks, [Hugo Giraudel](http://hugogiraudel.com/) has been doing some of his Sass wizardry on the project, refactoring some parts and adding new features.<!--more-->
+Version 1.3 of [include-media](http://include-media.com) is out and I'm excited to say it's quite a big one. For the past couple of weeks, [Hugo Giraudel](http://hugogiraudel.com/) has been doing some of his Sass wizardry on the project, refactoring some parts and adding new features.<!--more-->
 
 If you ever read an article about Sass, there's a good chance that it was written by Hugo. He authors and maintains projects like [Sass Guidelines](http://sass-guidelin.es/), [SassDoc](http://sassdoc.com/), [Sass Compatibility](http://sass-compatibility.github.io/) and [others](https://github.com/HugoGiraudel/awesome-sass), so it was a no-brainer when he told me that he started using include-media on a big project and that he had a couple of ideas on how to improve it.
 
@@ -13,9 +13,11 @@ The keyword for what we've been doing is *simplicity*. Some big parts of the log
 
 ## Content-specific breakpoints (or tweakpoints)
 
-With content-specific media queries — or tweakpoints, as coined by [Jeremy Keith on Adactio](https://adactio.com/journal/6044) — you can refer to breakpoints or media expressions that only exist within a certain module or component. In its essence, the idea is the same as defining on-the-fly breakpoints, where breakpoint values that only make sense for a certain element shouldn't pollute the global breakpoint list. However, it takes it one step further and allow those values to be defined an reused multiple times within the component. Here's an example.
+With content-specific media queries — or tweakpoints, as coined by [Jeremy Keith on Adactio](https://adactio.com/journal/6044) — you can refer to breakpoints or media expressions that only exist within a certain module or component. In its essence, the idea is the same as defining on-the-fly breakpoints, where breakpoint values that only make sense for a certain element shouldn't pollute the global breakpoint list. However, it takes it one step further and allow those values to be defined an reused multiple times within the component. 
 
-{% highlight sass linenos %}
+Here's an example.
+
+{% highlight scss linenos %}
 // _my-component.scss
 @include media-context(('custom': 678px)) {
     .my-component {
@@ -47,9 +49,9 @@ Hugo initially wrote about this on [his SitePoint article](http://www.sitepoint.
 
 ## Ligatured operators
 
-This might seem a small one, but it follows the library's key principle of a clean and natural syntax. As of v1.3, the `<=` and `>=` operators can be replaced by the `≤` and `≥` operators.
+This might seem a small one, but it follows the library's key principle of a clean and natural syntax. As of v1.3, the `≤` and `≥` operators can be used can be used in conjunction with the previous `<=` and `>=` ones.
 
-{% highlight sass linenos %}
+{% highlight scss linenos %}
 @include media('≥phone', '≤tablet') {
     color: tomato;
 }
