@@ -7,9 +7,9 @@ tags: responsive viewport typography sass
 ---
 Viewport units for typography are quite a cool toy to have in your responsive web design toolbox, as they allow you to size fonts relatively to the dimensions of the viewport.<!--more--> If you've never used them before, [Chris Coyier's article](https://css-tricks.com/viewport-sized-typography/) is probably a good place to start.
 
-These units can produce really interesting results, especially on full-bleed websites on huge screens — however, they must be used with caution. From my experience, there's always a point where the font becomes unreadable on small screens, and sometimes too big on large screens. I end up setting a couple of media queries to set some boundaries on where the viewport units kick in.
+These units can produce really interesting results, but they must be used with caution. From my experience, there's always a point where the font becomes unreadable on small screens, and sometimes too big on large screens. I end up setting a couple of media queries to set some boundaries on where the viewport units kick in.
 
-As a result, I created a Sass mixin that abstracts what I wish you could more naturally in CSS: use viewport units and specify a minimum and a maximum size for the font. It takes the viewport based size, a minimum value (in pixels), an optional maximum value (in pixels as well) and an optional fallback, in whatever units you prefer, for [browsers that don't support viewport units](http://caniuse.com/#feat=viewport-units).
+As a result, I created a Sass mixin that abstracts what I wish you could more naturally in CSS: specify a minimum and a maximum size for the font while still using viewport based units. The mixin takes the viewport based size, a minimum value (in pixels), an optional maximum value (in pixels as well) and an optional fallback value, in whatever units you prefer, for [browsers that don't support viewport units](http://caniuse.com/#feat=viewport-units).
 
 {% highlight scss linenos %}
 ///
@@ -59,7 +59,7 @@ As a result, I created a Sass mixin that abstracts what I wish you could more na
 }
 {% endhighlight %}
 
-**Caveat:** It only works for `vw` or `vh` units; `vmin` or `vmax` are not supported.
+**Caveat:** `vw` or `vh` units work, `vmin` or `vmax` don't.
 
 Here's a pen showing the effect.
 
