@@ -29,14 +29,8 @@ As a result, I created a Sass mixin that abstracts what I wish you could more na
 ///  @include responsive-font(5vw, 35px, 150px, 50px);
 ///
 @mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
-  $responsive-unitless: $responsive / 1vw;
-  $dimension: 'width';  
-  
-  @if unit($responsive) == 'vh' {
-    $responsive-unitless: $responsive / 1vh;
-    $dimension: 'height';
-  }
-  
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
   $min-breakpoint: $min / $responsive-unitless * 100;
   
   @media (max-#{$dimension}: #{$min-breakpoint}) {
