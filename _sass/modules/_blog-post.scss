@@ -128,6 +128,11 @@
 	margin: 30px auto !important;
 }
 
+// Embedded CodePen
+iframe[src*="codepen"] {
+	margin-bottom: 15px;
+}
+
 // Embedded video
 .post__video-wrapper {
 	position: relative;
