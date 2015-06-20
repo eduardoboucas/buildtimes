@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Viewport sized typography with minimum and maximum sizes"
-date:   2016-06-18 09:28:00
+date:   2015-06-18 09:28:00
 categories: blog
 tags: responsive viewport typography sass
 ---
