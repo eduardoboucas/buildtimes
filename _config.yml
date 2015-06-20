@@ -50,3 +50,6 @@ defaults:
       enable_comments: true
 
 excerpt_separator: <!--more-->
+
+gems:
+  - jekyll-redirect-from
