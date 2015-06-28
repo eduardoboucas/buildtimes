@@ -15,9 +15,5 @@
         <link rel="next" href="{{ site.site_url }}{{ site.blog_url }}/page{{ paginator.next_page }}" />
     {% endif %}
 
-    {% if include.getcomments %}
-        {% include blog/scripts.html getcomments="true" %}
-    {% else %}
-        {% include blog/scripts.html %}
-    {% endif %}
+    {% include blog/scripts.html %}
 </head>

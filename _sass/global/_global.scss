@@ -222,6 +222,10 @@ textarea {
   &.honey {
     display: none;
   }
+
+  &[disabled] {
+    opacity: 0.3;
+  }
 }
 
 textarea {
