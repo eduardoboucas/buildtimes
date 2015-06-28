@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Exporting breakpoints to JavaScript with include-media"
+title:  "Exporting breakpoints from CSS to JavaScript with include-media"
 date:   2016-06-29 09:28:00
 categories: blog
 tags: include-media sass javascript json
