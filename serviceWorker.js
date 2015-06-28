@@ -3,7 +3,7 @@ layout: null
 ---
 importScripts('js/vendor/serviceworker-cache-polyfill.js');
 
-var cacheName = 'eduardoboucas.com-cache-v2';
+var cacheName = 'eduardoboucas.com-cache-v3';
 var filesToCache = [
     // Stylesheets
     '/css/main.css',
