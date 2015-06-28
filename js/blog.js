@@ -59,6 +59,7 @@ var blog = {
 			$fields.attr('disabled', 'disabled');
 			
 			var spinner = blog.spin($(this).get(0));
+			var form = $(this).get(0);
 
 			$.ajax({
 				type: "POST",
@@ -69,6 +70,7 @@ var blog = {
 					spinner.stop();
 					blog.addComment(parsedData.hash, parsedData.date, formName, formUrl, parsedData.message);
 					$fields.removeAttr('disabled');
+					form.reset();
 				}
 			});
 
