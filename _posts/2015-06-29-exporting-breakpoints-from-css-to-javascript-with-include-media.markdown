@@ -77,3 +77,5 @@ By default, the JavaScript will read from the DOM element and parse the JSON eve
 However, this might become expensive when polling too many times — the code above is a good example for that, because we're querying the library every time the resize event fires, which is not a good idea even if we debounce the function.
 
 The library allows the developer to handle the updating, by calling `im.setUpdateMode('manual')` to cache the JSON string and `im.update()` to update it.<!--tomb-->
+
+**[include-media-export on GitHub](https://github.com/eduardoboucas/include-media-export)**
