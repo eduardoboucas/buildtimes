@@ -48,7 +48,7 @@ Anyway, back to our conundrum. It would be great if we could still declare the b
 
 ## Exporting breakpoints to JavaScript
 
-[This plugin](https://github.com/eduardoboucas/include-media/plugins/include-media-export) consists of a bit of Sass that automatically exports your breakpoints to a hidden element in the DOM (by default, `body::after`), and a small JavaScript library that allows us to query them.
+[This plugin](https://github.com/eduardoboucas/include-media-export) consists of a bit of Sass that automatically exports your breakpoints to a hidden element in the DOM (by default, `body::after`), and a small JavaScript library that allows us to query them.
 
 To get started, we just need to import the plugin file into the Sass project and call the JavaScript code somewhere (does not require jQuery or any other library).
 
@@ -70,7 +70,7 @@ function isSticky() {
 }
 {% endhighlight %}
 
-## Choosing the update mode
+## Controlling the update process
 
 By default, the JavaScript will read from the DOM element and parse the JSON every time the library is queried, which ensures that you'll always get the current active breakpoint regardless of how many times the browser is resized. 
 
