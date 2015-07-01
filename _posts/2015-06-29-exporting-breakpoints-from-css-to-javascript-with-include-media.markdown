@@ -4,6 +4,7 @@ title:  "Exporting breakpoints from CSS to JavaScript with include-media"
 date:   2016-06-29 09:28:00
 categories: blog
 tags: include-media sass javascript json
+redirect_from: /blog/2016/06/29/exporting-breakpoints-from-css-to-javascript-with-include-media.html
 ---
 If you're using [include-media](http://include-media.com) or any other pre-processor library for managing breakpoints in CSS, you probably like the idea of declaring the values once and reference them by name whenever necessary, keeping the code DRY. But when you also need to make decisions based on the viewport dimensions on the JavaScript side, things can get a bit ugly.<!--more-->
 
