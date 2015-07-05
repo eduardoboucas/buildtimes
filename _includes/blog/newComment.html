@@ -1,4 +1,5 @@
 <form id="comments-form" class="comments__new" action="{{ site.comment_post_url }}" method="post">
+    <input type="hidden" name="url" value="{{ page.url }}">
     <input type="hidden" name="post" value="{{ post_slug }}">
     <input type="text" name="company" class="honey comments__field">
     <input class="comments__field" type="text" name="name" placeholder="Name" required/>
