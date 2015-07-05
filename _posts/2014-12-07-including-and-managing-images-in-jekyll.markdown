@@ -36,17 +36,17 @@ I would prefer a `posts` folder with a sub-folder for every post. Something like
 
 So how to keep the files organised in a structure like this while maintaining the code clean, short and maintainable? I created a file called `image` (I didn't use the .html extension, but maybe I should) inside my `_includes` folder that looks like this:
 
-{% highlight html linenos %}
-{{ "{%" }} capture imagePath %}{{ "{{" }} page.date | date: "%Y-%m-%d" }}-{{ "{{" }} page.title | slugify }}/{{ "{{" }} include.name }}{{ "{%" }} endcapture %}
-{{ "{%" }} if include.caption %}
-<figure>
-  <img src="/assets/posts/{{ "{{" }} imagePath }}" {{ "{%" }} if include.alt %} alt="{{ "{{" }} include.alt }}" {{ "{%" }} endif %} {{ "{%" }} if include.width %} width="{{ "{{" }} include.width }}" {{ "{%" }} endif %}/>
-  <figcaption>{{ "{{" }} include.caption }}</figcaption>
-</figure>
-{{ "{%" }} else %}
-<img src="/assets/posts/{{ "{{" }} imagePath }}" {{ "{%" }} if include.alt %} alt="{{ "{{" }} include.alt }}" {{ "{%" }} endif %} {{ "{%" }} if include.width %} width="{{ "{{" }} include.width }}" {{ "{%" }} endif %}/>
-{{ "{%" }} endif %}
-{% endhighlight %}
+{% highlight html linenos %}{% raw %}
+{% capture imagePath %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ include.name }}{% endcapture %}
+{% if include.caption %}
+    <figure>
+        <img src="/assets/posts/{{ imagePath }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+        <figcaption>{{ include.caption }}</figcaption>
+    </figure>
+{% else %}
+    <img src="/assets/posts/{{ imagePath }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+{% endif %}
+{% endraw %}{% endhighlight %}
 
 This file expects the image name, the caption and the alt text (the last two are optional), figures out the image path name (line 1) by slugifying the concatenation of the post date, the title and the image name, and based on the arguments passed write either a `<figure>`/`<figcaption>` or a plain old `<img>`.
 

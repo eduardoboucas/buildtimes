@@ -4,7 +4,7 @@ title:  "Viewport sized typography with minimum and maximum sizes"
 date:   2015-06-18 09:28:00
 categories: blog
 tags: responsive viewport typography sass
-redirect_from: /blog/2016/06/29/exporting-breakpoints-from-css-to-javascript-with-include-media.html
+redirect_from: /blog/2016/06/18/viewport-sized-typography-with-minimum-and-maximum-sizes.html
 ---
 Viewport units for typography are quite a cool toy to have in your responsive web design toolbox, as they allow you to size fonts relatively to the dimensions of the viewport.<!--more--> If you've never used them before, [Chris Coyier's article](https://css-tricks.com/viewport-sized-typography/) is probably a good place to start.
 

@@ -55,14 +55,22 @@ var blog = {
 			var formUrl = $(this).find('[name="url"]').val().trim();
 			var formEmail = $(this).find('[name="email"]').val().trim();
 
+			var $fields = $('.comments__field');
+			$fields.attr('disabled', 'disabled');
+			
+			var spinner = blog.spin($(this).get(0));
+			var form = $(this).get(0);
+
 			$.ajax({
 				type: "POST",
 				url: url,
 				data: data,
 				success: function (data) {
 					var parsedData = JSON.parse(data);
-
+					spinner.stop();
 					blog.addComment(parsedData.hash, parsedData.date, formName, formUrl, parsedData.message);
+					$fields.removeAttr('disabled');
+					form.reset();
 				}
 			});
 
@@ -92,7 +100,15 @@ var blog = {
 			template = template.replace('@url', url);
 		}
 
-		$(template).insertBefore('.comments__new');
+		$(template).insertBefore('.js-new-comments');
+	},
+
+	spin: function (element) {
+		var spinner = new Spinner().spin();
+		
+		element.appendChild(spinner.el);
+
+		return spinner;
 	},
 
 	initSearch: function () {

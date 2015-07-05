@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "Exporting breakpoints from CSS to JavaScript with include-media"
-date:   2016-06-29 09:28:00
+date:   2015-06-29 09:28:00
 categories: blog
 tags: include-media sass javascript json
+redirect_from: /blog/2016/06/29/exporting-breakpoints-from-css-to-javascript-with-include-media.html
 ---
 If you're using [include-media](http://include-media.com) or any other pre-processor library for managing breakpoints in CSS, you probably like the idea of declaring the values once and reference them by name whenever necessary, keeping the code DRY. But when you also need to make decisions based on the viewport dimensions on the JavaScript side, things can get a bit ugly.<!--more-->
 
@@ -48,7 +49,7 @@ Anyway, back to our conundrum. It would be great if we could still declare the b
 
 ## Exporting breakpoints to JavaScript
 
-[This plugin](https://github.com/eduardoboucas/include-media/plugins/include-media-export) consists of a bit of Sass that automatically exports your breakpoints to a hidden element in the DOM (by default, `body::after`), and a small JavaScript library that allows us to query them.
+[This plugin](https://github.com/eduardoboucas/include-media-export) consists of a bit of Sass that automatically exports your breakpoints to a hidden element in the DOM (by default, `body::after`), and a small JavaScript library that allows us to query them.
 
 To get started, we just need to import the plugin file into the Sass project and call the JavaScript code somewhere (does not require jQuery or any other library).
 
@@ -70,10 +71,12 @@ function isSticky() {
 }
 {% endhighlight %}
 
-## Choosing the update mode
+## Controlling the update process
 
 By default, the JavaScript will read from the DOM element and parse the JSON every time the library is queried, which ensures that you'll always get the current active breakpoint regardless of how many times the browser is resized. 
 
 However, this might become expensive when polling too many times — the code above is a good example for that, because we're querying the library every time the resize event fires, which is not a good idea even if we debounce the function.
 
 The library allows the developer to handle the updating, by calling `im.setUpdateMode('manual')` to cache the JSON string and `im.update()` to update it.<!--tomb-->
+
+**[include-media-export on GitHub](https://github.com/eduardoboucas/include-media-export)**

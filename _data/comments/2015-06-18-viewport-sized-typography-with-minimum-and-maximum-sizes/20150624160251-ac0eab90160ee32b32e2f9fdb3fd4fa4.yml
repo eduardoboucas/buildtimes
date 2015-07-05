@@ -1,0 +1,5 @@
+name: "Thomas"
+date: "Jun 24, 2015, 5:02 pm"
+hash: ac0eab90160ee32b32e2f9fdb3fd4fa4
+url: "http://www.creeation.de"
+message: "<p>Be careful with this: user-initiated zoom (<code>ctrl/cmd</code> +  <code>+</code>) will <em>NOT</em> size the font, as the <strong>viewport stays the same</strong>, because we are using viewport units here. That's a huge accessibility issue to consider before using this. Otherwise, this is awesome :-)</p>"
