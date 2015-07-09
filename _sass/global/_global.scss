@@ -197,7 +197,10 @@ button {
 *
 **/
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="submit"],
 textarea {
   @include font-size(16);
 
@@ -213,6 +216,7 @@ textarea {
 
   &[type="submit"] {
     color: #BAABA9;
+    cursor: pointer;
 
     &:hover {
       color: black;
@@ -226,6 +230,14 @@ textarea {
   &[disabled] {
     opacity: 0.3;
   }
+}
+
+input[type="checkbox"] {
+  margin: 20px 5px 10px 0;
+}
+
+label {
+  @include font-size(16);
 }
 
 textarea {
