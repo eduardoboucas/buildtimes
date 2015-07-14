@@ -1,6 +1,7 @@
 <form id="comments-form" class="comments__new" action="{{ site.comment_post_url }}" method="post">
     <input type="hidden" name="post-url" value="{{ page.url }}">
-    <input type="hidden" name="post" value="{{ post_slug }}">
+    <input type="hidden" name="post-slug" value="{{ post_slug }}">
+    <input type="hidden" name="post-title" value="{{ page.title }}">
     <input type="text" name="company" class="honey comments__field">
     <input class="comments__field" type="text" name="name" placeholder="Name" required/>
     <input class="comments__field" type="email" name="email" placeholder="Email address (will not be public)" required/>
@@ -8,6 +9,6 @@
     <textarea class="comments__field" rows="10" name="message" placeholder="Comment" required></textarea>
     <span class="comments__info">You can use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> in your comment.</span>
     <input id="comments-form-subscribe" type="checkbox" name="subscribe" value="subscribe">
-    <label for="comments-form-subscribe">Notify me of follow-up comments by email</label>
+    <label for="comments-form-subscribe">Notify me of new comments by email</label>
     <input class="comments__field" type="submit" value="Send" />
 </form>
