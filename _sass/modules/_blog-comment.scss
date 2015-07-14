@@ -16,6 +16,10 @@ $comment__avatar-size: 90px;
 	margin-bottom: 0;
 }
 
+.comments__info {
+	display: block;
+}
+
 .comment {
 	@extend .cf;
 	
