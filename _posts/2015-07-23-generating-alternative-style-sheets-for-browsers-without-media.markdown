@@ -7,7 +7,7 @@ tags: include-media sass ie8 media
 ---
 If your CSS code is built with a mobile-first approach, it probably contains all the rules that make up the "desktop" view inside `@media` statements. That's great, but browsers that don't support media queries (IE 8 and below) will simply ignore them, ending up getting the mobile view — not good.<!--more-->
 
-An alternative is to create two separate style sheets — a regular one to be served to modern browsers, and another without media queries, served to older browsers that don't support them. But is this maintainable? Is it reasonable to keep a separate style sheet for a small subset of visitors? In the true spirit of making the web accessible for everyone, we probably should.
+An alternative is to create two separate style sheets — a regular one to be served to modern browsers, and another without media queries, served to older browsers that don't support them. But is this maintainable? Is it reasonable to keep a separate style sheet for a small subset of visitors?
 
 Turns out that, as [Jake Archibald described](http://jakearchibald.github.io/sass-ie/), Sass can be used to automate a great part of the process. In fact, breakpoint managers such as [include-media](http://include-media.com/) or [Sass MQ](https://github.com/sass-mq/sass-mq) provide a mechanism for dealing with this quite easily and with no extra maintainability effort.
 
@@ -179,4 +179,6 @@ Finally, we just need to serve the appropriate style sheet depending on the brow
 <!--<![endif]-->
 {% endraw %}{% endhighlight %}
 
-And that's it. IE-friendly mobile-first responsive websites!<!--tomb-->
+And that's it. IE-friendly mobile-first responsive websites!
+
+You can get include-media at [http://include-media.com](http://include-media.com)<!--tomb-->
