@@ -1,6 +1,6 @@
 ---
 layout: external-post
-title:  "Generating Alternative Stylesheets for Browsers Without @media"
+title:  "Generating alternative stylesheets for browsers without @media"
 date:   2015-07-27 15:31:00
 categories: blog
 tags: include-media sass media queries
