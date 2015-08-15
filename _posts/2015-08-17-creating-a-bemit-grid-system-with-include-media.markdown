@@ -85,7 +85,7 @@ After importing include-media and the include-media-columns plugin, a call to th
 </article>
 {% endhighlight %}
 
-Please note that the plugin alone is not sufficient to create a grid system *per se*, it only generates the classes that divide the page into equal portions. To achieve a grid effect, a method for positioning the various elements side-by-side is necessary.
+Please note that this plugin alone is not sufficient to create a grid system *per se* — it simply generates columns which can then be used to divide a page into whatever combinations you'd like. To achieve a typical grid effect, you'll need a method for positioning the various elements side-by-side.
 
 In this example, I've used floats (lines 7-9), but a similar result could've been achieved by using `display: inline-block` or even Flexbox. [This article](https://mixitup.kunkalabs.com/learn/tutorial/responsive-grids/) is a good reference of all the possible approaches, along with their advantages and caveats.<!--tomb-->
 
