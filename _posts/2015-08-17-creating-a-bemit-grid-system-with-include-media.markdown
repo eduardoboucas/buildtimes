@@ -41,7 +41,7 @@ This solution works, but it has some (ugly) caveats:
 
 So if we take the principles of *BEMIT* and apply them to our grid classes, we could have a semantic responsive grid system. Essentially, we’d need classes like `.col-1-2@small`, `.col--1-2@medium`, `.col--1-2@large` and so on, depending on the number of subdivisions required and the number of breakpoints used throughout the project.
 
-## include-media marries BEMIT
+## include-media meets BEMIT
 
 When using a library for managing all the breakpoints in a project (such as [include-media](http://include-media.com)), it seems logical to use take advantage of its power to generate all the grid classes with the responsive suffixes. The following mixin, part of [the include-media-columns plugin](https://github.com/eduardoboucas/include-media-columns), does just that.
 
