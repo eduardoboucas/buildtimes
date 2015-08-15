@@ -43,10 +43,10 @@ So if we take the principles of *BEMIT* and apply them to our grid classes, we c
 
 ## include-media marries BEMIT
 
-When using a library for managing all the breakpoints in a project (such as [include-media](http://include-media.com)), it seems logical to use take advantage of its power to generate all the grid classes with the responsive suffixes. The following mixin, part of [the include-media-grid plugin](https://github.com/eduardoboucas/include-media-grid), does just that.
+When using a library for managing all the breakpoints in a project (such as [include-media](http://include-media.com)), it seems logical to use take advantage of its power to generate all the grid classes with the responsive suffixes. The following mixin, part of [the include-media-columns plugin](https://github.com/eduardoboucas/include-media-columns), does just that.
 
 {% highlight scss linenos %}
-@mixin im-grid($columns...) {
+@mixin im-columns($columns...) {
   @each $breakpoint in $breakpoints {
     $breakpoint-name: nth($breakpoint, 1);
 
@@ -64,13 +64,13 @@ When using a library for managing all the breakpoints in a project (such as [inc
 {% endhighlight %}
 
 So let's imagine a website with three breakpoints (small, medium and large), and a grid of articles that should display four items per row on the large view, two on the medium view and just one on the small view.
-After importing include-media and the include-media-grid plugin, a call to the `im-grid()` mixin generates all the classes. In this case, we only need to divide the page into fourths.
+After importing include-media and the include-media-columns plugin, a call to the `im-columns()` mixin generates all the classes. In this case, we only need to divide the page into fourths.
 
 {% highlight scss linenos %}
 @import 'include-media';
-@import 'include-media-make-grid';
+@import 'include-media-columns';
 
-@include im-grid(4);
+@include im-columns(4);
 
 // Using floats for the grid
 .col {
@@ -89,4 +89,4 @@ Please note that the plugin alone is not sufficient to create a grid system *per
 
 In this example, I've used floats (lines 7-9), but a similar result could've been achieved by using `display: inline-block` or even Flexbox. [This article](https://mixitup.kunkalabs.com/learn/tutorial/responsive-grids/) is a good reference of all the possible approaches, along with their advantages and caveats.<!--tomb-->
 
-**[include-media-grid on GitHub](https://github.com/eduardoboucas/include-media-grid)**
+**[include-media-columns on GitHub](https://github.com/eduardoboucas/include-media-columns)**
