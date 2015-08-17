@@ -4,9 +4,9 @@
 
 .post__body {
 	word-wrap: break-word;
-	
+
 	>p:first-of-type {
-		@extend .dropped-cap;	
+		@extend .dropped-cap;
 	}
 
 	img {
@@ -23,18 +23,45 @@
 
 			text-align: center;
 			font-style: italic;
-		}		
+		}
 	}
 
+	// A single blockquote is a normal citation, a nested one is a pull-quote
 	blockquote {
-		@include font-size(25);
-
-		font-style: italic;
-		padding: 0px 10%;
-		margin: 40px 0;
+		margin: 30px auto;
+		max-width: 80%;
+	    font-style: italic;
+	    padding: 0 0 0 15px;
 
 		p {
-			line-height: 35px;
+			position: relative;
+			color: $light-gray;
+
+			&:first-of-type:before {
+				content: '“';
+			    position: absolute;
+			    top: 20px;
+			    left: -50px;
+				font-family: Georgia;
+			    font-size: 100px;
+			}
+		}
+
+		blockquote {
+			@include font-size(25);
+
+			margin: 0;
+		    max-width: none;
+		    padding: 0;
+
+			p {
+				line-height: 35px;
+				color: black;
+
+				&:first-of-type:before {
+					display: none;
+				}
+			}
 		}
 	}
 
@@ -60,9 +87,9 @@
 
 	h2 {
 		@include font-size(25);
-		
+
 		text-transform: none;
-	}	
+	}
 }
 
 .post__meta {
@@ -105,7 +132,7 @@
 	display: inline;
 	margin: 0;
 	width: 15px;
-	height: 15px;	
+	height: 15px;
 }
 
 @include media('<tablet') {
