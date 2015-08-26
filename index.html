@@ -1,27 +1,19 @@
 ---
-title: Index
+
 ---
 <!DOCTYPE html>
 <html>
 	<head>
 		{% include meta.html %}
 		{% include stylesheets.html %}
-		<script data-main="js/main" src="/js/vendor/require.min.js"></script>
 	</head>
-
-	<body>
+	<body class="body--blog">
 		{% include svg/defs.html %}
-
-		<div id="main">
-			<p class="loader">Hold on, let me grab a seat...</p>
+		<div class="content content--blog">
+			{% include blog/header.html %}
+			{% include blog/posts.html %}
+			{% include googleAnalytics.html %}
+			{% include blog/footer.html %}	
 		</div>
-
-		<script src="js/VideoLooper.js"></script>
-
-		<!-- Service Worker -->
-		{% include serviceWorker.html %}
-
-		<!-- Google Analytics -->
-		{% include googleAnalytics.html %}
 	</body>
 </html>

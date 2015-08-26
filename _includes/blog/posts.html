@@ -1,5 +1,25 @@
-<section id="blog" class="blog" data-page="{{ paginator.page }}" data-totalPages="{{ paginator.total_pages }}">
-  {% for post in paginator.posts %}
+{% if paginator.posts %}
+  {% assign posts = paginator.posts %}
+  {% assign currentPage = paginator.page %}
+  {% assign totalPages = paginator.total_pages %}
+{% else %}
+  {% assign posts = site.posts %}
+  {% assign allPosts = true %}
+  {% assign currentPage = 1 %}
+  {% assign numPosts = site.posts | size %}
+  
+  {% if numPosts | modulo:site.paginate > 0 %}
+    {% assign totalPages = numPosts | divided_by:site.paginate | plus:1 %}
+  {% else %}
+    {% assign totalPages = numPosts | divided_by:site.paginate %}
+  {% endif %}
+{% endif %}
+
+<section id="blog" class="blog" data-page="{{ currentPage }}" data-totalPages="{{ totalPages }}">
+  {% for post in posts %}
+    {% if allPosts and forloop.index >= site.paginate %}
+      {% break %}
+    {% endif %}
     {% capture post_slug %}{{ post.date | date: "%Y-%m-%d" }}-{{ post.title | slugify }}{% endcapture %}
     <article class="post">
       <header class="post__header">
