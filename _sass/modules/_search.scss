@@ -53,8 +53,11 @@
 .search__field {
 	@include font-size(40);
 
+	background: none;
+	outline: 0;
 	border: 0;
 	color: white;
+	margin-bottom: 10px;
 }
 
 .search__icon {
