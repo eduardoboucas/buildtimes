@@ -197,56 +197,58 @@ button {
 *
 **/
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="submit"],
-textarea {
-  @include font-size(16);
+.comments__new {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="submit"],
+  textarea {
+    @include font-size(16);
 
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: inherit;
-  outline: 0;
-  border: 1px solid #ddd;
-  margin: 10px 0;
-  padding: 5px;
-  background-color: transparent;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: transparent;
 
-  &[type="submit"] {
-    color: #BAABA9;
-    cursor: pointer;
+    &[type="submit"] {
+      color: #BAABA9;
+      cursor: pointer;
 
-    &:hover {
-      color: black;
+      &:hover {
+        color: black;
+      }
+    }
+
+    &.honey {
+      display: none;
+    }
+
+    &[disabled] {
+      opacity: 0.3;
     }
   }
 
-  &.honey {
-    display: none;
+  input[type="checkbox"] {
+    margin: 20px 5px 10px 0;
   }
 
-  &[disabled] {
-    opacity: 0.3;
+  label {
+    @include font-size(16);
   }
-}
 
-input[type="checkbox"] {
-  margin: 20px 5px 10px 0;
-}
+  textarea {
+    margin-bottom: 0;
+  }
 
-label {
-  @include font-size(16);
-}
-
-textarea {
-  margin-bottom: 0;
-}
-
-textarea + span {
-  @include font-size(11);
-  color: #BAABA9;
+  textarea + span {
+    @include font-size(11);
+    color: #BAABA9;
+  }
 }
 
 /**
