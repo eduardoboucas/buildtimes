@@ -1,28 +1,5 @@
 <section class="comments">
-	{% capture post_slug %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}{% endcapture %}
-	
 	<hr class="comments__separator">
 	<h2 class="comments__title">Comments</h2>
-
-	{% if site.data.comments[post_slug] %}
-		{% assign comments = site.data.comments[post_slug] | sort %}
-		
-		{% for comment in comments %}
-			{% assign hash = comment[1].hash %}
-			{% assign name = comment[1].name %}
-			{% assign url = comment[1].url %}
-			{% assign date = comment[1].date %}
-			{% assign message = comment[1].message %}
-
-			{% include blog/comment.html index=forloop.index hash=hash name=name url=url date=date message=message %}
-		{% endfor %}
-	{% endif %}
-
-	<p class="js-new-comments comments__description">Leave a comment</p>
-
-	{% include blog/newComment.html %}
+	<p>Comments are temporarily unavailable. Sorry about that!</p>
 </section>
-
-<script type="text/template" id="template--new-comment">
-	{% include blog/comment.html hash="@hash" name="@name" url="@url" date="@date" message="@message" %}
-</script>
