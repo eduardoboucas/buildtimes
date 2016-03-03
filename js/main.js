@@ -112,7 +112,7 @@ var eb = (function ($) {
 			noMoreArticles();
 		}
 
-		$.get('/page/' + nextPage, function (response) {
+		$.get('https://eduardoboucas.com/page/' + nextPage, function (response) {
 			var html = $.parseHTML(response);
 			var posts = $(html).filter('#main').children();
 
