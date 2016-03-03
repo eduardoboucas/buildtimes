@@ -1,0 +1,1 @@
+[{% for post in site.posts %}{"title": "{{ post.title | escape }}","tags": "{{ post.tags | join: ', ' }}","url": "{{ site.baseurl }}{{ post.url }}","date": "{% include helpers/format-date.html date=post.date %}"}{% unless forloop.last %},{% endunless %}{% endfor %}]

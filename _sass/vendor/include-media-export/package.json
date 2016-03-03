@@ -1,0 +1,75 @@
+{
+  "_args": [
+    [
+      "include-media-export@^1.0.1",
+      "/Users/eduardoboucas/Sites/eduardoboucas.com"
+    ]
+  ],
+  "_from": "include-media-export@>=1.0.1 <2.0.0",
+  "_id": "include-media-export@1.0.1",
+  "_inCache": true,
+  "_location": "/include-media-export",
+  "_npmUser": {
+    "email": "mail@eduardoboucas.com",
+    "name": "eduardoboucas"
+  },
+  "_npmVersion": "1.4.28",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "include-media-export",
+    "raw": "include-media-export@^1.0.1",
+    "rawSpec": "^1.0.1",
+    "scope": null,
+    "spec": ">=1.0.1 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/include-media-export/-/include-media-export-1.0.1.tgz",
+  "_shasum": "0f14db638b096f187968baa6d2c3f0ec64456b29",
+  "_shrinkwrap": null,
+  "_spec": "include-media-export@^1.0.1",
+  "_where": "/Users/eduardoboucas/Sites/eduardoboucas.com",
+  "author": {
+    "email": "mail@eduardoboucas.com",
+    "name": "Eduardo Boucas"
+  },
+  "bugs": {
+    "url": "https://github.com/eduardoboucas/include-media-export/issues"
+  },
+  "dependencies": {},
+  "description": "An include-media plugin for exporting breakpoints from Sass to JavaScript",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-rename": "~1.2",
+    "gulp-uglify": "~1.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "0f14db638b096f187968baa6d2c3f0ec64456b29",
+    "tarball": "http://registry.npmjs.org/include-media-export/-/include-media-export-1.0.1.tgz"
+  },
+  "gitHead": "d2fefc48302147b5a7bfad999a9b47f6660cee2d",
+  "homepage": "https://github.com/eduardoboucas/include-media-export",
+  "installable": true,
+  "license": "MIT",
+  "main": "dist/_include-media-export.scss",
+  "maintainers": [
+    {
+      "name": "eduardoboucas",
+      "email": "mail@eduardoboucas.com"
+    }
+  ],
+  "name": "include-media-export",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eduardoboucas/include-media-export.git"
+  },
+  "scripts": {},
+  "title": "include-media-export",
+  "version": "1.0.1"
+}

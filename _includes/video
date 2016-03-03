@@ -1,7 +1,0 @@
-{% assign width = include.width | times: 1.0 %}
-{% assign height = include.height | times: 1.0 %}
-{% assign paddingBottom = height | divided_by: width | times: 100 %}
-
-<div class="post__video-wrapper" style="padding-bottom: {{ paddingBottom }}%">
-	<iframe width="{{ include.width }}" height="{{ include.height }}" src="{{ include.url }}" frameborder="0" allowfullscreen></iframe>
-</div>

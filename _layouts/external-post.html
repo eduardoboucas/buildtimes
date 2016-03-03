@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="refresh" content="0;URL='{{ page.external-url }}'" />
-        <title></title>
-    </head>
-    <body>
-        {% include googleAnalytics.html %}
-    </body>
-</html>
+---
+layout: default
+---
+
+{% include partials/post-navigation.html %}
+
+<main id="main" role="main" class="main">
+  <article class="post post--full">
+    <div class="constrain">
+    	<h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=page.title %}</h1>
+    	<p class="post-meta post-meta--emphasis">{% include helpers/format-date.html date=page.date %}</p>
+    	<div class="post__external-info">
+    		<a class="cta" href="{{ page.external-url }}">Read on {{ page.external-name }}</a>
+    	</div>
+    </div>
+  </article>
+</main>

@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Rethinking the commenting system for my Jekyll site"
-date:   2015-05-11 09:30:00
 categories: blog
 tags: jekyll comments github
 ---
@@ -30,7 +29,7 @@ With that said, the new plan was to store each comment as a separate file in my 
 
 On the front-end, JavaScript would hijack the form submission to avoid a page reload, sending the data as an asynchronous POST request via Ajax and preventing the default behaviour of a page reload. Upon confirmation of success, it would then append a temporary version of the new comment to the page, giving the feeling that the content was added instantly even though a lot of stuff still has to happen behind the curtain.
 
-{% include image name="jekyll-discuss-diagram.png" caption="Flow of data in the commenting system" %}
+{% include helpers/image.html name="jekyll-discuss-diagram.png" caption="Flow of data in the commenting system" %}
 
 The form itself would have four fields: name (mandatory), email (mandatory, but not public), url (optional) and message (mandatory). My plan for the email address was to use it as a unique identifier for the user and also to attempt to pull an avatar from Gravatar, so I just needed it to create a md5 hash — I was not going to make it public for privacy and spammy reasons.
 

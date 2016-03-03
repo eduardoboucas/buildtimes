@@ -1,0 +1,47 @@
+@mixin cta() {
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+	border: 2px solid black;
+	border-radius: 0;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: transparent;
+	cursor: pointer;
+}
+
+@mixin cta-hover() {
+	@include transition(background-color color transform);
+
+	background-color: black;
+	color: white;	
+}
+
+@mixin cta-progress() {
+	&:before {
+		position: absolute;
+		content: '...';
+		background-color: $colour-background;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		line-height: 30px;
+		font-size: 1.5em;
+		letter-spacing: 3px;
+		color: $colour-primary;
+	}	
+}
+
+.cta {
+	@include cta;
+
+	&:hover {
+		@include cta-hover;
+	}
+}
+
+.cta--progress {
+	@include cta-progress;
+}

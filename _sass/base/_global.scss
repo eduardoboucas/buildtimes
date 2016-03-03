@@ -1,0 +1,47 @@
+// --------------------------------------------------------------
+// Breakpoints
+// --------------------------------------------------------------
+
+$breakpoints: (
+    'small': 320px,
+    'medium': 800px,
+    'large': 1280px
+);
+
+// --------------------------------------------------------------
+// Global rules
+// --------------------------------------------------------------
+
+body {
+    @include rem(font-size, $font-size-normal);
+    
+    background-color: $colour-background;
+    color: $colour-primary;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-light;
+}
+
+[aria-hidden="true"] {
+    display: none;
+}
+
+$post-gutter: 50px;
+$post-vertical-rythm: 25px;
+$post-body-max-width: 700px;
+
+@mixin post-title() {
+    font-family: $font-family-primary;
+    font-weight: bold;
+    font-size: 35px;
+
+    @include media('>=medium') {
+        font-size: 45px;
+    }
+}
+
+// --------------------------------------------------------------
+// Width constrain
+// --------------------------------------------------------------
+
+$layout-max-width: 1640px;
+$layout-side-padding: 20px;

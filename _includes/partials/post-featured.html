@@ -1,0 +1,16 @@
+{% if include.post.layout == 'external-post' %}
+  {% assign link = include.post.external-url %}
+{% else %}
+  {% assign link = include.post.url %}
+{% endif %}
+
+<a href="{{ link }}" class="post-wrapper post-wrapper--block">
+<article class="post post--feature">
+  <h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=include.post.title %}</h1>
+  <p class="post__meta post-meta">{% include helpers/format-date.html date=include.post.date %}</p>
+  <div class="post__body">
+    {{ include.post.excerpt | strip_html }}
+  </div>
+  <span class="post__read-more">Read more</span>
+</article>
+</a>

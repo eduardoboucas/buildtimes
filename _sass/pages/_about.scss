@@ -1,0 +1,37 @@
+.about {
+	@include constrain(800px);
+
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+	@include media('>=medium') {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+.about__image {
+	$polygon: polygon(nonzero, 91px 102px, 120px 103px, 125px 2px, 612px 5px, 598px 324px, 66px 324px, 68px 182px, 3px 193px);
+
+	display: none;
+	margin: 0 auto 40px auto;
+	width: 600px;
+	height: 320px;
+	
+	@supports (shape-outside: #{$polygon}) {
+		shape-outside: #{$polygon};
+		-webkit-shape-outside: #{$polygon};
+		float: right;
+		margin: 0;
+	}
+
+	@include media('>=medium') {
+		display: block;
+	}
+}
+
+.about__copy {
+	p:first-of-type {
+		@include drop-cap;
+	}
+}

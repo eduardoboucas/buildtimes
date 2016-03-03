@@ -1,0 +1,32 @@
+<header class="masthead constrain">
+	<div class="masthead__wrapper">
+		<a href="/">
+			<h1 class="masthead-title">e<span class="masthead-title__part">duardo</span>b<span class="masthead-title__part">oucas</span>.<div class="masthead-title__part masthead-title__extension"><i aria-hidden>js</i><i aria-hidden>css</i><i aria-hidden>html</i><i aria-hidden>json</i><i aria-hidden>omg</i><span>com</span></div></h1>
+		</a>
+		<div class="masthead-bar">
+			<div class="masthead-bar__face">
+				{% if page.url == '/' or page.url == '/index.html' %}
+					<div class="masthead-bar__menu">
+						<span class="masthead-bar__date masthead-bar__menu-item">Issue #{{ site.posts | size }}, {% include helpers/format-date.html weekDay=false date=site.posts.first.date %}</span>
+						<span class="masthead-bar__menu-item">
+							<a class="link--underline" href="/about">About</a>
+						</span>
+					</div>
+				{% else %}
+					<p><a class="link" href="/">← Back to cover</a></p>	
+				{% endif %}
+			
+				<label for="search-toggle" class="masthead-bar__open-search-button search-button">
+					<svg class="search-button__icon">
+						<use xlink:href="#icon-search"></use>
+					</svg>
+					<span class="search-button__label">Search</span>
+				</label>
+			</div>
+			<div class="masthead-bar__face">
+	  			<input id="search-input" type="text" class="masthead-bar__search-input" placeholder="Search...">
+	  			<label for="search-toggle" class="masthead-bar__close-search-button">✕</label>
+  			</label>
+		</div>
+	</div>	
+</header>

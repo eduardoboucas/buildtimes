@@ -1,0 +1,17 @@
+.highlight {
+	padding: 40px 0;
+	font-family: $font-family-monospace;
+	color: white;
+	font-size: 19px;
+	background-color: $colour-dark-grey;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	pre {
+		@include constrain;
+	}
+
+	.lineno {
+		display: none;
+	}
+}

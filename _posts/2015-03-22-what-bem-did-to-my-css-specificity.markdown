@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "What BEM did to my CSS specificity"
-date:   2015-03-22 00:25:00
 categories: blog
 tags: css specificity bem
 ---
@@ -48,9 +47,9 @@ Right off the bat, it makes DOM elements more structured and tightly coupled. Bu
 
 To measure that I used Jonas Ohlsson's [CSS Specificity Graph Generator](http://jonassebastianohlsson.com/specificity-graph/) to see how the specificity of my shiny new BEM-powered stylesheet looked like when compared to the previous version using the plain old habit of naming things randomly. Here's how it looks:
 
-{% include image width="600" name="graph-before.png" caption="CSS specificity graph before BEM" %}
+{% include helpers/image.html width="600" name="graph-before.png" caption="CSS specificity graph before BEM" %}
 
-{% include image width="600" name="graph-after.png" caption="CSS specificity graph after BEM" %}
+{% include helpers/image.html width="600" name="graph-after.png" caption="CSS specificity graph after BEM" %}
 
 ## Here's what I make of it
 

@@ -1,0 +1,8 @@
+// --------------------------------------------------------------
+// REM mixin with px fallback
+// --------------------------------------------------------------
+
+@mixin rem($property, $pxValue) {
+  #{$property}: $pxValue;
+  #{$property}: ($pxValue / 10px) + rem;
+}

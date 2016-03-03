@@ -1,0 +1,30 @@
+{
+  "name": "eduardoboucas.com",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "jekyll serve --port 4100 --host=0.0.0.0 --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardoboucas/eduardoboucas.github.io.git"
+  },
+  "keywords": [
+    "front-end",
+    "css",
+    "sass"
+  ],
+  "author": "Eduardo Boucas <mail@eduardoboucas.com> (https://eduardoboucas.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eduardoboucas/eduardoboucas.github.io/issues"
+  },
+  "homepage": "https://github.com/eduardoboucas/eduardoboucas.github.io#readme",
+  "dependencies": {
+    "include-media": "^1.4.1",
+    "include-media-columns": "^1.1.0",
+    "include-media-export": "^1.0.1"
+  }
+}

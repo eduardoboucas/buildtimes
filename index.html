@@ -1,20 +1,24 @@
 ---
-
+layout: default
 ---
-<!DOCTYPE html>
-<html>
-	<head>
-		{% include meta.html %}
-		{% include stylesheets.html %}
-	</head>
-	<body class="body--blog">
-		{% include svg/defs.html %}
-		<div class="content content--blog">
-			{% include blog/header.html %}
-			{% include blog/posts.html %}
-			{% include blog/scripts.html %}
-			{% include googleAnalytics.html %}
-			{% include blog/footer.html %}	
-		</div>
-	</body>
-</html>
+
+<main id="main" role="main" class="main posts constrain" data-paginator-current="{{ paginator.page }}" data-paginator-total="{{ paginator.total_pages }}">
+  {% assign postsPerPage = site.paginate %}
+  
+  {% if paginator.page == 1 %}
+    {% assign postsOffset = 0 %}
+    {% assign postsPerPage = postsPerPage | plus: 1 %}
+  {% else %}
+    {% assign postsOffset = paginator.page | minus: 1 | times: postsPerPage | plus: 1 %}
+  {% endif %}
+
+  {% for post in site.posts | offset: postsOffset | limit: postsPerPage %}
+    {% if postsOffset == 0 and forloop.first == true %}
+      {% include partials/post-featured.html post=post %}
+    {% else %}
+      {% include partials/post-small.html post=post %}
+    {% endif %}
+  {% endfor %}
+</main>
+
+{% include partials/paginator.html paginator=paginator %}

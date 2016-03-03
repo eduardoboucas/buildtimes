@@ -1,0 +1,158 @@
+@mixin body-text() {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	p {
+		margin-bottom: $post-vertical-rythm;
+	}
+
+	strong {
+		font-weight: $font-weight-bold;
+	}
+
+	em {
+		font-style: italic;
+	}
+	
+	ol,
+	ul {
+		margin-bottom: $post-vertical-rythm;
+		list-style-position: inside;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	li + li {
+		margin-top: $post-vertical-rythm * 0.6;
+	}
+
+	p code {
+		font-family: $font-family-monospace;
+		background-color: $colour-light-grey;
+		font-size: 0.75em;
+		padding: 5px 8px;
+	}
+
+	// Twitter embed
+	.twitter-tweet {
+		margin: ($post-vertical-rythm * 3) auto !important;
+	}
+
+	// CodePen embed
+	.cp_embed_iframe {
+		max-width: 1400px;
+		margin: ($post-vertical-rythm * 3) auto;
+		display: block;
+	}
+
+	p,
+	li, {
+		@include constrain($post-body-max-width, true);
+
+		// Probably wrap in a media query
+		font-size: 20px;
+		line-height: 1.6;
+
+		@include media('>=medium') {
+			font-size: 24px;
+		}
+	}
+
+	h2 {
+		@include heading2;
+		@include constrain($post-body-max-width, true);
+
+		margin-top: $post-vertical-rythm * 1.8;
+		margin-bottom: $post-vertical-rythm * 0.6;
+	}
+
+	a {
+		@include link(true);
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	div.highlight,
+	figure.highlight {
+		font-size: 0.5em;
+		margin: ($post-vertical-rythm * 2) 0;
+		padding-left: 10px;
+
+		>pre {
+			text-align: center;
+
+			>code {
+				display: inline-block;
+				text-align: left;
+				min-width: $post-body-max-width;
+			}
+		}
+
+		@include media('>=medium') {
+			font-size: 0.8em;
+			margin: ($post-vertical-rythm * 3) 0;
+			padding-left: 0;
+		}
+	}
+
+	// Pull quote
+	>blockquote {
+		@include constrain($post-body-max-width, true);
+
+		>p {
+			font-style: italic;
+			text-align: center;
+			font-size: 32px;
+			border-width: 1px 0;
+			border-color: black;
+			//border-style: solid;
+			margin: ($post-vertical-rythm * 3) 0;
+		}
+	}
+
+	// Citations
+	>blockquote>blockquote {
+		@include constrain($post-body-max-width, true);
+
+		position: relative;
+		padding: 20px;
+		font-style: italic;
+		margin-top: $post-vertical-rythm * 1.4;
+		margin-bottom: $post-vertical-rythm;
+
+		>p {
+			background-color: $colour-light-grey;
+			padding: 0 20px 20px 20px;
+			margin-bottom: 0;
+
+			&:first-of-type {
+				padding-top: 40px;
+
+				&:before {
+					content: '“';
+					position: absolute;
+					top: -22px;
+					left: 0;
+					font-size: 160px;
+					font-weight: bold;
+					font-family: $font-family-quotes;
+					line-height: 1em;
+				}				
+			}	
+		}
+	}
+}
+
+.body-text {
+	@include body-text;
+}

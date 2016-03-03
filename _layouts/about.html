@@ -1,78 +1,11 @@
 ---
-layout: about
+layout: default
 ---
-<html>
-	<head>
-		{% include stylesheets.html %}
-		{% include meta.html %}
-	</head>
-	<body>
-		{% include svg/defs.html %}
-		<div id="content" class="content">
-			{% include navigation.html %}
-
-			<h1>{{ page.header }}</h1>
-			<section class="bio">
-				<div class="bio__copy dropped-cap col-2-3">
-					{{ content }}
-				</div>
-				<div class="bio__image col-1-3">
-					<img src="/assets/images/drawing.png"/>
-				</div>
-			</section>
-
-			<h2>Skills</h2>
-			<section>
-				<table class="skills">
-					<thead>
-						<tr>
-							<th></th>
-							<th><span>Meh...</span><span>Ultimate ninja</span></th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for skill in site.data.about_skills %}
-							{% assign strengthInt = skill.strength | divided_by:10 %}
-							{% assign strengthMod = skill.strength | modulo:10 | times:0.1 %}
-							
-							{% if strengthMod > 0 %}
-								{% assign strength = strengthInt | plus:strengthMod %}
-							{% else %}
-								{% assign strength = strengthInt %}
-							{% endif %}
-							
-							<tr>	
-								<td class="skills__title">{{ skill.title }}</td>
-								<td><span style="width: {{ skill.strength }}%">{{ strength }}/10 </span></td>
-							</tr>
-						{% endfor %}		
-					</tbody>
-				</table>
-			</section>
-
-			<h2>Work</h2>
-			<dl>
-			{% for work in site.data.about_work %}
-				<dt>{{ work.date }}</dt> 
-				<dd>{{ work.position }} at {{ work.company }}
-					{% if work.notes %}
-						<br/><em>{{ work.notes }}</em>
-					{% endif %}
-				</dd>
-			{% endfor %}
-			</dl>
-
-			<h2>Education</h2>
-			<dl>
-			{% for education in site.data.about_education %}
-				<dt>{{ education.date }}</dt> 
-				<dd>{{ education.title }}, {{ education.location }}.
-					{% if education.notes %}
-						<br/><em>{{ education.notes }}</em>
-					{% endif %}
-				</dd>
-			{% endfor %}
-			</dl>			
-		</div>
-	</body>
-</html>
+<main id="main" role="main" class="main constrain--padding">
+  <div class="about">
+  	<img class="about__image" src="/assets/images/about.gif">
+  	<div class="about__copy body-text">
+  		{{ content | replace: '<!--tomb-->', ' &#8718;' }}
+    </div>
+  </div>
+</main>

@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Writing media queries for Retina devices with include-media"
-date:   2015-02-01 12:25:00
 categories: blog
 tags: retina include-media media-query
 ---

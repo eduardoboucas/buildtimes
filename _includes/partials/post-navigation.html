@@ -1,0 +1,21 @@
+<nav class="post-navigation">
+  {% if page.next %}
+    <a href="{{ page.next.url }}" class="post-navigation__previous post-navigation__item js-post-navigation-arrow">
+      <svg class="post-navigation__arrow">
+        <use xlink:href="#icon-arrow-left"></use>
+      </svg>
+    </a>
+    <span class="post-navigation__previous post-navigation__label">{{ page.next.title }}</span>
+  {% endif %}
+
+  {% if page.previous %}
+    <a href="{{ page.previous.url }}" class="post-navigation__next post-navigation__item js-post-navigation-arrow">
+      <svg class="post-navigation__arrow">
+        <use xlink:href="#icon-arrow-right"></use>
+      </svg>
+    </a>
+    <span class="post-navigation__next post-navigation__label">{{ page.previous.title }}</span>
+  {% endif %}
+
+  <div class="post-navigation__overlay"></div>
+</nav>

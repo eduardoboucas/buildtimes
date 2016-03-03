@@ -1,55 +1,27 @@
-#########################
-#						#
-#   General settings	#
-#						#
-#########################
-author: Eduardo Bouças
+title: Eduardo Bouças
 email: mail@eduardoboucas.com
-feed_url: "http://feeds.eduardoboucas.com/eduardoboucas"
-facebook_url: "https://www.facebook.com/eduardoboucas"
-twitter_username: eduardoboucas
-github_username:  eduardoboucas
-googleAnalyticsId: UA-54012006-1
+description: Test
+baseurl: ""
+url: "https://eduardoboucas.com"
 
-#########################
-#						#
-#  Main site settings	#
-#						#
-#########################
-site_title: Eduardo Boucas - Web Developer from London
-site_description: "A passionate and creative full-stack web developer that thinks code and numbers, but breathes art and design. Responsible and responsive. Terrible dancer."
-site_url: "https://eduardoboucas.com"
-
-#########################
-#						#
-#    Blog settings		#
-#						#
-#########################
-blog_title: Eduardo saying things
-blog_description: "My blog about web, my experience as a sharp programmer and a terrible dancer."
-blog_url: "/"
 markdown: kramdown
 
-comment_post_url: https://aws.bouc.as/jekyll-discuss/comments
+sass:
+  sass_dir: _sass
+  style: compressed
 
-# Pagination
-paginate: 10
-paginate_path: "/blog/page:num/"
+exclude:
+  - node_modules
 
-collections:
-  portfolio:
-    output: true
+paginate: 6
+paginate_path: "/page/:num/"
 
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      author: "Eduardo Bouças"
-      enable_comments: true
+comments:
+  url: "https://staticman.net/api/v1/entries/56bc6a83bad169944324e966"
 
-excerpt_separator: <!--more-->
+googleAnalyticsId: UA-54012006-1  
 
 gems:
-  - jekyll-redirect-from
+  - jekyll-paginate
+
+future: true

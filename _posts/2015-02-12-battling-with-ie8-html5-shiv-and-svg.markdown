@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Battling with IE8: HTML5 shiv and SVG"
-date:   2015-02-12 14:19:00
 categories: blog
 tags: ie8 html5 shiv svg
 ---

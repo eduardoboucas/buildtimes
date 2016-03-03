@@ -1,37 +1,20 @@
 ---
 layout: default
 ---
-<!DOCTYPE html>
-<html>
-{% include blog/head.html %}
 
-<body class="body--blog">
-  {% include svg/defs.html %}
-  <div class="content content--blog">
-    {% include blog/header.html %}
-    {% include blog/navigation.html %}
+{% include partials/post-navigation.html %}
 
-    <article class="post">
-      <header class="post__header">
-        <h1 class="post__title">{{ page.title }}</h1>
-        <ul class="post__meta">
-          <li class="post__date">{% include svg/use.html id="icn--time" class="post__icon" %} {{ page.date | date: "%b %-d, %Y" }}</li>
-          {% if page.tags %}
-          <li class="post__tags">{% include svg/use.html id="icn--tag" class="post__icon" %} {% for tag in page.tags %} <em><a href="/blog/tags.html#tag-{{ tag }}">{{ tag }}</a></em>{% endfor %}</li>
-          {% endif %}
-          <li class="post__permalink">{% include svg/use.html id="icn--link" class="post__icon" %} <a href="{{ page.url }}">Permalink</a></li>
-        </ul>
-      </header>
-      <div class="post__body">
-        {{ content | replace: '<!--tomb-->', ' &#8718;'}}
-      </div>
-    </article>
+<main id="main" role="main" class="main">
+  <article class="post post--full">
+    <div class="constrain">
+    	<h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=page.title %}</h1>
+    	<p class="post-meta post-meta--emphasis">{% include helpers/format-date.html date=page.date %}</p>
+    </div>
+    
+    <div class="post__body body-text">
+      {{ content | replace: '<!--tomb-->', ' &#8718;'}}
+    </div>
 
-    {% if page.enable_comments %}
-      {% include blog/comments.html %}
-    {% endif %}
-
-    {% include googleAnalytics.html %}
-    {% include blog/footer.html %}
-</body>
-</html>
+    {% include partials/post-comments.html %}
+  </article>
+</main>

@@ -2,7 +2,6 @@
 layout: post
 title:  "Experimenting with Sass and grids"
 handle: "experimenting-with-sass-and-grids"
-date:   2015-01-13 22:56:00
 categories: blog
 tags: sass css responsive grid
 ---

@@ -2,7 +2,6 @@
 layout: post
 title:  "How I used Jekyll on my Backbone.js website"
 handle: "how-i-used-jekyll-on-my-backbonejs-website"
-date:   2014-10-25 10:38:00
 categories: blog
 tags: eduardoboucas.com jekyll backbonejs
 ---
@@ -26,9 +25,9 @@ On the other hand, would it make sense to have a website and a blog without any 
 
 Everyone was talking about [Jekyll](http://jekyllrb.com/) and I was really curious about it. What is Jekyll, anyways? 
 
-> Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through Markdown (or Textile) and Liquid converters, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server.
-
-(from [jekyllrb.com](http://jekyllrb.com/docs/home/))
+>> Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through Markdown (or Textile) and Liquid converters, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server.
+>>
+>>(from [jekyllrb.com](http://jekyllrb.com/docs/home/))
 
 So basically I could write the content in Markdown (yay!), finally separating it from the content, and automatically generate plain HTML files which Backbone can deal with right away. But how would I structure the content?
 
