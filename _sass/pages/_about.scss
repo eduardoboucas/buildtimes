@@ -18,7 +18,7 @@
 	width: 600px;
 	height: 320px;
 	
-	@supports (shape-outside: #{$polygon}) {
+	@supports (shape-outside: #{$polygon}) or (-webkit-shape-outside: #{$polygon}) {
 		shape-outside: #{$polygon};
 		-webkit-shape-outside: #{$polygon};
 		float: right;
