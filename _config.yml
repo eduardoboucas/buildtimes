@@ -1,7 +1,7 @@
 title: Eduardo Bouças
 email: mail@eduardoboucas.com
-description: "Software engineer with a crush on the web. Writings in English and JavaScript"
-baseurl: "https://eduardoboucas.com"
+description: "Software engineer with a crush on the web. Writings in English and JavaScript."
+baseurl: ""
 url: "https://eduardoboucas.com"
 
 markdown: kramdown
