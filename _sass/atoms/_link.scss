@@ -1,0 +1,24 @@
+@mixin link($underline: false) {
+	@include transition(background-color color, $transition-shorter);
+
+	position: relative;
+	overflow: hidden;
+	
+	@if $underline {
+		text-decoration: underline;
+	}
+
+	&:hover {
+		color: white;
+		text-decoration: none;
+		background-color: black;
+	}
+}
+
+.link {
+	@include link;
+}
+
+.link--underline {
+	@include link(true);
+}

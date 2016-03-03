@@ -1,0 +1,14 @@
+<form id="post-new-comment" class="form" action="{{ site.comments.url }}" method="post">
+    <!-- Meta -->
+    <input type="hidden" name="meta[url]" value="{{ page.url }}">
+    <input type="hidden" name="meta[slug]" value="{{ post_slug }}">
+    <input type="hidden" name="meta[title]" value="{{ page.title }}">
+    
+    <!-- Fields -->
+    <input type="text" name="company" class="text-field" style="display: none">
+    <input class="form__field text-field" type="text" name="fields[name]" placeholder="Name" required/>
+    <input class="form__field text-field" type="email" name="fields[email]" placeholder="Email address (will not be public)" required/>
+    <input class="form__field text-field" type="url" name="fields[url]" placeholder="Website (optional)"/>
+    <textarea class="form__field text-field" rows="10" name="fields[message]" placeholder="Comment. Markdown is accepted." required></textarea>
+    <input class="cta" type="submit" value="Send" />
+</form>

@@ -1,0 +1,61 @@
+{% if include.lineLength %}
+  {% assign lineLength = include.lineLength %}
+{% else %}
+  {% assign lineLength = 20 %}
+{% endif %}
+
+{% if include.separator %}
+  {% assign separator = include.separator %}
+{% else %}
+  {% assign separator = '|' %}
+{% endif %}
+
+{% assign title = include.title %}
+
+{% assign titleSize = title | size %}
+{% assign words = title | split: ' ' %}
+{% assign lines = '' %}
+{% assign currentSize = 0 %}
+{% assign cumulativeSize = 0 %}
+
+{% for word in words %}
+  {% assign nextWordSize = word | size %}
+  {% assign sizeWithNextWord = currentSize | plus: nextWordSize %}
+  {% assign differenceWithNextWord = lineLength | minus: sizeWithNextWord %}
+
+  {% if differenceWithNextWord > 0 %}
+    {% if currentSize > 0 %}
+      {% assign lines = lines | append: ' ' %}
+    {% endif %}
+
+    {% assign lines = lines | append: word %}
+    {% assign currentSize = currentSize | plus: nextWordSize | plus: 1 %}
+    {% assign cumulativeSize = cumulativeSize | plus: nextWordSize | plus: 1 %}
+  {% else %}
+    {% assign currentDifference = lineLength | minus: currentSize %}
+    {% assign absoluteDifferenceWithNextWord = differenceWithNextWord | times: -1 %}
+
+    {% assign remainingSize = titleSize | minus: cumulativeSize %}
+    
+    {% if remainingSize >= lineLength %}
+      {% if absoluteDifferenceWithNextWord < currentDifference %}
+        {% assign lines = lines | append: ' ' | append: word | append: separator %}
+        {% assign currentSize = 0 %}
+        {% assign cumulativeSize = cumulativeSize | plus: nextWordSize | plus: 1 %}
+      {% else %}
+        {% assign lines = lines | append: separator | append: word %}
+        {% assign currentSize = nextWordSize %}
+        {% assign cumulativeSize = cumulativeSize | plus: nextWordSize %}
+      {% endif %}      
+    {% else %}
+      {% assign lines = lines | append: ' ' | append: word %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign lines = lines | split: separator %}
+
+<p class="feature-title__full">{{ title }}</p>
+{% for line in lines %}
+  <span aria-hidden="true" class="feature-title__part">{{ line }}</span>
+{% endfor %}

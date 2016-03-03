@@ -1,0 +1,19 @@
+.search-results {
+	@include constrain();
+
+	transition: max-height 0s linear 0s;
+	overflow: hidden;
+	max-height: 0;
+	opacity: 0;
+}
+
+.search-results__message {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.search-toggle:checked ~ .search-results {
+	max-height: 15000px;
+	opacity: 1;
+	transition: max-height 0s linear 0.3s, opacity 0.2s ease-out 0.35s;
+}

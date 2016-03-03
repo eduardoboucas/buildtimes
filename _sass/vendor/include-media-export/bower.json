@@ -1,0 +1,36 @@
+
+{
+  "name": "include-media-export",
+  "version": "1.0.1",
+  "homepage": "https://github.com/eduardoboucas/include-media-export",
+  "authors": [
+    "Eduardo Boucas <mail@eduardoboucas.com>"
+  ],
+  "description": "An include-media plugin for exporting breakpoints from Sass to JavaScript",
+  "main": "dist/_include-media-export.scss",
+  "keywords": [
+    "breakpoint",
+    "breakpoints",
+    "media",
+    "queries",
+    "media-queries",
+    "media-query",
+    "mediaquery",
+    "sass",
+    "scss",
+    "rwd",
+    "responsive",
+    "css"
+  ],
+  "dependencies": {
+    "include-media": "^1.0.0"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

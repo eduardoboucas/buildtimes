@@ -1,0 +1,28 @@
+.feature-title {
+    display: inline-block;
+    font-family: $font-family-secondary;
+    font-size: 120px;
+    font-weight: $font-weight-bold;
+}
+
+.feature-title__full {
+	@include post-title;
+	@include media('>=medium') {
+		font-size: 0;
+		line-height: 0;
+	}
+}
+
+.feature-title__part {
+	@include transition(opacity);
+	
+	display: inline-block;
+	white-space: nowrap;
+	text-transform: uppercase;
+	line-height: 0.78;
+	opacity: 0;
+    
+	@include media('<medium') {
+		display: none !important;
+	}
+}

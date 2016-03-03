@@ -1,0 +1,11 @@
+.post-wrapper {
+	display: inline-block;
+
+	//@include media('>=medium') {
+		padding: 5px;
+	//}
+}
+
+.post-wrapper--block {
+	display: block;
+}

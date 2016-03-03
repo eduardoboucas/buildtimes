@@ -1,0 +1,25 @@
+@mixin heading2() {
+	font-size: 30px;
+	line-height: 1.3;
+
+	@include media('>=medium') {
+		font-size: 43px;
+	}
+}
+
+@mixin heading3() {
+	font-size: 25px;
+	line-height: 1.3;
+
+	@include media('>=medium') {
+		font-size: 30px;
+	}
+}
+
+.heading-2 {
+	@include heading2;
+}
+
+.heading-3 {
+	@include heading3;
+}

@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Rapid deployment with Sass"
-date:   2015-03-19 22:31:00
 categories: blog
 tags: sass scaffold grunt
 ---

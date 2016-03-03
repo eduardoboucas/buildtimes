@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Adding Ajax pagination to Jekyll"
-date:   2014-11-10 18:29:00
 categories: blog
 tags: jekyll pagination backbonejs
 ---

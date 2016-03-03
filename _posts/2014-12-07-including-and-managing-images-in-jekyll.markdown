@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Including and managing images in Jekyll"
-date:   2014-12-07 02:00:00
 categories: blog
 tags: jekyll assets images html5 figure figcaption
 ---

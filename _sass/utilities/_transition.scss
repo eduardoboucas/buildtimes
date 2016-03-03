@@ -1,0 +1,23 @@
+$transition-longer: 0.8s;
+$transition-long: 0.5s;
+$transition-normal: 0.3s;
+$transition-short: 0.2s;
+$transition-shorter: 0.1s;
+
+@mixin transition($properties, $duration: $transition-normal, $curve: ease-out) {
+    $transitions: ();
+
+    @each $property in $properties {
+      $transitions: append($transitions, $property $duration $curve, comma);
+    }
+
+    transition: $transitions;
+}
+
+@mixin transition-delay-children($num-children, $delta-delay: 0.2s, $initial-delay: 0s) {
+	@for $i from 1 through $num-children {
+		&:nth-child(#{$i}) {
+			transition-delay: $initial-delay + ($i * $delta-delay);
+		}
+	}
+}

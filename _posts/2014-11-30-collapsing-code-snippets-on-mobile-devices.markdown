@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Collapsing code snippets on mobile devices"
-date:   2014-11-30 22:35:00
 categories: blog
 tags: code snippet expandable html5 javascript mobile
 ---

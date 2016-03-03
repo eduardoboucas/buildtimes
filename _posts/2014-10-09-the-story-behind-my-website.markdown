@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "The story behind my website"
-date:   2014-10-09 16:57:00
 categories: blog
 tags: eduardoboucas.com video backbonejs
 ---
@@ -19,11 +18,11 @@ I wanted to take care of the video capturing and editing all by myself, because 
 
 How on earth would I do that? I didn't have a fancy green screen with an expensive lighting rig to pull out a decent chroma key. I just had a Canon 550d with a stock lens, a garage with walls that are half white (ish) and the blazing sun on a hot Portuguese summer day to light things up.
 
-{% include image name="studio.jpg" caption="My parent's garage transformed into a studio" %}
+{% include helpers/image.html name="studio.jpg" caption="My parent's garage transformed into a studio" %}
 
 I wanted the final video to be black and white with a kind of low-fi vibe to it, which made things easier. I bought a cheap roll of scenery paper to cover the floor and the tiles on the wall, hoping that with the right colour treatment I could make this work. It was time to get everything in place, start rolling some test takes and have some fun with Final Cut Pro X.
 
-{% include image name="editing.jpg" caption="Saturation down, exposure up et voilà!" %}
+{% include helpers/image.html name="editing.jpg" caption="Saturation down, exposure up et voilà!" %}
 
 Sweet! I framed everything in a way that I would have the chair centred and scenery paper going all the way to the left edge of the frame, because I wanted to enter the video from that side. A bit of cropping would take care of the rest.
 
@@ -64,7 +63,7 @@ In the end, I was happy with the result. There are obvious problems and downside
 
 "Why did you do it like this, then?", the dear reader will ask. Well, because I can. This is not a corporate website that can't afford the luxury of not supporting dumb browsers, or a content-rich magazine website that must provide quick and easy navigation to its users. It's my four-page website that the average Joe will only visit once in his lifetime. But instead of living in his brain for 2 minutes as a "nicely built, sober website", I'm hoping it can be carved in his memory forever as the "kick-ass video website with the guy blinking". Well, maybe not forever, that was a bit cocky.<!--tomb-->
 
-_Check out the website at [http://eduardoboucas.com](http://eduardoboucas.com)_
+_Check out the website at http://eduardoboucas.com (EDIT: archived at [https://eduardoboucas.com/v1](https://eduardoboucas.com/v1))._
 
 [sagmeister]: http://www.sagmeisterwalsh.com/ "Sagmeister & Walsh website"
 [videolooper]: https://github.com/eduardoboucas/eduardoboucas.github.io/blob/master/js/VideoLooper.js "VideoLooper.js library"

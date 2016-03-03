@@ -2,7 +2,6 @@
 layout: post
 title:  "BEM, wrappers and nesting (and why I love Twitter)"
 date:   2015-04-27 09:32:00
-categories: blog
 tags: bem html twitter
 ---
 I'm a huge fan of the BEM convention for naming elements in a page. It brings concepts of namespacing, inheritance and modularity to the otherwise messy world of CSS. But because BEM is just a naming convention you can adopt and not a technology put in place by a preprocessor or compiler, it has to be enforced by you and your team. If you fail to do it properly, you lose the guarantee that it will solve all the problems it promises to solve.<!--more-->

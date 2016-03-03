@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Supercharging Jekyll with a ServiceWorker"
-date:   2015-06-04 19:30:00
 categories: blog
 tags: serviceworker javascript jekyll offline cache
 ---
@@ -226,7 +225,7 @@ self.addEventListener('fetch', function(event) {
 
 Here's a demo of the thing working. It's good because you get to see the ServiceWorker in action even if you're not running a recent version of Chrome, but bad because I'm terrible with screencasts.
 
-{% include video url="https://www.youtube.com/embed/wCoUZXBlJWI" width="420" height="315" %}
+{% include helpers/video.html url="https://www.youtube.com/embed/wCoUZXBlJWI" width="420" height="315" %}
 
 The console errors I've mentioned are caused by calls to Google Analytics and there's a really elegant way of handling this. [This sample](https://googlechrome.github.io/samples/service-worker/offline-analytics/) shows how those calls can be stored in IndexedDB and sent to the server once a working internet connection is found. Yes, this means having analytics for offline visits, how cool is that?
 

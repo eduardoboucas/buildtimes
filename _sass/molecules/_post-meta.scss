@@ -1,0 +1,21 @@
+.post-meta {
+	font-family: $font-family-tertiary;
+	font-size: 14px;
+}
+
+.post-meta--emphasis {
+	@include constrain($post-body-max-width);
+
+	padding: 10px 0;
+	font-family: $font-family-primary;
+	font-size: 19px;
+	font-style: italic;
+
+	@include media('>=medium') {
+		border-width: 1px 0 1px 0;
+		border-color: $colour-primary;
+		border-style: solid;
+		text-align: center;
+		margin-top: $post-vertical-rythm * 1.2;
+	}
+}

@@ -1,0 +1,12 @@
+.main {
+	@include transition(transform opacity);
+
+	margin-top: $post-vertical-rythm;
+	overflow: hidden;
+}
+
+.search-toggle:checked ~ .main,
+.search-toggle:checked ~ .paginator {
+	transform: translateY(-80px);
+	opacity: 0;
+}

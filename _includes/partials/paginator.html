@@ -1,0 +1,9 @@
+{% if include.paginator.next_page %}
+  <div class="js-paginator paginator">
+    <div class="paginator__inner">
+      <div class="paginator__button-wrapper">
+        <a class="cta paginator__button js-load-more-articles" href="{{ include.paginator.next_page_path }}">Load more articles</a>
+      </div>
+    </div>
+  </div>
+{% endif %}

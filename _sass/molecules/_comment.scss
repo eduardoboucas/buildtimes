@@ -1,0 +1,42 @@
+$avatar-size: 100px;
+$avatar-size-narrow: 50px;
+
+.comment {
+	margin-bottom: 80px;
+	line-height: 1.3;
+	position: relative;
+}
+
+.comment__content-wrapper {
+	padding-left: $avatar-size-narrow + 20px;
+
+	@include media('>=medium') {
+		padding-left: $avatar-size + 20px;		
+	}
+}
+
+.comment__author {
+	font-size: 24px;
+}
+
+.comment__date {
+	opacity: 0.6;
+	margin: 5px 0 15px 0;
+	font-size: 0.8em;
+}
+
+.comment__avatar-wrapper {
+	width: $avatar-size-narrow;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	@include media('>=medium') {
+		width: $avatar-size;
+	}
+}
+
+.comment__avatar {
+	border-radius: 50%;
+	width: 100%;
+}

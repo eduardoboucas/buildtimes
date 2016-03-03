@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Google News and sponsored content"
-date:   2015-04-20 18:38:00
 categories: blog
 tags: google-news robotstxt seo
 ---
@@ -9,7 +8,7 @@ If your website — or a website you're working on — is on Google News, that's
 
 Getting a site into the platform is supposedly not that difficult — a good read through [this page](https://support.google.com/news/publisher/answer/40787?hl=en) should point you to the technical and editorial requirements you need to put in place before you [submit your site](https://partnerdash.google.com/partnerdash/d/news#p:id=pfehome) to the platform. Within those pages, there's a very important piece of information: **«Stick to the news--we mean it!»**.<!--more-->
 
-> Google News is not a marketing service. We don't want to send users to sites created primarily for promoting a product or organization, or to sites that engage in commerce journalism. (...) Otherwise, if we find non-news content mixed with news content, we may exclude your entire publication from Google News.
+>> Google News is not a marketing service. We don't want to send users to sites created primarily for promoting a product or organization, or to sites that engage in commerce journalism. (...) Otherwise, if we find non-news content mixed with news content, we may exclude your entire publication from Google News.
 
 It's a common practice for news sites and blogs to have sponsored articles, often visually camouflaged as editorial content. If you're doing this and your website is on Google News, you might be breaching their guidelines and that can get your content removed from the platform.
 

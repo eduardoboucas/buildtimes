@@ -1,0 +1,15 @@
+@mixin drop-cap() {
+	&:first-letter { 
+		font-family: $font-family-secondary;
+		float: left; 
+		line-height: 50px; 
+		font-size: 120px;
+		margin: 23px 6px 0px 0px;
+
+		@include media('>=medium') {
+			line-height: 53px; 
+			font-size: 130px;
+			margin: 33px 6px 0px -5px;
+		}
+	}
+}
