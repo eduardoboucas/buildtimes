@@ -1,4 +1,4 @@
-![Desk with desktop and laptop computers](https://raw.githubusercontent.com/eduardoboucas/dev.eduardoboucas.com/gh-pages/assets/images/about.gif?token=AD-DGb5lhojb4s2979lu-0m0TIMW4p0vks5W4G42wA%3D%3D)
+![Desk with desktop and laptop computers](https://raw.githubusercontent.com/eduardoboucas/eduardoboucas.github.io/master/assets/images/about.gif)
 
 # eduardoboucas.com
 
