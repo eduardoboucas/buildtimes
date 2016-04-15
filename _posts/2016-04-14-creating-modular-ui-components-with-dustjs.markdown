@@ -29,19 +29,19 @@ But what about HTML? Regardless of how compartmentalised our CSS and JavaScript 
 <section class="about-us">
   <p>Lorem ipsum</p>
   <img src="/about-us.jpg">
-  {>"partials/contact-modal" action="/formhandler.html"/}
+  {>"partials/contact-modal" title="Contact us"/}
 </section>
 
 <!-- partials/contact-modal.dust -->
 <div class="contact-modal">
-  <form method="POST" action="{action}">
-    <input type="text" name="name">
+  <p class="contact-modal__title">{title}</p>
   
-    {>"partials/country-picker" name="country"/}
+  <input type="text" name="name">
+  {>"partials/country-picker" name="country"/}
+  <textarea name="message"></textarea>
   
-    <textarea name="message"></textarea>
-    <input type="submit" value="Submit">
-  </form>
+  <button class="contact-modal__cancel">Cancel</button>
+  <button class="contact-modal__confirm">OK</button>
 </div>
 
 <!-- partials/country-picker.dust -->
@@ -92,7 +92,26 @@ The massive caveat of this solution is that helpers are defined as plain JavaScr
 
 At first, I thought the huge maintainability costs of that approach could be mitigated if I managed to still keep the markup in a Dust-flavoured HTML file and somehow generated the JavaScript functions from it automatically as a build process, using something like Gulp or Grunt. This sounded like an acceptable solution to me.
 
-But then I realised there's a much better way to do it, by creating a helper that makes use of its content block in a creative way by passing it to a partial as an inline parameter.
+Then I realised there's a much better way of doing it, by creating a helper that makes use of its content block in a creative way, passing it down to a partial as an inline parameter.
 
+{% highlight html %}
+<!-- partials/modal.dust -->
+<div class="modal" data-foo="whatever" data-bar="we-need">
+  <p class="modal__title">{title}</p>
 
+  {$content}
+
+  <button class="modal__cancel">Cancel</button>
+  <button class="modal__confirm">OK</button>
+</div>
+
+<!-- partials/contact-modal.dust -->
+{@partial name="partials/modal" title="Contact us"}
+  <input type="text" name="name">
+  {>"partials/country-picker" name="country"/}
+  <textarea name="message"></textarea>
+{/partial}
+{% endhighlight %}
+
+So, here's what's happening. Our modal component
 <!--tomb-->
