@@ -2,7 +2,7 @@
 layout: post
 title:  "Creating modular UI components with Dust.js"
 categories: blog
-tags: test
+tags: dust dustjs atomic design modular components
 ---
 One of the most important changes in my mindset as a front-end engineer happened when I started to look at websites as a group of components, rather than a group of pages. The principle is not new, and articles like *[Don’t Build Pages, Build Modules](http://www.ebaytechblog.com/2014/10/02/dont-build-pages-build-modules/)* from the eBay engineering team or the reference piece on [atomic design by Brad Frost](http://bradfrost.com/blog/post/atomic-web-design/) provide a far better explanation than I could ever attempt to do — in short, building monolithic pages that are not reusable in different contexts isn't scalable, sustainable or maintainable in the long term. 
 
