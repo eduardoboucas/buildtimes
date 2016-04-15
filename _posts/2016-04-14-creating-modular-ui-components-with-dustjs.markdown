@@ -88,7 +88,7 @@ I [asked the question](https://github.com/linkedin/dustjs/issues/715) to the Lin
 {/modal-dialog}
 {% endhighlight %}
 
-The massive caveat of this solution is that helpers are defined as plain JavaScript functions, so any markup required by our modal dialog component would have to be kept as a String in the middle of a function — *yikes!*. 
+This solution comes with a massive caveat though, in that helpers are defined as plain JavaScript functions, so any markup required by our modal dialog component would have to be kept as a String in the middle of a function — *yikes!*. 
 
 At first, I thought the huge maintainability costs of that approach could be mitigated if I managed to still keep the markup in a Dust-flavoured HTML file and somehow generated the JavaScript functions from it automatically as a build process, using something like Gulp or Grunt. This sounded like an acceptable solution to me.
 
@@ -113,5 +113,7 @@ Then I realised there's a much better way of doing it, by creating a helper that
 {/partial}
 {% endhighlight %}
 
-So, here's what's happening. Our modal component
+So, what's happening? Our modal component is still declared in a normal Dust template, but it can now make use of a special context variable called `$content`, where all the markup to be rendered in the modal will reside. 
+
+This is made possible by calling the template using our new `@partial` helper instead of the traditional `{>"partial"/}` self-closing tag. The partial to be called is defined in `name`, and any other parameters will be made available to the partial (in this case we only used `title`, but it could be anything).
 <!--tomb-->
