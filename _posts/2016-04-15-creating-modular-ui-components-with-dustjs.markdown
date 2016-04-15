@@ -4,25 +4,25 @@ title:  "Creating modular UI components with Dust.js"
 categories: blog
 tags: test
 ---
-One of the most important changes in my mindset, as an engineer who builds for the web, happened when I started to look at websites as a group of components, rather than a group of pages. The principle is not new, and articles like *[Don’t Build Pages, Build Modules](http://www.ebaytechblog.com/2014/10/02/dont-build-pages-build-modules/)* from the eBay engineering blog or the mandatory piece on [atomic design by Brad Frost](http://bradfrost.com/blog/post/atomic-web-design/) provide a far better explanation than I could ever attempt to do — in short, building monolithic pages that are not reusable in different contexts isn't scalable, sustainable or maintainable in the long term. 
+One of the most important changes in my mindset as a front-end engineer happened when I started to look at websites as a group of components, rather than a group of pages. The principle is not new, and articles like *[Don’t Build Pages, Build Modules](http://www.ebaytechblog.com/2014/10/02/dont-build-pages-build-modules/)* from the eBay engineering team or the reference piece on [atomic design by Brad Frost](http://bradfrost.com/blog/post/atomic-web-design/) provide a far better explanation than I could ever attempt to do — in short, building monolithic pages that are not reusable in different contexts isn't scalable, sustainable or maintainable in the long term. 
 
 Imagine, as an example, a *About us* page that contains some copy, an image and a modal dialog, triggered from a *Contact* link, with three fields: name, country and message. It's a simple layout, so one could be tempted to house everything (markup, styling and any JavaScript logic) under a *About us* block and call it a day. 
 
 But what happens if you also need to use the modal dialog in the homepage, perhaps with a different colour scheme? And what if you also want to use just the country picker somewhere in the shopping cart process? Will you summon a "about us country picker" even though you're in a completely different context? Will you simply duplicate the code and live with the burden of maintaining it in two different places?
 
-## Thinking components
+## Thinking in components
 
 A more reasonable approach is to create a *country picker* component, self-contained and independent of its context, which will then be used in a *contact form* component (along with several other components), which will then be used in a larger *contact us* component and so on. You see where I'm going with this.
 
-Ideally, a developer should be able to create a consistent and centrally-managed instance of any of these components, and include it with ease anywhere on the project. This is a difficult problem to take when considering all the languages involved in a web project. In CSS, it's possible (albeit with huge limitations until we have [CSS containment](https://justmarkup.com/log/2016/04/css-containment/)) to visually describe our country picker component with just a `.country-picker` class.
+Ideally, a developer should be able to create a consistent and centrally-managed instance of any of these components, and include it with ease anywhere on the project. This is a difficult problem to tackle when considering all the languages involved in a web project. In CSS, it's possible (albeit with huge limitations until we have [CSS containment](https://justmarkup.com/log/2016/04/css-containment/)) to visually describe our country picker component with just a `.country-picker` class.
 
-Similarly, it's fairly easy to create a modular JavaScript piece that contains all the logic required by our component, even more so when [ES6 modules](http://exploringjs.com/es6/ch_modules.html) land.
+Similarly, it's fairly easy to create a modular JavaScript piece that contains all the logic required by our component, even before [ES6 modules](http://exploringjs.com/es6/ch_modules.html) land.
 
-But what about HTML? Regardless of how compartmentalised our CSS and JavaScript are, one still needs to include the correct HTML markup required to render the component every time it needs to be rendered.
+But what about HTML? Regardless of how compartmentalised the CSS and JavaScript are, one still needs to include the correct HTML markup required to render the component every time it needs to be rendered.
 
 ## Enter Dust.js
 
-[Dust.js](http://www.dustjs.com/) is LinkedIn's JavaScript templating engine, that works both on the server and on the browser. Just like most templating languages, it introduces the concept of partials, templates that can be reused by other templates.
+[Dust.js](http://www.dustjs.com/) is LinkedIn's JavaScript templating engine, that works both on the server and on the browser. Like most templating languages, it introduces the concept of partials, which are essentialy templates that can be reused by other templates.
 
 {% highlight html %}
 <!-- page/contact-us.dust -->
@@ -78,7 +78,7 @@ To make our component capable of rendering anything we throw at it, we need a Du
 
 ## Finding a solution
 
-I [asked the question](https://github.com/linkedin/dustjs/issues/715) to the LinkedIn engineers and a few suggestions were discussed. One of them was to use [helpers](http://www.dustjs.com/guides/dust-helpers/), a feature of Dust that allows a globally-available JavaScript function to run arbitrary code on a template, useful for implementing more complex logic tests or other types of processing (e.g. parsing Markdown text). The reason this was suggested was because, unlike partials, helpers do support a content block.
+I [asked the question](https://github.com/linkedin/dustjs/issues/715) to the LinkedIn engineers and a few suggestions were discussed. One of them was to use define the component using [helpers](http://www.dustjs.com/guides/dust-helpers/) instead of partials. Helpers are globally-available JavaScript functions that can run arbitrary code on a template, useful for implementing more complex logic operations or other types of processing (e.g. parsing Markdown text). More importantly to our case, and unlike partials, they do support a content block.
 
 {% highlight html %}
 <!-- This does work! -->
@@ -88,11 +88,11 @@ I [asked the question](https://github.com/linkedin/dustjs/issues/715) to the Lin
 {/modal-dialog}
 {% endhighlight %}
 
-This solution comes with a massive caveat though, in that helpers are defined as plain JavaScript functions, so any markup required by our modal dialog component would have to be kept as a String in the middle of a function — *yikes!*. 
+This solution comes with a massive caveat though, in that helpers are defined as plain JavaScript functions, so any markup required by our modal dialog component would have to be kept as a String in the middle of a function — *yikes!*
 
-At first, I thought the huge maintainability costs of that approach could be mitigated if I managed to still keep the markup in a Dust-flavoured HTML file and somehow generated the JavaScript functions from it automatically as a build process, using something like Gulp or Grunt. This sounded like an acceptable solution to me.
+At first, I thought the huge maintainability costs of that approach could be mitigated if I managed to still keep the markup in a Dust-flavoured HTML file and could somehow generate the JavaScript functions from it automatically as part of the build process, using something like Gulp or Grunt. This could be an acceptable solution, but still not ideal.
 
-Then I realised there's a much better way of doing it, by creating a helper that makes use of its content block in a creative way, passing it down to a partial as an inline parameter.
+Then I realised there's a much better way of doing it, by creating a helper that calls a partial and makes its own content block available to it as a context variable.
 
 {% highlight html %}
 <!-- partials/modal.dust -->
@@ -115,5 +115,20 @@ Then I realised there's a much better way of doing it, by creating a helper that
 
 So, what's happening? Our modal component is still declared in a normal Dust template, but it can now make use of a special context variable called `$content`, where all the markup to be rendered in the modal will reside. 
 
-This is made possible by calling the template using our new `@partial` helper instead of the traditional `{>"partial"/}` self-closing tag. The partial to be called is defined in `name`, and any other parameters will be made available to the partial (in this case we only used `title`, but it could be anything).
-<!--tomb-->
+This is made possible by calling the template using our new `@partial` helper instead of the traditional `{>"partial"/}` self-closing tag. The partial to be called is defined in `$name`, and any other parameters will be made available to the partial (in this case we only used `title`, but it could be anything).
+
+The code for the helper itself is incredibly simple.
+
+{% highlight javascript %}
+(function (dust) {
+  dust.helpers.partial = function (chunk, context, bodies, params) {
+    var newContext = {
+      $content: bodies.block
+    };
+
+    return chunk.partial(params.$name, context.push(newContext), params);
+  };
+})(typeof exports !== 'undefined' ? module.exports = require('dustjs-linkedin') : dust);
+{% endhighlight %}
+
+And that's it. We now have a modal dialog component that follows Addy Osmani's principle of [FIRST](https://addyosmani.com/first/): Focused, Independent, Reusable, Small and Testable.<!--tomb-->
