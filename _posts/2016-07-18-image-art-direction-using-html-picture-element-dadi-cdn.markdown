@@ -16,7 +16,7 @@ Displaying a landscape image on a portrait device is a common challenge develope
 
 {% include helpers/image.html name="responsive-images-demo.jpg" caption="Showing different image crops based on screen aspect ratio" %}
 
-This can be achieve with the `<picture>` element, and the markup would look like this:
+This can be achieved with the `<picture>` element, and the markup would look like this:
 
 {% highlight html %}
 <picture>
@@ -26,13 +26,13 @@ This can be achieve with the `<picture>` element, and the markup would look like
 </picture>
 {% endhighlight %}
 
-This is great, but it comes with a challenge: we now have to generate multiple crops for each image that needs to be displayed on the site. This creates a huge overhead and can quickly transform into a daunting task for any editorial workflow.
+This is great, but it comes with a challenge: we now have to generate multiple crops for each image that is to be displayed on the site. This creates a huge overhead and can quickly become a heavy burden to an editorial workflow.
 
 ## Cropping on-the-fly
 
 Ideally, we would have a single image file in its original dimensions and then generate the various crops as needed, on-the-fly. This can be done with the *just in time* image manipulation system of [DADI CDN](https://github.com/dadi/cdn), an open-source asset manipulation and delivery platform.
 
-A crop can be obtained by requesting the image with specific URL parameters. The following URL would get a `400x600` crop with a specific set of coordinates:
+A crop can be obtained by requesting the image with specific URL parameters. The following URL would get a `400x600` crop, with the top left corner on the coordinates `600,150`:
 
 `http://cdn.url/img.jpg?width=400&height=600&resizeStyle=crop&crop=600,150,1000,750`
 
@@ -46,7 +46,7 @@ We can use this on the `<picture>` element to generate the various crops from a 
 </picture>
 {% endhighlight %}
 
-Now the only overhead we're adding to the workflow is having to find the coordinates for each image crop. But even that can be automated.
+This eliminates the need to manually generate different image files, so the only overhead we're adding to the workflow is having to find the coordinates for each image crop. But even that can be automated.
 
 ## Automating crop generation
 
@@ -56,7 +56,7 @@ For example, a `400x600` crop can be obtained with this syntax:
 
 `http://cdn.url/img.jpg?width=400&height=600&resizeStyle=entropy`
 
-Finally, applying this to the `<picture>` element markup means that we can provide as many variations of an image as we want, without having to do anything manually:
+Finally, by applying this to the `<picture>` element markup we can provide as many variations of an image as we want, without having to do any of it manually.
 
 {% highlight html %}
 <picture>
@@ -66,4 +66,4 @@ Finally, applying this to the `<picture>` element markup means that we can provi
 </picture>
 {% endhighlight %}
 
-If you're interested in seeing a demo of this, check out [this pen](http://codepen.io/eduardoboucas/full/ZOApOK/).<!--tomb-->
+Check out [this pen](http://codepen.io/eduardoboucas/full/ZOApOK/) for a demo.<!--tomb-->
