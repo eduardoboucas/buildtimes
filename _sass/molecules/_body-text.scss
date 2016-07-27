@@ -39,6 +39,10 @@
 		padding: 5px 8px;
 	}
 
+	strike {
+		text-decoration: line-through;		
+	}
+
 	// Twitter embed
 	.twitter-tweet {
 		margin: ($post-vertical-rythm * 3) auto !important;
