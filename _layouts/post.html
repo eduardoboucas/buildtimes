@@ -8,10 +8,16 @@ layout: default
   <article class="post post--full">
     <div class="constrain">
     	<h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=page.title %}</h1>
-    	<p class="post-meta post-meta--emphasis">{% include helpers/format-date.html date=page.date %}</p>
+    	<p class="post-meta post-meta--emphasis">{% if page.author %}Guest article by {{ page.author }} — {% endif %}{% include helpers/format-date.html date=page.date %}</p>
     </div>
     
     <div class="post__body body-text">
+      {% if page.preface %}
+        <div class="preface">
+          {{ page.preface | markdownify }}
+        </div>
+      {% endif %}
+      
       {{ content | replace: '<!--tomb-->', ' &#8718;'}}
     </div>
 

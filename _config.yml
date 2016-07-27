@@ -24,4 +24,11 @@ googleAnalyticsId: UA-54012006-1
 gems:
   - jekyll-paginate
 
+excerpt_separator: <!--more-->
+
 future: true
+
+# Serving
+detach:  false
+port:    4100
+host:    0.0.0.0

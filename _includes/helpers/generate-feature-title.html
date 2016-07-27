@@ -12,9 +12,18 @@
 
 {% assign title = include.title %}
 
-{% assign titleSize = title | size %}
-{% assign words = title | split: ' ' %}
 {% assign lines = '' %}
+
+{% assign colon = title | split: ':' %}
+
+<!-- Checking ... -->
+{% if colon[1] %}
+  {% assign lines = lines | append: colon[0] | append: ':' | append: separator %}
+  {% assign title = colon[1] %}
+{% endif %}
+
+{% assign words = title | split: ' ' %}
+{% assign titleSize = title | size %}
 {% assign currentSize = 0 %}
 {% assign cumulativeSize = 0 %}
 

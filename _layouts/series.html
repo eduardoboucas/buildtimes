@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<main id="main" role="main" class="main posts constrain">
+  {% for post in site.categories[page.category] %}
+    {% if forloop.first %}
+      {% include partials/post-featured.html post=post %}
+    {% else %}
+      {% include partials/post-small.html post=post %}
+    {% endif %}
+  {% endfor %}
+</main>
