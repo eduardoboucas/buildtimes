@@ -32,3 +32,20 @@ future: true
 detach:  false
 port:    4100
 host:    0.0.0.0
+
+# Staticman
+staticman:
+  allowedFields: ['name', 'email', 'url', 'message']
+  akismet:
+    enabled: true
+    author: name
+    content: message
+  branch: master
+  format: yml
+  moderation: true
+  path: "_data/comments/{options.slug}"
+  requiredFields: ['name', 'email', 'message']
+  transforms:
+    email: md5
+  url: http://localhost:8053/v1/entry/eduardoboucas/eduardoboucas.github.io/master
+  #url: https://api.staticman.net/v1/entry/eduardoboucas/eduardoboucas.github.io/master
