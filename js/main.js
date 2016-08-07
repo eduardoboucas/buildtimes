@@ -36,9 +36,9 @@ var eb = (function ($) {
 					url: postUrl,
 					data: payload,
 					success: function (response) {
-						var comment = getComment(response);
+						var message = response.success ? 'Thanks for your comment. It will appear on the site shortly.' : 'Oops! There was an error when submitting your comment. Please try again.';
 
-						addComment(comment);
+						toaster(message);
 					},
 					error: function (response) {
 						console.log('** ERROR!');
@@ -142,25 +142,33 @@ var eb = (function ($) {
 	}
 
 	// --------------------------------------------------------------
-	// Templating
+	// Toaster
 	// --------------------------------------------------------------
 
-	function getComment(data) {
-		var template = $('#template-comment').text();
-		data.index = $('.js-comment').length;
+	function toaster(message) {
+		$('#toaster').remove();
 
-		for (var variable in data) {
-			var exp = new RegExp('{' + variable + '}', 'g');
+		var html = '<div id="toaster" class="toaster">'
+		+ '<button type="button" class="toaster__close js-close-toaster">&times;</button>'
+		+ '<p>' + message + '</p>'
+		+ '</div>'
 
-			template = template.replace(exp, data[variable]);
-		}
+		$('#main').append(html);
 
-		return template;
+		setTimeout(function () {
+			closeToaster();
+		}, 5000);
 	}
 
-	function addComment(comment) {
-		$('.js-comments').removeAttr('aria-hidden').append(comment);
+	function closeToaster() {
+		$('#toaster').fadeOut(300, function () {
+			$(this).remove();
+		})
 	}
+
+	$('body').on('click', '.js-close-toaster', function () {
+		closeToaster();
+	});
 
 	// --------------------------------------------------------------
 	// Initialisation
@@ -201,7 +209,7 @@ var eb = (function ($) {
 
 	return {
 		init: init,
-		getComment: getComment,
-		loadMoreArticles: loadMoreArticles
+		loadMoreArticles: loadMoreArticles,
+		toaster: toaster
 	}
 })(jQuery);

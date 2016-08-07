@@ -47,5 +47,4 @@ staticman:
   requiredFields: ['name', 'email', 'message']
   transforms:
     email: md5
-  url: http://localhost:8053/v1/entry/eduardoboucas/eduardoboucas.github.io/master
-  #url: https://api.staticman.net/v1/entry/eduardoboucas/eduardoboucas.github.io/master
+  url: https://api.staticman.net/v1/entry/eduardoboucas/eduardoboucas.github.io/master
