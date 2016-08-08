@@ -16,9 +16,6 @@ exclude:
 paginate: 6
 paginate_path: "/page/:num/"
 
-comments:
-  url: "https://staticman.net/api/v1/entries/56bc6a83bad169944324e966"
-
 googleAnalyticsId: UA-54012006-1  
 
 gems:
