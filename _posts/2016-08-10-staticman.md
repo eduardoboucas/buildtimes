@@ -8,9 +8,9 @@ I've been really interested in finding the ideal solution to add user-generated 
 
 A few months later, a [talk by Tom Preston-Werner](https://www.youtube.com/watch?v=BMve1OCKj6M) made me rethink the whole concept, and I ended up building [a bespoke commenting system]({% post_url 2015-05-11-rethinking-the-commenting-system-for-my-jekyll-site %}). After several iterations, that project eventually evolved into a public, open-source platform called [Staticman](https://staticman.net).<!--more-->
 
-In a nutshell, I love the fact that my entire Jekyll lives in a GitHub repository and can go into a ZIP file with just a click, content included. I wanted to allow users to comment on my posts, but refused to accept the fact that introducing user-generated content would mean breaking that premise.
+In a nutshell, I love the fact that my entire site lives in a GitHub repository and can go into a ZIP file with just a click, content included. I wanted to allow users to comment on my posts, but refused to accept the fact that introducing user-generated content would mean breaking that premise above.
 
-Commenting platforms like Disqus are great, but the content is no longer under your control (not to mention the fact that it's difficult to stay on-brand.)
+Commenting platforms like Disqus are great, but the content is no longer under your contro, not to mention the fact that it's difficult to fully customise visually so it blends in with your existing design.
 
 With Staticman, you can have user comments stored as data files in the repository, along with the rest of your content. When users submit a new entry, Staticman will process, validate and push it to your GitHub repository, either directly to the branch where your site lives or as a pull request for your approval.
 
@@ -18,4 +18,6 @@ Instead of writing an essay, I figured the video below would be a good way of sh
 
 {% include helpers/video.html url="https://player.vimeo.com/video/178244050" width="640" height="360" %}
 
-Feel free to drop any questions in the comments box below — powered by Staticman, of course!<!--tomb-->
+The example shows how to use the hosted version available on [staticman.net](https://staticman.net), but you can choose to run your own instance as the entire project is fully open source and available [on GitHub](https://gitub.com/eduardoboucas/staticman).
+
+If you need help or get stuck, feel free to drop any questions in the comments box below — which is powered by Staticman, of course!<!--tomb-->
