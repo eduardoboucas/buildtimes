@@ -39,6 +39,11 @@ staticman:
     content: message
   branch: master
   format: yml
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp-seconds"
   moderation: true
   path: "_data/comments/{options.slug}"
   requiredFields: ['name', 'email', 'message']
