@@ -1,68 +1,66 @@
-{% if include.lineLength %}
-  {% assign lineLength = include.lineLength %}
+{% assign separator = include.separator | default: '|' %}
+
+{% if include.visualTitle %}
+  {% assign lines = include.visualTitle | split: separator %}
 {% else %}
-  {% assign lineLength = 20 %}
-{% endif %}
-
-{% if include.separator %}
-  {% assign separator = include.separator %}
-{% else %}
-  {% assign separator = '|' %}
-{% endif %}
-
-{% assign title = include.title %}
-
-{% assign lines = '' %}
-
-{% assign colon = title | split: ':' %}
-
-<!-- Checking ... -->
-{% if colon[1] %}
-  {% assign lines = lines | append: colon[0] | append: ':' | append: separator %}
-  {% assign title = colon[1] %}
-{% endif %}
-
-{% assign words = title | split: ' ' %}
-{% assign titleSize = title | size %}
-{% assign currentSize = 0 %}
-{% assign cumulativeSize = 0 %}
-
-{% for word in words %}
-  {% assign nextWordSize = word | size %}
-  {% assign sizeWithNextWord = currentSize | plus: nextWordSize %}
-  {% assign differenceWithNextWord = lineLength | minus: sizeWithNextWord %}
-
-  {% if differenceWithNextWord > 0 %}
-    {% if currentSize > 0 %}
-      {% assign lines = lines | append: ' ' %}
-    {% endif %}
-
-    {% assign lines = lines | append: word %}
-    {% assign currentSize = currentSize | plus: nextWordSize | plus: 1 %}
-    {% assign cumulativeSize = cumulativeSize | plus: nextWordSize | plus: 1 %}
+  {% if include.lineLength %}
+    {% assign lineLength = include.lineLength %}
   {% else %}
-    {% assign currentDifference = lineLength | minus: currentSize %}
-    {% assign absoluteDifferenceWithNextWord = differenceWithNextWord | times: -1 %}
-
-    {% assign remainingSize = titleSize | minus: cumulativeSize %}
-    
-    {% if remainingSize >= lineLength %}
-      {% if absoluteDifferenceWithNextWord < currentDifference %}
-        {% assign lines = lines | append: ' ' | append: word | append: separator %}
-        {% assign currentSize = 0 %}
-        {% assign cumulativeSize = cumulativeSize | plus: nextWordSize | plus: 1 %}
-      {% else %}
-        {% assign lines = lines | append: separator | append: word %}
-        {% assign currentSize = nextWordSize %}
-        {% assign cumulativeSize = cumulativeSize | plus: nextWordSize %}
-      {% endif %}      
-    {% else %}
-      {% assign lines = lines | append: ' ' | append: word %}
-    {% endif %}
+    {% assign lineLength = 20 %}
   {% endif %}
-{% endfor %}
 
-{% assign lines = lines | split: separator %}
+  {% assign title = include.title %}
+  {% assign lines = '' %}
+  {% assign colon = title | split: ':' %}
+
+  <!-- Checking ... -->
+  {% if colon[1] %}
+    {% assign lines = lines | append: colon[0] | append: ':' | append: separator %}
+    {% assign title = colon[1] %}
+  {% endif %}
+
+  {% assign words = title | split: ' ' %}
+  {% assign titleSize = title | size %}
+  {% assign currentSize = 0 %}
+  {% assign cumulativeSize = 0 %}
+
+  {% for word in words %}
+    {% assign nextWordSize = word | size %}
+    {% assign sizeWithNextWord = currentSize | plus: nextWordSize %}
+    {% assign differenceWithNextWord = lineLength | minus: sizeWithNextWord %}
+
+    {% if differenceWithNextWord > 0 %}
+      {% if currentSize > 0 %}
+        {% assign lines = lines | append: ' ' %}
+      {% endif %}
+
+      {% assign lines = lines | append: word %}
+      {% assign currentSize = currentSize | plus: nextWordSize | plus: 1 %}
+      {% assign cumulativeSize = cumulativeSize | plus: nextWordSize | plus: 1 %}
+    {% else %}
+      {% assign currentDifference = lineLength | minus: currentSize %}
+      {% assign absoluteDifferenceWithNextWord = differenceWithNextWord | times: -1 %}
+
+      {% assign remainingSize = titleSize | minus: cumulativeSize %}
+      
+      {% if remainingSize >= lineLength %}
+        {% if absoluteDifferenceWithNextWord < currentDifference %}
+          {% assign lines = lines | append: ' ' | append: word | append: separator %}
+          {% assign currentSize = 0 %}
+          {% assign cumulativeSize = cumulativeSize | plus: nextWordSize | plus: 1 %}
+        {% else %}
+          {% assign lines = lines | append: separator | append: word %}
+          {% assign currentSize = nextWordSize %}
+          {% assign cumulativeSize = cumulativeSize | plus: nextWordSize %}
+        {% endif %}      
+      {% else %}
+        {% assign lines = lines | append: ' ' | append: word %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign lines = lines | split: separator %}
+{% endif %}
 
 <p class="feature-title__full">{{ title }}</p>
 {% for line in lines %}
