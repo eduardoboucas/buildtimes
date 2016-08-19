@@ -38,6 +38,7 @@ staticman:
     author: name
     content: message
   branch: master
+  filename: 'entry{@timestamp}'
   format: yml
   generatedFields:
     date:
