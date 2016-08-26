@@ -18,6 +18,6 @@ Instead of writing an essay, I figured the video below would be a good way of sh
 
 {% include helpers/video.html url="https://player.vimeo.com/video/178244050" width="640" height="360" %}
 
-The example shows how to use the hosted version available on [staticman.net](https://staticman.net), but you can choose to run your own instance as the entire project is fully open source and available [on GitHub](https://gitub.com/eduardoboucas/staticman).
+The example shows how to use the hosted version available on [staticman.net](https://staticman.net), but you can choose to run your own instance as the entire project is fully open source and available [on GitHub](https://github.com/eduardoboucas/staticman).
 
 If you need help or get stuck, feel free to drop any questions in the comments box below — which is powered by Staticman, of course!<!--tomb-->
