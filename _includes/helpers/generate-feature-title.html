@@ -2,6 +2,7 @@
 
 {% if include.visualTitle %}
   {% assign lines = include.visualTitle | split: separator %}
+  {% assign title = include.title %}
 {% else %}
   {% if include.lineLength %}
     {% assign lineLength = include.lineLength %}
