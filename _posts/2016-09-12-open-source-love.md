@@ -8,12 +8,12 @@ The news that Tim Wood, maintainer of popular JavaScript library [Moment.js](htt
 
 >> Seeing bugs and issues continue to roll in and being mentally unable to address them has led to feelings of failure and depression. When looking at the moment project, I could only see the negatives. The bugs and misnomers and mistakes I had made. It let to a cycle of being too depressed to contribute, which led to being depressed because I wasn’t contributing.
 
-Many developers came forward to speak about the issue, such as Dave DeSandro, the man behind projects like [Isotope](http://isotope.metafizzy.co/) and [Flickity](http://flickity.metafizzy.co/).
+Many developers came forward to speak about the issue, like Dave DeSandro, the man behind projects like [Isotope](http://isotope.metafizzy.co/) and [Flickity](http://flickity.metafizzy.co/).
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Been meaning to talk about this for a while: GitHub Issues and mental health <a href="https://t.co/6Ka8vwJ2Wc">https://t.co/6Ka8vwJ2Wc</a></p>&mdash; Dave DeSandro (@desandro) <a href="https://twitter.com/desandro/status/759111533221720064">July 29, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I completely relate to this. On a much smaller scale, I've dedicated huge amounts of my personal time to projects like [include-media](http://include-media.com) and [Staticman](https://staticman.net/), and yet the vast majority of feedback I ever get from anyone is a bug report or a feature request (luckily, I never had to deal with [this level](https://twitter.com/mxstbr/status/759085713845587968) of harshness).
+I completely relate to this. On a much smaller scale, I've dedicated huge amounts of my personal time to projects like [include-media](http://include-media.com) and [Staticman](https://staticman.net/), and yet the vast majority of feedback I ever get from anyone are bug reports or feature requests (luckily, I never had to deal with [this level](https://twitter.com/mxstbr/status/759085713845587968) of harshness).
 
 Instead of only coming across the negative comments, I would love to hear from people that use these projects successfully and to learn about how they helped make their jobs and lives a tiny bit easier. Their experiences would certainly teach me a lot about my own projects and the positive feedback would be a huge motivation boost to help me keep going.
 
