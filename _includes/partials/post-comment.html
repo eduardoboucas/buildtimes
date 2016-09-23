@@ -15,10 +15,10 @@
 				{% if include.index %}<a href="#comment{{ include.index }}">{% endif %}
 				{% include helpers/format-date.html date=include.date time=true %}
 				{% if include.index %}</a>{% endif %}
-			{% else %}
-				<em>This is a preview of your comment. It may take a couple of minutes for it to be displayed to others.</em>
 			{% endif %}
 		</p>
-		{{ include.message }}
+		<div class="comment__body">
+			{{ include.message | markdownify }}
+		</div>
 	</div>
 </article>

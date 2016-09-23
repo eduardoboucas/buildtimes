@@ -40,3 +40,21 @@ $avatar-size-narrow: 50px;
 	border-radius: 50%;
 	width: 100%;
 }
+
+.comment__body {
+	* + * {
+		margin-top: 20px;
+	}
+
+	.highlight {
+		font-size: 14px;
+		padding: 20px;
+	}
+
+	p > code {
+		font-family: "Monaco","Consolas","Menlo",monospace;
+    background-color: #eeeee5;
+    font-size: 0.75em;
+    padding: 5px 8px;
+	}
+}
