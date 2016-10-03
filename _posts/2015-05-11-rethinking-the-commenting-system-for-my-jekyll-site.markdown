@@ -4,6 +4,8 @@ title:  "Rethinking the commenting system for my Jekyll site"
 categories: blog
 tags: jekyll comments github
 ---
+***Update 03/10/2016**: I turned this concept into a service called [Staticman](https://staticman.net). It's free and open-source and you can read more about it in [this post](https://eduardoboucas.com/blog/2016/08/10/staticman.html).*
+
 Last December I wrote [a post about building a bespoke commenting for Jekyll]({% post_url 2014-12-14-building-a-bespoke-commenting-system-for-a-static-site %}). I had been using Jekyll for a couple of months at the time, and not having an easy solution for a commenting system was the first big limitation of a static site I had to deal with. I didn’t want to use a third-party service, like Disqus, so I decided to build a bespoke solution because I knew what I wanted — or I thought I did.<!--more-->
 
 To sum it up, I used [Poole](http://pooleapp.com) to handle and store my comments data and then built a server-side middleman that would get the feed from Poole, convert the Markdown to HTML and return the comments in pure HTML, ready to be appended to the page. A bit of JavaScript would then make the call to this middleman on every post and append all the comments to the page.
