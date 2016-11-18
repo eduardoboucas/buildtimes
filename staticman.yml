@@ -3,11 +3,6 @@
 # For example, you can have one property to handle comment submission and
 # another one to handle posts.
 comments:
-  akismet:
-    enabled: true
-    author: name
-    content: message
-
   # (*) REQUIRED
   #
   # Names of the fields the form is allowed to submit. If a field that is
