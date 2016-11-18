@@ -31,23 +31,4 @@ port:    4100
 host:    0.0.0.0
 
 # Staticman
-staticman:
-  allowedFields: ['name', 'email', 'url', 'message']
-  akismet:
-    enabled: true
-    author: name
-    content: message
-  branch: master
-  filename: 'entry{@timestamp}'
-  format: yml
-  generatedFields:
-    date:
-      type: date
-      options:
-        format: "timestamp-seconds"
-  moderation: true
-  path: "_data/comments/{options.slug}"
-  requiredFields: ['name', 'email', 'message']
-  transforms:
-    email: md5
-  url: https://api.staticman.net/v1/entry/eduardoboucas/eduardoboucas.github.io/master
+staticmanUrl: https://api.staticman.net/v2/entry/eduardoboucas/eduardoboucas.github.io/master/comments
