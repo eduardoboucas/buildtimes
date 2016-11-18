@@ -34,8 +34,6 @@ comments:
       options:
         format: "timestamp-seconds"
 
-  filename: "entry{@timestamp}"
-
   # The format of the generated data files. Accepted values are "json", "yaml"
   # or "frontmatter"
   format: "yaml"
