@@ -1,5 +1,7 @@
-<form id="post-new-comment" class="form" action="{{ site.staticman.url }}" method="post">
+<form id="post-new-comment" class="form" action="{{ site.staticmanUrl }}" method="post">
     <input type="hidden" name="options[slug]" value="{{ post_slug }}">
+    <input type="hidden" name="options[parent]" value="{{ post_slug }}">
+    <input type="hidden" name="options[origin]" value="{{ site.url }}{{ page.url }}">
     
     <input type="text" name="company" class="text-field" style="display: none">
     <input class="form__field text-field" type="text" name="fields[name]" placeholder="Name" required/>
@@ -7,5 +9,7 @@
     <input class="form__field text-field" type="url" name="fields[url]" placeholder="Website (optional)"/>
     <input class="form__field text-field" type="address" name="fields[address]" placeholder="Address (do not fill!)" style="display: none"/>
     <textarea class="form__field text-field" rows="10" name="fields[message]" placeholder="Comment. Markdown is accepted." required></textarea>
+    <input id="form-subscribe" type="checkbox" name="fields[subscribe]" value="email" class="checkbox">
+    <label for="form-subscribe" class="form__field checkbox__label">I want to be notified of new comments</label>
     <input class="cta" type="submit" value="Send" />
 </form>
