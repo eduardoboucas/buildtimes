@@ -40,6 +40,9 @@ comments:
 
   # Name of the site. Used in notification emails.
   name: "eduardoboucas.com"
+  
+  notifications:
+    enabled: true
 
   # (*) REQUIRED
   #
