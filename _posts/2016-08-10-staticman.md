@@ -10,7 +10,7 @@ A few months later, a [talk by Tom Preston-Werner](https://www.youtube.com/watch
 
 In a nutshell, I love the fact that my entire site lives in a GitHub repository and can go into a ZIP file with just a click, content included. I wanted to allow users to comment on my posts, but refused to accept the fact that introducing user-generated content would mean breaking that premise above.
 
-Commenting platforms like Disqus are great, but the content is no longer under your contro, not to mention the fact that it's difficult to fully customise visually so it blends in with your existing design.
+Commenting platforms like Disqus are great, but the content is no longer under your control, not to mention the fact that it's difficult to fully customise visually so it blends in with your existing design.
 
 With Staticman, you can have user comments stored as data files in the repository, along with the rest of your content. When users submit a new entry, Staticman will process, validate and push it to your GitHub repository, either directly to the branch where your site lives or as a pull request for your approval.
 
