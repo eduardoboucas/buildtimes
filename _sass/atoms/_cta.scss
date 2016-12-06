@@ -45,3 +45,15 @@
 .cta--progress {
 	@include cta-progress;
 }
+
+.cta__inner {
+	vertical-align: middle;
+}
+
+.cta__icon {
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-top: -5px;
+	margin-left: 5px;
+}

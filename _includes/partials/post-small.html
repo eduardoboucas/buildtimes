@@ -5,27 +5,25 @@
 {% endif %}
 
 <a href="{{ link }}" class="post-wrapper col col--1-1 col--1-2@medium">
-  <article class="post post--small {% if include.post.layout == 'external-post' %}post--external{% endif %}">
-    {% if include.post.layout == 'external-post' %}
-      <div class="post__external-ribbon ribbon">
-        <span class="ribbon__content">
-          <svg class="ribbon__icon">
-            <use xlink:href="#icon-external"></use>
-          </svg>
-        </span>
-      </div>
-    {% endif %}
+  <article class="post post--small">
     <h1 class="post__title">{{ include.post.title }}</h1>
     <p class="post__meta post-meta">{% include helpers/format-date.html date=include.post.date %}</p>
     <div class="post__body">
       {{ include.post.excerpt | strip_html }}
     </div>
-    <span class="post__read-more">
-      {% if include.post.layout == 'external-post' %}
+    <p class="cta post__read-more">
+      <span class="cta__inner">
+        {% if include.post.layout == 'external-post' %}
         Read on {{ post.external-name }}
-      {% else %}
+        {% else %}
         Read more
+        {% endif %}
+      </span>
+      {% if include.post.layout == 'external-post' %}
+        <svg class="cta__icon">
+          <use xlink:href="#icon-external"></use>
+        </svg>
       {% endif %}
-    </span>
+    </p>
   </article>
 </a>

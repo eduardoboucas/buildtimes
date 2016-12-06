@@ -11,12 +11,19 @@
 	  <div class="post__body">
 	    {{ include.post.excerpt | strip_html }}
 	  </div>
-	  <span class="post__read-more">
+	  <p class="cta post__read-more">
+			<span class="cta__inner">
+				{% if include.post.layout == 'external-post' %}
+				Read on {{ post.external-name }}
+				{% else %}
+				Read more
+				{% endif %}
+			</span>
 			{% if include.post.layout == 'external-post' %}
-			Read on {{ post.external-name }}
-			{% else %}
-			Read more
+				<svg class="cta__icon">
+					<use xlink:href="#icon-external"></use>
+				</svg>
 			{% endif %}
-		</span>
+		</p>
 	</article>
 </a>
