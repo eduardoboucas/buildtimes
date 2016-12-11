@@ -8,8 +8,8 @@
 		@include media('>=masthead-expand') {
 			&:hover {
 				.masthead-title__part {
-					transition: max-width 0.2s ease-out;
 					max-width: 500px;
+					transition-delay: 2s;
 				}
 			}			
 		}
@@ -18,13 +18,15 @@
 	.masthead-title__part {
 		display: inline-block;
 		vertical-align: bottom;
-		transition: max-width 0.1s ease-out;
 		max-width: 0;
 		overflow: hidden;
+		transition: all 0.2s ease-out 0s;
 	}
 
 	.masthead-title__extension {
 		position: relative;
+		visibility: hidden;
+		overflow: visible;
 
 		i {
 			background-color: $colour-background;
@@ -40,30 +42,33 @@
 		@include media('>=masthead-expand') {
 			.masthead-title:hover & {
 				padding-right: 20px;
-				overflow: visible;
+				//overflow: visible;
+				visibility: visible;
+				transition: all 0.1s ease-out 2s;
 
 				i {
 					animation-name: extension;
 					animation-duration: 0.5s;
+					animation-delay: 2s;
 
 					&:nth-child(2) {
-						animation-delay: 0.5s;
+						animation-delay: 2.5s;
 					}
 
 					&:nth-child(3) {
-						animation-delay: 1s;
+						animation-delay: 3s;
 					}
 
 					&:nth-child(4) {
-						animation-delay: 1.5s;
+						animation-delay: 3.5s;
 					}
 
 					&:nth-child(5) {
-						animation-delay: 2s;
+						animation-delay: 4s;
 					}
 
 					&:nth-child(6) {
-						animation-delay: 2.5s;
+						animation-delay: 4.5s;
 					}
 				}
 			}

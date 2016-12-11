@@ -35,3 +35,21 @@
 		@include drop-cap;
 	}
 }
+
+.about__links {
+	text-align: center;
+}
+
+.about__link {
+	@include transition(transform opacity);
+	display: inline-block;
+
+  &:hover {
+    transform: translateY(-3px);
+    opacity: 0.6;
+  }	
+
+	& + & {
+		margin-left: 20px;
+	}
+}
