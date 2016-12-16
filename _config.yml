@@ -13,7 +13,7 @@ sass:
 exclude:
   - node_modules
 
-paginate: 6
+paginate: 9
 paginate_path: "/page/:num/"
 
 googleAnalyticsId: UA-54012006-1  

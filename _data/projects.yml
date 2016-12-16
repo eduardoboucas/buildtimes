@@ -1,0 +1,42 @@
+- handle: staticman
+  featured: true
+  title: Staticman
+  copy: >
+    I’m a big fan of static site generators. I’ve used Jekyll to power numerous websites, including this one. But despite the clear advantages static sites can have over their database-driven, dynamic counterparts, it didn’t take long for me to feel a paradigmatic pain point: if there is no back-end to receive and process forms with user input, how can I add user-generated content? To address that, I built Staticman, a service that receives, processes and transforms content into data files, pushed to a GitHub repository where the rest of your content lives. Staticman creates a pull request whenever an entry is submitted: merge it to accept the submission, or close it to send it away. 
+  website: https://staticman.net
+  github: https://github.com/eduardoboucas/staticman
+
+- handle: speedtracker
+  featured: true
+  title: SpeedTracker
+  copy: >
+    I’m very interested in web performance. Making sure websites load and become responsive as quickly as possible is a determinant factor in user experience, engagement and even revenue. As a developer, this is something that I take into consideration at all times when working on a project, but I feel it’s equally important that performance data can be something that everyone in a team or organisation, regardless of their technical background, can access and act upon. SpeedTracker is a service that constantly monitors various performance metrics of a website and displays them in an easy-to-consume dashboard, allowing people to quickly assess how new features or infrastructural changes have impacted the perceived performance for users across the world.
+  website: https://speedtracker.org
+  github: https://github.com/speedtracker
+
+- handle: include-media
+  featured: true
+  title: include-media
+  copy: >
+    include-media came about as a result of intense research and experimentation with how Sass can help front-end developers write responsive sites in a simple and maintainable way. I documented the process and the findings in an [article on CSS-Tricks](https://css-tricks.com/approaches-media-queries-sass/) and published include-media, a library focused on providing a simple, intuitive and natural syntax for maintaining breakpoints and writing media queries. It currently has over 12,000 downloads a month on npm and there’s an interesting ecosystem of community-built plugins and extensions around it.
+  website: http://include-media.com
+  github: https://github.com/eduardoboucas/include-media
+
+- handle: cssential
+  title: CSSential
+  copy: >
+    Inlining critical path CSS is one of many techniques available to front-end developers to improve the perceived performance of a website. The idea is to remove a render-blocking stylesheet from the head of a document and inline the essential declarations for an instant load. Having experimented with several tools that automatically determine which parts of the stylesheet are considered essential, I built a PostCSS plugin that gives developers the power to prioritise selectors by annotating them with comments. The critical CSS is automatically injected in a template and the remaining is saved to a normal CSS file.
+  github: https://github.com/eduardoboucas/postcss-cssential
+
+- handle: xsltea
+  title: XSL Tea
+  copy: >
+    At one point in my career, I was working a lot with a PHP-based content management platform that used XSLT as a templating engine. To make it possible to debug in an isolated environment, as well as easier prototyping, I built XSL Tea, an on-line XSL REPL (read-eval-print loop) interface, JSFiddle style. It takes an XSL stylesheet, an XML document and outputs the transformed result. I don’t really use it these days, but there’s still a public instance online — it’s running on a free Heroku instance, so you might need to give it a few seconds for the application to wake up!
+  website: https://eduardoboucas.com/xsltea
+  github: https://github.com/eduardoboucas/xsltea
+
+- handle: denis
+  title: Denis
+  copy: >
+    Denis was a fun little project built in an hour. As a remote developer, I heavily rely on Slack to communicate with other members of my team. When working on one of our products, we were spinning up several development instances of an API to test new features, and we had to keep track of the IP addresses of all these instances, copying and pasting and getting them wrong. So I built a Slack bot that, in response to a command, creates a DNS record pointing a subdomain to an IP, making it easy to memorise and manage. It can create both A and CNAME records and currently supports only CloudFlare, but it’s prepared to work with other providers.
+  github: https://github.com/eduardoboucas/denis

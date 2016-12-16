@@ -1,3 +1,9 @@
+@mixin link-active() {
+	color: white;
+	text-decoration: none;
+	background-color: black;
+}
+
 @mixin link($underline: false) {
 	@include transition(background-color color, $transition-shorter);
 
@@ -9,16 +15,14 @@
 	}
 
 	&:hover {
-		color: white;
-		text-decoration: none;
-		background-color: black;
+		@include link-active;
 	}
 }
 
 .link {
-	@include link;
+	@include link(true);
 }
 
-.link--underline {
-	@include link(true);
+.link--active {
+	@include link-active;
 }

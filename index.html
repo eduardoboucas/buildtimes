@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<main id="main" role="main" class="main posts constrain" data-paginator-current="{{ paginator.page }}" data-paginator-total="{{ paginator.total_pages }}">
+<main id="main" role="main" class="main constrain" data-paginator-current="{{ paginator.page }}" data-paginator-total="{{ paginator.total_pages }}">
   {% assign postsPerPage = site.paginate %}
   
   {% if paginator.page == 1 %}
@@ -15,8 +15,14 @@ layout: default
   {% for post in site.posts | offset: postsOffset | limit: postsPerPage %}
     {% if postsOffset == 0 and forloop.first == true %}
       {% include partials/post-featured.html post=post %}
+
+      <div class="js-posts">
     {% else %}
       {% include partials/post-small.html post=post %}
+
+      {% if postsOffset == 0 and forloop.last == true %}
+        </div>
+      {% endif %}
     {% endif %}
   {% endfor %}
 </main>

@@ -22,3 +22,7 @@
 .constrain--body {
     @include constrain($post-body-max-width, true);
 }
+
+.constrain--narrow {
+    @include constrain(900px, true)
+}

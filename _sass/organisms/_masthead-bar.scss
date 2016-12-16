@@ -67,11 +67,8 @@ $masthead-bar-border-thickness: 2px;
 	}
 }
 
-.masthead-bar__menu-item + .masthead-bar__menu-item {
-	@include media('>=medium') {
-		&:before {
-			content: '/';
-			margin: 0 5px;
-		}		
-	}
+.masthead-bar__menu-item:nth-child(n+2) + .masthead-bar__menu-item:before,
+.masthead-bar__menu-item:first-child:after {
+	content: '/';
+	margin: 0 5px;
 }
