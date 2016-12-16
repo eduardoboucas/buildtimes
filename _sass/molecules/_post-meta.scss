@@ -11,6 +11,10 @@
 	font-size: 19px;
 	font-style: italic;
 
+	a {
+		@include link(true);
+	}
+
 	@include media('>=medium') {
 		border-width: 1px 0 1px 0;
 		border-color: $colour-primary;

@@ -26,5 +26,10 @@
     "include-media": "^1.4.1",
     "include-media-columns": "^1.1.0",
     "include-media-export": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.0.0"
   }
 }

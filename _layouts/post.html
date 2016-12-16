@@ -8,7 +8,13 @@ layout: default
   <article class="post post--full">
     <div class="constrain">
     	<h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=page.title visualTitle=page.visualTitle %}</h1>
-    	<p class="post-meta post-meta--emphasis">{% if page.author %}Guest article by {{ page.author }} — {% endif %}{% include helpers/format-date.html date=page.date %}</p>
+      <p class="post-meta post-meta--emphasis">
+        {% if page.external-date %}
+          Originally published on {% if page.external-url %}<a href="{{ page.external-url }}">{% endif %}{{ page.external-name }}{% if page.external-url %}</a>{% endif %} on {% include helpers/format-date.html date=page.external-date %}
+        {% else %}
+          {% include helpers/format-date.html date=page.date %}
+        {% endif %}
+      </p>
     </div>
     
     <div class="post__body body-text">
@@ -21,6 +27,8 @@ layout: default
       {{ content | replace: '<!--tomb-->', ' &#8718;'}}
     </div>
 
-    {% include partials/post-comments.html %}
+    {% if page.disable-comments != true %}
+      {% include partials/post-comments.html %}
+    {% endif %}
   </article>
 </main>

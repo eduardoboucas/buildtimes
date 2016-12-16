@@ -55,5 +55,12 @@
 	height: 16px;
 	vertical-align: middle;
 	margin-top: -5px;
-	margin-left: 5px;
+
+	&:first-child {
+		margin-right: 5px;
+	}
+
+	&:last-child {
+		margin-left: 5px;
+	}
 }

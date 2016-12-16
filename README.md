@@ -12,12 +12,28 @@ This is the source code for [eduardoboucas.com](https://eduardoboucas.com). The 
    git clone https://github.com/eduardoboucas/eduardoboucas.github.io.git eduardoboucas.com
    cd eduardoboucas.com
    ```
+
+1. Install the dependencies
+
+  ```
+  npm start
+  ```
+
 1. Run a server, generate the site and watch for changes
    
    ```
    npm start
    ```
+
 1. Navigate to [http://localhost:4100/](http://localhost:4100/).
+
+## Development
+
+Sass is compiled to CSS natively by Jekyll. To build the JavaScript files, run:
+
+```
+gulp
+```
 
 ## Old version
 

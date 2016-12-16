@@ -76,6 +76,14 @@
 		margin-bottom: $post-vertical-rythm * 0.6;
 	}
 
+	h3 {
+		@include heading3;
+		@include constrain($post-body-max-width, true);
+
+		margin-top: $post-vertical-rythm * 1.8;
+		margin-bottom: $post-vertical-rythm * 0.6;
+	}
+
 	a {
 		@include link(true);
 	}
@@ -106,6 +114,23 @@
 			font-size: 0.8em;
 			margin: ($post-vertical-rythm * 3) 0;
 			padding-left: 0;
+		}
+	}
+
+	table {
+		@include constrain($post-body-max-width, true);
+
+		margin-bottom: $post-vertical-rythm;
+
+		th {
+			font-weight: bold;
+		}
+
+		td,
+		th {
+			background-color: $colour-light-grey;
+			border: 3px solid $colour-background;
+			padding: 10px;
 		}
 	}
 

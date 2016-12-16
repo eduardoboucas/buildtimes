@@ -36,21 +36,25 @@
 	}
 }
 
-.post--small,
-.post--feature {
+a > .post--small,
+a > .post--feature {
 	@include transition(transform opacity);
 
 	&:hover {
 		transform: translateY(-3px);
 		opacity: 0.6;
 
-		.post__read-more {
+		.post__cta {
 			@include cta-hover;
 		}
 	}	
 }
 
-.post--external {
+.post--room {
+	margin-bottom: 70px;
+}
+
+.post--tint {
 	background-color: $colour-light-grey;
 }
 
@@ -65,12 +69,35 @@
 	margin-top: 5px;
 }
 
-.post__read-more {
+.post__cta {
 	margin-top: $post-vertical-rythm;
+
+	& + & {
+		margin-left: 10px;
+	}
 }
 
-.post__read-more-icon {
+.post__hero-wrapper {
+	padding: 0 5px;
 
+	&:first-child {
+		margin-left: -5px;
+	}
+
+	&:last-child {
+		margin-right: -5px;
+	}
+}
+
+.post__hero {
+	background-color: #eeeee5;
+	padding: 20px;
+	margin-top: 30px;
+
+	img {
+		display: block;
+		width: 100%;
+	}
 }
 
 .post__body {
@@ -80,6 +107,10 @@
 
 	p {
 		margin-bottom: $post-vertical-rythm;
+	}
+
+	a {
+		@include link(true);
 	}
 }
 

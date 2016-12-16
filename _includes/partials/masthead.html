@@ -5,16 +5,23 @@
 		</a>
 		<div class="masthead-bar">
 			<div class="masthead-bar__face">
-				{% if page.url == '/' or page.url == '/index.html' %}
-					<div class="masthead-bar__menu">
-						<span class="masthead-bar__date masthead-bar__menu-item">Issue #{{ site.posts | size }}, {% include helpers/format-date.html weekDay=false date=site.posts.first.date %}</span>
-						<span class="masthead-bar__menu-item">
-							<a class="link--underline" href="/about">About</a>
+				<div class="masthead-bar__menu">
+					{% if page.url == '/' or page.url == '/index.html' %}
+						<span class="masthead-bar__date masthead-bar__menu-item">Issue #{{ site.posts | size }}</span>
+					{% else %}
+						<span class="masthead-bar__date masthead-bar__menu-item">
+							<a href="/">← <span class="link">First page</span></a>
 						</span>
-					</div>
-				{% else %}
-					<p><a class="link" href="/">← Back to cover</a></p>	
-				{% endif %}
+					{% endif %}
+
+					<span class="masthead-bar__menu-item">
+						<a class="link{% if page.url == '/about' %} link--active{% endif %}" href="/about">About</a>
+					</span>
+
+					<span class="masthead-bar__menu-item">
+						<a class="link{% if page.url == '/projects' %} link--active{% endif %}" href="/projects">Projects</a>
+					</span>
+				</div>
 			
 				<label for="search-toggle" class="masthead-bar__open-search-button search-button">
 					<svg class="search-button__icon">
