@@ -49,7 +49,7 @@ In the case of my structure described above, I want to load `modules/` last, bec
 
 This is how I define that task in my `Gruntfile.js`:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 sass_import: {
   options: {
     basePath: 'sass/'
