@@ -35,7 +35,7 @@ I would prefer a `posts` folder with a sub-folder for every post. Something like
 
 So how to keep the files organised in a structure like this while maintaining the code clean, short and maintainable? I created a file called `image` (I didn't use the .html extension, but maybe I should) inside my `_includes` folder that looks like this:
 
-{% highlight html linenos %}{% raw %}
+{% highlight html %}{% raw %}
 {% capture imagePath %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ include.name }}{% endcapture %}
 {% if include.caption %}
     <figure>
