@@ -56,7 +56,7 @@ With that, you can do this:
 </div>
 {% endhighlight %}
 
-What's the magic here? We create an element (`.video-holder`) that takes up the entire width of the page. We set its height to `0`, but compensate by adding some bottom padding — `56.25%` to be more precise, or `9/16`, since our video is `16:9`). We then absolute position the iframe inside that component, taking its full width and height.
+What's the magic here? We create an element (`.video-holder`) that takes up the entire width of the page. We set its height to `0`, but compensate by adding some bottom padding (`56.25%`, or `9/16`, since our video is `16:9`). We then absolute position the iframe inside that component, taking its full width and height.
 
 ## Making a Jekyll partial
 
