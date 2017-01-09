@@ -11,7 +11,7 @@ These units can produce really interesting results, but they must be used with c
 
 As a result, I created a Sass mixin that abstracts what I wish you could more naturally in CSS: specify a minimum and a maximum size for the font while still using viewport based units. The mixin takes the viewport based size, a minimum value (in pixels), an optional maximum value (in pixels as well) and an optional fallback value, in whatever units you prefer, for [browsers that don't support viewport units](http://caniuse.com/#feat=viewport-units).
 
-{% highlight scss linenos %}
+{% highlight scss %}
 ///
 /// Viewport sized typography with minimum and maximum values
 ///
