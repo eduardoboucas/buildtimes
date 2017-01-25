@@ -7,7 +7,7 @@
 <a href="{{ link }}" class="post-wrapper col col--1-1 col--1-2@medium col--1-3@large">
   <article class="post post--small">
     <h1 class="post__title">{{ include.post.title }}</h1>
-    <p class="post__meta post-meta">{% include helpers/format-date.html date=include.post.date %}</p>
+    <p class="post__meta post-meta">{% include helpers/format-date.html date=include.post.date %}{% include partials/post-meta-comment-count.html post=include.post %}</p>
     <div class="post__body">
       {{ include.post.excerpt | strip_html }}
     </div>
