@@ -15,7 +15,7 @@ So what happens to them in the BEM world? Should they be independent blocks? Sho
 
 Folks started sharing their own approaches, finding conflicts with the rules of BEM and discussing options to fix them. Further down the discussion, Mr. Harry Roberts — author of [this reference article](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) — shared his views and helped me come up with a structure that makes sense and respects the rules:
 
-{% highlight html linenos %}
+{% highlight html %}
 <!-- 1 -->
 <div class="blocky-wrapper">
   <!-- 2 -->

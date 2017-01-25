@@ -8,7 +8,7 @@ Devices with Retina displays have been with us for a while, and now Retina 3x is
 
 If you use [include-media](http://include-media.com), a Sass library for writing simple, elegant and maintainable media queries that I've talked about [here](http://css-tricks.com/approaches-media-queries-sass/) and [here](http://davidwalsh.name/sass-media-query), then all you'll need is:
 
-{% highlight sass linenos %}
+{% highlight sass %}
 /* Retina 2x */
 @include media("retina2x") {
 	color: #bad;
@@ -22,7 +22,7 @@ If you use [include-media](http://include-media.com), a Sass library for writing
 
 Under the hood, this will generate this CSS:
 
-{% highlight css linenos %}
+{% highlight css %}
 /* Retina 2x */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   color: #bad;
@@ -36,7 +36,7 @@ Under the hood, this will generate this CSS:
 
 So yes, you can just use plain CSS and ditch the library, but things get more complicated when you also want to limit the viewport width because of the way the *OR* operator works in CSS. Let's say that you want to target retina 2x devices on a viewport width greater than 750px.
 
-{% highlight css linenos %}
+{% highlight css %}
 /* Plain CSS */
 @media (min-width: 751px) and (-webkit-min-device-pixel-ratio: 3), 
 (min-width: 751px) and (min-resolution: 350dpi) {
@@ -46,7 +46,7 @@ So yes, you can just use plain CSS and ditch the library, but things get more co
 
 Whereas with include-media you can just write:
 
-{% highlight sass linenos %}
+{% highlight sass %}
 @include media("retina2x", ">750px") {
 	color: #bad;
 }

@@ -52,7 +52,7 @@ I realised that I could build a server-side middleman that would get the JSON fi
 
 Right away. I started by building my middleman, with PHP as my language of choice. I used [composer](https://packagist.org/packages/erusev/parsedown) to install [Parsedown](http://parsedown.org/), a fast Markdown parser for PHP. This script will look for two GET variables: `page` is the path for the post I want to get the comments for and `callback` is the name of the function to pad the JSON data with. 
 
-{% highlight php linenos %}
+{% highlight php %}
 <?php
 
 require 'vendor/erusev/parsedown/Parsedown.php';
@@ -116,7 +116,7 @@ After including it in my script, I set the URL for my Poole JSON file and grab i
 
 I wanted to allow comments on all posts by default, but at the same time have the ability to disable them on specific cases. To do that, I modified the default front-matter settings for my posts.
 
-{% highlight text linenos %}
+{% highlight text %}
 # _config.yml
 defaults:
   -
@@ -130,7 +130,7 @@ defaults:
 
 Now I just need to add `enable_comments: false` to any post I don't want comments on. Time to add the comments section to my post layout:
 
-{% highlight html linenos %}
+{% highlight html %}
 <hr/>
 <section class="comments">
 	<h2>Comments</h2>
@@ -163,7 +163,7 @@ I used `async` because I don't want to wait for the middleman to give me the com
 
 Finally, the bit of JavaScript that handles the data from the JSONP call:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 var blog = {
 	initComments: function (data) {
 		if (data.length > 0) {

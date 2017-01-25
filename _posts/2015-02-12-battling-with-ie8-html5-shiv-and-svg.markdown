@@ -10,7 +10,7 @@ I quickly realised that the person was running IE8 and the elements were not bei
 
 To install the shiv you wrap the call to the JS file in a conditional comment so that only the browsers that actually need the file will actually load it.
 
-{% highlight html linenos %}
+{% highlight html %}
 <!--[if lt IE 9]>
     <script src="path/to/your/html5shiv.js"></script>
 <![endif]-->
@@ -22,7 +22,7 @@ After digging around for about an hour, I realised that the problem were my SVGs
 
 To overcome that, I simply wrapped all the SVG declarations with conditional comments that prevent the code from being read in versions of IE prior to 9.
 
-{% highlight html linenos %}
+{% highlight html %}
 <!--[if gte IE 9]><!-->
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
 	<defs>

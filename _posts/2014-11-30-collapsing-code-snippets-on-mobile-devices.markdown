@@ -14,7 +14,7 @@ For example, people that are reading your post on a mobile device are very unlik
 
 First, the CSS (SASS).
 
-{% highlight sass linenos %}
+{% highlight sass %}
 @include media("screen", "<tablet") {
 	.highlight:not(.expanded) {
 		$highlightHeight: 23px;
@@ -42,7 +42,7 @@ So what's happening here? I used [my media query mixin]({% post_url 2014-10-29-h
 
 All this will be applied only when the element does NOT have a class named `expanded`, so all we have to do to revert the element to its original state is to add that class when the element is clicked, using a bit of Javascript.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 bindUiEvents: function () {
 	$(".highlight").click(function () {
 		$(this).addClass("expanded");

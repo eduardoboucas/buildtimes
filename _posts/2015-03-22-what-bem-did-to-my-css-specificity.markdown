@@ -17,7 +17,7 @@ With BEM, every HTML tag has to have a class and that's how it will be styled, a
 
 This is how the DOM structure of my blog posts looked like before BEM:
 
-{% highlight html linenos %}
+{% highlight html %}
 <article class="post">
 	<header>
 		<h1>{{ post.title }}</h1>
@@ -31,7 +31,7 @@ This is how the DOM structure of my blog posts looked like before BEM:
 
 And here's how it looks after BEM:
 
-{% highlight html linenos %}
+{% highlight html %}
 <article class="post">
 	<header class="post__header">
 		<h1 class="post__title">{{ post.title }}</h1>
@@ -59,7 +59,7 @@ I use Jekyll to power my site and it actually generates a lot of the markup for 
 
 Also, because my website relies on a HTML5 video sequence, I have to cater for devices that a) don't have a big enough screen to show the video sequence in a way that makes sense or b) can't automatically play HTML5 videos without user interaction (I'm speaking iOS here). As a result, I have to use Modernizr to detect some features and create a whole new experience for certain users. That means saying things like "apply these rules **if** the device is smaller than a tablet **or** there's no support for HTML5 video autoplay".
 
-{% highlight sass linenos %}
+{% highlight sass %}
 @mixin mobile-flow() {
 	.no-videoautoplay & {
 		@content;

@@ -20,7 +20,7 @@ Here's the idea:
 ## Creating the feeds
 The first step is to create the RSS feeds for the different platforms. Instead of duplicating the code over and over again for each platform, we can define a layout that all feeds will inherit.
 
-{% highlight html linenos %}
+{% highlight html %}
 <!-- _layouts/social-feed.xml -->
 ---
 layout: social-feed
@@ -62,7 +62,7 @@ This looks really similar to the normal RSS feed file Jekyll ships with, but the
 
 With this layout in place, adding a new platform to the system means creating a simple file with just a bit of information in the front matter and no body. Here's an example of such file for Facebook:
 
-{% highlight text linenos %}
+{% highlight text %}
 <!-- social-feeds/facebook.xml -->
 ---
 layout: social-feed
@@ -75,7 +75,7 @@ When your site is compiled, there should have an RSS file on *http://your-site/s
 ## Working on the front matter
 We want to be able to select which social platforms to share each individual post on, so we need to add that information to the front matter of every post. Taking the example of this very post you're reading, this is how it would look if I wanted to share it on Facebook, Twitter and LinkedIn (assuming I have created the individual feeds for those platforms following the steps above):
 
-{% highlight text linenos %}
+{% highlight text %}
 ---
 layout: post
 title:  "Sharing Jekyll posts on social media using front matter and IFTTT"
@@ -91,7 +91,7 @@ On line 7 you can see that I define a property called `share` with the list of t
 
 If you find yourself sharing the majority of your posts on the same platforms, you can define a default value for `share` which you can then override if necessary on a per-post basis. To do that, add the following to your `_config.yml` file.
 
-{% highlight text linenos %}
+{% highlight text %}
 defaults:
   -
     scope:

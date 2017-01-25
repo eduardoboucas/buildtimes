@@ -11,7 +11,7 @@ Let's imagine that we want to make one of those navigation menus that become sti
 
 But what if we don't want that behaviour on a small screen, perhaps because it takes too much space? Sure, we can change our CSS class to say that the menu only becomes sticky if the viewport is wider than a certain amount:
 
-{% highlight scss linenos %}
+{% highlight scss %}
 // Using include-media
 
 $breakpoints: ('small': 320px, 'medium': 768px, 'large': 1024);
@@ -25,7 +25,7 @@ $breakpoints: ('small': 320px, 'medium': 768px, 'large': 1024);
 
 So, adding the class `menu--sticky` to the element on a mobile screen won't make it sticky anymore, but we're still computing those expensive calculations on the JavaScript side. We can skip that whole process if the viewport is narrower than our breakpoint.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 // In the JavaScript side
 
 function isSticky() {
@@ -52,14 +52,14 @@ Anyway, back to our conundrum. It would be great if we could still declare the b
 
 To get started, we just need to import the plugin file into the Sass project and call the JavaScript code somewhere (does not require jQuery or any other library).
 
-{% highlight sass linenos %}
+{% highlight sass %}
 @import 'include-media';
 @import 'include-media-export';
 {% endhighlight %}
 
 We can then rewrite the function above like so:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 function isSticky() {
   // Are we on a mobile view?
   if (im.lessThan('medium')) {

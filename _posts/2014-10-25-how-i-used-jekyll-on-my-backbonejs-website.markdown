@@ -36,7 +36,7 @@ Jekyll is _blog-aware_ in the sense that it looks for text files in a specific d
 How does this work, exactly? Well, let me give you an example. Let's say we want two pages on your website, _About me_ and _Contact me_, with roughly the same structure: a header with the page title, a hero image, the copy and a footer.
 We start by creating the page layout.
 
-{% highlight html linenos %}
+{% highlight html %}
 ---
 layout: pageSimple
 ---

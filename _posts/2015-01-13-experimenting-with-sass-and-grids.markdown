@@ -17,7 +17,7 @@ Let's take a very simple grid layout as an example.
 
 As you can see from the code in the pen, the CSS implementation of this is really straightforward:
 
-{% highlight css linenos %}
+{% highlight css %}
 [class^="col-"] {
   float: left;
 }
@@ -49,7 +49,7 @@ We can add as many classes as we want to make the columns as granular as necessa
 
 We can quickly put something together to help us.
 
-{% highlight sass linenos %}
+{% highlight sass %}
 $granularity: 3;
 
 @for $i from 1 through $granularity {
@@ -63,7 +63,7 @@ $granularity: 3;
 
 This will generate:
 
-{% highlight css linenos %}
+{% highlight css %}
 .col-1-1 {
   width: 100%;
 }
@@ -96,7 +96,7 @@ I'm not saying we should solve this by getting rid of equivalent classes, becaus
 
 Instead, I wanted to group equivalent classes together to have a more compressed CSS output. For example, I wanted the example shown above to look like this:
 
-{% highlight css linenos %}
+{% highlight css %}
 .col-1-1, .col-2-2, .col-3-3 {
   width: 100%;
 }
@@ -116,7 +116,7 @@ Instead, I wanted to group equivalent classes together to have a more compressed
 
 See how we group `.col-1-1`, `.col-2-2` and `.col-3-3` together with the same set of rules? I would also want to group `.col-1-3` with `.col-2-6` and `.col-1-2` with `.col-3-6` from the example I mentioned before. How can we implement something like this in Sass?
 
-{% highlight sass linenos %}
+{% highlight sass %}
 @mixin grid-columns($granularity: 2, $breakpoints: ()) {
   $widths: ();
   
@@ -170,7 +170,7 @@ As you can see, our mixin includes an extra argument, `$breakpoints`. The idea b
 
 Let's go back to the grid layout we built before and let's imagine it's being used to display a list of articles on a magazine website. On the full desktop view, the pattern is a `1-1` taking a full row (maybe it's a featured article), two `2-2` in the next row (still relevant stories) and four `4-4` in the last row (probably less important stories). This pattern could be repeated indefinitely and alternated with others. The typical approach to make this responsive is to make all the columns go full-width when the browser gets narrower than a certain width.
 
-{% highlight css linenos %}
+{% highlight css %}
 @media (max-width: 500px) {
 	[class^="col-"] {
 	  /* Depending on how you create the grid, you might need an !important here. 

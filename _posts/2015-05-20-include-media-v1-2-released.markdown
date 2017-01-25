@@ -16,7 +16,7 @@ As a result, 1.2 was the first version of the library that has been released pur
 
 Several people showed interest in having height-based media queries, using `min-height` expressions instead of `min-width`. The challenge here was how to incorporate this functionality without compromising the simplistic and natural syntax that the library avidly promotes. The solution was to accept a `height` keyword before the operator, which makes the breakpoint work with a `min-height` expression.
 
-{% highlight sass linenos %}
+{% highlight sass %}
 $breakpoints: ('medium': 768px, 'large': 1280px);
 
 // Default syntax, resulting in (min-width: 768px)
@@ -45,7 +45,7 @@ Another request was for adding support to aliases for declarations, as offered b
 
 A lot of solutions were proposed, but in the end [joseluis](https://github.com/joseluis) came up with a way to achieve this without actually adding anything to the codebase. It envolves creating a variable with the expressions in a list format, and then pass that variable to the mixin with the `...` suffix.
 
-{% highlight sass linenos %}
+{% highlight sass %}
 $my-weird-bp: '>=tablet', '<815px', 'landscape', 'retina3x';
 
 @include media($my-weird-bp...) {
@@ -57,7 +57,7 @@ $my-weird-bp: '>=tablet', '<815px', 'landscape', 'retina3x';
 
 This is quite a simple one, but the `$media-expressions` array was extended with `landscape` and `portrait` expressions, compiling to `(orientation: landscape)` and `(orientation: portrait)` respectively.
 
-{% highlight sass linenos %}
+{% highlight sass %}
 // Targets "tablet" devices on portrait mode
 @include media('>=tablet', '<desktop', 'portrait') {
     // ...
