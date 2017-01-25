@@ -4,7 +4,7 @@ title: "Sass components with variable naming conventions"
 categories: blog
 tags: sass
 ---
-To build a library of UI components that is flexible enough to be dropped into any project, there are some things to be considered. To avoid naming collisions, you might want to prefix CSS selectors with a certain sequence of characters, but what should you use? What if the prefix you choose is already being used by something else? Unlikely, I know, but possible nonetheless. And what about the naming convention for the class names? Is the project using *camelCase*, *PascalCase* or hyphen-separated names? It'd be great if your library could match whatever is being used in the host project.<!--more-->
+To build a library of UI components that is flexible enough to be dropped into any project, there are some things to be considered. To avoid naming collisions, you might want to prefix CSS classes with a certain sequence of characters, but what should you use? What if the prefix you choose is already being used by something else? Unlikely, I know, but possible nonetheless. And what about the naming convention for the class names? Is the project using *camelCase*, *PascalCase* or hyphen-separated names? It'd be great if your library could match whatever is being used in the host project.<!--more-->
 
 I put together a small Sass snippet that allows you to define the name of a component and dynamically choose whether or not it should be prefixed (and what prefix to use) and what naming convention is used to render the CSS selector.
 
