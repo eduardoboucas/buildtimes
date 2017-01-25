@@ -69,6 +69,15 @@ a > .post--feature {
 	margin-top: 5px;
 }
 
+.post__meta-icon {
+	position: relative;
+	top: -2px;
+	margin-left: 10px;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
+
 .post__cta {
 	margin-top: $post-vertical-rythm;
 
