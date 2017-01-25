@@ -24,7 +24,7 @@ Let's first understand how Jekyll deals with pagination and how we can implement
 The centrepiece of Jekyll's pagination system is [an object called *paginator*](http://jekyllrb.com/docs/pagination/#liquid-attributes-available), which exposes information such as the current page number, the posts for the current page or the total number of pages. 
 With this, we can quickly implement pagination in our blog posts listing page:
 
-{% highlight html linenos %}
+{% highlight html %}
 <!-- Without pagination (we load all posts) -->
 {{ "{%" }} for post in site.posts %}
   <a href="{{ "{{" }} post.url }}">{{ "{{" }} post.title }}</a>
@@ -38,7 +38,7 @@ With this, we can quickly implement pagination in our blog posts listing page:
 
 And then we add a very simple navigation system
 
-{% highlight html linenos %}
+{% highlight html %}
 <!-- If we have a previous page, we show a link to it -->
 {{ "{%" }} if paginator.previous_page %}
   <span class="previous"><a href="{{ "{{" }} paginator.previous_page_path }}"><- Previous</a></span>
@@ -59,7 +59,7 @@ The centrepiece of my blog is a file called *posts.html* located inside my `_inc
 
 One of the limitations of the *paginator* is that [it's only available in index files](http://jekyllrb.com/docs/variables/#paginator), so I could access it from the standalone version of the blog, but I was getting an empty object when accessing it from the Backbone version. After banging my head against the wall for a couple of hours, I overcame this limitation by manually iterating over the site posts instead of using the *paginator* for that. It turned out to be very didactic so I'm sharing that with you.
 
-{% highlight html linenos %}
+{% highlight html %}
 <!-- Normal approach: Iterating through posts using paginator -->
 {{ "{%" }} for post in site.posts limit:site.paginate offset:offset %}
   <!-- Display post -->
@@ -87,7 +87,7 @@ The plan is to have the first page displaying the 5 most recent posts. If there 
 
 Let's write some code then.
 
-{% highlight html linenos %}
+{% highlight html %}
 {{ "{%" }} if paginator.page %}
   {{ "{%" }} assign offset = paginator.page | minus:1 | times:paginator.per_page %}
   {{ "{%" }} assign currentPage = paginator.page %}
@@ -135,7 +135,7 @@ I then start by adding two data attributes to my post container, `data-page` and
 
 I then need to evaluate if all the posts have been covered or if there are still more pages to show (lines 31 to 33) and, based on that, I'll show or hide the *Load more posts button*. Finally, I include the JavaScript file that will handle the Ajax requests, shown below.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 $(".loadMore").click(loadMorePosts);
 
 function loadMorePosts() {
@@ -170,7 +170,7 @@ If the new page number is the same as the total number of pages, then we don't h
 Finally, you may notice that we're appending and removing the class `loading` from our link (lines 9 and 21). The idea is that when the user clicks on the link, its text changes to *Loading...*, giving the indication that the page is waiting for new content to be appended. As soon as the response from the Ajax request comes back and the posts are appended to the page, the link goes back to its original state.
 This is the CSS behind it.
 
-{% highlight sass linenos %}
+{% highlight sass %}
 .loadMore {
   @extend %textButton;
   position: relative;

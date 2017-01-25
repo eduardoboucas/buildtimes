@@ -16,7 +16,7 @@ This is a mockup of the page I had to build. Right off the bat you can tell that
 
 Even without Flexbox's help, this layout can be easily built in plain CSS, but what happens when we get to a narrower viewport? How can we make this mobile-friendly? The more obvious approach is to say that up until a certain viewport width all the columns should take the full width of the page.
 
-{% highlight css linenos %}
+{% highlight css %}
 /* Something like this */
 @media (max-width: 767px) {
 	[class*="col-"] {
@@ -39,7 +39,7 @@ If you only care about supporting Flexbox for mobile users then things don't loo
 ## Let's Flexbox it, then
 So how exactly can Flexbox help us here? Simple.
 
-{% highlight sass linenos %}
+{% highlight sass %}
 /* 
 I'm omitting the browser prefixes,
 but they're required on iOS Safari

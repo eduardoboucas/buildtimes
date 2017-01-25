@@ -11,7 +11,7 @@ In this post I'll describe how I implemented tags on my blog, from including the
 ## Including tags in posts
 Attaching tags to a post is a no-brainer. This is how the front matter for this post looks like:
 
-{% highlight text linenos %}
+{% highlight text %}
 ---
 layout: post
 title: "Creating a tags page in Jekyll"
@@ -23,7 +23,7 @@ tags: jekyll tags html5 details
 
 In line 6, I define all the tags I want to use. Then it's time to display them in my post layout:
 
-{% highlight html linenos %}
+{% highlight html %}
 <!-- _layouts/post.html -->
 {{ "{%" }} if page.tags %}
   <span class="tags">
@@ -40,7 +40,7 @@ Iterating through all the tags in the post and printing the tag name. Nice and s
 ## Creating a tags page
 Jekyll stores all tags in an array called `site.tags` where to each index (the tag name) corresponds an array containing all the posts associated with the given tag. I created a new page inside my *blog/* folder and used that array to create a tag aggregation page:
 
-{% highlight html linenos %}
+{% highlight html %}
 <!-- blog/tags.html -->
 ...
 
@@ -68,7 +68,7 @@ Each tag will have the tag name on index 0 and the list of posts on index 1, so 
 
 The idea behind attaching an anchor to a tag is that we can link directly to it (e.g. *blog.url/tags.html#javascript) and the page will scroll automatically to the right place, but that won't work very well with the `details` element. By default, all those elements will be collapsed, so when you link directly to one of the tags you'll still have to expand it manually to see the posts it contains. We can use a bit of JavaScript as a workaround:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 window.addEventListener("load", function () {
   if (window.location.hash != "") {
     var tagId = "tag-" + window.location.hash.slice(1);

@@ -45,7 +45,7 @@ The script will take 5 arguments: the post slug (e.g. 2015-05-11-rethinking-the-
 
 We’ll use a config file to store general settings to be used by both the Bash script and the PHP handler. We'll store things like the GitHub user and repository details (where `GIT_REPO` is the path for the local folder and `GIT_REPO_REMOTE` is the remote location) and folder structure to be used for the comment files. In this example, each comment will be in a YAML file named `{date-and-time}-{email-hash}.yml` (e.g. `20150510170537-b7284abf8c22bf9ba22069899511404c.yml`), inside a directory with the post slug, all inside `_data/`. Here’s how my config file looks like:
 
-{% highlight text linenos %}
+{% highlight text %}
 GIT_USERNAME="eduardoboucas"
 GIT_REPO="/var/www/eduardoboucas.github.io"
 GIT_REMO_REMOTE="eduardoboucas/eduardoboucas.github.io.git"
@@ -60,7 +60,7 @@ We also need some sort of authentication to be able to push things to GitHub. In
 
 So when the script fires, we extract the arguments into variables, create a folder for the post if it doesn’t exist yet, and form the YAML file with the content from the comment.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 # Read GitHub token
 TOKEN=`cat .gittoken`
 
@@ -115,7 +115,7 @@ With the bash script ready, we need something that triggers it from an HTTP requ
 
 Finally, it runs the comment through a Markdown parser and echoes back the HTML result, along with the email hash, as JSON format. On the front-end, we'll use that data to generate a preview of the comment without forcing a page reload.
 
-{% highlight php linenos %}
+{% highlight php %}
 <?php
 
 // (Autoloading dependencies and initialising Slim...)
@@ -176,7 +176,7 @@ $app->post('/comments', function () use ($app) {
 
 With our server-side infrastructure taken care of, we're back to Jekyll. Since the comments are stored as flat files within `_data/`, it's pretty simple to access them. I started by creating an include file that will receive the comment data as arguments and print a single comment. I'll explain why in a second.
 
-{% highlight html linenos %}{% raw %}
+{% highlight html %}{% raw %}
 <!-- _includes/blog/comment.html -->
 <article id="comment{{ include.index }}" class="comment">
     <img class="comment__avatar" src="https://www.gravatar.com/avatar/{{ include.hash }}?d=mm&s=180">
@@ -199,7 +199,7 @@ I wanted to use Gravatar to display avatars for users that have one, which can b
 
 Then I created an include file that will load all the comments for a given post.
 
-{% highlight html linenos %}{% raw %}
+{% highlight html %}{% raw %}
 <!-- _includes/blog/comments.html -->
 <section class="comments">
     {% capture post_slug %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}{% endcapture %}
@@ -237,7 +237,7 @@ So what's happening here? Well, we capture the post slug to `post_slug` and use 
 
 The form used to add new comments is inside `newComment.html`, which we included previously in our comments section (line 24). It's a very simple form and it's posting to the PHP handler on my AWS instance.
 
-{% highlight html linenos %}{% raw %}
+{% highlight html %}{% raw %}
 <!-- _includes/blog/newComment.html -->
 <form id="comments-form" class="comments__new" action="https://aws1.bouc.as/jekyll-discuss/comments" method="post">
     <input type="hidden" name="post" value="{{ post_slug }}">
@@ -257,7 +257,7 @@ A solution for this is to use JavaScript to stop a page reload and to append a f
 
 So the first step is to prevent the default behaviour of the form submit and send the information via Ajax instead. Please note that since you'll be submitting the form to an external recipient, you'll need to [enable CORS on the server](http://enable-cors.org/server.html) or browsers will block the cross-domain Ajax request.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 $('#comments-form').submit(function () {
     var url = $(this).attr('action');
     var data = $(this).serialize();
@@ -283,7 +283,7 @@ $('#comments-form').submit(function () {
 
 Finally, we can create a function that creates a temporary comment and appends it to the page. I'm not using any client-side templating engine so I just used `String.replace()` to replace the placeholders with the real content, but if you are using one then it'll probably look nicer if you use it for this job.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 addComment: function (hash, date, name, url, message) {
     var template = document.getElementById('template--new-comment').innerHTML;
 

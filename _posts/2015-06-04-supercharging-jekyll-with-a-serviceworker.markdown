@@ -50,7 +50,7 @@ There are some important things to take in before getting your hands dirty with 
 
 Right, let's get to the implementation then. The first step is to register a ServiceWorker (providing the browser supports it). Because users can get to my site either via the main web app or through the blog, I need to be able to register the ServiceWorker in both `index.html` and `blog/index.html`. Instead of creating a separate JavaScript file for this and require an additional HTTP request, I created a partial (`serviceWorker.html`) that I include when needed, so the JS code is automatically embedded on the pages.
 
-{% highlight html linenos %}
+{% highlight html %}
 <!-- serviceWorker.html -->
 <script>
 if ('serviceWorker' in navigator) {
@@ -77,7 +77,7 @@ This will register the ServiceWorker written in the `serviceWorker.js` file in m
 
 Now let's look at the ServiceWorker itself, where we'll choose which files to cache and define the functions that will handle the requests. The files to be cached are defined as an array of filenames that we could simply keep updating manually, but we can take advantage of some of Jekyll's internal variables to generate that list for us.
 
-{% highlight javascript linenos %}{% raw %}
+{% highlight javascript %}{% raw %}
 // serviceWorker.js
 ---
 layout: null
@@ -134,7 +134,7 @@ Here's what's happening:
 
 Then we add the functions to handle the requests:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 // serviceWorker.js
 self.addEventListener('install', function(event) {
     event.waitUntil(
@@ -171,7 +171,7 @@ Caching external font files from third-party providers, in my case Google Fonts,
 
 For example, when I open the URL above on my browser I get something like this:
 
-{% highlight css linenos %}
+{% highlight css %}
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -189,7 +189,7 @@ A more elegant solution is to cache the fonts at a later stage and not during th
 
 Here's how we can modify our ServiceWorker to do just that:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 self.addEventListener('fetch', function(event) {
     var requestUrl = new URL(event.request.url);
 

@@ -9,7 +9,7 @@ Once you Sass, you never go... ah, damn it. I can't make the pun work, but you g
 
 One example of that is media queries. There are a lot of mixins out there that allow you to easily write media queries in a nice way, such as [Chris Coyier's approach](http://css-tricks.com/conditional-media-query-mixins/) or [Dmitry Sheiko's technique](http://codepen.io/dsheiko/pen/KeLGy). I started by using the latter, which allows you to do define global breakpoints and combine them to form the media query expression.
 
-{% highlight sass linenos %}
+{% highlight sass %}
 @include media("screen", ">bp1Width", "<maxWidth" ) {
   background: red;
   color: white;
@@ -24,7 +24,7 @@ Dmitry's mixin didn't allow me to do this, so one option would be to go back to 
 
 The other option would be to extend the functionality of the mixin to allow the combination of defined breakpoints with custom ones. Did I go for that one? Oh you bet.
 
-{% highlight sass linenos %}
+{% highlight sass %}
 $breakpoint-phone: 480px !default;
 $breakpoint-tablet: 768px !default;
 $breakpoint-desktop: 1024px !default;
@@ -83,7 +83,7 @@ In that case, I check if the first character matches a "greater than" or "less t
 
 This allows me to do things like:
 
-{% highlight sass linenos %}
+{% highlight sass %}
 @include media("screen", ">phone", "<620px") {
   nav.burger {
     display: block;
