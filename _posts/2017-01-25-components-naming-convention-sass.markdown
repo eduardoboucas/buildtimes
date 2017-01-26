@@ -15,7 +15,7 @@ For example, you could define a component as `my-cool-component` and have it ren
 /// Sets a prefix for all selectors
 ///
 /// @example
-///  $sel-prefix: 'foo';
+///  $sel-prefix: 'foo-';
 ///
 ///  .foo-MyComponent
 ///
@@ -93,7 +93,7 @@ $sel-case: 'pascal' !default;
   }
   
   @if $sel-prefix {
-    $selector: $sel-prefix + '-' + $selector;
+    $selector: $sel-prefix + $selector;
   }
   
   @return $selector;
@@ -104,7 +104,7 @@ And here's how it can be used:
 
 {% highlight scss %}
 // Defining the prefix
-$sel-prefix: 'foo';
+$sel-prefix: 'foo-';
 
 // Using PascalCase
 $sel-case: 'pascal';
