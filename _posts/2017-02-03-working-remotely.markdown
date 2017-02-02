@@ -54,7 +54,7 @@ Try to understand the routines of the people you work closest with and avoid con
 
 I think it's crucial to be surrounded by people that challenge, question and teach you. It's difficult to become a better professional by staying in isolation, which is a risk you take by working from home. Make sure you establish relationships with your colleagues that go beyond the daily work subjects.
 
-In the same way that in a physical office you'd swivel your chair to tell a joke or vent about something with a colleague, you should be able to do a quick Slack/Skype/Hangouts call with a colleague for whatever reason, even if not work-related. It's important to know that you're still surrounded by humans and part of a team, not a loner behind a screen.
+In the same way that in a physical office you'd swivel your chair to tell a joke or vent about something with a colleague, you should be able to do a quick Slack/Skype/Hangouts call with a colleague for whatever reason. It's important to know that you're still surrounded by humans and part of a team, not a loner behind a screen.
 
 Mingling with local development communities in your city, by attending conferences and meetups, is a great way to surround yourself with other professionals and establish new connections. If you don't live in an area with an established community, perhaps you can kickstart it yourself?
 
