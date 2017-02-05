@@ -3,6 +3,7 @@ layout: post
 title: "Working remotely"
 categories: blog
 tags: remote dadi
+audio: /assets/audio/2017-02-03-working-remotely.mp3
 ---
 It's been just over a year since I joined [DADI](https://dadi.tech) and, like everyone else in the company, started working fully remotely. There are still many people that are curious and intrigued by this work style and there are certainly many myths around it; after a year of experiencing it myself, I thought I'd share some of my own views on the matter.<!--more-->
 

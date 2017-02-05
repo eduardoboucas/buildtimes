@@ -192,6 +192,8 @@ var eb = (function ($) {
     } else {
       window.SimpleJekyllSearchInit = initSearch;
     }
+
+    initAudio();
   }
 
   function initSearch() {
@@ -209,6 +211,39 @@ var eb = (function ($) {
       noResultsText: '<p class="search-results__message">No results, sorry.</p>',
       searchResultTemplate: resultTemplate
     });   
+  }
+
+  function initAudio() {
+    var $audio = $('.js-audio');
+    var audio = $audio.get(0);
+    var $audioControlPlay = $('.js-audio-play');
+    var $audioControlPause = $('.js-audio-pause');
+
+    var updateAudioControl = function (playing) {
+      if (playing) {
+        $audioControlPlay.attr('aria-hidden', 'true');
+        $audioControlPause.removeAttr('aria-hidden');
+      } else {
+        $audioControlPlay.removeAttr('aria-hidden');
+        $audioControlPause.attr('aria-hidden', 'true');
+      }
+    }
+
+    var toggleAudio = function () {
+      if (!audio.paused) {
+        audio.pause();
+        updateAudioControl(false);
+      } else {
+        audio.play();
+        updateAudioControl(true);
+      }
+    }
+
+    $audioControlPlay.click(toggleAudio);
+    $audioControlPause.click(toggleAudio);
+    $audio.on('ended', function () {
+      updateAudioControl(false);
+    });
   }
 
   init();
