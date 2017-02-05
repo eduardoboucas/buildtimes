@@ -236,6 +236,8 @@ var eb = (function ($) {
       } else {
         audio.play();
         updateAudioControl(true);
+
+        sendGAEvent('Articles', 'Audio play');
       }
     }
 
