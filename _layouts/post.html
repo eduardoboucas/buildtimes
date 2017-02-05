@@ -10,13 +10,17 @@ layout: default
     	<h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=page.title visualTitle=page.visualTitle %}</h1>
       <div class="post-meta post-meta--emphasis">
         {% if page.external-date %}
-          <span class="post-meta__room">Originally published on {% if page.external-url %}<a href="{{ page.external-url }}">{% endif %}{{ page.external-name }}{% if page.external-url %}</a>{% endif %} on {% include helpers/format-date.html date=page.external-date %}</span>
+          <span>Originally published on {% if page.external-url %}<a href="{{ page.external-url }}">{% endif %}{{ page.external-name }}{% if page.external-url %}</a>{% endif %} on {% include helpers/format-date.html date=page.external-date %}</span>
         {% else %}
           <span>{% include helpers/format-date.html date=page.date %}</span>
         {% endif %}
+      </div>
+    </div>
 
-        {% if true %}
-          <div class="audio-player">
+    <div class="post__body body-text">
+      {% if page.audio %}
+        <div class="audio-player">
+          <div class="audio-player__inner">
             <button class="js-audio-play">
               <svg class="audio-player__icon">
                 <use xlink:href="#icon-play"></use>
@@ -34,12 +38,9 @@ layout: default
             <audio class="js-audio">
               <source src="{{ page.audio }}" type="audio/mpeg">
             </audio>
-          </div>
-        {% endif %}
-      </div>
-    </div>
-    
-    <div class="post__body body-text">
+            </div>
+        </div>
+      {% endif %}
 
       {% if page.preface %}
         <div class="preface">
