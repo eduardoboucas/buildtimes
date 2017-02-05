@@ -8,16 +8,39 @@ layout: default
   <article class="post post--full">
     <div class="constrain">
     	<h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=page.title visualTitle=page.visualTitle %}</h1>
-      <p class="post-meta post-meta--emphasis">
+      <div class="post-meta post-meta--emphasis">
         {% if page.external-date %}
-          Originally published on {% if page.external-url %}<a href="{{ page.external-url }}">{% endif %}{{ page.external-name }}{% if page.external-url %}</a>{% endif %} on {% include helpers/format-date.html date=page.external-date %}
+          <span class="post-meta__room">Originally published on {% if page.external-url %}<a href="{{ page.external-url }}">{% endif %}{{ page.external-name }}{% if page.external-url %}</a>{% endif %} on {% include helpers/format-date.html date=page.external-date %}</span>
         {% else %}
-          {% include helpers/format-date.html date=page.date %}
+          <span>{% include helpers/format-date.html date=page.date %}</span>
         {% endif %}
-      </p>
+
+        {% if true %}
+          <div class="audio-player">
+            <button class="js-audio-play">
+              <svg class="audio-player__icon">
+                <use xlink:href="#icon-play"></use>
+              </svg>
+            </button>
+
+            <button class="js-audio-pause" aria-hidden="true">
+              <svg class="audio-player__icon">
+                <use xlink:href="#icon-pause"></use>
+              </svg>
+            </button>
+
+            <span class="audio-player__label">Listen to this post</span>
+
+            <audio class="js-audio">
+              <source src="{{ page.audio }}" type="audio/mpeg">
+            </audio>
+          </div>
+        {% endif %}
+      </div>
     </div>
     
     <div class="post__body body-text">
+
       {% if page.preface %}
         <div class="preface">
           {{ page.preface | markdownify }}

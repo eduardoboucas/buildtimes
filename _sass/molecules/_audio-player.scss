@@ -1,0 +1,25 @@
+.audio-player {
+  margin-top: 10px;
+
+  * {
+    vertical-align: middle;
+  }
+
+  @include media('>=medium') {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 60px; 
+  }
+}
+
+.audio-player__label {
+  font-family: $font-family-secondary;
+  font-style: normal;
+  margin-left: 8px;
+
+}
+
+.audio-player__icon {
+  width: 32px;
+  height: 32px;
+}
