@@ -20,6 +20,7 @@ googleAnalyticsId: UA-54012006-1
 
 gems:
   - jekyll-paginate
+  - jekyll-github-metadata
 
 excerpt_separator: <!--more-->
 
