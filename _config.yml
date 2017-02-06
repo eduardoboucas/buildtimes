@@ -3,7 +3,6 @@ email: mail@eduardoboucas.com
 description: "Software engineer with a crush on the web"
 baseurl: ""
 url: "https://eduardoboucas.com"
-devRepo: "dev.eduardoboucas.com"
 
 markdown: kramdown
 

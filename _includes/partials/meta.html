@@ -25,7 +25,7 @@
 <meta name="description" content="{{ description | truncate: 200, '...' }}">
 <link rel="manifest" href="/manifest.json">
 
-{% if site.github.repository_name == site.devRepo %}
+{% if jekyll.environment == 'stage' %}
   <meta name="robots" content="noindex">
   <link rel="canonical" href="{{ site.url }}" />
 {% endif %}
