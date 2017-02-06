@@ -25,6 +25,11 @@
 <meta name="description" content="{{ description | truncate: 200, '...' }}">
 <link rel="manifest" href="/manifest.json">
 
+{% if site.github.repository_name == site.devRepo %}
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ site.url }}" />
+{% endif %}
+
 <meta property="og:image" content="{{ "/assets/images/logo-800x800.png" | prepend: site.url }}"/>
 <meta property="og:image:width" content="800"/>
 <meta property="og:image:height" content="800"/>

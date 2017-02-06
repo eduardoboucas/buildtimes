@@ -3,6 +3,7 @@ email: mail@eduardoboucas.com
 description: "Software engineer with a crush on the web"
 baseurl: ""
 url: "https://eduardoboucas.com"
+devRepo: "dev.eduardoboucas.com"
 
 markdown: kramdown
 
@@ -20,6 +21,7 @@ googleAnalyticsId: UA-54012006-1
 
 gems:
   - jekyll-paginate
+  - jekyll-github-metadata
 
 excerpt_separator: <!--more-->
 
