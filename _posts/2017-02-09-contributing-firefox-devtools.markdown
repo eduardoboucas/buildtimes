@@ -2,7 +2,8 @@
 layout: post
 title: "Contributing to Mozilla Firefox DevTools"
 categories: blog
-tags: sass
+tags: mozilla firefox devtools mdn
+audio: /assets/audio/2017-02-09-contributing-firefox-devtools.mp3
 ---
 In 2007, Firebug 1.0 was released as a Mozilla Firefox add-on. This was the first set of browser development tools to feature a DOM inspector, a console and a JavaScript debugger in one place, which revolutionised front-end development tooling and shaped the way other browsers approached it too. A decade later, [Firefox DevTools takes its place](https://hacks.mozilla.org/2016/12/firebug-lives-on-in-firefox-devtools/) and I thought it'd be a great time to contribute to it. This article describes my experience in doing it, hoping to convince you to do the same.<!--more-->
 
@@ -16,7 +17,7 @@ DevTools is built using the languages of the web, so any web developer can just 
 
 There is [a long list](http://firefox-dev.tools/) of bug reports and feature requests to choose from. The ones labelled with *Good First Bug* are probably a good starting point for someone that is new to the codebase.
 
-One of the things I like the most about Mozilla is the community of people, both staff and volunteers, who work tirelessly to make the web a better place. I'm particularly fond of [MDN](https://developer.mozilla.org/en-US/), a community-driven repository of documentation for developers, which I produdly [contribute to myself]({% post_url 2016-08-17-mdn %}).
+One of the things I like the most about Mozilla is the community of people, both staff and volunteers, who work tirelessly to make the web a better place. I'm particularly fond of [MDN](https://developer.mozilla.org/en-US/), a community-driven repository of documentation for developers, which I proudly [contributed to myself]({% post_url 2016-08-17-mdn %}).
 
 In fact, I think Mozilla should leverage this huge knowledge base as much as possible, by syndicating its content to various channels and integrating it with tools used daily by developers — Firefox itself, and DevTools in particular, is a perfect vehicle for that. An example of this is the error messages in the console that, since version 49 of the browser, are accompanied by a link to a relevant MDN page, offering developers extended information about the nature of the error, along with likely causes and possible solutions.
 
@@ -26,7 +27,7 @@ To help with the effort of integrating MDN with DevTools, I started looking into
 
 ## Build Firefox
 
-The first step to make that happen is to download the Firefox source code and built it on your machine. I recommend checking the [Firefox Build Instructions](https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Build_Instructions) page on MDN for information specific to your operating system, but it'll start with downloading and running a [bootstrap script](https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py) that will download some dependencies and configure a few things in your system. After that, it's time to download the actual source code and start building.
+The first step to make that happen is to download the Firefox source code and build it on your machine. I recommend checking the [Firefox Build Instructions](https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Build_Instructions) page on MDN for information specific to your operating system, but it'll start with downloading and running a [bootstrap script](https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py) that will download some dependencies and configure a few things in your system. After that, it's time to download the actual source code and start building.
 
 {% highlight bash %}
 # Download the source code
@@ -120,3 +121,5 @@ You can then attach this patch to the bug and request a review by adding the fla
 ## Celebrate
 
 Once everyone is happy with your patch, they will check it in and flag it as ready to be included in a future release cycle. As for [my patch](https://hg.mozilla.org/mozilla-central/rev/031087a1f3c6), it will help you learn everything about HTTP headers as soon as Firefox 54 lands. Happy days!<!--tomb-->
+
+*Thanks to [Soledad Penadés](https://soledadpenades.com/) for reviewing the post.*
