@@ -4,11 +4,11 @@
     <input type="hidden" name="options[origin]" value="{{ site.url }}{{ page.url }}">
     
     <input type="text" name="company" class="text-field" style="display: none">
-    <input class="form__field text-field" type="text" name="fields[name]" placeholder="Name" required/>
-    <input class="form__field text-field" type="email" name="fields[email]" placeholder="Email address (will not be public)" required/>
-    <input class="form__field text-field" type="url" name="fields[url]" placeholder="Website (optional)"/>
+    <label><input class="form__field text-field" type="text" name="fields[name]" placeholder="Name" required>Name</label>
+    <label><input class="form__field text-field" type="email" name="fields[email]" placeholder="Email address (will not be public)" required>Email</label>
+    <label><input class="form__field text-field" type="url" name="fields[url]" placeholder="Website (optional)">Website</label>
     <input class="form__field text-field" type="address" name="fields[address]" placeholder="Address (do not fill!)" style="display: none"/>
-    <textarea class="form__field text-field" rows="10" name="fields[message]" placeholder="Comment. Markdown is accepted." required></textarea>
+    <label><textarea class="form__field text-field" rows="10" name="fields[message]" placeholder="Comment. Markdown is accepted." required></textarea>Comment. Markdown is accepted</label>
     <input id="form-subscribe" type="checkbox" name="options[subscribe]" value="email" class="checkbox">
     <label for="form-subscribe" class="form__field checkbox__label">I want to be notified of new comments</label>
     <input class="cta" type="submit" value="Send" />
