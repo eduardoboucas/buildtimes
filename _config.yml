@@ -12,6 +12,7 @@ sass:
 
 exclude:
   - node_modules
+  - vendor
 
 paginate: 9
 paginate_path: "/page/:num/"
