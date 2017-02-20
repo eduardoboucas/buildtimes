@@ -3,6 +3,7 @@ layout: post
 title: "Creating a staging environment for Jekyll"
 categories: blog
 tags: jekyll preview staging environment netlify
+audio: /assets/audio/2017-02-22-jekyll-staging-environment.mp3
 ---
 A staging or pre-production environment is a testing infrastructure that replicates as best as possible the setup of a live site. In the context of a Jekyll site, it can be used to share a new post or feature with a selected group of people before a roll out to the general public. In this post, I'll show you how I created one and how I make use of it.<!--more-->
 
