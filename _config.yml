@@ -37,7 +37,7 @@ defaults:
       layout: tv
       permalink: /video/:title
 
-future: true
+future: false
 
 # Serving
 detach:  false

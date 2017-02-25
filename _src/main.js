@@ -8,6 +8,11 @@ var eb = (function ($) {
   function bindUiEvents() {
     $(window).load(function () {
       adjustFeatureWidth();
+
+      // Init masonry
+      $('.js-posts').masonry({
+        itemSelector: '.post-wrapper'
+      });
     });
 
     $(window).resize(function () {
@@ -17,11 +22,6 @@ var eb = (function ($) {
     $(document).ready(function() {
       // Lazy load images
       $('.js-lazyload').unveil();
-
-      // Init masonry
-      $('.js-posts').masonry({
-        itemSelector: '.post-wrapper'
-      });      
     });
 
     $('#post-new-comment').submit(function () {

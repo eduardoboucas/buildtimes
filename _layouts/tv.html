@@ -45,6 +45,8 @@ title: Video
       {% endif %}      
     </div>
     <div class="tv__playlist col col--1-1 col--1-3@medium">
+      <p class="tv__playlist-title">Other videos</p>
+
       {% for video in videos %}
         {% if video.url != page.url %}
           {% if page.src != null or forloop.index != 1 %}

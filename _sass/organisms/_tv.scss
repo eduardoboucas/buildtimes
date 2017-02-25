@@ -46,6 +46,15 @@
   }
 }
 
+.tv__playlist-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  @include media('>=medium') {
+    display: none;
+  }
+}
+
 .tv__playlist-item {
   display: block;
 }
