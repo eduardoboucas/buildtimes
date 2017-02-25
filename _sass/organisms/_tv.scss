@@ -48,7 +48,7 @@
 
 .tv__playlist-title {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 10px 0;
 
   @include media('>=medium') {
     display: none;
