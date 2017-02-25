@@ -25,6 +25,18 @@ gems:
 
 excerpt_separator: <!--more-->
 
+collections:
+  tv:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: tv
+    values:
+      layout: tv
+      permalink: /video/:title
+
 future: true
 
 # Serving

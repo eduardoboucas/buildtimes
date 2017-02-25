@@ -45,11 +45,15 @@ $masthead-bar-border-thickness: 2px;
 .masthead-bar__close-search-button {
 	position: absolute;
 	top: 5px;
-	right: 8px;	
+	right: 0;
 	display: inline-block;
 	font-size: 26px;
 	line-height: 29px;
 	cursor: pointer;
+
+	@include media('>=medium') {
+		right: 8px;
+	}
 }
 
 .masthead-bar__search-input {
@@ -60,15 +64,23 @@ $masthead-bar-border-thickness: 2px;
 	outline: none;
 	font-family: $font-family-primary;
 	font-size: 23px;
-	padding: 0 35px 0 5px;
+	padding: 0 25px 0 0;
 
 	&:focus {
 		background-color: $colour-light-grey;
+	}
+
+	@include media('>=medium') {
+		padding: 0 35px 0 5px;
 	}
 }
 
 .masthead-bar__menu-item:nth-child(n+2) + .masthead-bar__menu-item:before,
 .masthead-bar__menu-item:first-child:after {
 	content: '/';
-	margin: 0 5px;
+	margin: 0 2px;
+
+	@include media('>=medium') {
+		margin: 0 5px;		
+	}
 }

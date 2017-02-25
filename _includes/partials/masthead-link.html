@@ -1,0 +1,16 @@
+{% assign activeLink = false %}
+{% assign route = page.url | split: '/' %}
+
+{% if route[1] == include.link %}
+  {% assign activeLink = true %}
+{% endif %}
+
+{% if include.link == "" %}
+  {% if route[1] == "blog" or route[1] == null %}
+    {% assign activeLink = true %}
+  {% endif %}
+{% endif %}
+
+<span class="masthead-bar__menu-item">
+  <a class="link{% if activeLink %} link--active{% endif %}" href="{{ include.link | prepend: '/' }}">{{ include.title }}</a>
+</span>

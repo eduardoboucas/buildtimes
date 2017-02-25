@@ -2,7 +2,7 @@
 // Grid
 // --------------------------------------------------------------
 
-@include im-columns(2, 3);
+@include im-columns(1, 2, 3);
 
 .col {
 	display: inline-block;

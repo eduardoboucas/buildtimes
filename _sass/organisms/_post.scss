@@ -1,3 +1,17 @@
+@mixin post-body() {
+	margin-top: $post-vertical-rythm;
+	font-size: 21px;
+	line-height: 1.5;
+
+	p {
+		margin-bottom: $post-vertical-rythm;
+	}
+
+	a {
+		@include link(true);
+	}	
+}
+
 .post {
 	position: relative;
 	display: block;
@@ -110,17 +124,7 @@ a > .post--feature {
 }
 
 .post__body {
-	margin-top: $post-vertical-rythm;
-	font-size: 21px;
-	line-height: 1.5;
-
-	p {
-		margin-bottom: $post-vertical-rythm;
-	}
-
-	a {
-		@include link(true);
-	}
+	@include post-body;
 }
 
 .post__external-ribbon {

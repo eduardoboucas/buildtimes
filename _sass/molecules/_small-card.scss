@@ -1,0 +1,26 @@
+.small-card {
+  @include transition(transform opacity);
+
+    display: block;
+    padding: 20px;
+    background-color: $colour-light-grey;
+
+    &:hover {
+      transform: translateY(-3px);
+      opacity: 0.6;
+    }
+
+    @include media('>=medium') {
+      display: inline-block;
+    }
+}
+
+.small-card__pre {
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.small-card__title {
+  font-weight: bold;
+}
