@@ -8,21 +8,23 @@
 	}
 }
 
-.search-button__icon,
-.search-button__label {
-	display: inline-block;
-	vertical-align: middle;
-}
-
 .search-button__icon {
 	@include transition(transform, $transition-short);
 
+	display: inline-block;
 	width: 20px;
 	height: 20px;
 	transform-origin: center;
+	vertical-align: middle;
 }
 
 .search-button__label {
+	display: none;
 	text-transform: none;
 	font-size: 14px;
+	vertical-align: middle;
+
+	@include media('>=medium') {
+		display: inline-block;
+	}
 }

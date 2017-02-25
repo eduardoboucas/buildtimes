@@ -8,6 +8,11 @@ var eb = (function ($) {
   function bindUiEvents() {
     $(window).load(function () {
       adjustFeatureWidth();
+
+      // Init masonry
+      $('.js-posts').masonry({
+        itemSelector: '.post-wrapper'
+      });
     });
 
     $(window).resize(function () {
@@ -17,11 +22,6 @@ var eb = (function ($) {
     $(document).ready(function() {
       // Lazy load images
       $('.js-lazyload').unveil();
-
-      // Init masonry
-      $('.js-posts').masonry({
-        itemSelector: '.post-wrapper'
-      });      
     });
 
     $('#post-new-comment').submit(function () {
@@ -199,9 +199,9 @@ var eb = (function ($) {
   function initSearch() {
     var resultTemplate = '';
 
-    resultTemplate += '<a href="{url}" class="search-result">';
-    resultTemplate += ' <p class="search-result__date">{date}</p>';
-    resultTemplate += ' <p class="search-result__title">{title}</p>';
+    resultTemplate += '<a href="{url}" class="search-result small-card">';
+    resultTemplate += ' <p class="small-card__pre">{date}</p>';
+    resultTemplate += ' <p class="small-card__title">{title}</p>';
     resultTemplate += '</a>';
 
     SimpleJekyllSearch({

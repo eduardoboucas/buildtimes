@@ -6,21 +6,10 @@
 		<div class="masthead-bar">
 			<div class="masthead-bar__face">
 				<div class="masthead-bar__menu">
-					{% if page.url == '/' or page.url == '/index.html' %}
-						<span class="masthead-bar__date masthead-bar__menu-item">Issue #{{ site.posts | size }}</span>
-					{% else %}
-						<span class="masthead-bar__date masthead-bar__menu-item">
-							<a href="/">← <span class="link">First page</span></a>
-						</span>
-					{% endif %}
-
-					<span class="masthead-bar__menu-item">
-						<a class="link{% if page.url == '/about' %} link--active{% endif %}" href="/about">About</a>
-					</span>
-
-					<span class="masthead-bar__menu-item">
-						<a class="link{% if page.url == '/projects' %} link--active{% endif %}" href="/projects">Projects</a>
-					</span>
+					{% include partials/masthead-link.html link="" title="Blog" %}
+					{% include partials/masthead-link.html link="video" title="Video" %}
+					{% include partials/masthead-link.html link="about" title="About" %}
+					{% include partials/masthead-link.html link="projects" title="Projects" %}
 				</div>
 			
 				<label for="search-toggle" class="masthead-bar__open-search-button search-button">

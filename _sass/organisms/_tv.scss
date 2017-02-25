@@ -1,0 +1,64 @@
+.tv {
+  margin-bottom: 30px;
+}
+
+.tv__frame {
+  padding: 5px;
+  background-color: $colour-light-grey;
+}
+
+.tv__video-container {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.tv__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tv__video-title {
+  @include post-title;
+
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  vertical-align: middle;
+}
+
+.tv__video-description {
+  @include post-body;
+}
+
+.tv__video-cta {
+  vertical-align: middle;
+}
+
+.tv__playlist {
+  padding: 30px 0;
+  
+  @include media('>=medium') {
+    padding: 0 0 0 10px;
+  }
+}
+
+.tv__playlist-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  @include media('>=medium') {
+    display: none;
+  }
+}
+
+.tv__playlist-item {
+  display: block;
+}
+
+.tv__playlist-item + .tv__playlist-item {
+  margin-top: 10px;
+}
