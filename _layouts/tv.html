@@ -5,6 +5,7 @@ title: Video
 {% assign videos = site.tv | reverse %}
 {% assign videoSrc = page.src | default: videos[0].src %}
 {% assign videoTitle = page.title | default: videos[0].title %}
+{% assign videoDate = page.date | default: videos[0].date %}
 {% assign videoPost = page.post | default: videos[0].post %}
 
 {% if videoPost %}
@@ -27,6 +28,7 @@ title: Video
       </div>
 
       <h2 class="tv__video-title">{{ videoTitle }}</h2>
+      <p class="tv__video-date">{% include helpers/format-date.html date=videoDate %}</p>
 
       {% if excerpt %}
         <div class="tv__video-description">

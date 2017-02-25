@@ -30,6 +30,14 @@
   vertical-align: middle;
 }
 
+.tv__video-date {
+  padding: 10px 0;
+  font-family: $font-family-primary;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
 .tv__video-description {
   @include post-body;
 }
