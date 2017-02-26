@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing Haiku"
+title: "Deploying to Heroku with Haiku"
 categories: blog
 tags: haiku heroku
 ---
