@@ -16,7 +16,7 @@ This information is vital to the project maintainers or to whoever picks up the 
 
 Hopefully, the project in question has some form of automated test suite (if it doesn't, it probably should). So why not take the concept of [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development), where requirements are defined as tests that are written *before* the functionality is built?
 
-People that wish to request a new feature can do so by creating a pull request containing a set of test cases for the behaviour they want to see (or, at least, the skeleton of a test in pseudo-code, in cases where the test suite is not very friendly to first-time contributors or the given test case is too complex).
+People that wish to request a new feature can be encouraged to do so by creating a pull request containing a set of test cases for the behaviour they want to see (or, at least, the skeleton of a test in pseudo-code, in cases where the test suite is not very friendly to first-time contributors or the given test case is too complex).
 
 These tests work as *contracts* that unequivocally specify the requirements and its implementation details, including edge cases. Based on the tests, maintainers can adjust the spec before work begins, and the developers can use them as a constant evaluator of whether the work they're producing meets the requirements.
 
