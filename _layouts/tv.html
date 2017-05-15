@@ -7,6 +7,11 @@ title: Video
 {% assign videoTitle = page.title | default: videos[0].title %}
 {% assign videoDate = page.date | default: videos[0].date %}
 {% assign videoPost = page.post | default: videos[0].post %}
+{% assign videoContent = page.content | strip_newlines %}
+
+{% if page.url == "/video/" %}
+  {% assign videoContent = videos[0].content %}
+{% endif %}
 
 {% if videoPost %}
   {% for post in site.posts %}
@@ -18,7 +23,7 @@ title: Video
   {% endfor %}
 {% endif %}
 
-{% assign excerpt = page.description | default: linkedPost.excerpt %}
+{% assign excerpt = videoContent | default: linkedPost.excerpt %}
 
 <main id="main" role="main" class="main constrain--padding">
   <div class="tv">
