@@ -20,7 +20,7 @@ But the cool thing about FeedBurner is that it gives you some important metrics 
 >>
 >> Reach aggregates both of these groups, providing an accurate and useful measurement of your true audience.
 
-{% include helpers/image.html name="feedburner-dashboard.png" caption="My FeedBurner dashboard" %}
+{% include helpers/image-legacy.html name="feedburner-dashboard.png" caption="My FeedBurner dashboard" %}
 
 As you can see from my modest dashboard above (hey, this set-up is a couple of days old so give me a break!), I can now have an idea of how many people read and interact with my content.
 
@@ -32,7 +32,7 @@ use a FeedBurner URL right?
 Luckily, FeedBurner allows you to use the service with your own domain, so if you have one just stick with it. To set everything up, log-in to FeedBurner and go to *My Account*. On the left-hand side menu, click on *My Brand*. You will then see instructions on how you should set up a CNAME entry and point it to FeedBurner.
 After you set up the CNAME with your DNS provider, add it to FeedBurner.
 
-{% include helpers/image.html name="feedburner-custom-domain.png" caption="Adding a custom domain to FeedBurner" %}
+{% include helpers/image-legacy.html name="feedburner-custom-domain.png" caption="Adding a custom domain to FeedBurner" %}
 
 The service allows you to have multiple feeds, so they recommend setting up a subdomain like `feeds.yourdomain.com` and have all your feeds with URLs like `feeds.yourdomain.com/yourfeed1`. 
 
@@ -56,6 +56,6 @@ Then I added the meta tag:
 
 After doing this, I can use any feed reader application to search for my blog and hopefully it will pull the correct information. Here's how it looks on [Feedly](http://feedly.com/):
 
-{% include helpers/image.html name="feedly-search.png" caption="Searching for my blog on Feedly" %}
+{% include helpers/image-legacy.html name="feedly-search.png" caption="Searching for my blog on Feedly" %}
 
 And that's pretty much it. Now please subscribe to my feed, will you? My subscriber numbers are just sad.<!--tomb-->

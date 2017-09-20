@@ -10,7 +10,7 @@ I won't go through everything Flexbox can do for you, because [other folks](http
 
 I've been wanting to use Flexbox for ages, but [browser support](http://caniuse.com/#feat=flexbox) was always an issue, with Internet Explorer being the most problematic case — it's IE10+, even though version 10 still ships with an outdated implementation (see the differences [here](http://css-tricks.com/old-flexbox-and-new-flexbox/)). My team works under the requirements of building for IE9+ (or 10+, depending on the project), so on countless times I've said *"man, Flexbox would be perfect for this"* shortly followed by *"yeah, but we can't use it"*. Until today.
 
-{% include helpers/image.html name="austin-full.png" caption="A mockup of the design I had to build (desktop)" %}
+{% include helpers/image-legacy.html name="austin-full.png" caption="A mockup of the design I had to build (desktop)" %}
 
 This is a mockup of the page I had to build. Right off the bat you can tell that Flexbox would be perfect for building this layout, especially when it comes to maintaining the same height within a group of elements, but I've made peace with the fact that I can't rely on it for such a critical thing — browser support, browser support, browser support.
 
@@ -27,7 +27,7 @@ Even without Flexbox's help, this layout can be easily built in plain CSS, but w
 
 This works absolutely fine, but there's a caveat associated with the fact that our layout alternates between displaying articles with copy first and then image and the other way around. Naturally, the DOM structure will reflect that, so this is what will happen when we get to a mobile view.
 
-{% include helpers/image.html name="austin-mobile.png" caption="Mobile view of the layout (before Flexbox)" %}
+{% include helpers/image-legacy.html name="austin-mobile.png" caption="Mobile view of the layout (before Flexbox)" %}
 
 Because the articles are being stacked on top of each other and the natural order of the elements in the DOM is preserved, we will sometimes see two consecutive images or two consecutive pieces of copy which is not what we want, since it might confuse users as to what image a bit of copy is associated with. Ideally, we would display all the articles in the same way on mobile: first copy, then image. But how can we do this? Yes, we could use JavaScript to detect if we're on a mobile viewport (probably attaching that check to a window resize event) and then swapping the DOM elements around when necessary. *YIKES!* That sounds awful.
 

@@ -18,11 +18,11 @@ I wanted to take care of the video capturing and editing all by myself, because 
 
 How on earth would I do that? I didn't have a fancy green screen with an expensive lighting rig to pull out a decent chroma key. I just had a Canon 550d with a stock lens, a garage with walls that are half white (ish) and the blazing sun on a hot Portuguese summer day to light things up.
 
-{% include helpers/image.html name="studio.jpg" caption="My parent's garage transformed into a studio" %}
+{% include helpers/image-legacy.html name="studio.jpg" caption="My parent's garage transformed into a studio" %}
 
 I wanted the final video to be black and white with a kind of low-fi vibe to it, which made things easier. I bought a cheap roll of scenery paper to cover the floor and the tiles on the wall, hoping that with the right colour treatment I could make this work. It was time to get everything in place, start rolling some test takes and have some fun with Final Cut Pro X.
 
-{% include helpers/image.html name="editing.jpg" caption="Saturation down, exposure up et voilà!" %}
+{% include helpers/image-legacy.html name="editing.jpg" caption="Saturation down, exposure up et voilà!" %}
 
 Sweet! I framed everything in a way that I would have the chair centred and scenery paper going all the way to the left edge of the frame, because I wanted to enter the video from that side. A bit of cropping would take care of the rest.
 

@@ -11,7 +11,7 @@ A commenting system is something very common and easy to implement on classic bl
 ## At first, I thought Disqus
 My first thought was [Disqus](https://disqus.com/), a comment hosting service used by platforms like Tumblr or Wordpress. In a nutshell, here's how it works: you create an account with them, add your website to the platform, tweak a few things on the layout and finally add a piece of JavaScript to your website, which will then get replaced with all the markup, style and logic needed for the comments to work. This sounded perfect, because I didn't need to actually run any logic on my server, a few lines of JavaScript would do the job, so I gave it a go.
 
-{% include helpers/image.html name="disqus.png" caption="Screenshot of a Disqus installation" %}
+{% include helpers/image-legacy.html name="disqus.png" caption="Screenshot of a Disqus installation" %}
 
 It was that simple and it did work great, but I didn't like it. It offered too much stuff that I didn't want, like post ratings, favourites, social media integration and even a whole community! All I wanted was a simple form with 3 fields (name, email address or website and the message) so I didn't want to load a heavier plugin full of controls that I wouldn't use, and worse, with an interface that I couldn't properly customise and make *on-brand*.
 

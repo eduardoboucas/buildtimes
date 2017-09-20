@@ -19,7 +19,7 @@ Now that we have the ability to obtain performance metrics programmatically thro
 
 I set out to create a tool that allowed me to compile and visualise all this information, and I wanted to build it in a way that allowed others to do it too.
 
-{% include helpers/image.html name="diagram1.png" caption="What I had in mind. Roughly." %}
+{% include helpers/image-legacy.html name="diagram1.png" caption="What I had in mind. Roughly." %}
 
 ## The wish list
 
@@ -52,7 +52,7 @@ As for #1, I built a small Node.js application that receives test requests, send
 
 The diagram below shows the gist of the idea.
 
-{% include helpers/image.html name="diagram2.png" caption="The system architecture" %}
+{% include helpers/image-legacy.html name="diagram2.png" caption="The system architecture" %}
 
 Oh, at some point I needed a name. I called it [SpeedTracker](https://speedtracker.org).
 
@@ -80,7 +80,7 @@ With that list in place, I could build a client-side application that given a pr
 
 I built that using React.
 
-{% include helpers/image.html name="diagram2.png" caption="Jekyll powering the React application" %}
+{% include helpers/image-legacy.html name="diagram2.png" caption="Jekyll powering the React application" %}
 
 ## Performance budgets
 
@@ -90,7 +90,7 @@ That threshold must then be taken into account every time you plan on adding a n
 
 I wanted to give budgets a prominent place in the platform. When creating a profile, you can set a budget for any of the metrics captured and a horizontal line will show in the respective chart alongside the data, giving you a visual indication of how well your site is doing.
 
-{% include helpers/image.html name="graph1.png" caption="Paul Irish recommends a 1000ms budget for SpeedIndex" %}
+{% include helpers/image-legacy.html name="graph1.png" caption="Paul Irish recommends a 1000ms budget for SpeedIndex" %}
 
 It's also possible to define alerts that are triggered when any of the budgets is exceeded, so that you and your team can instantly be notified via email or Slack when things aren't looking so great.
 
