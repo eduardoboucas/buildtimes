@@ -56,7 +56,7 @@
   {% assign lines = lines | split: separator %}
 {% endif %}
 
-<p class="feature-title__full">{{ title }}</p>
+<span class="feature-title__full">{{ title }}</span>
 {% for line in lines %}
   <span aria-hidden="true" class="feature-title__part">{{ line }}</span>
 {% endfor %}

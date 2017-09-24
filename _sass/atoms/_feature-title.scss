@@ -6,7 +6,10 @@
 }
 
 .feature-title__full {
-	@include post-title;
+  @include post-title;
+
+  display: block;
+
 	@include media('>=medium') {
 		font-size: 0;
 		line-height: 0;

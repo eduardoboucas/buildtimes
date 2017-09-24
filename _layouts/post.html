@@ -7,7 +7,9 @@ layout: default
 <main id="main" role="main" class="main">
   <article class="post post--full">
     <div class="constrain">
-    	<h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=page.title visualTitle=page.visualTitle %}</h1>
+    	<h1 class="post__title feature-title">
+        {% include helpers/generate-feature-title.html title=page.title visualTitle=page.visualTitle %}
+      </h1>
       <div class="post-meta post-meta--emphasis">
         {% if page.external-date %}
           <span>Originally published on {% if page.external-url %}<a href="{{ page.external-url }}">{% endif %}{{ page.external-name }}{% if page.external-url %}</a>{% endif %} on {% include helpers/format-date.html date=page.external-date %}</span>
