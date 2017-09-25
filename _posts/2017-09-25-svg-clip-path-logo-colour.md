@@ -4,7 +4,7 @@ title: "Using SVG clip-path to change a logo's colour on scroll"
 categories: blog
 tags: svg clip path logo colour scroll
 ---
-This week I had to put together a landing site for a new business. The design was quite straightforward: a single page with various sections represented as full-width horizontal blocks with different background colours, and a fixed positioned logo on the top-left corner.
+Last week I put together a landing site for a new business. The design was quite straightforward: a single page with various sections represented as full-width horizontal blocks with different background colours, and a fixed positioned logo on the top-left corner.
 
 The only particularity was that the logo should change colours, as the user scrolls, depending on which section it overlaps.<!--more--> When positioned over a section with a dark background, the logo should be white. When overlapping a section with a light background, it should be dark blue.
 
