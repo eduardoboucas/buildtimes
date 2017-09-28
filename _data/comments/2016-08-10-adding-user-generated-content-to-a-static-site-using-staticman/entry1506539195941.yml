@@ -1,8 +1,0 @@
-_id: fb4f67f0-a3b6-11e7-aa8b-15aa8a7fde60
-_parent: 2016-08-10-adding-user-generated-content-to-a-static-site-using-staticman
-name: tbodt
-email: ae8ab91a64f21f0e65b69a0bf1ca4904
-url: ''
-address: ''
-message: "\uD835\uDC60\uD835\uDC61\uD835\uDC4E\uD835\uDC61\uD835\uDC56\uD835\uDC50\uD835\uDC5A\uD835\uDC4E\uD835\uDC5B stops working when you post a comment with Unicode characters not in the Basic Multilingual Plane, please merge https://github.com/eduardoboucas/staticman/pull/137"
-date: 1506539195
