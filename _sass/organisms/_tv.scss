@@ -67,6 +67,11 @@
   display: block;
 }
 
+.tv__playlist-item-active {
+  background-color: $colour-primary;
+  color: $colour-background;
+}
+
 .tv__playlist-item + .tv__playlist-item {
   margin-top: 10px;
 }

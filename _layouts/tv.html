@@ -53,13 +53,26 @@ title: Video
       <p class="tv__playlist-title">Other videos</p>
 
       {% for video in videos %}
-        {% if video.url != page.url %}
-          {% if page.src != null or forloop.index != 1 %}
-            <a href="{{ video.url }}" class="small-card tv__playlist-item">
-              <p class="small-card__pre">{% include helpers/format-date.html date=video.date %}</p>
-              <p class="small-card__title">{{ video.title }}</p>
-            </a>
-          {% endif %}
+        {% assign isActive = false %}
+
+        {% if page.url == video.url %}
+          {% assign isActive = true %}
+        {% endif %}
+
+        {% if page.url == '/video/' and forloop.index == 1 %}
+          {% assign isActive = true %}
+        {% endif %}
+
+        {% if isActive %}
+          <div class="small-card tv__playlist-item tv__playlist-item-active">
+            <p class="small-card__pre">{% include helpers/format-date.html date=video.date %}</p>
+            <p class="small-card__title">{{ video.title }}</p>
+          </div>
+        {% else %}
+          <a href="{{ video.url }}" class="small-card tv__playlist-item">
+            <p class="small-card__pre">{% include helpers/format-date.html date=video.date %}</p>
+            <p class="small-card__title">{{ video.title }}</p>
+          </a>
         {% endif %}
       {% endfor %}
     </div>
