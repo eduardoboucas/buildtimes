@@ -13,11 +13,15 @@
 }
 
 .figure__inner {
-	display: inline-block;
-	background-image: url(/assets/images/loading.gif);
+    display: inline-block;
+    background-image: url(/assets/images/loading.gif);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 40px;
+}
+
+.figure__inner--loaded {
+  background-image: none;
 }
 
 .figure__caption {
