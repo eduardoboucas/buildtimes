@@ -7,15 +7,15 @@ external-url: https://forum.dadi.tech/topic/17/lazy-loading-images-with-cdn-reci
 external-name: DADI forum
 external-date: 2017-10-23
 ---
-The most common culprits of poor performance in websites are images and videos, which often mean sending several megabytes of data across the wire for a single asset. When the network conditions are less than ideal, this can have a huge impact on load times and potentially make the website unusable.
+Images and videos are amongst the most common culprits of poor performance in websites, as they often require sending several megabytes of data across the wire for a single asset. When the network conditions are less than ideal, this can have a huge impact on load times and potentially make the website unusable.
 
-To get around this, developers typically resort to *lazy loading*, a technique that involves sending a tiny image with the initial payload, usually a blank pixel, which is then replaced when the real image, fetched asynchronously, is ready to be used. <!--more-->This means that users won't have to wait for a large asset to be dpwnloaded before they start seeing content on the screen, which is an improvement in perceived performance.
+To get around this, developers typically resort to *lazy loading*, a technique that comprises of sending a tiny temporary image with the initial payload (usually a blank pixel), which is then replaced when the real image, fetched asynchronously, has been downloaded and is ready to be used. <!--more-->In practice, this means that users don't have to wait for a large asset to be downloaded before they start seeing content on the screen, which is an improvement in perceived performance.
 
 ## Using a placeholder
 
 As an alternative to a blank pixel, we can use a placeholder generated from the original asset, as long as it's still small enough to have a marginal impact on the size of the initial payload. This creates a more pleasant visual effect, as users start seeing something that resembles the image they're expecting instead of just a blank slot.
 
-For example, we can take the original image and drastically reduce its dimensions and compression quality, bringing down the file size immediately. To avoid getting a terribly pixelated image, we can add a blur effect to mask the imperfections.
+For example, we can take the original image and reduce its dimensions and compression quality, drastically bringing down the file size. To avoid getting a terribly pixelated image, we can add a blur effect to mask the imperfections.
 
 Here's how it looks like:
 
@@ -27,7 +27,7 @@ Here's how it looks like:
 
 ## Using CDN recipes
 
-We could use CDN to generate a placeholder from any image using a set of URL parameters.
+We could use [DADI CDN](https://dadi.tech/cdn/) to generate a placeholder from any image using a set of URL parameters.
 
 [https://cdn.somedomain.tech/samples/tree.jpg?width=120&quality=75&resizeStyle=aspectfit&blur=4](https://cdn.somedomain.tech/samples/tree.jpg?width=120&quality=75&resizeStyle=aspectfit&blur=4)
 
