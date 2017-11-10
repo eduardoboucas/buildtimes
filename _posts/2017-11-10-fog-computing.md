@@ -16,8 +16,6 @@ Having looked at the basics, let’s think a bit bigger: how do large corporatio
 
 Companies solved that problem in perhaps the most obvious way possible: they got bigger and faster computers (commonly known as servers) to deliver their websites to large numbers of users, as well as super-fast Internet connections to do it in a timely manner and with high availability. So if you wanted to run a large website, your company would invest in powerful and expensive hardware, like processors, hard drives and network cards, that would physically live within your premises.
 
-{% include helpers/image.html name="owned-infrastructure.jpg" caption="Owned infrastructure" %}
-
 This comes with its own set of challenges. For one, you need an in-house team of people to run the day-to-day maintenance routines: replacing a hard drive, installing new equipment, updating software, etc. This is expensive.
 
 Secondly, if you recall the process of how a web page is transferred from one computer to another, you’ll see that we have a geographical problem at hand. If the server hosting the content you want to access is located on the other side of the world, the transfer will take significantly longer than if it were just a few blocks away from your house. This means that the quality of service that someone will experience will be dependent on their geographical location, which is far from ideal. 
