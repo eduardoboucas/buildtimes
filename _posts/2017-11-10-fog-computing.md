@@ -48,6 +48,6 @@ The reduced bandwidth requirements also mean a dramatic reduction of costs when 
 
 ## Are we there yet?
 
-I’m working on a fog computing platform at [DADI](https://dadi.cloud), expected to launch in Q3 2018. It allows anyone to rent their computational resources, becoming what we call miners. It’s based on concepts like blockchain and cryptocurrencies, which I’ll cover in a future article. 
+I’m working on a fog computing platform at [DADI](https://dadi.cloud), expected to launch in Q3 2018. It allows anyone to rent their computational resources, becoming what we call *miners*. It’s based on concepts like blockchain and cryptocurrencies, which I’ll cover in a future article. 
 
 For now, head to [https://dadi.cloud](https://dadi.cloud) to learn more and take part. <!--tomb-->
