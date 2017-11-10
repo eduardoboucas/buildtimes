@@ -12,7 +12,7 @@ I wanted to mention this because I want to bust any perception that there’s so
 
 Having looked at the basics, let’s think a bit bigger: how do large corporations host their websites and web applications? We’re talking about sites with massive volumes of traffic and of critical availability, so surely they can’t be running from a bedroom, on the same laptops you and me use to read the news.
 
-## The past: owned infrastructure
+## Owned infrastructure (the past)
 
 Companies solved that problem in perhaps the most obvious way possible: they got bigger and faster computers (commonly known as servers) to deliver their websites to large numbers of users, as well as super-fast Internet connections to do it in a timely manner and with high availability. So if you wanted to run a large website, your company would invest in powerful and expensive hardware, like processors, hard drives and network cards, that would physically live within your premises.
 
@@ -22,7 +22,7 @@ Secondly, if you recall the process of how a web page is transferred from one co
 
 Finally, there’s a problem of scalability. Sure, if your site gets more traffic, you can just buy more hardware and increase connectivity – but is that sustainable in the long term? And how long does it take you to scale? Can you do it quickly enough to give your organisation the agility to adapt to traffic spikes? And what happens when traffic goes down again? You can’t easily sell the hardware to buy it back again the next time you need more capacity.
 
-## The present: the cloud
+## The cloud (the present)
 
 Cloud computing is a radically different paradigm that sets to tackle the challenges created by owned infrastructure. It abstracts the physical aspect of servers by keeping the hardware off-premises, in large datacenters owned and operated by third parties. Right away, this eliminates the need for costly in-house maintenance personnel.
 
@@ -30,7 +30,7 @@ With the rise of on-demand cloud computing services like Amazon Web Services, Mi
 
 The fact that these cloud computing services are effectively a virtually infinite pool of computing resources means that website owners can scale their infrastructure up and down as needed, paying just for what they use. If you get a traffic spike, you rent more computational power to ensure the demand is met, which you can then discard when no longer necessary. This paradigm is much more scalable than the owned infrastructure.
 
-## The future: the fog?
+## The fog (the future?)
 
 In less than a decade, cloud computing went from being a novelty concept to becoming the norm, as nowadays companies that still choose to own their infrastructure are certainly an exception. The flexibility, resilience and especially the reduced running costs are very attractive to many organisations, but it does raise some fundamental questions about the founding principles of the Internet itself.
 
