@@ -4,9 +4,9 @@ title:  "Explain it like I'm five: fog computing"
 categories: blog
 tags: fog cloud dadi eli5
 ---
-Have you ever thought about what happens when you type an address in your web browser? Like, what actually happens behind the scenes so that a page with the content you’re looking for lands on your screen? Where is that content coming from?<!--more-->
+Have you ever thought about what happens when you type an address in your web browser? Like, what actually happens behind the scenes so that a page with the content you’re looking for lands on your screen? Where is that content coming from?
 
-As you might know, the Internet is just a massive group of interconnected computers, each of which is identified by a unique address (much like your home address). When you type the address to a website in your browser, you’re sending a message to the computer that lives on that address, asking it to send you the files with the content you’re after. Once the files are transferred to your computer, your browser can render them on the screen.
+As you might know, the Internet is just a massive group of interconnected computers, each of which is identified by a unique address (much like your home address). When you type the address to a website in your browser, you’re sending a message to the computer that lives on that address, asking it to send you the files with the content you’re after.<!--more--> Once the files are transferred to your computer, your browser can render them on the screen.
 
 I wanted to mention this because I want to bust any perception that there’s something magical about the place where websites are stored – there’s not. It’s just computers, not too dissimilar from the one you’re using to read this. In fact, you can easily host a website on your computer in a matter of minutes, which then anyone that knows the address will be able to access. Hold onto this thought, we’ll come back to it later.
 
