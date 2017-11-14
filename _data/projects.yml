@@ -22,21 +22,20 @@
   website: http://include-media.com
   github: https://github.com/eduardoboucas/include-media
 
+- handle: static-api-generator
+  title: Static API generator
+  copy: >
+    Static API generator is a Node.js application that creates a basic JSON API from a tree of directories and files. Think of a static site generator, like Jekyll or Hugo, but for APIs. It takes your existing data files, which you may already be using to feed a static site generator or similar, and creates an API layer with whatever structure you want, leaving the original files untouched. Static API generator helps you deliver your data to client-side applications or third-party syndication services.
+  github: https://github.com/eduardoboucas/static-api-generator
+
 - handle: cssential
   title: CSSential
   copy: >
     Inlining critical path CSS is one of many techniques available to front-end developers to improve the perceived performance of a website. The idea is to remove a render-blocking stylesheet from the head of a document and inline the essential declarations for an instant load. Having experimented with several tools that automatically determine which parts of the stylesheet are considered essential, I built a PostCSS plugin that gives developers the power to prioritise selectors by annotating them with comments. The critical CSS is automatically injected in a template and the remaining is saved to a normal CSS file.
   github: https://github.com/eduardoboucas/postcss-cssential
 
-- handle: xsltea
-  title: XSL Tea
+- handle: haiku
+  title: Haiku
   copy: >
-    At one point in my career, I was working a lot with a PHP-based content management platform that used XSLT as a templating engine. To make it possible to debug in an isolated environment, as well as easier prototyping, I built XSL Tea, an on-line XSL REPL (read-eval-print loop) interface, JSFiddle style. It takes an XSL stylesheet, an XML document and outputs the transformed result. I don’t really use it these days, but there’s still a public instance online — it’s running on a free Heroku instance, so you might need to give it a few seconds for the application to wake up!
-  website: https://eduardoboucas.com/xsltea
-  github: https://github.com/eduardoboucas/xsltea
-
-- handle: denis
-  title: Denis
-  copy: >
-    Denis was a fun little project built in an hour. As a remote developer, I heavily rely on Slack to communicate with other members of my team. When working on one of our products, we were spinning up several development instances of an API to test new features, and we had to keep track of the IP addresses of all these instances, copying and pasting and getting them wrong. So I built a Slack bot that, in response to a command, creates a DNS record pointing a subdomain to an IP, making it easy to memorise and manage. It can create both A and CNAME records and currently supports only CloudFlare, but it’s prepared to work with other providers.
-  github: https://github.com/eduardoboucas/denis
+    Haiku is a small Node.js app that watches a branch on your GitHub repository and deploys every pull request to a new Heroku application. You will get a URL that represents a snapshot of the state of your project as per the contents of the pull request, useful to test or to share features with colleagues/clients before rolling out to production.
+  github: https://github.com/eduardoboucas/haiku
