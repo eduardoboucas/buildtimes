@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<main id="main" role="main" class="main constrain" data-paginator-current="{{ paginator.page }}" data-paginator-total="{{ paginator.total_pages }}">
+{% assign totalPages = site.posts | size | minus: 1 | divided_by: 9 %}{% assign totalPagesRemainder = site.posts | size | minus: 1 | modulo: site.paginate %}{% if totalPagesRemainder > 0 %}{% assign totalPages = totalPages | plus: 1 %}{% endif %}
+<main id="main" role="main" class="main constrain" data-paginator-current="{{ paginator.page }}" data-paginator-total="{{ totalPages }}">
   {% assign postsPerPage = site.paginate %}
   
   {% if paginator.page == 1 %}
@@ -12,14 +13,20 @@ layout: default
   {% endif %}
 
   {% for post in site.posts | offset: postsOffset | limit: postsPerPage %}
-    {% if postsOffset == 0 and forloop.first == true %}
-      {% include partials/post-featured.html post=post %}
+    {% if forloop.first == true %}
+      {% if postsOffset == 0 %}
+        {% include partials/post-featured.html post=post %}
+      {% endif %}
 
       <div class="js-posts">
-    {% else %}
-      {% include partials/post-small.html post=post %}
 
-      {% if postsOffset == 0 and forloop.last == true %}
+      {% if postsOffset != 0 %}
+        {% include partials/post-small.html post=post index=forloop.index page=paginator.page %}
+      {% endif %}
+    {% else %}
+      {% include partials/post-small.html post=post index=forloop.index page=paginator.page %}
+
+      {% if forloop.last == true %}
         </div>
       {% endif %}
     {% endif %}

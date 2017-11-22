@@ -5,7 +5,7 @@
 {% endif %}
 
 <a href="{{ link }}" class="post-wrapper post-wrapper--block">
-	<article class="post post--feature">
+	<article class="post post--feature js-post-featured">
 	  <h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=include.post.title visualTitle=include.post.visualTitle %}</h1>
 	  <p class="post__meta post-meta">{% include helpers/format-date.html date=include.post.date %}{% include partials/post-meta-comment-count.html post=include.post %}</p>
 	  <div class="post__body">

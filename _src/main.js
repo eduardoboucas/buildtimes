@@ -13,6 +13,18 @@ var eb = (function ($) {
       $('.js-posts').masonry({
         itemSelector: '.post-wrapper'
       });
+
+      // Loading content from previous pages
+      if ($('#main').data('paginator-current') > 1) {
+        var $firstPost = $('.js-post').eq(0);
+        var initialOffset = $firstPost.offset().top;
+        
+        loadPosts(function () {
+          var diff = $firstPost.offset().top - initialOffset;
+
+          $(document).scrollTop(diff);
+        }, true);
+      }
     });
 
     $(window).resize(function () {
@@ -65,7 +77,7 @@ var eb = (function ($) {
     $('.js-load-more-articles').click(function () {
       $(this).addClass('cta--progress');
       
-      loadMoreArticles((function () {
+      loadPosts((function () {
         $(this).removeClass('cta--progress');
       }).bind(this));
 
@@ -109,36 +121,96 @@ var eb = (function ($) {
     });
   }
 
-  function loadMoreArticles(callback) {
-    var currentPage = parseInt($main.attr('data-paginator-current'));
-    var totalPages = parseInt($main.attr('data-paginator-total'));
-    var nextPage = currentPage + 1;
+  function fetchPages(pageNumbers, callback) {
+    var pages = [];
 
-    if (nextPage > totalPages) {
-      return;
-    }
+    $.each(pageNumbers, function (index, pageNumber) {
+      var endpoint = (pageNumber === 1) ? '/' : '/page/' + pageNumber + '/';
 
-    if (nextPage == totalPages) {
-      noMoreArticles();
-    }
+      $.get(endpoint, function (response) {
+        var html = $.parseHTML(response);
 
-    $.get('/page/' + nextPage + '/', function (response) {
-      var html = $.parseHTML(response);
-      var posts = $(html).filter('#main').children();
+        pages[index] = $(html);
 
-      // Append posts
-      $main.find('.js-posts').append(posts).masonry('appended', posts);
+        if (pages.length === pageNumbers.length) {
+          var output = pages[0];
 
-      // Update state
-      $main.attr('data-paginator-current', nextPage);
+          if (!output) return;
 
-      // Fire callback
-      callback();
+          for (var i = 1; i < pageNumbers.length; i++) {
+            output = output.add(pages[i]);
+          }
+
+          callback(output);
+        }
+      });
     });
   }
 
-  function noMoreArticles() {
-    $('.js-paginator').remove();
+  function getRangeArray(from, to) {
+    var range = [];
+
+    for (var i = from; i <= to; i++) {
+      range.push(i);
+    }
+
+    return range;
+  }
+
+  function loadPosts(callback, previousPages) {
+    var currentPage = parseInt($main.attr('data-paginator-current'));
+    var totalPages = parseInt($main.attr('data-paginator-total'));
+    var $existingPosts = $main.find('.js-posts');
+    var pageNumbers;
+
+    if (previousPages) {
+      pageNumbers = getRangeArray(1, currentPage - 1)
+    } else {
+      var nextPage = currentPage + 1;
+
+      if (nextPage > totalPages) {
+        return;
+      }
+
+      if (nextPage === totalPages) {
+        $('.js-paginator').remove();
+      }
+
+      pageNumbers = [nextPage];
+
+      if (typeof window.history !== 'undefined') {
+        window.history.pushState({}, '', '/page/' + nextPage + '/');
+      }
+    }
+
+    fetchPages(pageNumbers, function ($pages) {
+      var $posts = $pages.find('.js-post');
+
+      if (previousPages) {
+        $existingPosts
+          .prepend($posts)
+          .masonry('prepended', $posts)
+          .one('layoutComplete', callback);
+
+        // Appending featured post (if any)
+        var $featuredPost = $pages.find('.js-post-featured')
+
+        if ($featuredPost) {
+          $existingPosts.before($featuredPost);
+
+          setTimeout(adjustFeatureWidth, 300);
+        }
+      } else {
+        $existingPosts
+          .append($posts)
+          .masonry('appended', $posts);
+        $main.attr('data-paginator-current', currentPage + 1);
+
+        if (typeof callback === 'function') {
+          callback();
+        }
+      }
+    })
   }
 
   function sendGAEvent(primary, secondary) {
@@ -256,7 +328,6 @@ var eb = (function ($) {
 
   return {
     init: init,
-    loadMoreArticles: loadMoreArticles,
     toaster: toaster
   }
 })(jQuery);
