@@ -9,8 +9,14 @@
 	p:last-of-type {
 		margin-bottom: 0;
 	}
-}
 
-.preface--center {
-  text-align: center;
+  ul {
+    text-align: left;
+    margin-left: 8%;
+    margin-top: 25px;
+  }
+
+  p, li {
+    font-size: 20px;
+  }
 }

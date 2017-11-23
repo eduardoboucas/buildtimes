@@ -45,45 +45,40 @@ layout: default
       {% endif %}
 
       {% if page.series %}
-        {% assign seriesPosts = '' %}
+        <div class="preface">
+          {% assign seriesPosts = '' %}
 
-        {% for post in site.posts %}
-          {% if post.series == page.series and post.path != page.path %}
-            {% if seriesPosts != '' %}
-              {% assign seriesPosts = seriesPosts | append: '|' %}
+          {% for post in site.posts %}
+            {% if post.series == page.series %}
+              {% if seriesPosts != '' %}
+                {% assign seriesPosts = seriesPosts | prepend: '|' %}
+              {% endif %}
+              {% assign seriesPosts = seriesPosts | prepend: forloop.index0 %}
             {% endif %}
-            {% assign seriesPosts = seriesPosts | append: forloop.index0 %}
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
 
-        {% assign seriesPosts = seriesPosts | split: '|' %}
-
-        <div class="preface preface--center">
-          {% assign previousPost = null %}
+          {% assign seriesPosts = seriesPosts | split: '|' %}
           {% assign nextPost = null %}
 
+          <p>This article is part of a series called <em>«{{ page.series }}»</em>:</p>
+
+          <ul>
           {% for seriesPost in seriesPosts %}
             {% assign seriesPostInt = seriesPost | times: 1 %}
             {% assign post = site.posts[seriesPostInt] %}
 
             {% if post.date > page.date %}
               {% assign nextPost = post %}
-            {% else %}
-              {% if previousPost == null %}
-                {% assign previousPost = post %}
-              {% endif %}
             {% endif %}
+
+            <li>
+              {% if post.url == page.url %}
+                <span class="cta--active">{{ post.title }}</span>
+              {% else %}
+                <a href="{{ post.url }}">{{ post.title }}</a></li>
+              {% endif %}
           {% endfor %}
-
-          <p>This article is part of a series called <em>«{{ page.series }}»</em></p>
-
-          {% if previousPost %}
-            <p><strong>Previous</strong>: <a href="{{ previousPost.url }}">{{ previousPost.title }}</a></p>
-          {% endif %}
-
-          {% if nextPost %}
-            <p><strong>Next</strong>: <a href="{{ nextPost.url }}">{{ nextPost.title }}</a></p>
-          {% endif %}
+          </ul>
         </div>
       {% else %}
         {% if page.preface %}
@@ -94,6 +89,12 @@ layout: default
       {% endif %}
       
       {{ content | replace: '<!--tomb-->', ' &#8718;'}}
+
+      {% if nextPost %}
+        <p>
+          <em>Next in the series: <a href="{{ nextPost.url }}">{{ nextPost.title }}</a></em>
+        </p>
+      {% endif %}
     </div>
 
     {% if page.disable-comments != true %}

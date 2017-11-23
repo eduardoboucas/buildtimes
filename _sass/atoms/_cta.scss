@@ -42,6 +42,10 @@
 	}
 }
 
+.cta--active {
+	@include cta-hover;
+}
+
 .cta--progress {
 	@include cta-progress;
 }
