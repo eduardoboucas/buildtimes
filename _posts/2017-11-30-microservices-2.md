@@ -34,7 +34,7 @@ With microservices, communication channels should resemble the pipes in Unix app
 
 In a [Stack Overflow question](https://stackoverflow.com/a/402970) asking for a definition of loose coupling, Konrad Rudolph answered with a curious example:
 
->> “iPods are a good example of tight coupling: once the battery dies you might as well buy a new iPod because the battery is soldered fixed and won't come loose, thus making replacing very expensive. A loosely coupled player would allow effortlessly changing the battery.”
+>> iPods are a good example of tight coupling: once the battery dies you might as well buy a new iPod because the battery is soldered fixed and won't come loose, thus making replacing very expensive. A loosely coupled player would allow effortlessly changing the battery.
 
 The same goes for software development.
 

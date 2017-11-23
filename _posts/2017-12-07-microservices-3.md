@@ -8,7 +8,7 @@ queued: "Dec 7"
 ---
 At this point, you might rightfully argue that a lot of the principles we used to characterise microservices are resemble the Service-Oriented Architecture (SOA), a software design pattern that gained immense popularity in the early 2000s. Wikipedia defines SOA as:
 
->> “A service-oriented architecture (SOA) is a style of software design where services are provided to the other components by application components, through a communication protocol over a network. The basic principles of service oriented architecture are independent of vendors, products and technologies. A service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online.”
+>> A service-oriented architecture (SOA) is a style of software design where services are provided to the other components by application components, through a communication protocol over a network. The basic principles of service oriented architecture are independent of vendors, products and technologies. A service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online.
 <!--more-->
 
 Indeed, this sounds a lot like microservices. So how do these two concepts relate to each other? Are they the same thing? Is one the evolution of the other, or are they conceived to achieve different things?

@@ -35,7 +35,7 @@ Let’s imagine the system of a newspaper organisation built with this architect
 
 So what exactly are microservices and how do they differ from the monolithic paradigm? Whenever someone asks me that question or when I’m delivering a talk on the subject, I always refer to this quote from Martin Fowler:
 
->> “The microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery.”
+>> The microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery.
 
 With microservices, components don't live together inside the boundaries of a single unit. Instead, this architecture promotes the development and deployment of applications as a suite of independent, self-contained services. If we were to rebuild the example above using this architectural style, the steps we’d follow to obtain the same content could be quite different.
 
