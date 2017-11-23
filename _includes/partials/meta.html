@@ -27,7 +27,7 @@
 <meta name="description" content="{{ description | truncate: 200, '...' }}">
 <link rel="manifest" href="/manifest.json">
 
-{% if jekyll.environment == 'stage' %}
+{% if jekyll.environment == 'stage' or page.queued != null %}
   <meta name="robots" content="noindex">
 {% endif %}
 

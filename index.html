@@ -1,7 +1,18 @@
 ---
 layout: default
 ---
-{% assign totalPages = site.posts | size | minus: 1 | divided_by: 9 %}{% assign totalPagesRemainder = site.posts | size | minus: 1 | modulo: site.paginate %}{% if totalPagesRemainder > 0 %}{% assign totalPages = totalPages | plus: 1 %}{% endif %}
+{% assign posts = '' | split: '/' %}
+{% for post in site.posts %}
+  {% if post.queued == null %}
+    {% assign posts = posts | push: post %}
+  {% endif %}
+{% endfor %}
+{% assign totalPages = site.posts | size | minus: 1 | divided_by: 9 %}
+{% assign totalPagesRemainder = site.posts | size | minus: 1 | modulo: site.paginate %}
+
+{% if totalPagesRemainder > 0 %}
+  {% assign totalPages = totalPages | plus: 1 %}
+{% endif %}
 <main id="main" role="main" class="main constrain" data-paginator-current="{{ paginator.page }}" data-paginator-total="{{ totalPages }}">
   {% assign postsPerPage = site.paginate %}
   
@@ -12,7 +23,7 @@ layout: default
     {% assign postsOffset = paginator.page | minus: 1 | times: postsPerPage | plus: 1 %}
   {% endif %}
 
-  {% for post in site.posts | offset: postsOffset | limit: postsPerPage %}
+  {% for post in posts | offset: postsOffset | limit: postsPerPage %}
     {% if forloop.first == true %}
       {% if postsOffset == 0 %}
         {% include partials/post-featured.html post=post %}
