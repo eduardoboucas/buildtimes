@@ -63,7 +63,7 @@ In the end, I was happy with the result. There are obvious problems and downside
 
 "Why did you do it like this, then?", the dear reader will ask. Well, because I can. This is not a corporate website that can't afford the luxury of not supporting dumb browsers, or a content-rich magazine website that must provide quick and easy navigation to its users. It's my four-page website that the average Joe will only visit once in his lifetime. But instead of living in his brain for 2 minutes as a "nicely built, sober website", I'm hoping it can be carved in his memory forever as the "kick-ass video website with the guy blinking". Well, maybe not forever, that was a bit cocky.<!--tomb-->
 
-_Check out the website at http://eduardoboucas.com (EDIT: archived at [https://eduardoboucas.com/v1](https://eduardoboucas.com/v1))._
+_Check out the archived website at [https://v1.eduardoboucas.com](https://v1.eduardoboucas.com)._
 
 [sagmeister]: http://www.sagmeisterwalsh.com/ "Sagmeister & Walsh website"
 [videolooper]: https://github.com/eduardoboucas/eduardoboucas.github.io/blob/master/js/VideoLooper.js "VideoLooper.js library"
