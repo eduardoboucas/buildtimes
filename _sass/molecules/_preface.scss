@@ -12,8 +12,11 @@
 
   ul {
     text-align: left;
-    margin-left: 8%;
     margin-top: 25px;
+
+    @include media('>=medium') {
+      margin-left: 8%;
+    }
   }
 
   p, li {

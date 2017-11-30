@@ -4,7 +4,6 @@ title:  "The principles of microservices"
 categories: blog
 tags: microservices nodejs
 series: "Microservices and Node.js"
-queued: "Nov 30"
 ---
 In the previous article, we introduced the concept of microservices and established a parallel with the traditional monolithic approach. In this article, we’ll continue with that comparison whilst we cover the key principles behind a microservices architecture and how they can help an organisation build better software systems.<!--more-->
 
