@@ -1,5 +1,5 @@
 <nav class="post-navigation">
-  {% if page.next %}
+  {% if page.next and page.next.queued == null %}
     <a href="{{ page.next.url }}" class="post-navigation__previous post-navigation__item js-post-navigation-arrow">
       <svg class="post-navigation__arrow">
         <use xlink:href="#icon-arrow-left"></use>
