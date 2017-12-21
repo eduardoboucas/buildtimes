@@ -68,7 +68,7 @@ layout: default
               {% assign seriesPostInt = seriesPost | times: 1 %}
               {% assign post = site.posts[seriesPostInt] %}
 
-              {% if post.date > page.date %}
+              {% if post.date > page.date and nextPost == null %}
                 {% assign nextPost = post %}
               {% endif %}
 
@@ -97,7 +97,7 @@ layout: default
 
         {% if nextPost and nextPost.queued == null %}
           <p>
-            <em>Next in the series:<a href="{{ nextPost.url }}">{{ nextPost.title }}</a></em>
+            <em>Next in the series: <a href="{{ nextPost.url }}">{{ nextPost.title }}</a></em>
           </p>
         {% endif %}
       </div>
