@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  "Building microservices with Node.js"
+title:  "Microservices + Node.js"
 categories: blog
 tags: microservices nodejs
 series: "Microservices and Node.js"
-queued: "Dec 21"
 ---
 We covered the basic principles of a microservices architecture, but we'll also look into the practicalities of implementing it from a technical standpoint. As we've seen, microservices are agnostic of technology, so you could use any programming language or environment to build them. In this article we'll see why JavaScript — and the Node.js environment in particular — is a good candidate.<!--more-->
 
