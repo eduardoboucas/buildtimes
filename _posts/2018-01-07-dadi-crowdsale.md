@@ -22,7 +22,7 @@ But you know what’s really frustrating for someone who’s involved in the pro
 - A visionary digital asset delivery and manipulation layer that gives developers the tools to manipulate images on the fly, do automated art direction on the web with ease, serve targeted content based on location, device and network connectivity to ensure optimal performance, transform CSS and JavaScript on the edge based on browser capabilities
 - A content management system that simply works as a window for the content, liberating developers instead of dictating the entire technology stack that they must use 
 
-These are just some of the pieces of the puzzle that is our microservices stack. Fully open-source for the community to use as they please. Prototypes or proofs of concept? No. These are powering digital products used by 200 million users every month.
+These are just some of the pieces of the puzzle that is our microservices stack. Fully open-source for the community to use as they please. Prototypes or proofs of concept? No. These are powering digital products used by 200 million page views every month.
 
 **If you were in my shoes** you’d get to work with a team of talented and passionate engineers, putting in a huge effort every single day. And for those reasons, you’d be absolutely gutted to see the credibility of everything you do be put in question because of a PR hiccup.
 
