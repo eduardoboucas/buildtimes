@@ -11,7 +11,7 @@ Yesterday, the community flocked to various channels to show grave concerns abou
 
 Anyone who’s ever written a theoretical document or thesis knows that research is an important part of the process. You look around to see who else is doing something that is remotely close to what you’re trying to achieve, and you look at how they’re doing it. If you find something that is good, that you respect, you’re going to lean on it, in one way or another, to produce your own work.
 
-When you do that, however, you cite your sources and you credit the author. We didn’t. We should’ve reviewed the paper thoroughly to ensure that any scaffolding sections taken from various sources to be used as references later to be reworked and reshaped are actually reworked and reshaped. We didn’t. We dropped the ball on that one.
+When you do that, however, you cite your sources and you credit the author. We didn’t. We should’ve reviewed the paper thoroughly to ensure that any scaffolding sections taken from various sources to be used as references later to be reworked and reshaped were actually reworked and reshaped. We didn’t. We dropped the ball on that one.
 
 But you know what’s really frustrating for someone who’s involved in the project? It’s just noise. It was an honest mistake that sends the wrong message about who we are as a company and as engineers.
 
