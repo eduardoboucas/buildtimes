@@ -14,6 +14,13 @@
   website: https://speedtracker.org
   github: https://github.com/speedtracker
 
+- handle: compat-report
+  featured: true
+  title: Compat report
+  copy: >
+    To make the web evolve in a sane and sustainable way for both users and developers, browser vendors work together to standardise new features, whether it’s a new HTML element, CSS property, or JavaScript API. But it’s very unlikely that said feature will land on all the major browsers at once, not to mention the older (but still widely used) browsers that will never get it. In practice, choosing to use a certain feature is making a decision about the list of browsers that the site will optimally support. To help developers make these decisions consciously rather than accidentally, I created compat-report, a developer tools extension for identifying and visualising cross-browser compatibility issues.
+  github: https://github.com/eduardoboucas/compat-report
+
 - handle: include-media
   featured: true
   title: include-media
