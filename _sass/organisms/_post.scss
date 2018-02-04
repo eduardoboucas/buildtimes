@@ -114,12 +114,16 @@ a > .post--feature {
 
 .post__hero {
 	background-color: #eeeee5;
-	padding: 20px;
+	padding: 8px;
 	margin-top: 30px;
 
 	img {
 		display: block;
 		width: 100%;
+	}
+
+	@include media('>=medium') {
+		padding: 20px;
 	}
 }
 
