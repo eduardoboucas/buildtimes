@@ -1,0 +1,8 @@
+_id: 3b655f50-1ec5-11e8-8af7-ab99598c81b0
+_parent: 2014-11-05-adding-ajax-pagination-to-jekyll
+name: Bob Marley
+email: 6f8b5702d4f623361dfe6001a09152b7
+url: ''
+address: ''
+message: "@Brad West , try this\r\n\r\n```\r\npaginate: 3\r\npaginate_path: \"/blog/page:num\"\r\n```"
+date: 1520069309
