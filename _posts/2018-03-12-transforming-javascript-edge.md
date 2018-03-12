@@ -3,6 +3,9 @@ layout: post
 title:  "Transforming JavaScript at the edge"
 categories: blog
 tags: javascript transpile es6 dadi cdn
+external-url: https://medium.com/@daditech/transforming-javascript-at-the-edge-e7e9836b6c83
+external-name: DADI Medium
+external-date: 2018-03-09
 ---
 One of the greatest challenges of building for the Web is the plethora of devices, operating systems and browser combinations that the product must support. How do you move this universal platform forward whilst retaining compatibility with older setups, which often still represent a significant percentage of the market?
 
