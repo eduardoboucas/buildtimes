@@ -1,0 +1,8 @@
+_id: 326a8ff0-3343-11e8-b9c8-31f76021fe65
+_parent: 2015-06-18-viewport-sized-typography-with-minimum-and-maximum-sizes
+name: Mark
+email: b4b0e2e2f8a15499752aba70f1aa433e
+url: ''
+address: ''
+message: "Andrew: on “Matching Font Styles”, read item 6 in above link.\r\n\r\nfont-size must be matched within a UA-dependent margin of tolerance. (Typically, sizes for scalable fonts are rounded to the nearest whole pixel, while the tolerance for bitmapped fonts could be as large as 20%.) Further computations, e.g., by em values in other properties, are based on the font-size value that is used, not the one that is specified.\r\n\r\nI use Safari, where there is no ‘margin of tolerance’ for “FONT-MIN-SIZE”. In my two examples above, we can use fake fluidity to set a fixed font-size-min:16px and then when we resize above 1200px or 1600px, the fluid vm measure happens. Font size grows bigger, faster in my first post above, no idea why. something to do with fudged tolerance, that for now nixes your rem, em (and ex) units of measure."
+date: 1522322434
