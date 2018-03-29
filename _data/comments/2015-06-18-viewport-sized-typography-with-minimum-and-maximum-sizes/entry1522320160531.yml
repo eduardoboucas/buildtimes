@@ -1,0 +1,8 @@
+_id: e70eab40-333d-11e8-b9c8-31f76021fe65
+_parent: 2015-06-18-viewport-sized-typography-with-minimum-and-maximum-sizes
+name: Mark
+email: b4b0e2e2f8a15499752aba70f1aa433e
+url: ''
+address: ''
+message: "So my display 'fakes' fluid steps with this balance ratio between width (1200/1600) and font-size(1.2vw/1.0vw)... \r\n\r\nbody{font-size:1.2vw;} and @media(max-width:1200px){body{font-size:16px}} and @media(min-width:1201px{body{font-max-size:16px}}...\r\n\r\nincrementally reduces viewport font size increase with...\r\n\r\nbody{font-size:1.0vw;} and @media(max-width:1600px){body{font-size:16px}} and @media(min-width:1601px{body{font-max-size:16px}}...\r\n\r\nSo, this would define the CSS width ratio between viewport font-size and browser window px width as fixed. Mixin and script can morph that fixed ratio across mutiple ‘screen’ widths using ‘responsive’ arguments. To morph using Cascading Style Sheet, I say again, I think we have to wait for CSS4, though for now “font-max-size” shows a glimpse of what's to come.\r\n\r\nhttps://www.w3.org/TR/css-fonts-4/#font-style-matching"
+date: 1522320160
