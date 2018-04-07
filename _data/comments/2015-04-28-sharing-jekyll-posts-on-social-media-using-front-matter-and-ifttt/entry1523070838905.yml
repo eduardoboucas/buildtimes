@@ -1,0 +1,9 @@
+_id: b632d5c0-3a11-11e8-bf2b-f37993e44618
+_parent: 2015-04-28-sharing-jekyll-posts-on-social-media-using-front-matter-and-ifttt
+name: Gareth Pye
+email: 260132d7aa260918696d55f86b0d1626
+url: 'https://gamenightpro.com'
+address: ''
+message: "I'm having trouble getting the links correct in the feed outputs. I'm only getting the relative part of the url. The \"| prepend site.site_url\" does nothing for me. \r\n\r\nThen I tried {{ site.base_url}} before the post url and nothing happens. I tried that as I am using that in other parts of the blog.\r\n\r\nWhat am I missing?"
+date: 1523070838
+layout: post
