@@ -1,0 +1,12 @@
+_id: 45aae980-4bb6-11e8-b5e0-f59c1fc4a733
+_parent: 2018-03-12-transforming-javascript-at-the-edge
+name: Test
+email: 715779d66e7f336d5f7bd0bbbeee554e
+url: ''
+address: ''
+message: Test message!
+date: 1525010686
+pageless: true
+templateKey: comments
+timestamp: 1525010686
+tags: []
