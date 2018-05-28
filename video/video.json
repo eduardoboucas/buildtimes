@@ -1,0 +1,4 @@
+{
+  "layout": "video",
+  "permalink": "/video/{{ title | slug }}/index.html"
+}

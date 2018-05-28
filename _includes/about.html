@@ -1,0 +1,29 @@
+---
+layout: default
+title: About me
+---
+<main id="main" role="main" class="main constrain--padding">
+  <div class="about">
+    <img class="about__image" src="/assets/images/headshot.jpg">
+  	<div class="about__copy body-text">
+  		{{ content | replace: '<!--tomb-->', ' &#8718;' }}
+    </div>
+    <div class="about__links">
+      <a class="about__link" href="https://github.com/eduardoboucas">
+        <svg class="social-icon">
+          <use xlink:href="#icon-github"></use>
+        </svg>
+      </a>
+      <a class="about__link" href="https://twitter.com/eduardoboucas">
+        <svg class="social-icon">
+          <use xlink:href="#icon-twitter"></use>
+        </svg>
+      </a>
+      <a class="about__link" href="https://www.linkedin.com/in/eduardoboucas">
+        <svg class="social-icon">
+          <use xlink:href="#icon-linkedin"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</main>

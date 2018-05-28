@@ -1,26 +1,52 @@
-{% capture post_slug %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}{% endcapture %}
-
 <section class="comments">
 	<div class="constrain--body">
-		<div class="comments__existing js-comments" {% if site.data.comments[post_slug] == null %}aria-hidden="true"{% endif %}>
+		<div class="comments__existing js-comments" {% if comments == null %}aria-hidden="true"{% endif %}>
 			<h2 class="comments__heading heading-2">Comments</h2>
 
-			{% if site.data.comments[post_slug] %}
-				{% assign comments = site.data.comments[post_slug] | sort %}
-				
-				{% for comment in comments %}
-					{% assign email = comment[1].email %}
-					{% assign name = comment[1].name %}
-					{% assign url = comment[1].url %}
-					{% assign date = comment[1].date %}
-					{% assign message = comment[1].message %}
-
-					{% include partials/post-comment.html index=forloop.index email=email name=name url=url date=date message=message %}
-				{% endfor %}
-			{% endif %}
+			{% for comment in comments %}
+				<article id="comment{{ forloop.index }}" class="js-comment comment">
+					<div class="comment__avatar-wrapper">
+						<img class="comment__avatar" src="https://www.gravatar.com/avatar/{{ comment.email }}?d=mm&s=100">
+					</div>
+					<div class="comment__content-wrapper">
+						<h3 class="comment__author">{{ comment.name }}</h3>
+						<p class="comment__date">
+							<a href="#comment{{ forloop.index }}">
+								{{ comment.date | fullDate }}
+							</a>
+						</p>
+						<div class="comment__body">
+							{{ comment.message | markdownify }}
+						</div>
+					</div>
+				</article>
+			{% endfor %}
 		</div>
 
 		<h2 class="comments__heading heading-2">Leave a comment</h2>
-		{% include partials/post-new-comment.html %}
+
+		{% assign slug = page.inputPath | split: '/' | last | split: '.' | first %}
+
+		<form id="post-new-comment" class="form" action="{{ config.staticmanUrl }}" method="post">
+	    <input type="hidden" name="options[slug]" value="{{ slug }}">
+	    <input type="hidden" name="options[parent]" value="{{ slug }}">
+	    <input type="hidden" name="options[origin]" value="{{ config.url }}{{ page.url | }}">
+
+	    <input type="hidden" name="options[reCaptcha][siteKey]" value="6LddezEUAAAAAEgYhFlbg6YMrola0d5ZdhK6OyrA">
+	    <input type="hidden" name="options[reCaptcha][secret]" value="C/beoE4nGgpjfvj6yPT4/B+54tlnfxXiL/OynntFifQ2CFQDadkGXnBAzxk/LFa2Ta/KCUSSfmgpDrODqzgZ4euo+EGL1VL3jKcP6mstpyT39Z9mlzd4grO2COrdbjuIJ1R4dlmjL95532Os0qbw3KfYkj0tOzbxBahlOrCzC0o=">
+	    
+	    <input type="text" name="company" class="text-field" style="display: none">
+	    <input class="form__field text-field" type="text" name="fields[name]" placeholder="Name" required/>
+	    <input class="form__field text-field" type="email" name="fields[email]" placeholder="Email address (will not be public)" required/>
+	    <input class="form__field text-field" type="address" name="fields[address]" placeholder="Address (do not fill!)" style="display: none"/>
+	    <textarea class="form__field text-field" rows="10" name="fields[message]" placeholder="Comment. Markdown is accepted." required></textarea>
+	    <input id="form-subscribe" type="checkbox" name="options[subscribe]" value="email" class="checkbox">
+	    <label for="form-subscribe" class="form__field checkbox__label">I want to be notified of new comments</label>
+
+	    <div class="form__recaptcha g-recaptcha" data-sitekey="6LddezEUAAAAAEgYhFlbg6YMrola0d5ZdhK6OyrA"></div>
+	    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+	    <input class="cta" type="submit" value="Send" />
+		</form>
 	</div>
 </section>

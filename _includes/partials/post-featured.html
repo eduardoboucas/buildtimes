@@ -1,25 +1,19 @@
-{% if include.post.layout == 'external-post' %}
-  {% assign link = include.post.external-url %}
-{% else %}
-  {% assign link = include.post.url %}
-{% endif %}
-
-<a href="{{ link }}" class="post-wrapper post-wrapper--block">
+<a href="{{ post.url | url }}" class="post-wrapper post-wrapper--block">
 	<article class="post post--feature js-post-featured">
-	  <h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=include.post.title visualTitle=include.post.visualTitle %}</h1>
-	  <p class="post__meta post-meta">{% include helpers/format-date.html date=include.post.date %}{% include partials/post-meta-comment-count.html post=include.post %}</p>
+	  <h1 class="post__title feature-title">{{ post.data.title | feature_title }}</h1>
+	  <p class="post__meta post-meta">{{ post.date | fullDate }}{% include partials/post-meta-comment-count.html, post:post %}</p>
 	  <div class="post__body">
-	    {{ include.post.excerpt | strip_html }}
+	    {{ post.templateContent | split: '<!--more-->' | first | strip_html }}
 	  </div>
 	  <p class="cta post__cta">
 			<span class="cta__inner">
-				{% if include.post.layout == 'external-post' %}
-				Read on {{ post.external-name }}
+				{% if post.data.layout == 'external-post' %}
+				Read on {{ post.data.external-name }}
 				{% else %}
 				Read more
 				{% endif %}
 			</span>
-			{% if include.post.layout == 'external-post' %}
+			{% if post.data.layout == 'external-post' %}
 				<svg class="cta__icon">
 					<use xlink:href="#icon-external"></use>
 				</svg>

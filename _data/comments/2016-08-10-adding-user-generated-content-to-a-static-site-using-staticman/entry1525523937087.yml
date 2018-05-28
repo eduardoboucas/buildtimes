@@ -1,8 +1,0 @@
-_id: 46b66b10-5061-11e8-ac87-87928077e3bf
-_parent: 2016-08-10-adding-user-generated-content-to-a-static-site-using-staticman
-name: wahyu
-email: efdca14e02e1ee2c557b28d82052e94f
-url: 'https://artipedia.site'
-address: ''
-message: "very good. but i have trouble in applying it, error message always appear after comment sent, i hope you can help.\r\n\r\n```\r\n{\"success\":false,\"rawError\":{\"code\":404,\"status\":\"Not Found\",\"message\":\"{\\\"message\\\":\\\"Not Found\\\",\\\"documentation_url\\\":\\\"https://developer.github.com/v3/repos/contents/#get-contents\\\"}\"},\"errorCode\":\"GITHUB_READING_FILE\"}\r\n```"
-date: 1525523937

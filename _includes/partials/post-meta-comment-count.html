@@ -1,6 +1,4 @@
-{% capture post_slug %}{{ include.post.date | date: "%Y-%m-%d" }}-{{ include.post.title | slugify }}{% endcapture %}
-
-{% if site.data.comments[post_slug] %}
+{% if post.data.comments %}
   <svg class="post__meta-icon"><use xlink:href="#icon-bubble"></use></svg>
-  {{ site.data.comments[post_slug] | size }}
+  {{ post.data.comments | size }}
 {% endif %}

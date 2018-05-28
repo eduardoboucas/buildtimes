@@ -1,8 +1,0 @@
-_id: 4d1b8e00-3328-11e8-b9c8-31f76021fe65
-_parent: 2015-06-18-viewport-sized-typography-with-minimum-and-maximum-sizes
-name: Mark
-email: b4b0e2e2f8a15499752aba70f1aa433e
-url: ''
-address: ''
-message: "I think we have to wait for CSS4 min/max\r\nThis max-width/min-width nonsense is specific to device-specific balance between max/min px value and global viewport measure value. Can't avoid size jumps, not fluid.\r\nI found a better way to fall into the “de-viced” trap, by forcing 1px non-fluid jump. TRY THIS\r\n/* viewport manipulation for device and presentation formats\r\nbody { font-size:1.2vw;\r\n@media (max-width:1200px) { body { font-size: 16px; font-max-size: 24px;\r\n@media (min-width:1201px) { body { font-max-size: 16px; font-max-size: 64px;"
-date: 1522310882
