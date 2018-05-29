@@ -1,0 +1,58 @@
+---
+layout: default
+permalink: /projects/index.html
+title: Projects
+---
+<main id="main" role="main" class="main constrain--padding">
+  {% for project in projects %}
+    {% if project.featured == true %}
+      <article class="post post--feature post--room">
+        <h1 class="post__title feature-title">{{ project.title | feature_title }}</h1>
+        <div class="post__hero">
+          <img class="js-lazyload" src="/assets/images/projects/{{ project.handle }}-placeholder.png" data-src="/assets/images/projects/{{ project.handle }}.png">
+        </div>
+
+        <div class="post__body">{{ project.copy | markdownify }}</div>
+        
+        {% if project.website %}
+          <a href="{{ project.website }}" class="cta post__cta">
+            <span class="cta__inner">Open site</span>
+          </a>
+        {% endif %}
+        
+        {% if project.github %}
+          <a href="{{ project.github }}" class="cta post__cta">
+            <span class="cta__inner">View on GitHub</span>
+          </a>
+        {% endif %}
+      </article>
+    {% else %}
+      <div class="post-wrapper col col--1-1 col--1-2@medium col--1-3@large">
+        <article class="post post--small">
+          <h1 class="post__title">{{ project.title }}</h1>
+          <div class="post__body">{{ project.copy }}</div>
+
+          {% if project.website %}
+            <a href="{{ project.website }}" class="cta post__cta">
+              <span class="cta__inner">Open site</span>
+            </a>
+          {% endif %}
+          
+          {% if project.github %}
+            <a href="{{ project.github }}" class="cta post__cta">
+              <span class="cta__inner">View on GitHub</span>
+            </a>
+          {% endif %}
+        </article>
+      </div>    
+    {% endif %}
+  {% endfor %}
+
+  <div class="paginator">
+    <div class="paginator__inner">
+      <div class="paginator__button-wrapper">
+        <a class="cta paginator__button" href="https://github.com/eduardoboucas">See more on GitHub</a>
+      </div>
+    </div>
+  </div>  
+</main>

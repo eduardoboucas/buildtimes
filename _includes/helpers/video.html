@@ -1,11 +1,12 @@
-{% assign width = include.width | times: 1.0 %}
-{% assign height = include.height | times: 1.0 %}
-{% assign paddingBottom = height | divided_by: width | times: 100 %}
+{% assign pathNodes = page.inputPath | split: "/" %}
+{% assign fileName = pathNodes[2] %}
+{% assign assetPath = name | prepend: "/" | prepend: fileName | prepend: "/posts/" %}
 
-<div class="post-video-container">
-  <div class="post-video">
-    <div class="post-video__inner" style="padding-bottom: {{ paddingBottom }}%">
-      <iframe width="{{ include.width }}" height="{{ include.height }}" src="{{ include.url }}?showinfo=0" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
+<figure class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}">
+  <video autoplay loop>
+    <source src="{{ assetPath }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>  
+
+  <figcaption class="figure__caption">{{ caption }}</figcaption>
+</figure>

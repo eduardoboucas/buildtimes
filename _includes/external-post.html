@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% include partials/post-navigation.html %}
+
+<main id="main" role="main" class="main">
+  <article class="post post--full">
+    <div class="constrain">
+    	<h1 class="post__title feature-title">{{ page.title | feature_title }}</h1>
+    	<p class="post-meta post-meta--emphasis">{{ page.date | fullDate }}</p>
+    	<div class="post__external-info">
+    		<a class="cta" href="{{ page.external-url }}">Read on {{ page.external-name }}</a>
+    	</div>
+    </div>
+  </article>
+</main>

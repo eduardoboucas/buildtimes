@@ -1,16 +1,16 @@
 {% if page.title %}
 	{% assign title = page.title %}
 {% else %}
-	{% assign title = site.title %}
+	{% assign title = config.title %}
 {% endif %}
 
 {% if page.excerpt %}
 	{% assign description = page.excerpt | strip_html | strip_newlines %}
 {% else %}
-	{% assign description = site.description | strip_html | strip_newlines %}
+	{% assign description = config.description | strip_html | strip_newlines %}
 {% endif %}
 
-{% assign url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+{% assign url = page.url | replace:'index.html','' | prepend: config.url %}
 {% assign title = page.title | default: layout.title %}
 
 <meta charset="utf-8">
@@ -19,9 +19,9 @@
 
 <title>
 	{% if title %}
-		{{ site.title }} / {{ title }}
+		{{ config.title }} / {{ title }}
 	{% else %}
-		{{ site.title }} / {{ site.description }}
+		{{ config.title }} / {{ config.description }}
 	{% endif %}
 </title>
 <meta name="description" content="{{ description | truncate: 200, '...' }}">
@@ -31,12 +31,12 @@
   <meta name="robots" content="noindex">
 {% endif %}
 
-<meta property="og:image" content="{{ "/assets/images/logo-800x800.png" | prepend: site.url }}"/>
+<meta property="og:image" content="{{ "/assets/images/logo-800x800.png" | prepend: config.url }}"/>
 <meta property="og:image:width" content="800"/>
 <meta property="og:image:height" content="800"/>
 <meta property="og:title" content="{{ title }}"/>
 <meta property="og:description" content="{{ description }}"/>
-<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="og:site_name" content="{{ config.title }}"/>
 <meta property="og:url" content="{{ url }}"/>
 <meta property="og:type" content="blog"/>
 
@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="{{ url }}">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ description | truncate: 200, '...' }}">
-<meta name="twitter:image:src" content="{{ "/assets/images/logo-800x800.png" | prepend: site.url }}">
+<meta name="twitter:image:src" content="{{ "/assets/images/logo-800x800.png" | prepend: config.url }}">
 
 <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">

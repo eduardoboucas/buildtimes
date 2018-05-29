@@ -1,35 +1,29 @@
 {
   "name": "eduardoboucas.com",
   "version": "1.0.0",
-  "description": "My personal website",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "jekyll serve --port 4100 --host=0.0.0.0 --watch"
+    "build": "npm run build:css && rm -rf _site && npx eleventy && npm run build:js && npm run build:clean",
+    "build:clean": "mv _site/page/1 _site/index.html && rm -rf _site/page/1 && rm -rf _site/posts/*/**.md && find _site/posts/ -type d -empty -delete",
+    "build:css": "node-sass --output-style compressed sass/main.scss > assets/css/main.css",
+    "build:js": "cat assets/js/*.js | uglifyjs > _site/assets/js/min/main.min.js",
+    "start": "npx eleventy --serve"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eduardoboucas/eduardoboucas.github.io.git"
-  },
-  "keywords": [
-    "front-end",
-    "css",
-    "sass"
-  ],
-  "author": "Eduardo Boucas <mail@eduardoboucas.com> (https://eduardoboucas.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/eduardoboucas/eduardoboucas.github.io/issues"
-  },
-  "homepage": "https://github.com/eduardoboucas/eduardoboucas.github.io#readme",
-  "dependencies": {
-    "include-media": "^1.4.1",
-    "include-media-columns": "^1.1.0",
-    "include-media-export": "^1.0.1"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^2.0.0"
+    "@11ty/eleventy": "^0.3.5",
+    "uglify-js": "^3.3.27"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^1.0.4",
+    "cheerio": "^1.0.0-rc.2",
+    "front-matter": "^2.3.0",
+    "js-yaml": "^3.11.0",
+    "moment": "^2.22.1",
+    "node-sass": "^4.9.0"
   }
 }

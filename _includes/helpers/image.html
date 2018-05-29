@@ -1,34 +1,15 @@
-{% if include.frame == false %}
-	{% assign frame = false %}
-{% else %}
-	{% assign frame = true %}
-{% endif %}
+{% assign pathNodes = page.inputPath | split: "/" %}
+{% assign fileName = pathNodes[2] %}
+{% assign assetPath = name | prepend: "/" | prepend: fileName | prepend: "/posts/" %}
 
-{% assign fileName = page.path | split: '/' | last | split: '.' | first %}
-{% assign fileNameDate = fileName | truncate: 14 | replace: '...', '' %}
-{% assign postSlug = fileName | replace_first: fileNameDate, '' %}
-{% assign assetPath = postSlug | prepend: '/assets/posts/' | append: '/' | append: include.name %}
-{% assign extension = assetPath | split: '.' | last %}
+<figure class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}">
+  <img
+    class="figure__image"
+    onload="this.parentElement.classList += ' figure--loaded'"
+    src="{{ assetPath }}"
+    alt="{{ caption }}"
+    width="{{ width }}"
+  >
 
-<figure class="figure {% if include.caption %}figure--caption{% endif %} {% if frame %}figure--frame{% endif %}">
-	<div class="figure__inner">
-    {% if extension == 'mov' %}
-      <video autoplay loop>
-        <source src="{{ assetPath }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    {% else %}
-      <img
-        class="figure__image"
-        onload="this.parentElement.classList += ' figure__inner--loaded'"
-        src="{{ assetPath }}"
-        {% if include.alt %} alt="{{ include.alt }}" {% endif %}
-        {% if include.width %} width="{{ include.width }}" {% endif %}
-      />
-    {% endif %}
-
-		{% if include.caption %}
-			<figcaption class="figure__caption">{{ include.caption }}</figcaption>
-		{% endif %}
-	</div>
+  <figcaption class="figure__caption">{{ caption }}</figcaption>
 </figure>

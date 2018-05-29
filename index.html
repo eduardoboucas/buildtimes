@@ -1,41 +1,25 @@
 ---
 layout: default
+pagination:
+  data: collections.homepage
+  size: 10
+  alias: posts
+permalink: page/{{ pagination.pageNumber | plus:1 }}
 ---
-{% assign posts = '' | split: '/' %}
-{% for post in site.posts %}
-  {% if post.queued == null %}
-    {% assign posts = posts | push: post %}
-  {% endif %}
-{% endfor %}
-{% assign totalPages = site.posts | size | minus: 1 | divided_by: 9 %}
-{% assign totalPagesRemainder = site.posts | size | minus: 1 | modulo: site.paginate %}
-
-{% if totalPagesRemainder > 0 %}
-  {% assign totalPages = totalPages | plus: 1 %}
-{% endif %}
-<main id="main" role="main" class="main constrain" data-paginator-current="{{ paginator.page }}" data-paginator-total="{{ totalPages }}">
-  {% assign postsPerPage = site.paginate %}
-  
-  {% if paginator.page == 1 %}
-    {% assign postsOffset = 0 %}
-    {% assign postsPerPage = postsPerPage | plus: 1 %}
-  {% else %}
-    {% assign postsOffset = paginator.page | minus: 1 | times: postsPerPage | plus: 1 %}
-  {% endif %}
-
-  {% for post in posts | offset: postsOffset | limit: postsPerPage %}
+<main id="main" role="main" class="main constrain" data-paginator-current="{{ pagination.pageNumber | plus:1}}" data-paginator-total="{{ pagination.size }}">
+  {% for post in posts %}
     {% if forloop.first == true %}
-      {% if postsOffset == 0 %}
+      {% if pagination.pageNumber == 0 %}
         {% include partials/post-featured.html post=post %}
       {% endif %}
 
       <div class="js-posts">
 
-      {% if postsOffset != 0 %}
-        {% include partials/post-small.html post=post index=forloop.index page=paginator.page %}
+      {% if pagination.pageNumber != 0 %}
+        {% include partials/post-small.html post=post %}
       {% endif %}
     {% else %}
-      {% include partials/post-small.html post=post index=forloop.index page=paginator.page %}
+      {% include partials/post-small.html post=post %}
 
       {% if forloop.last == true %}
         </div>
@@ -44,4 +28,10 @@ layout: default
   {% endfor %}
 </main>
 
-{% include partials/paginator.html paginator=paginator %}
+<div class="js-paginator paginator">
+  <div class="paginator__inner">
+    <div class="paginator__button-wrapper">
+      <a class="cta paginator__button js-load-more-articles" href="{{ pagination.nextPageLink }}">Load more articles</a>
+    </div>
+  </div>
+</div>
