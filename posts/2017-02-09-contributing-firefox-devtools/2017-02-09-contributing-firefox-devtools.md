@@ -22,11 +22,11 @@ DevTools is built using the languages of the web, so any web developer can just 
 
 There is [a long list](http://firefox-dev.tools/) of bug reports and feature requests to choose from. The ones labelled with *Good First Bug* are probably a good starting point for someone that is new to the codebase.
 
-One of the things I like the most about Mozilla is the community of people, both staff and volunteers, who work tirelessly to make the web a better place. I'm particularly fond of [MDN](https://developer.mozilla.org/en-US/), a community-driven repository of documentation for developers, which I proudly [contributed to myself]({% post_url 2016-08-17-mdn %}).
+One of the things I like the most about Mozilla is the community of people, both staff and volunteers, who work tirelessly to make the web a better place. I'm particularly fond of [MDN](https://developer.mozilla.org/en-US/), a community-driven repository of documentation for developers, which I proudly [contributed to myself](/blog/2016/08/17/mdn.html).
 
 In fact, I think Mozilla should leverage this huge knowledge base as much as possible, by syndicating its content to various channels and integrating it with tools used daily by developers — Firefox itself, and DevTools in particular, is a perfect vehicle for that. An example of this is the error messages in the console that, since version 49 of the browser, are accompanied by a link to a relevant MDN page, offering developers extended information about the nature of the error, along with likely causes and possible solutions.
 
-{% include helpers/image-legacy.html name="console-error.png" caption="Firefox Web Console showing an error" %}
+{% include helpers/image.html, name:"console-error.png", caption:"Firefox Web Console showing an error" %}
 
 To help with the effort of integrating MDN with DevTools, I started looking into [Bug 1320233](https://bugzilla.mozilla.org/show_bug.cgi?id=1320233). The idea was to add a *Learn More* button, similar to the one in the console, next to each HTTP header in the Network panel, with a link to the relevant documentation page in MDN.
 
@@ -58,7 +58,7 @@ DevTools is typically used to inspect and debug websites, of course, but because
 
 You can then click on the hamburger menu on the top-right corner and go to `Developer` > `Browser Toolbox`. You can now inspect the various DevTools panels like you would do with any website. How cool is that?
 
-{% include helpers/image-legacy.html name="devtools1.png" caption="Using DevTools to inspect DevTools" %}
+{% include helpers/image.html, name:"devtools1.png", caption:"Using DevTools to inspect DevTools" %}
 
 The code for DevTools lives in the `devtools` directory on the root of the repository, under which there are a `client` and `server`sub-directories for the front-end and the back-end, respectively. Every time you change something in the code, you need to rebuild the application. To avoid the painstakingly long command we ran initially, you can simply use:
 

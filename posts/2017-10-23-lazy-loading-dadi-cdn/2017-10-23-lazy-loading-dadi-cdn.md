@@ -24,11 +24,11 @@ For example, we can take the original image and reduce its dimensions and compre
 
 Here's how it looks like:
 
-{% include helpers/image.html name="leaf.jpg" caption="Original image (203 KB)" %}
+{% include helpers/image.html, name:"leaf.jpg", caption:"Original image (203 KB)" %}
 
-{% include helpers/image.html name="leaf-placeholder.jpg" caption="100px wide placeholder (1 KB)" %}
+{% include helpers/image.html, name:"leaf-placeholder.jpg", caption:"100px wide placeholder (1 KB)" %}
 
-{% include helpers/image.html name="leaf-placeholder.jpg" caption="Placeholder stretched to 650px" width="650" %}
+{% include helpers/image.html, name:"leaf-placeholder.jpg", caption:"Placeholder stretched to 650px", width:"650" %}
 
 ## Using CDN recipes
 

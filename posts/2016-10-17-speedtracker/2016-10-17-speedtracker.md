@@ -16,7 +16,7 @@ A couple of months ago I wrote about using WebPageTest, and more specifically it
 
 But how exactly does this tool sit within your development workflow? When should you run tests and what exactly do you do with the results? How do you visualise them?<!--more-->
 
-A couple of months ago [I wrote about using WebPageTest]({% post_url 2016-08-26-webpagetest-api %}), and more specifically its RESTful API, to monitor the performance of a website. Unarguably, the data it provides can translate to precious information for engineers to tweak various parts of a system to make it perform better.
+A couple of months ago [I wrote about using WebPageTest](/blog/2016/08/26/webpagetest-api.html), and more specifically its RESTful API, to monitor the performance of a website. Unarguably, the data it provides can translate to precious information for engineers to tweak various parts of a system to make it perform better.
 
 But how exactly does this tool sit within your development workflow? When should you run tests and what exactly do you do with the results? How do you visualise them?
 
@@ -24,7 +24,7 @@ Now that we have the ability to obtain performance metrics programmatically thro
 
 I set out to create a tool that allowed me to compile and visualise all this information, and I wanted to build it in a way that allowed others to do it too.
 
-{% include helpers/image-legacy.html name="diagram1.png" caption="What I had in mind. Roughly." %}
+{% include helpers/image.html, name="diagram1.png", caption="What I had in mind. Roughly." %}
 
 ## The wish list
 
@@ -57,7 +57,7 @@ As for #1, I built a small Node.js application that receives test requests, send
 
 The diagram below shows the gist of the idea.
 
-{% include helpers/image-legacy.html name="diagram2.png" caption="The system architecture" %}
+{% include helpers/image.html, name="diagram2.png", caption="The system architecture" %}
 
 Oh, at some point I needed a name. I called it [SpeedTracker](https://speedtracker.org).
 
@@ -65,7 +65,7 @@ You can see it in action [here](https://demo.speedtracker.org) or jump straight 
 
 ## Building the dashboard
 
-I’m a big fan of [Jekyll](http://jekyllrb.com/). For those of you who are not familiar with it, Jekyll is a program that takes structured content from files in various formats (Markdown, JSON, YAML or even CSV) and generates HTML pages. It’s part of a larger family of [static site generators]({% post_url 2015-05-21-an-introduction-to-static-site-generators %}).
+I’m a big fan of [Jekyll](http://jekyllrb.com/). For those of you who are not familiar with it, Jekyll is a program that takes structured content from files in various formats (Markdown, JSON, YAML or even CSV) and generates HTML pages. It’s part of a larger family of [static site generators](/blog/2015/05/21/an-introduction-to-static-site-generators.html).
 
 It’s particularly relevant to this project because of its native integration with GitHub Pages, which enables any repository to automatically build a Jekyll site every time it receives new or updated content and instantly serve the generated HTML files on a designated URL. With this in mind, I could make the API layer write the test results to JSON files and have Jekyll read and output them to a web page.
 
@@ -85,7 +85,7 @@ With that list in place, I could build a client-side application that given a pr
 
 I built that using React.
 
-{% include helpers/image-legacy.html name="diagram2.png" caption="Jekyll powering the React application" %}
+{% include helpers/image.html, name="diagram2.png", caption="Jekyll powering the React application" %}
 
 ## Performance budgets
 
@@ -95,7 +95,7 @@ That threshold must then be taken into account every time you plan on adding a n
 
 I wanted to give budgets a prominent place in the platform. When creating a profile, you can set a budget for any of the metrics captured and a horizontal line will show in the respective chart alongside the data, giving you a visual indication of how well your site is doing.
 
-{% include helpers/image-legacy.html name="graph1.png" caption="Paul Irish recommends a 1000ms budget for SpeedIndex" %}
+{% include helpers/image.html, name="graph1.png", caption="Paul Irish recommends a 1000ms budget for SpeedIndex" %}
 
 It's also possible to define alerts that are triggered when any of the budgets is exceeded, so that you and your team can instantly be notified via email or Slack when things aren't looking so great.
 

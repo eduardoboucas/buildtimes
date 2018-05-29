@@ -38,7 +38,7 @@ When you open the [WebPageTest website](https://www.webpagetest.org/), you'll se
 - Number of tests to run (doing a single run means that the test results are more easily influenced by network or server anomalies, so WebPageTest consider a best practice to run a test multiple times and use the average as a most representative result)
 - Single or repeat view (you can choose whether to load a page once or twice per test; because browser cache is cleared before each test, this effectively means deciding whether you’re only interested in the initial, uncached view, or you want a second time to leverage the browser cache).
 
-{% include helpers/image-legacy.html name="screenshot1.png" caption="Requesting a test on WebPageTest" %}
+{% include helpers/image.html, name="screenshot1.png", caption="Requesting a test on WebPageTest" %}
 
 For this example, we're testing *https://css-tricks.com* with the default settings: Chrome on a Cable connection from Dulles, VA, performing a single run with first and repeat view, with video capturing enabled.
 
@@ -58,7 +58,7 @@ The amount of information shown in the test reports can be a bit overwhelming, s
 - **Document Complete:** Set of metrics relative to the time until the browser load event, with Time, Requests and Bytes In representing the load time, number of requests and number of bytes received, respectively
 - **Fully Loaded:** Similar to Document Complete, but the metrics are relative to the time at which WebPageTest determines that the page has fully finished loading content. This is relevant and different from the above, because pages may decide to load additional content after the browser load event
 
-{% include helpers/image-legacy.html name="screenshot2.png" caption="Test results page on WebPageTest" %}
+{% include helpers/image.html, name="screenshot2.png", caption="Test results page on WebPageTest" %}
 
 The waterfall view is another key piece of the report. It shows a visualisation of the network activity over time, with each horizontal bar representing an HTTP request. The colours in the bars represent the five phases of a request: DNS lookup (teal), initial connection (orange), SSL negotiation (purple), time to first byte (green), and content download (blue).
 
@@ -66,7 +66,7 @@ It also shows vertical lines to mark key events in the lifecycle of the page, su
 
 We requested a video recording as part of the rest, so WebPageTest gives us a set of frames that visually show the page being drawn on the screen over time. We can use this data to generate a filmstrip view or an actual video.
 
-{% include helpers/image-legacy.html name="WebPageTest-video.gif" caption="Video of CSS-Tricks being loaded on WebPageTest" %}
+{% include helpers/image.html, name="WebPageTest-video.gif", caption="Video of CSS-Tricks being loaded on WebPageTest" %}
 
 ## WebPageTest API
 
@@ -306,4 +306,4 @@ This article isn't an attempt of a comprehensive guide on WebPageTest, since tha
 
 But extracting the data is just the start — it's what we do with it that can impact how our websites perform. I'll follow up soon with my take on using what I've shown here to build a bespoke performance monitoring tool, with the ability to visualise performance metrics over time, establish [performance budgets](https://timkadlec.com/2013/01/setting-a-performance-budget/) and receive alerts when they're not met.<!--tomb-->
 
-***Update**: Part II of this post is available [here]({% post_url 2016-10-17-speedtracker %}).*
+***Update**: Part II of this post is available [here](/blog/2016/10/17/speedtracker.html).*

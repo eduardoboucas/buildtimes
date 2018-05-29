@@ -28,7 +28,7 @@ This "middleman" layer is capable of speaking a universal language (JSON is my p
 
 I'm thinking something like this:
 
-{% include helpers/image-legacy.html name="Diagram.png" caption="Example of a multisite WordPress installation feeding an API" %}
+{% include helpers/image.html, name="Diagram.png", caption="Example of a multisite WordPress installation feeding an API" %}
 
 ## Adapting WordPress
 
@@ -81,7 +81,7 @@ As this point we have a very basic API that allows us to pull entries from WordP
 
 Take the [forum page](https://css-tricks.com/forums/) on CSS-Tricks as an example. Beside some meta data that we'd probably need, there are at least three distinct sets of content to pull from the CMS: the items on the navigation bar, the latest posts, and the tips.
 
-{% include helpers/image-legacy.html name="Buckets.png" caption="Different groups of content on a CSS-Tricks page" %}
+{% include helpers/image.html, name="Buckets.png", caption="Different groups of content on a CSS-Tricks page" %}
 
 We can define our own custom syntax for the API so it accepts the definition of "content buckets" on-the-fly and returns them compartmentalized as a JSON array in the response. 
 

@@ -15,7 +15,7 @@ Last week I put together a landing site for a new business. The design was quite
 
 The only particularity was that the logo should change colours, as the user scrolls, depending on which section it overlaps.<!--more--> When positioned over a section with a dark background, the logo should be white. When overlapping a section with a light background, it should be dark blue.
 
-{% include helpers/image.html name="fortblocks-design.png" caption="Landing site design" %}
+{% include helpers/image.html, name:"fortblocks-design.png" capti:n="Landing site design" %}
 
 The first thought that comes to mind is to use two images and swap them as the user scrolls, but that doesn't work here. If you look closer at the designs above, the second screen shows the logo overlapping a dark/light cross-section. When that happens, the portions of the logo that overlap each section must be coloured accordingly.
 
@@ -25,7 +25,7 @@ After searching around, I found [this pen](https://codepen.io/eighthday/full/MKq
 
 During my tests, it worked beautifully in Chrome, but it was quite jittery in Safari.
 
-{% include helpers/image.html name="first-approach.mov" caption="Animating the position looks jittery in Safari" %}
+{% include helpers/video.html, name:"first-approach.mov" , aption=:Animating the position looks jittery in Safari" %}
 
 ## Attempt #2: SVG clip-path
 
@@ -195,6 +195,6 @@ And it works! :tada:
 
 Here's how it looks on the same version of Safari that was being problematic before.
 
-{% include helpers/image.html name="second-approach.mov" caption="The result of animating the logos using SVG clip-path" %}
+{% include helpers/video.html, name:"second-approach.mov", caption:"The result of animating the logos using SVG clip-path" %}
 
 You can see it live (and dissect the source) [here](https://fortblocks.com/).<!--tomb-->

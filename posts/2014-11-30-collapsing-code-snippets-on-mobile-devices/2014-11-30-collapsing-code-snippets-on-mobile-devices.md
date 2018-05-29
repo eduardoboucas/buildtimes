@@ -45,7 +45,7 @@ First, the CSS (SASS).
 }
 ```
 
-So what's happening here? I used [my media query mixin]({% post_url 2014-10-29-how-i-write-media-queries-in-sass %}) to apply some rules when the viewport width is less than a given breakpoint (768 pixels). I then target all the code snippets, which in my case have the class `highlight`, and reduce their height to a value that will hide everything and leave only a `:before` containing the text "Code snippet: click to expand" (lines 5 and 9 to 14).
+So what's happening here? I used [my media query mixin](/blog/2014/10/29/how-i-write-media-queries-in-sass.html) to apply some rules when the viewport width is less than a given breakpoint (768 pixels). I then target all the code snippets, which in my case have the class `highlight`, and reduce their height to a value that will hide everything and leave only a `:before` containing the text "Code snippet: click to expand" (lines 5 and 9 to 14).
 
 All this will be applied only when the element does NOT have a class named `expanded`, so all we have to do to revert the element to its original state is to add that class when the element is clicked, using a bit of Javascript.
 

@@ -35,7 +35,7 @@ And here's the idea:
 
 - **base/**: This is the place for the stuff we don't really need to touch. Eric Meyer's [CSS reset](http://meyerweb.com/eric/tools/css/reset/), `box-sizing: border-box` by default for all the things, font-size of 62.5% in `<html>` for easier rem usage and clearfix.
 - **global/**: For rules that affect the site globally - e.g. declaration of colour variables, typography imports. In `_global.scss` I typically declare font sizes for headings and paragraphs, line heights, list styles and whatnot.
-- **helpers/**: For mixins and functions. From a simple mixin to declare font-sizes in rems with a pixel fallback to the more complex [include-media](http://include-media.com) for writing media queries. I also include a mixin that generates classes that I use to build a grid system, detailed [here]({% post_url 2015-01-13-experimenting-with-sass-and-grids %}).
+- **helpers/**: For mixins and functions. From a simple mixin to declare font-sizes in rems with a pixel fallback to the more complex [include-media](http://include-media.com) for writing media queries. I also include a mixin that generates classes that I use to build a grid system, detailed [here](/2015/01/13/experimenting-with-sass-and-grids.html).
 - **modules/**: Here's where all the individual elements in the page are styled. I use BEM as a naming convention for my classes and typically each block is a separate file inside this directory. For larger projects, it may make sense to divide modules into sub-folders.
 - **main.scss**: This file is used to import all the other files, so it contains nothing but `@import` instructions.
 

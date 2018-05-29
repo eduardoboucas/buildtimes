@@ -12,14 +12,14 @@ tags:
 - honeypot
 - markdown
 ---
-I've been using [Jekyll to run my professional website and my blog]({% post_url 2014-10-25-how-i-used-jekyll-on-my-backbonejs-website %}) for about 2 months and I never look back. It can do pretty much everything a dynamic website does, but better and faster. The one thing that my blog was missing was a way to get feedback from the readers and to allow me to interact with them and learn from their experiences. It's not very smart (and a bit arrogant, actually) to publish an article with a solution to a certain problem and not allow readers to comment on it, pointing possible weaknesses or even posting other solutions that (most likely) turn out to be better than mine.<!--more-->
+I've been using [Jekyll to run my professional website and my blog](/blog/2014/10/25/how-i-used-jekyll-on-my-backbonejs-website.html) for about 2 months and I never look back. It can do pretty much everything a dynamic website does, but better and faster. The one thing that my blog was missing was a way to get feedback from the readers and to allow me to interact with them and learn from their experiences. It's not very smart (and a bit arrogant, actually) to publish an article with a solution to a certain problem and not allow readers to comment on it, pointing possible weaknesses or even posting other solutions that (most likely) turn out to be better than mine.<!--more-->
 
 A commenting system is something very common and easy to implement on classic blog platforms like Blogger or Wordpress, but we have to cater for the special characteristics of our beloved static sites and adapt things a bit. So how can we take a static HTML page and add a section with content that is constantly updated based on user input?
 
 ## At first, I thought Disqus
 My first thought was [Disqus](https://disqus.com/), a comment hosting service used by platforms like Tumblr or Wordpress. In a nutshell, here's how it works: you create an account with them, add your website to the platform, tweak a few things on the layout and finally add a piece of JavaScript to your website, which will then get replaced with all the markup, style and logic needed for the comments to work. This sounded perfect, because I didn't need to actually run any logic on my server, a few lines of JavaScript would do the job, so I gave it a go.
 
-{% include helpers/image-legacy.html name="disqus.png" caption="Screenshot of a Disqus installation" %}
+{% include helpers/image.html, name="disqus.png", caption="Screenshot of a Disqus installation" %}
 
 It was that simple and it did work great, but I didn't like it. It offered too much stuff that I didn't want, like post ratings, favourites, social media integration and even a whole community! All I wanted was a simple form with 3 fields (name, email address or website and the message) so I didn't want to load a heavier plugin full of controls that I wouldn't use, and worse, with an interface that I couldn't properly customise and make *on-brand*.
 
@@ -54,7 +54,7 @@ I realised that I could build a server-side middleman that would get the JSON fi
 
 1. **Do some basic spam detection:** I could plant a [honeypot form field](http://solutionfactor.net/blog/2014/02/01/honeypot-technique-fast-easy-spam-prevention/) and look for it in when filtering the comments. This is not a bulletproof solution, but should stop some of the spam bots (at least the dumb ones).
 
-1. **Use Markdown:** I could allow users to use Markdown in their comments by installing a Markdown parser and hooking it up with my middleman. This is particularly important on my blog, since I wanted to give my readers a nice way of sharing their own code in response to my articles (and this way I could make it compatible with my [technique for displaying code snippets]({% post_url 2014-11-30-collapsing-code-snippets-on-mobile-devices %})).
+1. **Use Markdown:** I could allow users to use Markdown in their comments by installing a Markdown parser and hooking it up with my middleman. This is particularly important on my blog, since I wanted to give my readers a nice way of sharing their own code in response to my articles (and this way I could make it compatible with my [technique for displaying code snippets](/blog/2014/11/30/collapsing-code-snippets-on-mobile-devices.html)).
 
 ## Gosh, will you show some code already?
 

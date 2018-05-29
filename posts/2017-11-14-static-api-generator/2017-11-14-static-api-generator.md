@@ -23,7 +23,7 @@ Embracing this API paradigm comes with its own set of challenges. Designing, bui
 
 ## Back to basics
 
-I love the simplicity of static sites and I particularly like this new era of [static site generators]({% post_url 2015-05-21-an-introduction-to-static-site-generators %}). The idea of a website using a group of flat files as a data store is also very appealing to me, which using something like GitHub means the possibility of having a data set available as a public repository on a platform that allows anyone to easily contribute, with pull requests and issues being excellent tools for moderation and discussion.
+I love the simplicity of static sites and I particularly like this new era of [static site generators](/blog/2015/05/21/an-introduction-to-static-site-generators.html). The idea of a website using a group of flat files as a data store is also very appealing to me, which using something like GitHub means the possibility of having a data set available as a public repository on a platform that allows anyone to easily contribute, with pull requests and issues being excellent tools for moderation and discussion.
 
 Imagine having a site where people find a typo in an article and submit a pull request with the correction, or accepting submissions for new content with an open forum for discussion, where the community itself can filter and validate what ultimately gets published. To me, this is quite powerful.
 

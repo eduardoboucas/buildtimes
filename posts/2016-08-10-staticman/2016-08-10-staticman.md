@@ -7,9 +7,9 @@ tags:
 - jekyll
 - staticman
 ---
-I've been really interested in finding the ideal solution to add user-generated content, such as comments on a blog post, to a static site. My incursion started with a [PHP middleman application]({% post_url 2014-12-14-building-a-bespoke-commenting-system-for-a-static-site %}) that would interact with the now defunct Poole platform. 
+I've been really interested in finding the ideal solution to add user-generated content, such as comments on a blog post, to a static site. My incursion started with a [PHP middleman application](/blog/2014/12/14/building-a-bespoke-commenting-system-for-a-static-site.html) that would interact with the now defunct Poole platform. 
 
-A few months later, a [talk by Tom Preston-Werner](https://www.youtube.com/watch?v=BMve1OCKj6M) made me rethink the whole concept, and I ended up building [a bespoke commenting system]({% post_url 2015-05-11-rethinking-the-commenting-system-for-my-jekyll-site %}). After several iterations, that project eventually evolved into a public, open-source platform called [Staticman](https://staticman.net).<!--more-->
+A few months later, a [talk by Tom Preston-Werner](https://www.youtube.com/watch?v=BMve1OCKj6M) made me rethink the whole concept, and I ended up building [a bespoke commenting system](/blog/2015/05/11/rethinking-the-commenting-system-for-my-jekyll-site.html). After several iterations, that project eventually evolved into a public, open-source platform called [Staticman](https://staticman.net).<!--more-->
 
 In a nutshell, I love the fact that my entire site lives in a GitHub repository and can go into a ZIP file with just a click, content included. I wanted to allow users to comment on my posts, but refused to accept the fact that introducing user-generated content would mean breaking that premise above.
 

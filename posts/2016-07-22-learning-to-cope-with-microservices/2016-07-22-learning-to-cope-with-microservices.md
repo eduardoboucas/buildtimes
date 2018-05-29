@@ -53,7 +53,7 @@ A typical CMS is a monolithic application with at least four components under th
 
 The concept of a [headless CMS](https://css-tricks.com/what-is-a-headless-cms/) sets out to tackle this tight coupling of components, removing the concerns highlighted above. The idea is simple: separate numbers 1 and 2 from 3 and 4, adding an API layer that receives and delivers data to the database and communicates with the outside world using a universal language (typically JSON).
 
-{% include helpers/image-legacy.html name="headless.png" caption="Comparison between a monolithic CMS and a headless CMS" %}
+{% include helpers/image.html, name="headless.png", caption="Comparison between a monolithic CMS and a headless CMS" %}
 
 Working in this way the front-end is completely decoupled from the data that feeds it, which means it’s no longer limited by the tech stack adopted by the CMS - you could have a Node.js server pulling data from a headless Drupal running PHP, or even a static HTML page getting data from the API using a client-side JavaScript application.
 
@@ -107,7 +107,7 @@ CDN includes a content-aware cropping tool that is capable of analysing the cont
 
 The next version will introduce the concept of routes, a set of rules that allow you to deliver different variations of an asset based on conditions like the user’s device, language, location or connection type.
 
-{% include helpers/image-legacy.html name="DADI-Stack-diagram.png" caption="Diagram of a possible implementation of the DADI stack" %}
+{% include helpers/image.html, name="DADI-Stack-diagram.png", caption="Diagram of a possible implementation of the DADI stack" %}
 
 When compared to existing headless CMS solutions, which are really just monolithic applications adapted to provide an API-first approach as an afterthought, the DADI platform is actually COPE *by design*, and the separation of concerns using microservices is at its core.
 

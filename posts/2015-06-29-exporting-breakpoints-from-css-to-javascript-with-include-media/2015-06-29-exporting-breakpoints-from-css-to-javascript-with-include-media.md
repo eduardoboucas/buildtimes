@@ -47,7 +47,7 @@ Cool, that works! But there goes the beauty of storing the breakpoints once — 
 
 ## Enter include-media plugins
 
-I've been working a lot with [Hugo Giraudel](https://twitter.com/hugogiraudel) on include-media lately, and while we were determined to [keep the library simple and lightweight]({% post_url 2015-06-08-include-media-v1-3-released %}), we felt that it could be extended to include more interesting features. The solution for that was to keep the core at its simplest and distribute individual pieces of functionality as plugins.
+I've been working a lot with [Hugo Giraudel](https://twitter.com/hugogiraudel) on include-media lately, and while we were determined to [keep the library simple and lightweight](/blog/2015/06/08/include-media-v1-3-released.html), we felt that it could be extended to include more interesting features. The solution for that was to keep the core at its simplest and distribute individual pieces of functionality as plugins.
 
 Anyway, back to our conundrum. It would be great if we could still declare the breakpoints once, in our Sass, but being able to use them in the JavaScript as well. Turns out there's an include-media plugin for that.
 

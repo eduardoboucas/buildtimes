@@ -22,7 +22,7 @@ More importantly than measuring performance at one isolated point in time, I fel
 
 There are a few enterprise solutions that provide this type of monitoring, but the reality is that not every project can afford to allocate a budget for this. In the true spirit of FOSS, I set out to build a tool that everyone can use (and modify) for free. It’s called [SpeedTracker](https://speedtracker.org/).
 
-{% include helpers/image-legacy.html name="speedtracker1.png" caption="Example of a SpeedTracker dashboard (1/2)" %}
+{% include helpers/image.html, name="speedtracker1.png", caption="Example of a SpeedTracker dashboard (1/2)" %}
 
 ## The plan
 
@@ -34,7 +34,7 @@ Here’s what it offers:
 
 The platform consists of [an API layer](https://github.com/speedtracker/speedtracker-api) that processes test requests, communicates with the WebPageTest API and pushes the results to a GitHub repository, where the [visualisation layer](https://github.com/speedtracker/speedtracker) lives. If you don’t wish to deploy your own API, there is a public instance you can use for free.
 
-{% include helpers/image-legacy.html name="speedtracker2.png" caption="Example of a SpeedTracker dashboard (2/2)" %}
+{% include helpers/image.html, name="speedtracker2.png", caption="Example of a SpeedTracker dashboard (2/2)" %}
 
 ## Getting started
 
@@ -54,7 +54,7 @@ Finally, you can trigger the first test by using [the test tool](https://speedtr
 
 You can see a [demo dashboard](https://demo.speedtracker.org/) tracking the performance of CSS-Tricks.com, which is served from this repository. There is also a [dashboard](https://mdn.speedtracker.org/) tracking Mozilla’s MDN.
 
-{% include helpers/image-legacy.html name="speedtracker3.png" caption="Slack notifications" %}
+{% include helpers/image.html, name="speedtracker3.png", caption="Slack notifications" %}
 
 My plan will never be to compete with paid enterprise solutions, but to provide a free and modest alternative that brings this type of tooling to people that otherwise wouldn’t have access to it.
 

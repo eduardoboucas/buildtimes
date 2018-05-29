@@ -20,7 +20,7 @@ Instead of using the normal RSS feed as the trigger for our IFTTT, we can have o
 
 Here's the idea:
 
-{% include helpers/image-legacy.html name="jekyll-social-after.png" caption="Serving separate feeds to different IFTTT channels" %}
+{% include helpers/image.html, name="jekyll-social-after.png", caption="Serving separate feeds to different IFTTT channels" %}
 
 ## Creating the feeds
 The first step is to create the RSS feeds for the different platforms. Instead of duplicating the code over and over again for each platform, we can define a layout that all feeds will inherit.
@@ -113,11 +113,11 @@ With everything good to go on the Jekyll side, it's time to set everything up on
 The first step is to select the channel that triggers the action (the **This** part); in our case, a it's a Feed.
 In the next step we select *New feed item* as the trigger, meaning that the recipe will run every time there's a new item in the feed and then enter the feed URL.
 
-{% include helpers/image-legacy.html name="IFTTT-1.png" caption="Setting up my Facebook feed on IFTTT (step 3 of 7)" %}
+{% include helpers/image.html, name="IFTTT-1.png", caption="Setting up my Facebook feed on IFTTT (step 3 of 7)" %}
 
 Then we're off to the **That** part. In this example, I'm setting up the feed for Facebook so I select it from the list of available action channels — you have plenty of other options to choose from here. In the next step we go with *Create a link post* as that allows us to share a link to our post along with any message we want. That can be configured in the next screen, where you can use "Ingredients" to form your link and message. In this example, I'm going with a direct link to the article and a message saying "New blog post:" and then the title of the post.
 
-{% include helpers/image-legacy.html name="IFTTT-2.png" caption="Setting up my Facebook feed on IFTTT (step 6 of 7)" %}
+{% include helpers/image.html, name="IFTTT-2.png", caption="Setting up my Facebook feed on IFTTT (step 6 of 7)" %}
 
 ## Going one step further: the Twitter case
 We're pretty much done, you just need to repeat the above steps for each of the social media platforms you want to use. But we could go one step further. When posting things to Twitter, it's a common practice to include hashtags to make the tweet easier to find by people who are interested in the topics you're writing about. So if you're using tags in your posts, wouldn't it make sense to add them to your tweet as hashtags?

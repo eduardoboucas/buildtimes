@@ -10,7 +10,7 @@ tags:
 ---
 ***Update 03/10/2016**: I turned this concept into a service called [Staticman](https://staticman.net). It's free and open-source and you can read more about it in [this post](https://eduardoboucas.com/blog/2016/08/10/staticman.html).*
 
-Last December I wrote [a post about building a bespoke commenting for Jekyll]({% post_url 2014-12-14-building-a-bespoke-commenting-system-for-a-static-site %}). I had been using Jekyll for a couple of months at the time, and not having an easy solution for a commenting system was the first big limitation of a static site I had to deal with. I didn’t want to use a third-party service, like Disqus, so I decided to build a bespoke solution because I knew what I wanted — or I thought I did.<!--more-->
+Last December I wrote [a post about building a bespoke commenting for Jekyll](/blog/2014/12/14/building-a-bespoke-commenting-system-for-a-static-site.html). I had been using Jekyll for a couple of months at the time, and not having an easy solution for a commenting system was the first big limitation of a static site I had to deal with. I didn’t want to use a third-party service, like Disqus, so I decided to build a bespoke solution because I knew what I wanted — or I thought I did.<!--more-->
 
 To sum it up, I used [Poole](http://pooleapp.com) to handle and store my comments data and then built a server-side middleman that would get the feed from Poole, convert the Markdown to HTML and return the comments in pure HTML, ready to be appended to the page. A bit of JavaScript would then make the call to this middleman on every post and append all the comments to the page.
 
@@ -35,7 +35,7 @@ With that said, the new plan was to store each comment as a separate file in my 
 
 On the front-end, JavaScript would hijack the form submission to avoid a page reload, sending the data as an asynchronous POST request via Ajax and preventing the default behaviour of a page reload. Upon confirmation of success, it would then append a temporary version of the new comment to the page, giving the feeling that the content was added instantly even though a lot of stuff still has to happen behind the curtain.
 
-{% include helpers/image-legacy.html name="jekyll-discuss-diagram.png" caption="Flow of data in the commenting system" %}
+{% include helpers/image.html, name="jekyll-discuss-diagram.png", caption="Flow of data in the commenting system" %}
 
 The form itself would have four fields: name (mandatory), email (mandatory, but not public), url (optional) and message (mandatory). My plan for the email address was to use it as a unique identifier for the user and also to attempt to pull an avatar from Gravatar, so I just needed it to create a md5 hash — I was not going to make it public for privacy and spammy reasons.
 

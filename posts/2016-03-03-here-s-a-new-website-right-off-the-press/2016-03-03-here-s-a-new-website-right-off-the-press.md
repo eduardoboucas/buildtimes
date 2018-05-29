@@ -18,7 +18,7 @@ The first thing that catches your eye when you hold a newspaper is the big typog
 
 Simply taking a `h1` and setting the font to a huge size won't do the trick — variable content and viewport dimensions mean that the end result will almost always contain undesired spacing, widows and orphans, far from the clean look of a newspaper.
 
-{% include helpers/image-legacy.html name="headlines.png" caption="Single h1 element VS. one element per line" %}
+{% include helpers/image.html, name="headlines.png", caption="Single h1 element VS. one element per line" %}
 
 To achieve this effect I would have to separate each line of the title into its own separate element and size it proportionally, based on the amount of space it naturally takes compared to the size of its container. My plan was:
 

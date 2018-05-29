@@ -5,10 +5,10 @@
 <figure class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}">
   <img
     class="figure__image"
-    onload="this.parentElement.classList += ' figure__inner--loaded'"
+    onload="this.parentElement.classList += ' figure--loaded'"
     src="{{ assetPath }}"
-    {% if alt %} alt="{{ alt }}" {% endif %}
-    {% if width %} width="{{ width }}" {% endif %}
+    alt="{{ caption }}"
+    width="{{ width }}"
   >
 
   <figcaption class="figure__caption">{{ caption }}</figcaption>

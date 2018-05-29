@@ -9,14 +9,13 @@
     "build:clean": "mv _site/page/1 _site/index.html && rm -rf _site/page/1 && rm -rf _site/posts/*/**.md && find _site/posts/ -type d -empty -delete",
     "build:css": "node-sass --output-style compressed sass/main.scss > assets/css/main.css",
     "build:js": "cat assets/js/*.js | uglifyjs > _site/assets/js/min/main.min.js",
-    "start": "http-server _site"
+    "start": "npx eleventy --serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.3.5",
-    "http-server": "^0.11.1",
     "uglify-js": "^3.3.27"
   },
   "dependencies": {

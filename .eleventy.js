@@ -102,13 +102,6 @@ module.exports = eleventyConfig => {
     return momentDate.format("dddd, MMMM Do, YYYY")
   })
 
-  eleventyConfig.addLiquidTag(
-    'post_url',
-    (scope, hash) => {
-      return Promise.resolve('hi')
-    }
-  )
-
   eleventyConfig.addPassthroughCopy('assets')
   eleventyConfig.addPassthroughCopy('posts')
 

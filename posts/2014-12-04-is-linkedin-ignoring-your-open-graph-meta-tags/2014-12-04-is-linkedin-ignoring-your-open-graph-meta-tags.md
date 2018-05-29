@@ -23,7 +23,7 @@ When I launched my blog, I included these tags because I knew I would be sharing
 
 Everything was looking great on Facebook, but LinkedIn was not picking up any information when I tried to share a link to my blog. Here's how it looked:
 
-{% include helpers/image-legacy.html name="linkedin-before.png" caption="Sharing my blog on LinkedIn" %}
+{% include helpers/image.html, name="linkedin-before.png", caption="Sharing my blog on LinkedIn" %}
 
 I found this odd, because they clearly state in [their documentation](https://developer.linkedin.com/documents/setting-display-tags-shares) that *LinkedIn supports Open Graph tags*. I thought that maybe there was something wrong with my tags and that Facebook was just being merciful, so I went on [Open Graph Check](http://opengraphcheck.com/result.php?url=http%3A%2F%2Feduardoboucas.com%2Fblog#.VIDbvJOsUmw) to get some answers. Nope, all good here.
 
@@ -31,10 +31,10 @@ After doing some research on the subject, I found that [many people have encount
 
 Because I got really frustrated by this, as I really wanted to post my articles on LinkedIn, and especially because I'm an upright citizen concerned with my fellow colleagues, I decided to build a service to work around this limitation. I present you the [Open Graph Butler](http://butler.eduardoboucas.com)!
 
-{% include helpers/image-legacy.html name="butler.png" caption="Screenshot of the Open Graph Butler" %}
+{% include helpers/image.html, name="butler.png", caption="Screenshot of the Open Graph Butler" %}
 
 Here's the idea: you log in with your LinkedIn account, type or paste the URL that you want to share, and the butler will parse your site, look for the open graph meta tags and use [LinkedIn's API](https://developer.linkedin.com/javascript) to form a request and post on your behalf. By using the API, you don't rely on their system to parse the information for you, as it allows you to specify exactly what goes in the title, description, image, etc.
 
-{% include helpers/image-legacy.html name="linkedin-after.png" caption="A LinkedIn post created by the butler" %}
+{% include helpers/image.html, name="linkedin-after.png", caption="A LinkedIn post created by the butler" %}
 
 Point your browsers to [butler.eduardoboucas.com](http://butler.eduardoboucas.com) to use the butler. And please be nice to him!<!--tomb-->
