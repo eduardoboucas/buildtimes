@@ -1,0 +1,19 @@
+<div class="js-post post-wrapper col col--1-1 col--1-2@medium col--1-3@large">
+  <article class="post post--small tweet">
+    <svg class="tweet__icon">
+      <use xlink:href="#icon-twitter"></use>
+    </svg>
+    <p class="post__meta post-meta">{{ tweet._date | fullDate }}</p>
+    <div class="post__body">
+      {{ tweet.html }}
+    </div>
+    <a href="{{ tweet._url }}" target="_blank">
+      <p class="cta post__cta">
+        <span class="cta__inner">Open on Twitter</span>
+        <svg class="cta__icon">
+          <use xlink:href="#icon-external"></use>
+        </svg>
+      </p>
+    </a>
+  </article>
+</div>

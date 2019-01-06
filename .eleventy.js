@@ -5,11 +5,33 @@ const yaml = require('js-yaml')
 
 module.exports = eleventyConfig => {
   eleventyConfig.addCollection('homepage', collection => {
-    return collection.getAllSorted().filter(item => {
-      if (!item.data.tags || !item.data.tags.includes('blog') || item.data.queued) {
+    let nextIndexWithTweet = 2
+    let postsProcessed = 0
+    let tweetStep = 2
+    let tweetsAppended = 0
+    let posts = collection.getAllSorted().filter(item => {
+      const {data} = item
+
+      if (!data.tags || data.queued) {
         return false
       }
 
+      if (!data.tags.includes('blog')) {
+        return false
+      }
+
+      // Adding tweets.
+      if (postsProcessed === nextIndexWithTweet) {
+        data.tweet = data.tweets[tweetsAppended++]
+
+        if (data.tweets[tweetsAppended]) {
+          nextIndexWithTweet += tweetStep
+
+          tweetStep = (tweetStep === 4) ? 2 : tweetStep++
+        }
+      }
+
+      // Adding comments.
       let basename = item.inputPath.split('/').pop().split('.').shift()
       let comments = []
 
@@ -26,11 +48,15 @@ module.exports = eleventyConfig => {
       } catch (err) {}
 
       if (comments.length) {
-        item.data.comments = comments  
+        data.comments = comments  
       }
+
+      postsProcessed++
 
       return true
     }).reverse()
+
+    return posts
   })
 
   eleventyConfig.addCollection('series', collection => {
