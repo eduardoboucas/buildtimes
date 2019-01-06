@@ -26,8 +26,7 @@
     "handle": "include-media",
     "featured": true,
     "title": "include-media",
-    "copy": "include-media came about as a result of intense research and experimentation with how Sass can help front-end developers write responsive sites in a simple and maintainable way. I documented the process and the findings in an [article on CSS-Tricks](https://css-tricks.com/approaches-media-queries-sass/) and published include-media, a library focused on providing a simple, intuitive and natural syntax for maintaining breakpoints and writing media queries. It currently has over 12,000 downloads a month on npm and there’s an interesting ecosystem of community-built plugins and extensions around it.\n",
-    "website": "http://include-media.com",
+    "copy": "include-media came about as a result of intense research and experimentation with how Sass can help front-end developers write responsive sites in a simple and maintainable way. I documented the process and the findings in an article on CSS-Tricks (https://css-tricks.com/approaches-media-queries-sass/) and published include-media, a library focused on providing a simple, intuitive and natural syntax for maintaining breakpoints and writing media queries. It currently has over 12,000 downloads a month on npm and there’s an interesting ecosystem of community-built plugins and extensions around it.\n",
     "github": "https://github.com/eduardoboucas/include-media"
   },
   {

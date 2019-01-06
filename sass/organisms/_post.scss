@@ -50,6 +50,17 @@
 	}
 }
 
+.tweet {
+	background-color: $colour-light-grey;
+}
+
+.tweet__icon {
+	position: absolute;
+	pointer-events: none;
+	opacity: 0.05;
+	right: -50px;	
+}
+
 a > .post--small,
 a > .post--feature {
 	@include transition(transform opacity);

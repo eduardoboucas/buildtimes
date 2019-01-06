@@ -4,7 +4,7 @@ pagination:
   data: collections.homepage
   size: 10
   alias: posts
-permalink: page/{{ pagination.pageNumber | plus:1 }}
+permalink: "{% if pagination.pageNumber == 0 %}index.html{% else %}page/{{ pagination.pageNumber | plus:1 }}/index.html{% endif %}"
 ---
 <main id="main" role="main" class="main constrain" data-paginator-current="{{ pagination.pageNumber | plus:1}}" data-paginator-total="{{ pagination.size }}">
   {% for post in posts %}
@@ -17,9 +17,17 @@ permalink: page/{{ pagination.pageNumber | plus:1 }}
 
       {% if pagination.pageNumber != 0 %}
         {% include partials/post-small.html post=post %}
+
+        {% if post.data.tweet %}
+          {% include partials/tweet.html, tweet:post.data.tweet %}
+        {% endif %}
       {% endif %}
     {% else %}
       {% include partials/post-small.html post=post %}
+
+      {% if post.data.tweet %}
+        {% include partials/tweet.html, tweet:post.data.tweet %}
+      {% endif %}      
 
       {% if forloop.last == true %}
         </div>

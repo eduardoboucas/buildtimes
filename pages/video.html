@@ -1,11 +1,8 @@
 ---
-layout: video
 permalink: /video/index.html
-title: Video
 ---
-{% assign date = collections.video-section[0].date %}
-{% assign post = collections.video-section[0].data.post %}
-{% assign src = collections.video-section[0].data.src %}
-{% assign title = collections.video-section[0].data.title %}
+{% assign firstVideo = collections.video-section[0] %}
 
-{{ collections.video-section[0].templateContent }}
+<script>
+  window.location.replace("{{ firstVideo.url }}");
+</script>
