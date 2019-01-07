@@ -2,7 +2,7 @@
 
 # eduardoboucas.com
 
-This is the source code for [eduardoboucas.com](https://eduardoboucas.com). The site is fully static, powered by [Jekyll](http://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/), served right from this repository.
+This is the source code for [eduardoboucas.com](https://eduardoboucas.com). The site is fully static, powered by [11ty](https://www.11ty.io/) and hosted on [Netlify](https://netlify.com/), served right from this repository.
 
 ## Installation
 
@@ -16,7 +16,7 @@ This is the source code for [eduardoboucas.com](https://eduardoboucas.com). The 
 1. Install the dependencies
 
   ```
-  npm start
+  npm install
   ```
 
 1. Run a server, generate the site and watch for changes
@@ -25,14 +25,14 @@ This is the source code for [eduardoboucas.com](https://eduardoboucas.com). The 
    npm start
    ```
 
-1. Navigate to [http://localhost:4100/](http://localhost:4100/).
+1. Navigate to [http://localhost:8080/](http://localhost:8080/).
 
 ## Development
 
-Sass is compiled to CSS natively by Jekyll. To build the JavaScript files, run:
+To build the CSS and JavaScript files, run:
 
 ```
-gulp
+npm run build
 ```
 
 ## Old version
