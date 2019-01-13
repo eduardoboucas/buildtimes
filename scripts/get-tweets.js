@@ -53,7 +53,7 @@ request.post({
     url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${SCREEN_NAME}&exclude_replies=true&trim_user=true&count=200`
   }, (err, response, body) => {
     let parsedBody = JSON.parse(body)
-    let tweets = JSON.parse(body).filter(tweet => {
+    let tweets = JSON.parse(body).reverse().filter(tweet => {
       return !tweet.retweeted_status
     })
     let oembeds = tweets.map(tweet => getOembed(SCREEN_NAME, tweet))
