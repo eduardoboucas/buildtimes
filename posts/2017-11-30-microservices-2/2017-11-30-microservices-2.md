@@ -43,17 +43,22 @@ The same goes for software development.
 Similarly, services should depend as little as possible on the implementation details of other services, making it possible to change or replace a service without that affecting others.
 
 Perhaps a not so obvious example of a tightly coupled system is when more than one service share the same database. Even though the services are completely independent and only communicate with each other via network calls, the fact that they all share the same database schema means that they’re tightly coupled together. If a change to one service requires an update to the schema, all services need to be updated at the risk of breaking.
-High cohesion
+
+
+## High cohesion
 
 As defined by Larry Constantine in the late 1960s, cohesion refers to the degree to which the elements of a module belong together. In a component with low cohesion, elements are grouped based on the time at which they’re executed (temporal cohesion) or sometimes with no apparent criteria at all (coincidental cohesion), like a file with utility functions. This makes programs difficult to change, as code associated with one entity can be scattered around multiple parts of the codebase.
 
 Microservices are characterised by a high level of cohesion, with functionality being grouped together because it contributes to a single well-defined task (functional cohesion). As described by Robert C. Martin in his Single Responsibility Principle, “Gather together the things that change for the same reasons. Separate those things that change for different reasons”. This high level of cohesion makes it possible to change all aspects of an entity in a single place, without that affecting other entities in the process.
-Independent deployment
+
+
+## Independent deployment
 
 In a monolithic application, a small change requires the entire application to be deployed, which is risky, stressful and time consuming. This makes it impractical to deploy every time a new piece of functionality is ready to ship, stopping an organisation from being agile. Instead, this leads to changes building up and being deployed in bulk on a release day, an event that engineers and support teams have learned to absolutely dread, as they know it’s very likely that something will break and everybody will get home late. Creating a culture where developers are fearful of releasing their work is terrible.
 
 With microservices, changes to a service can be deployed independently of the rest of the system. This means that we can get features and fixes to production faster with simpler, quicker and less risky deployments. If something goes wrong, it’s quicker to pin down what failed and it’s easier to fix and redeploy the service, or to simply rollback to the previous working version.
-Technology agnostic
+
+## Technology agnostic
 
 When building a monolithic system, you commit to a technology stack at the beginning of the project. This technology will be the only option available for any new piece of functionality that is added to the system at any point in the future, regardless of whether or not it's the best tool for the job. No matter how much and how good the information you have at hand when making that decision is, it's still a massive long-term commitment. Different problems have different optimal solutions, and in an industry with such a fast pace of change, that optimal solution will likely give place to a much better one in the blink of an eye. It’s important that a system allows an organisation to evolve, rather than slow it down.
 
@@ -77,7 +82,8 @@ By having components as isolated services, you can scale specific parts of the s
 {% include helpers/image.html, name:"scaling.png", caption:"Figure 1-3: Scaling a single service" %}
 
 With the rise of elastic cloud computing environments like Amazon AWS, where it’s possible to automatically scale instances on demand, both vertically and horizontally, scalability on a micro level allows each component to dynamically scale up and down depending on its throughput, ensuring healthy performance metrics at all times.
-Automation
+
+## Automation
 
 We’ve seen the benefits of being able to deploy individual services independently of the rest of the system, but that also introduces some challenges. In a monolithic world, there's just a single application that needs to be pushed to a live environment, regardless of how convoluted the deployment process might be. Even if you manually have to provision a machine and pull a Git checkout, it’s still manageable. If you’re looking to have dozens, or even hundreds of microservices to deploy, that won’t cut it.
 
