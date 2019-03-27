@@ -15,7 +15,7 @@ layout: default
           {% if external-date %}
             <span>Originally published on {% if external-url %}<a href="{{ external-url }}">{% endif %}{{ external-name }}{% if external-url %}</a>{% endif %} on {{ external-date | fullDate }}</span>
           {% else %}
-            <span>{{ date | fullDate }}</span>
+            <span>{{ page.date | fullDate }}</span>
           {% endif %}
         </div>
       </div>
