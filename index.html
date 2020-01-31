@@ -6,7 +6,7 @@ pagination:
   alias: posts
 permalink: "{% if pagination.pageNumber == 0 %}index.html{% else %}page/{{ pagination.pageNumber | plus:1 }}/index.html{% endif %}"
 ---
-<main id="main" role="main" class="main constrain" data-paginator-current="{{ pagination.pageNumber | plus:1}}" data-paginator-total="{{ pagination.size }}">
+<main id="main" role="main" class="main constrain" data-paginator-current="{{ pagination.pageNumber | plus:1}}" data-paginator-total="{{ collections.homepage.size | divided_by: pagination.size | ceil }}">
   {% for post in posts %}
     {% if forloop.first == true %}
       {% if pagination.pageNumber == 0 %}
