@@ -12,7 +12,7 @@ permalink: "{% if pagination.pageNumber == 0 %}index.html{% else %}page/{{ pagin
   role="main"
   class="main constrain"
   data-paginator-current="{{ pagination.pageNumber | plus:1}}"
-  data-paginator-total="{{ pagination.size }}"
+  data-paginator-total="{{ collections.homepage.size | divided_by: pagination.size | ceil }}"
 >
   <div class="js-posts">
     {% for post in posts %} {% include partials/post-small.html post=post %} {%
