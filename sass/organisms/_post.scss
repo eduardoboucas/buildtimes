@@ -1,5 +1,5 @@
 @mixin post-body() {
-  margin-top: $post-vertical-rythm;
+  margin-top: 15px;
   font-size: 21px;
   line-height: 1.5;
 
@@ -9,6 +9,10 @@
 
   a {
     @include link(true);
+  }
+
+  @include media(">=medium") {
+    margin-top: $post-vertical-rythm;
   }
 }
 
