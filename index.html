@@ -6,7 +6,6 @@ pagination:
   alias: posts
 permalink: "{% if pagination.pageNumber == 0 %}index.html{% else %}page/{{ pagination.pageNumber | plus:1 }}/index.html{% endif %}"
 ---
-
 <main
   id="main"
   role="main"
