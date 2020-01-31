@@ -1,24 +1,25 @@
 pre[class^="language-"] {
-	padding: 40px 0;
-	font-family: $font-family-monospace;
-	color: white;
-	font-size: 19px;
-	background-color: $colour-dark-grey;
-	overflow-x: scroll;
-	-webkit-overflow-scrolling: touch;
-	text-align: center;
+  padding: 40px 0;
+  font-family: $font-family-monospace;
+  color: white;
+  font-size: 19px;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  text-align: center;
 
-	code {
-		@include constrain;
+  code {
+    @include constrain;
 
-		display: inline-block;
+    display: inline-block;
+    background-color: $colour-dark-grey;
+    padding: 40px;
 
-		@include media('>=medium') {
-			min-width: 700px;
-		}		
-	}
+    @include media(">=medium") {
+      min-width: 700px;
+    }
+  }
 
-	.lineno {
-		display: none;
-	}
+  .lineno {
+    display: none;
+  }
 }

@@ -1,14 +1,15 @@
 ---
 permalink: "/blog/{{ page.date | date: '%Y/%m/%d' }}/rethinking-the-commenting-system-for-my-jekyll-site.html"
 layout: post
-title:  "Rethinking the commenting system for my Jekyll site"
+title: "Rethinking the commenting system for my Jekyll site"
 tags:
-- blog
-- jekyll
-- comments
-- github
+  - blog
+  - jekyll
+  - comments
+  - github
 ---
-***Update 03/10/2016**: I turned this concept into a service called [Staticman](https://staticman.net). It's free and open-source and you can read more about it in [this post](https://eduardoboucas.com/blog/2016/08/10/staticman.html).*
+
+**\*Update 03/10/2016**: I turned this concept into a service called [Staticman](https://staticman.net). It's free and open-source and you can read more about it in [this post](https://eduardoboucas.com/blog/2016/08/10/staticman.html).\*
 
 Last December I wrote [a post about building a bespoke commenting for Jekyll](/blog/2014/12/14/building-a-bespoke-commenting-system-for-a-static-site.html). I had been using Jekyll for a couple of months at the time, and not having an easy solution for a commenting system was the first big limitation of a static site I had to deal with. I didn’t want to use a third-party service, like Disqus, so I decided to build a bespoke solution because I knew what I wanted — or I thought I did.<!--more-->
 
@@ -35,7 +36,7 @@ With that said, the new plan was to store each comment as a separate file in my 
 
 On the front-end, JavaScript would hijack the form submission to avoid a page reload, sending the data as an asynchronous POST request via Ajax and preventing the default behaviour of a page reload. Upon confirmation of success, it would then append a temporary version of the new comment to the page, giving the feeling that the content was added instantly even though a lot of stuff still has to happen behind the curtain.
 
-{% include helpers/image.html, name="jekyll-discuss-diagram.png", caption="Flow of data in the commenting system" %}
+{% include helpers/image.html name:"jekyll-discuss-diagram.png" caption:"Flow of data in the commenting system" %}
 
 The form itself would have four fields: name (mandatory), email (mandatory, but not public), url (optional) and message (mandatory). My plan for the email address was to use it as a unique identifier for the user and also to attempt to pull an avatar from Gravatar, so I just needed it to create a md5 hash — I was not going to make it public for privacy and spammy reasons.
 
@@ -120,6 +121,7 @@ With the bash script ready, we need something that triggers it from an HTTP requ
 Finally, it runs the comment through a Markdown parser and echoes back the HTML result, along with the email hash, as JSON format. On the front-end, we'll use that data to generate a preview of the comment without forcing a page reload.
 
 <!--phpsyntax-->
+
 ```
 <?php
 
@@ -184,19 +186,20 @@ With our server-side infrastructure taken care of, we're back to Jekyll. Since t
 ```html
 {% raw %}
 <article id="comment{{ include.index }}" class="comment">
-    <img class="comment__avatar" src="https://www.gravatar.com/avatar/{{ include.hash }}?d=mm&s=180">
-    <h3 class="comment__author">
-        {% if (include.url) and (include.url != '@url') %}
-            <a rel="nofollow" href="{{ include.url }}">{{ include.name }}</a>
-        {% else %}
-            {{ include.name }}
-        {% endif %}
-    </h3>
-    <p class="comment__date">
-        {% if include.index %}<a href="#comment{{ include.index }}">#</a> {% endif %}
-        {% if include.date %}{{ include.date }}{% endif %}
-    </p>
-    {{ include.message }}
+  <img
+    class="comment__avatar"
+    src="https://www.gravatar.com/avatar/{{ include.hash }}?d=mm&s=180"
+  />
+  <h3 class="comment__author">
+    {% if (include.url) and (include.url != '@url') %}
+    <a rel="nofollow" href="{{ include.url }}">{{ include.name }}</a>
+    {% else %} {{ include.name }} {% endif %}
+  </h3>
+  <p class="comment__date">
+    {% if include.index %}<a href="#comment{{ include.index }}">#</a> {% endif
+    %} {% if include.date %}{{ include.date }}{% endif %}
+  </p>
+  {{ include.message }}
 </article>
 {% endraw %}
 ```
@@ -209,32 +212,27 @@ Then I created an include file that will load all the comments for a given post.
 {% raw %}
 <!-- _includes/blog/comments.html -->
 <section class="comments">
-    {% capture post_slug %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}{% endcapture %}
-    
-    <hr class="comments__separator">
-    <h2 class="comments__title">Comments</h2>
+  {% capture post_slug %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title |
+  slugify }}{% endcapture %}
 
-    {% if site.data.comments[post_slug] %}
-        {% assign comments = site.data.comments[post_slug] | sort %}
-        
-        {% for comment in comments %}
-            {% assign hash = comment[1].hash %}
-            {% assign name = comment[1].name %}
-            {% assign url = comment[1].url %}
-            {% assign date = comment[1].date %}
-            {% assign message = comment[1].message %}
+  <hr class="comments__separator" />
+  <h2 class="comments__title">Comments</h2>
 
-            {% include blog/comment.html index=forloop.index hash=hash name=name url=url date=date message=message %}
-        {% endfor %}
-    {% endif %}
+  {% if site.data.comments[post_slug] %} {% assign comments =
+  site.data.comments[post_slug] | sort %} {% for comment in comments %} {%
+  assign hash = comment[1].hash %} {% assign name = comment[1].name %} {% assign
+  url = comment[1].url %} {% assign date = comment[1].date %} {% assign message
+  = comment[1].message %} {% include blog/comment.html index=forloop.index
+  hash=hash name=name url=url date=date message=message %} {% endfor %} {% endif
+  %}
 
-    <p class="comments__description">Leave a comment</p>
+  <p class="comments__description">Leave a comment</p>
 
-    {% include blog/newComment.html %}
+  {% include blog/newComment.html %}
 </section>
 
 <script type="text/template" id="template--new-comment">
-    {% include blog/comment.html hash="@hash" name="@name" url="@url" date="@date" message="@message" %}
+  {% include blog/comment.html hash="@hash" name="@name" url="@url" date="@date" message="@message" %}
 </script>
 {% endraw %}
 ```
@@ -248,15 +246,29 @@ The form used to add new comments is inside `newComment.html`, which we included
 ```html
 {% raw %}
 <!-- _includes/blog/newComment.html -->
-<form id="comments-form" class="comments__new" action="https://aws1.bouc.as/jekyll-discuss/comments" method="post">
-    <input type="hidden" name="post" value="{{ post_slug }}">
-    <input type="text" name="company" class="honey">
-    <input type="text" name="name" placeholder="Name" required/>
-    <input type="email" name="email" placeholder="Email address (will not be public)" required/>
-    <input type="url" name="url" placeholder="Website (optional)"/>
-    <textarea rows="10" name="message" placeholder="Comment" required></textarea>
-    <span>You can use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> in your comment.</span>
-    <input type="submit" value="Send" />
+<form
+  id="comments-form"
+  class="comments__new"
+  action="https://aws1.bouc.as/jekyll-discuss/comments"
+  method="post"
+>
+  <input type="hidden" name="post" value="{{ post_slug }}" />
+  <input type="text" name="company" class="honey" />
+  <input type="text" name="name" placeholder="Name" required />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email address (will not be public)"
+    required
+  />
+  <input type="url" name="url" placeholder="Website (optional)" />
+  <textarea rows="10" name="message" placeholder="Comment" required></textarea>
+  <span
+    >You can use
+    <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> in
+    your comment.</span
+  >
+  <input type="submit" value="Send" />
 </form>
 {% endraw %}
 ```
@@ -268,26 +280,41 @@ A solution for this is to use JavaScript to stop a page reload and to append a f
 So the first step is to prevent the default behaviour of the form submit and send the information via Ajax instead. Please note that since you'll be submitting the form to an external recipient, you'll need to [enable CORS on the server](http://enable-cors.org/server.html) or browsers will block the cross-domain Ajax request.
 
 ```javascript
-$('#comments-form').submit(function () {
-    var url = $(this).attr('action');
-    var data = $(this).serialize();
+$("#comments-form").submit(function() {
+  var url = $(this).attr("action");
+  var data = $(this).serialize();
 
-    var formName = $(this).find('[name="name"]').val().trim();
-    var formUrl = $(this).find('[name="url"]').val().trim();
-    var formEmail = $(this).find('[name="email"]').val().trim();
+  var formName = $(this)
+    .find('[name="name"]')
+    .val()
+    .trim();
+  var formUrl = $(this)
+    .find('[name="url"]')
+    .val()
+    .trim();
+  var formEmail = $(this)
+    .find('[name="email"]')
+    .val()
+    .trim();
 
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: data,
-        success: function (data) {
-            var parsedData = JSON.parse(data);
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: data,
+    success: function(data) {
+      var parsedData = JSON.parse(data);
 
-            blog.addComment(parsedData.hash, parsedData.date, formName, formUrl, parsedData.message);
-        }
-    }); 
+      blog.addComment(
+        parsedData.hash,
+        parsedData.date,
+        formName,
+        formUrl,
+        parsedData.message
+      );
+    }
+  });
 
-    return false;
+  return false;
 });
 ```
 

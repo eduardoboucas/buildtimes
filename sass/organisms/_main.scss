@@ -1,8 +1,10 @@
 .main {
 	@include transition(transform opacity);
 
+	flex: 1 0 auto;
 	margin-top: $post-vertical-rythm;
 	overflow: hidden;
+	width: 100%;
 }
 
 .search-toggle:checked ~ .main,

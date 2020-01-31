@@ -1,8 +1,0 @@
-_id: 74edf5a0-aa5a-11e7-aa19-e5ac3cfee067
-_parent: 2014-12-07-including-and-managing-images-in-jekyll
-name: bruce
-email: 4808bb8e569d581000bcb3e4497b9921
-url: 'http://bruc2kim.iptime.org'
-address: ''
-message: "This is what I am looking for!!\r\n\r\nOne issue is that\r\n* No image shown if the title of post is not the same as the filename of the post.\r\n\r\nI fixed this with tweaking the relative path as follow:\r\n{% capture imagePath %}{{ page.path | slugify | remove: \"posts-\" | remove: \"-md\"}}/{{ include.name }}{% endcapture %}"
-date: 1507269114

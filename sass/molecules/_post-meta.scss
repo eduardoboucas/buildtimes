@@ -1,31 +1,27 @@
 .post-meta {
-	font-family: $font-family-tertiary;
-	font-size: 14px;
+  font-family: $font-family-primary;
+  font-size: 12px;
+  padding: 5px 0;
+  text-transform: uppercase;
+
+  @include media(">=medium") {
+    border-width: 1px 0;
+    border-color: $colour-primary;
+    border-style: solid;
+    text-align: center;
+    margin-top: $post-vertical-rythm * 2;
+  }
 }
 
 .post-meta--emphasis {
-	@include constrain($post-body-max-width);
+  @include constrain($post-body-max-width);
 
-	padding: 10px 0;
-	font-family: $font-family-primary;
-	font-size: 19px;
-	font-style: italic;
-	line-height: 1.3;
+  padding: 10px 0;
+  font-family: $font-family-primary;
+  font-size: 16px;
+  line-height: 1.3;
 
-	a {
-		@include link(true);
-	}
-
-	@include media('>=medium') {
-		border-width: 1px 0 1px 0;
-		border-color: $colour-primary;
-		border-style: solid;
-		text-align: center;
-		margin-top: $post-vertical-rythm * 1.2;
-	}
-}
-
-.post-meta__room {
-	display: inline-block;
-	margin-bottom: 10px;
+  a {
+    @include link(true);
+  }
 }

@@ -1,11 +1,12 @@
 ---
 permalink: "/blog/{{ page.date | date: '%Y/%m/%d' }}/here-s-a-new-website-right-off-the-press.html"
 layout: post
-title:  "Here's a new website right off the press"
+title: "Here's a new website right off the press"
 categories: blog
 tags:
-- blog
+  - blog
 ---
+
 I finally got around to dedicate some love and attention to my site, in much need of a redesign. Its first iteration consisted of a sequence of 3 background videos depicting a guy walking around and sitting on a chair as users navigated the pages. It was published over two years ago and it reflected who I was at the time — a creative developer fascinated by the cutting-edge front-end technologies capable of creating unique visual experiences on the web. In its turn, this new iteration reflects my path since then and how it shaped me along the way.<!--more-->
 
 Incidentally, my career shifted towards working with publishing companies — first at [Monocle](http://monocle.com), then [Time Inc.](http://timeincuk.com) and now with different projects at [DADI+](https://dadi.co). That experience made me more sensible to the fact that content is ultimately what matters and what people come back for, much more than any (nonetheless cool) gimmicks and tricks that front-end developers pull off.
@@ -18,7 +19,7 @@ The first thing that catches your eye when you hold a newspaper is the big typog
 
 Simply taking a `h1` and setting the font to a huge size won't do the trick — variable content and viewport dimensions mean that the end result will almost always contain undesired spacing, widows and orphans, far from the clean look of a newspaper.
 
-{% include helpers/image.html, name="headlines.png", caption="Single h1 element VS. one element per line" %}
+{% include helpers/image.html name:"headlines.png" caption:"Single h1 element VS. one element per line" %}
 
 To achieve this effect I would have to separate each line of the title into its own separate element and size it proportionally, based on the amount of space it naturally takes compared to the size of its container. My plan was:
 
@@ -29,9 +30,15 @@ To achieve this effect I would have to separate each line of the title into its 
 ```html
 <!-- I was thinking something along these lines -->
 <h1 class="post__title feature-title">
-  <span class="feature-title__part" style="font-size: 239%;">Viewport sized</span>
-  <span class="feature-title__part" style="font-size: 135%;">typography with minimum</span>
-  <span class="feature-title__part" style="font-size: 187%;">and maximum sizes</span>
+  <span class="feature-title__part" style="font-size: 239%;"
+    >Viewport sized</span
+  >
+  <span class="feature-title__part" style="font-size: 135%;"
+    >typography with minimum</span
+  >
+  <span class="feature-title__part" style="font-size: 187%;"
+    >and maximum sizes</span
+  >
 </h1>
 ```
 
@@ -51,21 +58,23 @@ Eventually, I resorted to doing this calculation on the client, with JavaScript.
   but it's absolutely *not* essential. 
 */
 function adjustFeatureWidth() {
-  var $feature = $('.feature-title');
+  var $feature = $(".feature-title");
   var containerWidth = $feature.parent().width();
 
-  $feature.children('.feature-title__part').each(function () {
-    $(this).attr('style', '').css({
-      'display': 'inline-block',
-      'opacity': 0
-    });
+  $feature.children(".feature-title__part").each(function() {
+    $(this)
+      .attr("style", "")
+      .css({
+        display: "inline-block",
+        opacity: 0
+      });
 
-    var fontSize = Math.floor(containerWidth / $(this).width() * 100);
+    var fontSize = Math.floor((containerWidth / $(this).width()) * 100);
 
     $(this).css({
-      'font-size': fontSize + '%',
-      'display': 'block',
-      'opacity': 1
+      "font-size": fontSize + "%",
+      display: "block",
+      opacity: 1
     });
   });
 }
@@ -79,10 +88,18 @@ To keep the markup meaningful and accessible, I added a copy of the full title t
 
 ```html
 <h1 class="post__title feature-title">
-  <span class="feature-title__full">Viewport sized typography with minimum and maximum sizes</span>
-  <span aria-hidden="true" class="feature-title__part" style="font-size: 239%;">Viewport sized</span>
-  <span aria-hidden="true" class="feature-title__part" style="font-size: 135%;">typography with minimum</span>
-  <span aria-hidden="true" class="feature-title__part" style="font-size: 187%;">and maximum sizes</span>
+  <span class="feature-title__full"
+    >Viewport sized typography with minimum and maximum sizes</span
+  >
+  <span aria-hidden="true" class="feature-title__part" style="font-size: 239%;"
+    >Viewport sized</span
+  >
+  <span aria-hidden="true" class="feature-title__part" style="font-size: 135%;"
+    >typography with minimum</span
+  >
+  <span aria-hidden="true" class="feature-title__part" style="font-size: 187%;"
+    >and maximum sizes</span
+  >
 </h1>
 ```
 
@@ -93,4 +110,3 @@ The Liquid partial used to break the title into separate elements can be found [
 If you're interested in print layouts on the web, there's a [piece by Chris Coyier](https://css-tricks.com/creating-web-type-lockup/) on web type lockup that is definitely worth checking out. He also had a go at [a few implementations](https://css-tricks.com/print-magazine-layouts-converted-to-web-layouts/) of print-inspired layouts himself.
 
 Now with the new design done and dusted, I can finally focus on writing regularly to keep this digital newspaper blossoming with fresh words. Now watch me, as I fail miserably.<!--tomb-->
-

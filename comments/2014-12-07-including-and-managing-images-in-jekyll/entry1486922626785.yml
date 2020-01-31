@@ -1,8 +1,0 @@
-_id: 9905d190-f14d-11e6-97ec-e952498b19ef
-_parent: 2014-12-07-including-and-managing-images-in-jekyll
-name: Harry
-email: 9999a35a093355570204e460eba5d7ec
-url: ''
-address: ''
-message: "It is obvious that the images and other binary resources must lie with the main document in one folder. \r\n\r\n```\r\n_posts/\r\n  2000-01-01-article/\r\n    2000-01-01-article.md\r\n    image.png\r\n    document.pdf\r\n```\r\n\r\nBut no! Jekyll all about simplicity https://github.com/jekyll/jekyll/issues/881. Why do we need a convenient and simple structure of the documents? Better we will tinker with a separate directory. But it's would more convenient for developers."
-date: 1486922626

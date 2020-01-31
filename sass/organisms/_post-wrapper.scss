@@ -1,11 +1,9 @@
 .post-wrapper {
-	display: inline-block;
-
-	//@include media('>=medium') {
-		padding: 5px;
-	//}
+  border-left: 1px solid black;
+  display: inline-block;
+  margin-left: -1px;
 }
 
 .post-wrapper--block {
-	display: block;
+  display: block;
 }

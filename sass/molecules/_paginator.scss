@@ -1,25 +1,25 @@
 .paginator {
-	@include constrain($layout-max-width, true);
+  @include constrain($layout-max-width, true);
 }
 
 .paginator__inner {
-	position: relative;
-	text-align: center;
-	margin-bottom: $post-vertical-rythm;
+  position: relative;
+  text-align: center;
+  margin-bottom: $post-vertical-rythm;
 
-	&:before {
-		content: ' ';
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 100%;
-		border-bottom: 1px solid black;
-		z-index: -1;
-	}
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+    z-index: -1;
+  }
 }
 
 .paginator__button-wrapper {
-	display: inline-block;
-	padding: 0 10px;
-	background-color: $colour-background;
+  display: inline-block;
+  padding: 0 10px;
+  background-color: $colour-background;
 }

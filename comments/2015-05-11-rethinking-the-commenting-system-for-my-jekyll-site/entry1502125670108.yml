@@ -1,9 +1,0 @@
-_id: f0f85e20-7b92-11e7-b1ac-353e76822851
-_parent: 2015-05-11-rethinking-the-commenting-system-for-my-jekyll-site
-name: Sunil
-email: 578e837be3410b9d07eb5e96538fcc84
-url: ''
-address: ''
-message: "Thanks buddy , but I am facing issue sending the ajax request to different domain in this case, I get error as \"No 'Access-Control-Allow-Origin' header is present on the requested resource.\" as browser blocks you from sending ajax request to different domain. \r\n\r\nAs I checked your code you are not using ajax, so I need to now change it to as you used it"
-timestamp: 1502125670
-date: 1502125670

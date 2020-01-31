@@ -1,8 +1,0 @@
-_id: 78718990-de0c-11e7-a0c1-7de20d8f0c32
-_parent: 2014-12-07-including-and-managing-images-in-jekyll
-name: Jack
-email: 287de6c6c6b38b1f34963b4b126f4a63
-url: 'https://delapanpx.github.io'
-address: ''
-message: "Thank you Eduardo,\r\n\r\nBut, unfortunately, my raw html looks like wrapping in <code>, but thanks to @Danny, it fixed by wrapping all code <figure> into <div>."
-date: 1512953080

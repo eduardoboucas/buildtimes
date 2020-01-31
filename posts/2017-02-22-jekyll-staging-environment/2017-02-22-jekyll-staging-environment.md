@@ -3,14 +3,15 @@ permalink: "/blog/{{ page.date | date: '%Y/%m/%d' }}/jekyll-staging-environment.
 layout: post
 title: "Creating a staging environment for Jekyll"
 tags:
-- blog
-- jekyll
-- preview
-- staging
-- environment
-- netlify
+  - blog
+  - jekyll
+  - preview
+  - staging
+  - environment
+  - netlify
 audio: /assets/audio/2017-02-22-jekyll-staging-environment.mp3
 ---
+
 A staging or pre-production environment is a testing infrastructure that replicates as best as possible the setup of a live site. In the context of a Jekyll site, it can be used to share a new post or feature with a selected group of people before a roll out to the general public. In this post, I'll show you how I created one and how I make use of it.<!--more-->
 
 ## Git workflow
@@ -24,7 +25,7 @@ For a staging environment, we basically want to duplicate this infrastructure so
 1. Create a pull request from staging to live to propagate the changes
 1. Live site is regenerated, live URL reflects the new state
 
-To make this work with GitHub Pages alone, we'd need two repositories, since you can't have two sites being served from a single repository. But unless one repository is a fork from the other, which means having two GitHub accounts or using an *organisation*, you can't create a pull request between them.
+To make this work with GitHub Pages alone, we'd need two repositories, since you can't have two sites being served from a single repository. But unless one repository is a fork from the other, which means having two GitHub accounts or using an _organisation_, you can't create a pull request between them.
 
 Instead, I used [Netlify](https://netlify.com) to serve my staging site from the `dev` branch of my existing repository — I've got GitHub Pages serving `eduardoboucas.com` from the `master` branch and Netlify serving `dev.eduardoboucas.com` from the `dev` branch.
 
@@ -42,7 +43,7 @@ git push origin dev
 
 To start using Netlify, go to [their website](https://netlify.com) and sign up with your GitHub account (it's [free for open-source projects](https://www.netlify.com/pricing/)). Click on `Add a new project`, choose GitHub and select the repository that contains your site.
 
-{% include helpers/image.html, name="netlify1.png", caption="Netlify: Configuring the repository" %}
+{% include helpers/image.html name:"netlify1.png" caption:"Netlify: Configuring the repository" %}
 
 In the `Basic Settings` tab, select the staging branch you chose previously (e.g. `dev`). For a Jekyll installation, the default publish directory should be `_site` and the build command `jekyll build`. In the `Advanced Settings` tab, add an environment variable called `JEKYLL_ENV` with the value `stage` — this will be used to inform Jekyll of the environment the site is running on.
 
@@ -50,7 +51,7 @@ Next, click on `Build your site` and give it a few seconds. When the build proce
 
 You'll be attributed a random name, like `cartoonist-foreground-47121`, which you can change in the `Settings` panel. You can also define a custom domain on this page, which you'll need to configure the DNS for. If you set the name of your site to `dev-example-com`, you need a CNAME pointing to `dev-example-com.netlify.com`.
 
-{% include helpers/image.html, name="netlify2.png", caption="Netlify: The Settings panel" %}
+{% include helpers/image.html name:"netlify2.png" caption:"Netlify: The Settings panel" %}
 
 ## Configuring Jekyll
 
@@ -60,7 +61,7 @@ For example, we don't want the staging site to be indexed by search engines.
 
 ```html
 {% raw %}{% if jekyll.environment == 'stage'
-  <meta name="robots" content="noindex">
+<meta name="robots" content="noindex" />
 {% endif %}{% endraw %}
 ```
 
@@ -68,11 +69,12 @@ You can even add a banner to the top of every page, warning visitors that they'r
 
 ```html
 {% raw %}{% if jekyll.environment == 'stage'
-  <p class="banner">
-    <a href="https://eduardoboucas.com">
-      This is a development version of the site. Click here to see the live content.
-    </a>
-  </p>
+<p class="banner">
+  <a href="https://eduardoboucas.com">
+    This is a development version of the site. Click here to see the live
+    content.
+  </a>
+</p>
 {% endif %}{% endraw %}
 ```
 

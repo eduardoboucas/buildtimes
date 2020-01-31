@@ -1,87 +1,10 @@
-@include media-context(('masthead-expand': 930px)) {
-	.masthead-title {
-		font-family: $font-family-brand;
-		font-weight: $font-weight-ultra-bold;
-		font-size: 100px;
-		margin: 30px 0 20px 0;
+.masthead-title {
+  font-family: $font-family-brand;
+  font-weight: $font-weight-ultra-bold;
+  font-size: 60px;
+  margin: 30px 0 20px 0;
 
-		@include media('>=masthead-expand') {
-			&:hover {
-				.masthead-title__part {
-					max-width: 500px;
-					transition-delay: 2s;
-				}
-			}			
-		}
-	}
-
-	.masthead-title__part {
-		display: inline-block;
-		vertical-align: bottom;
-		max-width: 0;
-		overflow: hidden;
-		transition: all 0.2s ease-out 0s;
-	}
-
-	.masthead-title__extension {
-		position: relative;
-		visibility: hidden;
-		overflow: visible;
-
-		i {
-			background-color: $colour-background;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			text-align: left;
-			visibility: hidden;
-		}
-
-		@include media('>=masthead-expand') {
-			.masthead-title:hover & {
-				padding-right: 20px;
-				//overflow: visible;
-				visibility: visible;
-				transition: all 0.1s ease-out 2s;
-
-				i {
-					animation-name: extension;
-					animation-duration: 0.5s;
-					animation-delay: 2s;
-
-					&:nth-child(2) {
-						animation-delay: 2.5s;
-					}
-
-					&:nth-child(3) {
-						animation-delay: 3s;
-					}
-
-					&:nth-child(4) {
-						animation-delay: 3.5s;
-					}
-
-					&:nth-child(5) {
-						animation-delay: 4s;
-					}
-
-					&:nth-child(6) {
-						animation-delay: 4.5s;
-					}
-				}
-			}
-		}
-	}
-
-	@keyframes extension {
-		from {
-			visibility: hidden;
-		}
-
-		to {
-			visibility: visible;
-		}
-	}
+  @include media(">=medium") {
+    font-size: 100px;
+  }
 }

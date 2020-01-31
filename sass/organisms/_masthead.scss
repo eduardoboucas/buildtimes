@@ -4,5 +4,7 @@
 	background-color: $colour-background;
 	text-align: center;
 	padding: 0 $layout-side-padding;
-  overflow: hidden;
+	overflow: hidden;
+	width: 100%;
+	flex-shrink: 0;
 }

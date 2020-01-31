@@ -1,19 +1,20 @@
 ---
 permalink: "/blog/{{ page.date | date: '%Y/%m/%d' }}/static-api-generator.html"
 layout: post
-title:  "Static API generator"
+title: "Static API generator"
 tags:
-- blog
-- static
-- api
-- jam
+  - blog
+  - static
+  - api
+  - jam
 external-url: https://css-tricks.com/creating-static-api-repository/
 external-name: CSS-Tricks
 external-date: 2017-09-21
 ---
+
 When I first started building websites, the proposition was quite basic: take content, which may or may not be stored in some form of database, and deliver it to people's browsers as HTML pages. Over the years, countless products used that simple model to offer all-in-one solutions for content management and delivery on the web.
 
-Fast-forward a decade or so and developers are presented with a very different reality. With such a vast landscape of devices consuming digital content, it's now imperative to consider how content can be delivered not only to web browsers, but also to native mobile applications, *IoT* devices, and other mediums yet to come.<!--more-->
+Fast-forward a decade or so and developers are presented with a very different reality. With such a vast landscape of devices consuming digital content, it's now imperative to consider how content can be delivered not only to web browsers, but also to native mobile applications, _IoT_ devices, and other mediums yet to come.<!--more-->
 
 Even within the realms of the web browser, things have also changed: client-side applications are becoming more and more ubiquitous, with challenges to content delivery that didn't exist in traditional server-rendered pages.
 
@@ -115,7 +116,7 @@ This results on a 1-to-1 mapping between source and output files. If we now serv
   "revenue": 773328629,
   "runtime": 121,
   "tagline": "All heroes start somewhere.",
-  "title": "Guardians of the Galaxy"
+  "title": "Guardians of the Galaxy",
 }
 ```
 
@@ -126,9 +127,9 @@ With consumers now able to consume entries in the best-suited format, let's look
 The static API generator can generate this by visiting all subdirectories on the level being used to aggregate entries, and recursively saving their sub-trees to files placed at the root of said subdirectories. This would generate endpoints like `/english/action.json`, which would allow consumers to list all action movies in English, or `/english.json` to get all English movies.
 
 ```javascript
-{  
-   "results": [  
-      {  
+{
+   "results": [
+      {
          "budget": 150000000,
          "website": "http://www.thegreatwallmovie.com/",
          "tmdbID": 311324,
@@ -139,7 +140,7 @@ The static API generator can generate this by visiting all subdirectories on the
          "tagline": "1700 years to build. 5500 miles long. What were they trying to keep out?",
          "title": "The Great Wall"
       },
-      {  
+      {
          "budget": 58000000,
          "website": "http://www.foxmovies.com/movies/deadpool",
          "tmdbID": 293660,
@@ -160,16 +161,16 @@ We can make this possible by creating a snapshot of the data tree and manipulati
 
 ### Pagination
 
-Just like with traditional APIs, it's important to have some control over the number of entries added to an endpoint — as our movie data grows, an endpoint listing all English movies would probably have thousands of entries, making the payload extremely large and consequently slow and expensive to transmit. 
+Just like with traditional APIs, it's important to have some control over the number of entries added to an endpoint — as our movie data grows, an endpoint listing all English movies would probably have thousands of entries, making the payload extremely large and consequently slow and expensive to transmit.
 
 To fix that, we can define the maximum number of entries an endpoint can have, and every time the static API generator is about to write entries to a file, it divides them into batches and saves them to multiple files. If there are too many action movies in English to fit in `/english/action.json` we'd have `/english/action-2.json` and so on.
 
 For easier navigation, we can add a metadata block informing consumers of the total number of entries and pages, as well as the URL of the previous and next pages when applicable.
 
 ```javascript
-{  
-   "results": [  
-      {  
+{
+   "results": [
+      {
          "budget": 150000000,
          "website": "http://www.thegreatwallmovie.com/",
          "tmdbID": 311324,
@@ -180,7 +181,7 @@ For easier navigation, we can add a metadata block informing consumers of the to
          "tagline": "1700 years to build. 5500 miles long. What were they trying to keep out?",
          "title": "The Great Wall"
       },
-      {  
+      {
          "budget": 58000000,
          "website": "http://www.foxmovies.com/movies/deadpool",
          "tmdbID": 293660,
@@ -192,7 +193,7 @@ For easier navigation, we can add a metadata block informing consumers of the to
          "title": "Deadpool"
       }
    ],
-   "metadata": {  
+   "metadata": {
       "itemsPerPage": 2,
       "pages": 3,
       "totalItems": 6,
@@ -220,11 +221,11 @@ npm install static-api-generator --save
 The next step is to load the generator module and create an API. Start a blank file called `server.js` and add the following.
 
 ```javascript
-const API = require('static-api-generator')
+const API = require("static-api-generator");
 const moviesApi = new API({
-  blueprint: 'source/:language/:genre/:year/:movie',
-  outputPath: 'output'
-})
+  blueprint: "source/:language/:genre/:year/:movie",
+  outputPath: "output"
+});
 ```
 
 In the example above we start by defining the API blueprint, which is essentially naming the various levels so that the generator knows whether a directory represents a language or a genre just by looking at its depth. We also specify the directory where the generated files will be written to.
@@ -233,25 +234,25 @@ Next, we can start creating endpoints. For something basic, we can generate an e
 
 ```javascript
 moviesApi.generate({
-  endpoints: ['movie']
-})
+  endpoints: ["movie"]
+});
 ```
 
 We can aggregate data at any level. For example, we can generate additional endpoints for genres, like <code>/english/action.json</code>.
 
 ```javascript
 moviesApi.generate({
-  endpoints: ['genre', 'movie']
-})
+  endpoints: ["genre", "movie"]
+});
 ```
 
 To aggregate entries from multiple diverging paths of the same parent, like all action movies regardless of their language, we can specify a new root for the data tree. This will give us endpoints like <code>/action.json</code>.
 
 ```javascript
 moviesApi.generate({
-  endpoints: ['genre', 'movie'],
-  root: 'genre'
-})
+  endpoints: ["genre", "movie"],
+  root: "genre"
+});
 ```
 
 By default, an endpoint for a given level will include information about all its sub-levels — for example, an endpoint for a genre will include information about languages, years and movies. But we can change that behavior and specify which levels to include and which ones to bypass.
@@ -260,21 +261,21 @@ The following will generate endpoints for genres with information about language
 
 ```javascript
 moviesApi.generate({
-  endpoints: ['genre'],
-  levels: ['language', 'movie'],
-  root: 'genre'
-})
+  endpoints: ["genre"],
+  levels: ["language", "movie"],
+  root: "genre"
+});
 ```
 
 Finally, type `npm start` to generate the API and watch the files being written to the output directory. Your new API is ready to serve - enjoy!
 
 ## Deployment
 
-At this point, this API consists of a bunch of flat files on a local disk. How do we get it live? And how do we make the generation process described above part of the content management flow? Surely we can't ask editors to manually run this tool every time they want to make a change to the dataset. 
+At this point, this API consists of a bunch of flat files on a local disk. How do we get it live? And how do we make the generation process described above part of the content management flow? Surely we can't ask editors to manually run this tool every time they want to make a change to the dataset.
 
 ### GitHub Pages + Travis CI
 
-If you're using a GitHub repository to host the data files, then [GitHub Pages](https://pages.github.com/) is a perfect contender to serve them. It works by taking all the files committed to a certain branch and making them accessible on a public URL, so if you take the API generated above and push the files to a `gh-pages` branch, you can access your API on `http://YOUR-USERNAME.github.io/english/action/2016/deadpool.json`. 
+If you're using a GitHub repository to host the data files, then [GitHub Pages](https://pages.github.com/) is a perfect contender to serve them. It works by taking all the files committed to a certain branch and making them accessible on a public URL, so if you take the API generated above and push the files to a `gh-pages` branch, you can access your API on `http://YOUR-USERNAME.github.io/english/action/2016/deadpool.json`.
 
 We can automate the process with a CI tool, like Travis. It can listen for changes on the branch where the source files will be kept (e.g. `master`), run the generator script and push the new set of files to `gh-pages`. This means that the API will automatically pick up any change to the dataset within a matter of seconds – not bad for a static API!
 
@@ -303,10 +304,10 @@ And that's it. To see if it works, commit a new file to the `master` branch and 
 
 You can check out [the demo repository](https://github.com/eduardoboucas/movies-api) for my Movies API and see some of the endpoints in action:
 
-- [Movie endpoint (Deadpool)](https://eduardoboucas.com/movies-api/english/action/2016/deadpool.json)
-- [List of genres with languages and years](https://eduardoboucas.com/movies-api/genres.json)
-- [List of languages and years by genre (Action)](https://eduardoboucas.com/movies-api/action.json)
-- [Full list of languages with genres, years and movies](https://eduardoboucas.com/movies-api/languages.json)
+- [Movie endpoint (Deadpool)](https://eduardoboucas.github.io/movies-api/english/action/2016/deadpool.json)
+- [List of genres with languages and years](https://eduardoboucas.github.io/movies-api/genres.json)
+- [List of languages and years by genre (Action)](https://eduardoboucas.github.io/movies-api/action.json)
+- [Full list of languages with genres, years and movies](https://eduardoboucas.github.io/movies-api/languages.json)
 
 ## Going full circle with Staticman
 

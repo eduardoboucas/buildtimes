@@ -1,4 +1,0 @@
-name: "Eduardo Boucas"
-date: 1422524640
-email: 4f8072e22fae3cd98b876df304886bed
-message: "<p>Hi Andrea,</p><p>As with all the other posts on this blog, this was an experiment I made with a piece of technology that I decided to share with everyone. This is not a list of bulletproof solutions ready to use in production.</p><p>Having said that, yes, there is a limit on the number of requests you make to Poole, even though they are soft limits and they will let you know if you&#39;re starting to cross the line, rather than cut you off immediately (as they say on their website). But like you said, if you blog has a lot of traffic, you should be using a more robust/commercial solution anyway (in a lot of fronts, not only in the comments).</p><p>Regarding the absence of nofollow tags, you&#39;re absolutely right. That is indeed missing and can easily be added in the PHP side. I&#39;ll edit the post sometime soon and add that in.</p><p>Thanks for the feedback. Eduardo"

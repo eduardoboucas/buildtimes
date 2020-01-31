@@ -1,8 +1,0 @@
-_id: 97ed0750-453b-11e7-9b6a-af412692599a
-_parent: 2014-12-07-including-and-managing-images-in-jekyll
-name: Danny
-email: d0b2a4fdecbcbd5ebfbbef6359e548df
-url: 'http://dannywhite.is'
-address: ''
-message: "Legend, thank you. One issue:\r\n\r\nThe include displays as raw HTML: wrapped in `<code>` tags. I fixed it by wrapping the include `<figure>` with a `<div>`.\r\n\r\nMight have something to do with [this GitHub issue](https://github.com/jekyll/jekyll/issues/1868)."
-date: 1496150791

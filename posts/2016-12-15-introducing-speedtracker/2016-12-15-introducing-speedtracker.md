@@ -1,17 +1,18 @@
 ---
 permalink: "/blog/{{ page.date | date: '%Y/%m/%d' }}/introducing-speedtracker.html"
 layout: post
-title:  "Introducing SpeedTracker"
+title: "Introducing SpeedTracker"
 tags:
-- blog
-- speedtracker
-- webpagetest
-- api
-- performance
+  - blog
+  - speedtracker
+  - webpagetest
+  - api
+  - performance
 external-url: http://calendar.perfplanet.com/2016/introducing-speedtracker/
 external-name: Performance Calendar
 external-date: 2016-12-15
 ---
+
 As [several reports](https://wpostats.com/) show, it’s possible to correlate poor-performing websites with losses in engagement and revenue, so keeping a close eye on performance is of utmost importance for projects and businesses of all sizes.
 
 To do that, I’m a huge fan and regular user of [WebPageTest](http://www.webpagetest.org/).<!--more--> Being able to test a website on a variety of devices, connection types and physical locations gives engineers priceless information on the perceived performance for users all across the world.
@@ -22,7 +23,7 @@ More importantly than measuring performance at one isolated point in time, I fel
 
 There are a few enterprise solutions that provide this type of monitoring, but the reality is that not every project can afford to allocate a budget for this. In the true spirit of FOSS, I set out to build a tool that everyone can use (and modify) for free. It’s called [SpeedTracker](https://speedtracker.org/).
 
-{% include helpers/image.html, name="speedtracker1.png", caption="Example of a SpeedTracker dashboard (1/2)" %}
+{% include helpers/image.html name:"speedtracker1.png" caption:"Example of a SpeedTracker dashboard (1/2)" %}
 
 ## The plan
 
@@ -34,7 +35,7 @@ Here’s what it offers:
 
 The platform consists of [an API layer](https://github.com/speedtracker/speedtracker-api) that processes test requests, communicates with the WebPageTest API and pushes the results to a GitHub repository, where the [visualisation layer](https://github.com/speedtracker/speedtracker) lives. If you don’t wish to deploy your own API, there is a public instance you can use for free.
 
-{% include helpers/image.html, name="speedtracker2.png", caption="Example of a SpeedTracker dashboard (2/2)" %}
+{% include helpers/image.html name:"speedtracker2.png" caption:"Example of a SpeedTracker dashboard (2/2)" %}
 
 ## Getting started
 
@@ -42,7 +43,7 @@ SpeedTracker runs on top of WebPageTest, so you’ll need to get your hands on a
 
 The next step is to fork the [SpeedTracker dashboard](https://github.com/speedtracker/speedtracker) repository to your own GitHub account or organisation and enable GitHub Pages. This repository you’re about to create will be a key component, as we’ll use it as a data store for all test results, and it’s also where we’ll serve the dashboard website from.
 
-Now, the API needs access to the repository so it can start pushing the results. To avoid requesting access to your GitHub account and ending up with broader permissions than what is necessary, you can simply add the user *speedtracker-bot* as a collaborator to the new repository and then use the [connect tool](https://speedtracker.org/connect) to finalise the connection.
+Now, the API needs access to the repository so it can start pushing the results. To avoid requesting access to your GitHub account and ending up with broader permissions than what is necessary, you can simply add the user _speedtracker-bot_ as a collaborator to the new repository and then use the [connect tool](https://speedtracker.org/connect) to finalise the connection.
 
 With that done, you can start editing the main configuration file ([speedtracker.yml](https://github.com/speedtracker/speedtracker/blob/master/speedtracker.yml)) to enter details like your WebPageTest API key and a chosen passkey that will be used to identify you on every test request. You can also configure notifications (email and Slack) to be sent when a performance budget is overran.
 
@@ -54,7 +55,7 @@ Finally, you can trigger the first test by using [the test tool](https://speedtr
 
 You can see a [demo dashboard](https://demo.speedtracker.org/) tracking the performance of CSS-Tricks.com, which is served from this repository. There is also a [dashboard](https://mdn.speedtracker.org/) tracking Mozilla’s MDN.
 
-{% include helpers/image.html, name="speedtracker3.png", caption="Slack notifications" %}
+{% include helpers/image.html name:"speedtracker3.png" caption:"Slack notifications" %}
 
 My plan will never be to compete with paid enterprise solutions, but to provide a free and modest alternative that brings this type of tooling to people that otherwise wouldn’t have access to it.
 

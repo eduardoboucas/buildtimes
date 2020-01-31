@@ -1,6 +1,0 @@
-name: "Alex"
-date: 1434950520
-email: 32395f2fc9c9e37d224006e9fe8810b7
-message: "<p>Nice idea indeed!
-A little bug report: empty comments are passing through.
-I guess Safari 8 doesn't care much about <code>required</code> form attribute.</p>"

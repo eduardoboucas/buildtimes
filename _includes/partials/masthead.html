@@ -1,28 +1,40 @@
 <header class="masthead constrain">
-	<div class="masthead__wrapper">
-		<a href="/">
-			<h1 class="masthead-title">e<span class="masthead-title__part">duardo</span>b<span class="masthead-title__part">oucas</span>.<div class="masthead-title__part masthead-title__extension"><i aria-hidden>js</i><i aria-hidden>css</i><i aria-hidden>html</i><i aria-hidden>json</i><i aria-hidden>omg</i><span>com</span></div></h1>
-		</a>
-		<div class="masthead-bar">
-			<div class="masthead-bar__face">
-				<div class="masthead-bar__menu">
-					{% include partials/masthead-link.html, link:"", title:"Blog" %}
-					{% include partials/masthead-link.html, link:"video", title:"Video" %}
-					{% include partials/masthead-link.html, link:"about", title:"About" %}
-					{% include partials/masthead-link.html, link:"projects", title:"Projects" %}
-				</div>
-			
-				<label for="search-toggle" class="masthead-bar__open-search-button search-button">
-					<svg class="search-button__icon">
-						<use xlink:href="#icon-search"></use>
-					</svg>
-					<span class="search-button__label">Search</span>
-				</label>
-			</div>
-			<div class="masthead-bar__face">
-  			<input id="search-input" type="text" class="masthead-bar__search-input" placeholder="Search...">
-  			<label for="search-toggle" class="masthead-bar__close-search-button">✕</label>
-  		</div>
-		</div>
-	</div>	
+  <div class="masthead__wrapper">
+    {% if page.url != '/' %}
+    <a href="/">
+      <h1 class="masthead-title">BUILD TIMES</h1>
+    </a>
+    {% else %}
+    <h1 class="masthead-title">BUILD TIMES</h1>
+    {% endif %}
+
+    <div class="masthead-bar">
+      <div class="masthead-bar__face">
+        <div>
+          <span class="masthead-bar__intro">A web development periodical </span>by <a href="/about">Eduardo Bouças</a>
+        </div>
+
+        <label
+          for="search-toggle"
+          class="masthead-bar__open-search-button search-button"
+        >
+          <svg class="search-button__icon">
+            <use xlink:href="#icon-search"></use>
+          </svg>
+          <span class="search-button__label">Search</span>
+        </label>
+      </div>
+      <div class="masthead-bar__face">
+        <input
+          id="search-input"
+          type="text"
+          class="masthead-bar__search-input"
+          placeholder="Type to search (e.g. 'javascript')"
+        />
+        <label for="search-toggle" class="masthead-bar__close-search-button"
+          >✕</label
+        >
+      </div>
+    </div>
+  </div>
 </header>

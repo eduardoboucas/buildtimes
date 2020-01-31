@@ -1,9 +1,0 @@
-name: "Igi Manaloto"
-date: 1435152180
-email: ab9ac2e99572779a03a296c2dfccfdd0
-url: "http://igikorn.com"
-message: "<p>Gave this a try. I've never really used vw/vh units except for this one odd project I was doing...
-This is quite an interesting approach! I'll try this first thing tomorrow.</p>
-<p>Those who are using it, make sure you specify a pixel, percentage, em or rem size beforehand so unsupported or partially browsers (IE cough cough cough cough cough cough) can cope:
-http://caniuse.com/#feat=viewport-units</p>
-<p>So thanks, hope to read more from you!</p>"

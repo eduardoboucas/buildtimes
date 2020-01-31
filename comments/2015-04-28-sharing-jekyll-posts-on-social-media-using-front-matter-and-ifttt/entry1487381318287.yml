@@ -1,8 +1,0 @@
-_id: 927492a0-f579-11e6-9839-f7b8b79f4a11
-_parent: 2015-04-28-sharing-jekyll-posts-on-social-media-using-front-matter-and-ifttt
-name: Nur Andi Setiabudi
-email: 8d27cffdf7fdf83b6fb4f75e6d7f4ece
-url: ''
-address: ''
-message: "Hey Eduardo, this is brilliant !\r\n\r\nBut, is this applicable for only Twitter, Facebook and Linkedin? I tried to make 4 feeds, ie. twitter.xml, facebook.xml, linkedin.xml and googleplus.xml. When I commit new post, googleplus.xml is not be affected.\r\n\r\nIn front matter, I set `share: twitter facebook linkedin googleplus`"
-date: 1487381318

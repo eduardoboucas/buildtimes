@@ -1,30 +1,26 @@
 .search-button {
-	cursor: pointer;
+  cursor: pointer;
 
-	&:hover {
-		.search-button__icon {
-			transform: scale(1.1);
-		}
-	}
+  &:hover {
+    .search-button__icon {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .search-button__icon {
-	@include transition(transform, $transition-short);
+  @include transition(transform, $transition-short);
 
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	transform-origin: center;
-	vertical-align: middle;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  transform-origin: center;
+  vertical-align: middle;
 }
 
 .search-button__label {
-	display: none;
-	text-transform: none;
-	font-size: 14px;
-	vertical-align: middle;
-
-	@include media('>=medium') {
-		display: inline-block;
-	}
+  display: none;
+  text-transform: none;
+  font-size: 14px;
+  vertical-align: middle;
 }
