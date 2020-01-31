@@ -1,6 +1,0 @@
-name: Marcin Goscicki
-email: a80c6946c2885a4c8fce7de7b0c4826b
-url: 'http://goscicki.eu'
-address: ''
-message: "I like this convention but I always add element to the wrapper too, e.g.:\r\n```html\r\n<div class=\"blocky-wrapper\">\r\n  <div class=\"blocky-wrapper__item blocky\">\r\n    ...\r\n  </div>\r\n  <div class=\"blocky-wrapper__item blocky\">\r\n    ...\r\n  </div>\r\n</div>\r\n```\r\n\r\nWhile `.blocky` and `.blocky-wapper__item` share the same node we can simply separate our code, so if we want our `.blocky` to be fully-wide on mobile and 50% wide on larger screens we should set those values to `.block-wrapper__item` and set only really blocky-related values to `.blocky` (as margins, colors, etc + children styles). That simplifies things a lot when it turns out that you need to put your `blocky` inside some narrower page element like `aside`."
-date: 1474287818

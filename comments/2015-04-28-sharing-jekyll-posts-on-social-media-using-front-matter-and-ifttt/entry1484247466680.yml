@@ -1,8 +1,0 @@
-_id: 015cbcd0-d8f9-11e6-b55c-c714fe44c9f5
-_parent: 2015-04-28-sharing-jekyll-posts-on-social-media-using-front-matter-and-ifttt
-name: David Hamilton
-email: c8e341c8d5a26b46fd2f322bd3429e6e
-url: blog.jiffle.net
-address: ''
-message: "Brilliant post - thank you.\r\n\r\nOne small bug - the frontmatter definition for _layouts/social-feed.xml is self-referencial, and caused a sitemap plugin I was using to go into an infinite loop.\r\n\r\nAFAICS, that file doesn't need frontmatter as it works find without it."
-date: 1484247466

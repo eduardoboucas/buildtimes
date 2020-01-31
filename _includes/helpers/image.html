@@ -1,15 +1,17 @@
-{% assign pathNodes = page.inputPath | split: "/" %}
-{% assign fileName = pathNodes[2] %}
-{% assign assetPath = name | prepend: "/" | prepend: fileName | prepend: "/posts/" %}
+{% assign pathNodes = page.inputPath | split: "/" %} {% assign fileName =
+pathNodes[2] %} {% assign assetPath = name | prepend: "/" | prepend: fileName |
+prepend: "/posts/" %}
 
-<figure class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}">
+<figure
+  class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}"
+>
   <img
     class="figure__image"
     onload="this.parentElement.classList += ' figure--loaded'"
     src="{{ assetPath }}"
     alt="{{ caption }}"
     width="{{ width }}"
-  >
+  />
 
   <figcaption class="figure__caption">{{ caption }}</figcaption>
 </figure>

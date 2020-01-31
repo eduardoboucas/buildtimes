@@ -1,5 +1,0 @@
-name: "Leonardo"
-date: 1431451560
-email: 14f5b34a3eee72175a78801dcca5f0db
-message: "<p>Thanks for the include-media project, it's a nice tool for sass dev.  </p>
-<p>One question how would address a custom media query for ipad retina in landscape mode with include-media, that could be re-used  in different parts of a project or different projects</p>"

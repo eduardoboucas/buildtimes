@@ -1,4 +1,0 @@
-name: 'James Powell'
-email: 17ed318ec7168bd426e059259e1792f5
-url: 'https://therocketeers.cr.rs'
-message: "<p>It seems like you use Ajax for getting and displaying the temporary comments. It&#39;s fine if you like Ajax working behind the scene. But a much nicer way to display temporary comments would be to leverage local storage using JavaScript or setting cookies for users with older browsers. I too have a static <a href=\"https://therocketeers.cr.rs\">website</a> and a very similar static comment system. I use Travis CI to build and deploy my website. The comments are directly posted to the Pooleapp and during a rebuild I use a bash script and curl to get the yaml file from poole and include it in my <code>_data</code> folder. I schedule a rebuild at midnight every day only if there are any new comments. </p>\n"

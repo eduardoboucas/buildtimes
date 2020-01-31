@@ -1,6 +1,0 @@
-name: Ivan
-email: 7bd0c3a1779bde0e3fd287ba01cdf56c
-url: ''
-address: ''
-message: "Hi Eduardo. \r\nIn the articles of your blog you are using the same method to post the comments. Is there an article where do you explain how to integrate staticman for every posts? I see that in this [repository](https://github.com/eduardoboucas/eduardoboucas.github.io) is generated a single folder per post (in _data/comments). \r\nBest regards!"
-date: 1471776461

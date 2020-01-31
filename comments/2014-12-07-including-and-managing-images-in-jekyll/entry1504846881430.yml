@@ -1,8 +1,0 @@
-_id: c15965a0-9452-11e7-98b3-2b3edf49c9f4
-_parent: 2014-12-07-including-and-managing-images-in-jekyll
-name: jlo
-email: 47edf7e9d49532cc8f229e2152deb3f4
-url: 'https://jlopezbi.github.io/'
-address: ''
-message: "Thanks for this share! Very useful.\r\nJust noticed that, for my setup (cloned from https://github.com/barryclark/jekyll-now),\r\nI needed to add \".html\" after the file-name to be included:\r\n```\r\n{% include image.html name=\"linkedin-before.png\" caption=\"Sharing my blog on LinkedIn\" %}\r\n```\r\nDunno why, but maybe this will save someone a bit of head-scratching"
-date: 1504846881

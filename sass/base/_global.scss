@@ -3,26 +3,33 @@
 // --------------------------------------------------------------
 
 $breakpoints: (
-    'small': 320px,
-    'medium': 800px,
-    'large': 1280px
+  "small": 320px,
+  "medium": 800px,
+  "large": 1280px
 );
 
 // --------------------------------------------------------------
 // Global rules
 // --------------------------------------------------------------
 
+body,
+html {
+  height: 100%;
+}
+
 body {
-    @include rem(font-size, $font-size-normal);
-    
-    background-color: $colour-background;
-    color: $colour-primary;
-    font-family: $font-family-primary;
-    font-weight: $font-weight-light;
+  @include rem(font-size, $font-size-normal);
+
+  background-color: $colour-background;
+  color: $colour-primary;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-light;
 }
 
 [aria-hidden="true"] {
-    display: none;
+  display: none;
 }
 
 $post-gutter: 50px;
@@ -30,13 +37,9 @@ $post-vertical-rythm: 25px;
 $post-body-max-width: 700px;
 
 @mixin post-title() {
-    font-family: $font-family-primary;
-    font-weight: bold;
-    font-size: 35px;
-
-    @include media('>=medium') {
-        font-size: 45px;
-    }
+  font-family: $font-family-primary;
+  font-weight: bold;
+  font-size: 35px;
 }
 
 // --------------------------------------------------------------

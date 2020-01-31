@@ -1,192 +1,196 @@
 @mixin body-text() {
-	overflow-wrap: break-word;
-	word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 
-	p {
-		margin-bottom: $post-vertical-rythm;
-	}
+  p {
+    margin-bottom: $post-vertical-rythm;
+  }
 
-	strong {
-		font-weight: $font-weight-bold;
-	}
+  pre[class^="language-"] + p {
+    margin-top: $post-vertical-rythm;
+  }
 
-	em {
-		font-style: italic;
-	}
-	
-	ol,
-	ul {
-		margin-bottom: $post-vertical-rythm;
-		list-style-position: inside;
-	}
+  strong {
+    font-weight: $font-weight-bold;
+  }
 
-	ul {
-		list-style-type: disc;
-	}
+  em {
+    font-style: italic;
+  }
 
-	ol {
-		list-style-type: decimal;
-	}
+  ol,
+  ul {
+    margin-bottom: $post-vertical-rythm;
+    list-style-position: inside;
+  }
 
-	li + li {
-		margin-top: $post-vertical-rythm * 0.6;
-	}
+  ul {
+    list-style-type: disc;
+  }
 
-	li code,
-	p code {
-		font-family: $font-family-monospace;
-		background-color: $colour-light-grey;
-		font-size: 0.75em;
-		padding: 5px 8px;
-	}
+  ol {
+    list-style-type: decimal;
+  }
 
-	strike {
-		text-decoration: line-through;		
-	}
+  li + li {
+    margin-top: $post-vertical-rythm * 0.6;
+  }
 
-	// Twitter embed
-	.twitter-tweet {
-		margin: ($post-vertical-rythm * 3) auto !important;
-	}
+  li code,
+  p code {
+    font-family: $font-family-monospace;
+    background-color: $colour-light-grey;
+    font-size: 0.75em;
+    padding: 5px 8px;
+  }
 
-	// CodePen embed
-	.cp_embed_iframe {
-		max-width: 1400px;
-		margin: ($post-vertical-rythm * 3) auto;
-		display: block;
-	}
+  strike {
+    text-decoration: line-through;
+  }
 
-	p,
-	li, {
-		@include constrain($post-body-max-width, true);
+  // Twitter embed
+  .twitter-tweet {
+    margin: ($post-vertical-rythm * 3) auto !important;
+  }
 
-		// Probably wrap in a media query
-		font-size: 20px;
-		line-height: 1.6;
+  // CodePen embed
+  .cp_embed_iframe {
+    max-width: 1400px;
+    margin: ($post-vertical-rythm * 3) auto;
+    display: block;
+  }
 
-		@include media('>=medium') {
-			font-size: 24px;
-		}
-	}
+  p,
+  li {
+    @include constrain($post-body-max-width, true);
 
-	h2 {
-		@include heading2;
-		@include constrain($post-body-max-width, true);
+    // Probably wrap in a media query
+    font-size: 20px;
+    line-height: 1.6;
 
-		margin-top: $post-vertical-rythm * 1.8;
-		margin-bottom: $post-vertical-rythm * 0.6;
-	}
+    @include media(">=medium") {
+      font-size: 24px;
+    }
+  }
 
-	h3 {
-		@include heading3;
-		@include constrain($post-body-max-width, true);
+  h2 {
+    @include heading2;
+    @include constrain($post-body-max-width, true);
 
-		margin-top: $post-vertical-rythm * 1.8;
-		margin-bottom: $post-vertical-rythm * 0.6;
-	}
+    margin-top: $post-vertical-rythm * 1.8;
+    margin-bottom: $post-vertical-rythm * 0.6;
+  }
 
-	a {
-		@include link(true);
-	}
+  h3 {
+    @include heading3;
+    @include constrain($post-body-max-width, true);
 
-	img {
-		display: block;
-		margin: 0 auto;
-		max-width: 100%;
-	}
+    margin-top: $post-vertical-rythm * 1.8;
+    margin-bottom: $post-vertical-rythm * 0.6;
+  }
 
-	.emoji {
-		display: inline;
-	}
+  a {
+    @include link(true);
+  }
 
-	div.highlight,
-	figure.highlight {
-		font-size: 0.5em;
-		margin: ($post-vertical-rythm * 2) 0;
-		padding-left: 10px;
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
 
-		>pre {
-			text-align: center;
+  .emoji {
+    display: inline;
+  }
 
-			>code {
-				display: inline-block;
-				text-align: left;
-				min-width: $post-body-max-width;
-			}
-		}
+  div.highlight,
+  figure.highlight {
+    font-size: 0.5em;
+    margin: ($post-vertical-rythm * 2) 0;
+    padding-left: 10px;
 
-		@include media('>=medium') {
-			font-size: 0.8em;
-			margin: ($post-vertical-rythm * 3) 0;
-			padding-left: 0;
-		}
-	}
+    > pre {
+      text-align: center;
 
-	table {
-		@include constrain($post-body-max-width, true);
+      > code {
+        display: inline-block;
+        text-align: left;
+        min-width: $post-body-max-width;
+      }
+    }
 
-		margin-bottom: $post-vertical-rythm;
+    @include media(">=medium") {
+      font-size: 0.8em;
+      margin: ($post-vertical-rythm * 3) 0;
+      padding-left: 0;
+    }
+  }
 
-		th {
-			font-weight: bold;
-		}
+  table {
+    @include constrain($post-body-max-width, true);
 
-		td,
-		th {
-			background-color: $colour-light-grey;
-			border: 3px solid $colour-background;
-			padding: 10px;
-		}
-	}
+    margin-bottom: $post-vertical-rythm;
 
-	// Pull quote
-	>blockquote {
-		@include constrain($post-body-max-width, true);
+    th {
+      font-weight: bold;
+    }
 
-		>p {
-			font-style: italic;
-			text-align: center;
-			font-size: 32px;
-			border-width: 1px 0;
-			border-color: black;
-			//border-style: solid;
-			margin: ($post-vertical-rythm * 3) 0;
-		}
-	}
+    td,
+    th {
+      background-color: $colour-light-grey;
+      border: 3px solid $colour-background;
+      padding: 10px;
+    }
+  }
 
-	// Citations
-	>blockquote>blockquote {
-		@include constrain($post-body-max-width, true);
+  // Pull quote
+  > blockquote {
+    @include constrain($post-body-max-width, true);
 
-		position: relative;
-		padding: 20px;
-		font-style: italic;
-		margin-top: $post-vertical-rythm * 1.4;
-		margin-bottom: $post-vertical-rythm;
+    > p {
+      font-style: italic;
+      text-align: center;
+      font-size: 32px;
+      border-width: 1px 0;
+      border-color: black;
+      //border-style: solid;
+      margin: ($post-vertical-rythm * 3) 0;
+    }
+  }
 
-		>p {
-			background-color: $colour-light-grey;
-			padding: 0 20px 20px 20px;
-			margin-bottom: 0;
+  // Citations
+  > blockquote > blockquote {
+    @include constrain($post-body-max-width, true);
 
-			&:first-of-type {
-				padding-top: 40px;
+    position: relative;
+    padding: 20px;
+    font-style: italic;
+    margin-top: $post-vertical-rythm * 1.4;
+    margin-bottom: $post-vertical-rythm;
 
-				&:before {
-					content: '“';
-					position: absolute;
-					top: -22px;
-					left: 0;
-					font-size: 160px;
-					font-weight: bold;
-					font-family: $font-family-quotes;
-					line-height: 1em;
-				}				
-			}	
-		}
-	}
+    > p {
+      background-color: $colour-light-grey;
+      padding: 0 20px 20px 20px;
+      margin-bottom: 0;
+
+      &:first-of-type {
+        padding-top: 40px;
+
+        &:before {
+          content: "“";
+          position: absolute;
+          top: -22px;
+          left: 0;
+          font-size: 160px;
+          font-weight: bold;
+          font-family: $font-family-quotes;
+          line-height: 1em;
+        }
+      }
+    }
+  }
 }
 
 .body-text {
-	@include body-text;
+  @include body-text;
 }

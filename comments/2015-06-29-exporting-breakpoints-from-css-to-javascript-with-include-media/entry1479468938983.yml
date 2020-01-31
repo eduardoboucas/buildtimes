@@ -1,6 +1,0 @@
-name: Gaetan
-email: 6495e08e45c5d56a72b7c591a560d99a
-url: ''
-address: ''
-message: "Hey\r\nI use your plugin (include-media-export), but i'ld like to use bootstrap breakpoints.\r\nFor my Scss file, i use : $breakpoints: $grid-breakpoints;\r\nBut for my JS file, i'ld like to use im.greaterThan('lg') instead of im.greaterThan('desktop') for example.\r\n\r\nHave u an idea for that ?\r\nThanks"
-date: 1479468938

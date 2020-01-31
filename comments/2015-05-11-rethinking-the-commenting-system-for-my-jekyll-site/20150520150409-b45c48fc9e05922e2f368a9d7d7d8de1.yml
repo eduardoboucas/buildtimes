@@ -1,7 +1,0 @@
-name: "Les Orchard"
-date: 1432137840
-email: b45c48fc9e05922e2f368a9d7d7d8de1
-url: "http://blog.lmorchard.com"
-message: "<p>Here's another approach: I host my blog entirely on Amazon S3, so I don't have a server with PHP behind it to catch comments. So, I use Disqus. But, when using a 3rd party service like that, I expect it to go away at any time. Luckily, Disqus has an API for fetching all your comments.</p>
-<p>So, what I was doing for awhile was to let comments run on a post for a few months. Then, close commenting and run a script that scooped up all the comments from the API, incorporate those into a section in the original post, and check that into the repository. So, live comments are handled by Disqus, but archived &amp; closed discussions are incorporated into the static site itself.</p>
-<p>Here's some dirty code, FWIW: https://github.com/lmorchard/blog.decafbad.com/blob/master/_bin/archive_disqus_comments.py</p>"

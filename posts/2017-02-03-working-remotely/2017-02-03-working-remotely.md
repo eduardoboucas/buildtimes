@@ -3,28 +3,29 @@ permalink: "/blog/{{ page.date | date: '%Y/%m/%d' }}/working-remotely.html"
 layout: post
 title: "Working remotely"
 tags:
-- blog
-- remote
-- dadi
+  - blog
+  - remote
+  - dadi
 audio: /assets/audio/2017-02-03-working-remotely.mp3
 ---
+
 It's been just over a year since I joined [DADI](https://dadi.tech) and, like everyone else in the company, started working fully remotely. There are still many people that are curious and intrigued by this work style and there are certainly many myths around it; after a year of experiencing it myself, I thought I'd share some of my own views on the matter.<!--more-->
 
 ## The norm and the outlaw
 
-First and foremost, it's important to distinguish between [remote-friendly and remote-first](https://zachholman.com/posts/remote-first/) companies. Any company can suddenly become *remote-friendly* by allowing some of their employees to work outside the office. For a business, this might make sense because a particular role is too difficult (or too expensive) to hire for in a particular country, or it might simply be to attract the best people in the industry regardless of geographical location.
+First and foremost, it's important to distinguish between [remote-friendly and remote-first](https://zachholman.com/posts/remote-first/) companies. Any company can suddenly become _remote-friendly_ by allowing some of their employees to work outside the office. For a business, this might make sense because a particular role is too difficult (or too expensive) to hire for in a particular country, or it might simply be to attract the best people in the industry regardless of geographical location.
 
 > (...) you can’t just bring in remote workers and expect everything to still work the same without adjustments.
 
-But there's a lot more to it than just telling people it's okay to work from home. In an organisation where processes traditionally depend on face-to-face interactions and synchronous communication, you can't just bring in remote workers and expect everything to still work the same without adjustments. *«The remote guy? Erm, he can just dial in...»* is really not how it works.
+But there's a lot more to it than just telling people it's okay to work from home. In an organisation where processes traditionally depend on face-to-face interactions and synchronous communication, you can't just bring in remote workers and expect everything to still work the same without adjustments. _«The remote guy? Erm, he can just dial in...»_ is really not how it works.
 
-Fortunately for me, DADI is an example of a *remote-first* company. Remote work and asynchronous communication is a fundamental part of [the company's identity](https://dadi.tech/careers/), and there's not even a physical office to begin with. Every process and tool used in the company has been chosen with remote workers in mind, so that philosophy has become second nature to everyone involved: directors, engineers, project managers and even clients. You don't feel like an outlaw that's sitting at home whilst everyone else is eating cake and telling jokes at the office.
+Fortunately for me, DADI is an example of a _remote-first_ company. Remote work and asynchronous communication is a fundamental part of [the company's identity](https://dadi.tech/careers/), and there's not even a physical office to begin with. Every process and tool used in the company has been chosen with remote workers in mind, so that philosophy has become second nature to everyone involved: directors, engineers, project managers and even clients. You don't feel like an outlaw that's sitting at home whilst everyone else is eating cake and telling jokes at the office.
 
-{% include helpers/image.html, name="dadi-slack.png", caption="We use Slack a lot (not always for serious stuff)" %}
+{% include helpers/image.html name:"dadi-slack.png" caption:"We use Slack a lot (not always for serious stuff)" %}
 
 ## Working from home
 
-Working remotely means that you can (in theory) work from anywhere. Some people go to co-working spaces, while others like to be in busy environments like a café. Buying food and drink from cafés in London every day is not really compatible with my pocket, so that's a big *no* for me. I like working from home.
+Working remotely means that you can (in theory) work from anywhere. Some people go to co-working spaces, while others like to be in busy environments like a café. Buying food and drink from cafés in London every day is not really compatible with my pocket, so that's a big _no_ for me. I like working from home.
 
 I once worked at a company with a traditional office space where, for some reason, the air conditioning was always set to a **really** cold temperature. Everyone seemed to be cool with that (ha!), but I was really uncomfortable. It may seem like a ridiculous and insignificant thing to even mention, but I had to spend the best part of my day, every single day, in an environment where I felt uncomfortable. I absolutely hated that.
 
@@ -48,7 +49,7 @@ Establishing a healthy routine becomes entirely your responsibility and differen
 
 Part of the beauty of asynchronous/distributed teams is that everyone is able to work whenever they feel most productive, without the constraints of normal office hours. Some people like to start working early, others work better at night. Throw different timezones into the mix and you suddenly have a company with people working 24/7, with some people's work days never overlapping others.
 
-In an office, you know you can just knock at someone's door or go to their desk whenever you need anything: you're there, they're there, everyone is working, otherwise they wouldn't be there. In a distributed team, things are a bit more difficult and it's actually part of *your* job to ensure your peers can enjoy the flexibility they need.
+In an office, you know you can just knock at someone's door or go to their desk whenever you need anything: you're there, they're there, everyone is working, otherwise they wouldn't be there. In a distributed team, things are a bit more difficult and it's actually part of _your_ job to ensure your peers can enjoy the flexibility they need.
 
 Try to understand the routines of the people you work the closest with and avoid contacting them outside their working hours unless you absolutely need to. Avoid sending messages to everyone (e.g. `@channel` in Slack) unless really necessary. If you keep getting messages after you've stopped working, you feel obliged to respond and next thing you know you're working a "double shift". Be strict with the routine you establish for yourself and respect everyone else's.
 

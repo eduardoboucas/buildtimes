@@ -1,17 +1,18 @@
 ---
 permalink: "/blog/{{ page.date | date: '%Y/%m/%d' }}/webpagetest-api.html"
 layout: post
-title:  "How To Use WebPageTest and its API"
-visualTitle:  "How To Use|WebPageTest and its API"
+title: "How To Use WebPageTest and its API"
+visualTitle: "How To Use|WebPageTest and its API"
 tags:
-- blog
-- webpagetest
-- api
-- performance
+  - blog
+  - webpagetest
+  - api
+  - performance
 external-url: https://css-tricks.com/use-webpagetest-api
 external-name: CSS-Tricks
 external-date: 2016-08-26
 ---
+
 While the richness and interactivity of the average website has changed dramatically over the last decade, the same can be said about the expectations of those who consume it. [This page](https://wpostats.com/) has a list of reports that show how businesses were able to establish a direct correlation between the their website's performance and conversion/revenue figures. For example, the engineering team at the Financial Times [conducted a test](http://engineroom.ft.com/2016/04/04/a-faster-ft-com/) which showed that an increase of just one second in load time caused a 4.9% drop in article views.<!--more-->
 
 The underlying cause is pretty simple and it affects projects of all sizes (yep, including yours): users are becoming more demanding, less patient and not tolerant towards slow websites or applications. If your content takes too long to load, people will go somewhere else. Visiting a site that takes ages to open and navigate is a terrible user experience, especially on the dominant mobile environment where immediacy is crucial and battery life is precious.
@@ -38,9 +39,9 @@ When you open the [WebPageTest website](https://www.webpagetest.org/), you'll se
 - Number of tests to run (doing a single run means that the test results are more easily influenced by network or server anomalies, so WebPageTest consider a best practice to run a test multiple times and use the average as a most representative result)
 - Single or repeat view (you can choose whether to load a page once or twice per test; because browser cache is cleared before each test, this effectively means deciding whether you’re only interested in the initial, uncached view, or you want a second time to leverage the browser cache).
 
-{% include helpers/image.html, name="screenshot1.png", caption="Requesting a test on WebPageTest" %}
+{% include helpers/image.html name:"screenshot1.png" caption:"Requesting a test on WebPageTest" %}
 
-For this example, we're testing *https://css-tricks.com* with the default settings: Chrome on a Cable connection from Dulles, VA, performing a single run with first and repeat view, with video capturing enabled.
+For this example, we're testing _https://css-tricks.com_ with the default settings: Chrome on a Cable connection from Dulles, VA, performing a single run with first and repeat view, with video capturing enabled.
 
 After requesting the test, you will enter a waiting period, as the pool of devices is shared by everyone using the public instance of WebPageTest. For this reason, tests take an unpredictable amount of time to complete, depending on the number of people using the devices and the complexity of the test.
 
@@ -58,7 +59,7 @@ The amount of information shown in the test reports can be a bit overwhelming, s
 - **Document Complete:** Set of metrics relative to the time until the browser load event, with Time, Requests and Bytes In representing the load time, number of requests and number of bytes received, respectively
 - **Fully Loaded:** Similar to Document Complete, but the metrics are relative to the time at which WebPageTest determines that the page has fully finished loading content. This is relevant and different from the above, because pages may decide to load additional content after the browser load event
 
-{% include helpers/image.html, name="screenshot2.png", caption="Test results page on WebPageTest" %}
+{% include helpers/image.html name:"screenshot2.png" caption:"Test results page on WebPageTest" %}
 
 The waterfall view is another key piece of the report. It shows a visualisation of the network activity over time, with each horizontal bar representing an HTTP request. The colours in the bars represent the five phases of a request: DNS lookup (teal), initial connection (orange), SSL negotiation (purple), time to first byte (green), and content download (blue).
 
@@ -66,7 +67,7 @@ It also shows vertical lines to mark key events in the lifecycle of the page, su
 
 We requested a video recording as part of the rest, so WebPageTest gives us a set of frames that visually show the page being drawn on the screen over time. We can use this data to generate a filmstrip view or an actual video.
 
-{% include helpers/image.html, name="WebPageTest-video.gif", caption="Video of CSS-Tricks being loaded on WebPageTest" %}
+{% include helpers/image.html name:"WebPageTest-video.gif" caption:"Video of CSS-Tricks being loaded on WebPageTest" %}
 
 ## WebPageTest API
 
@@ -91,8 +92,8 @@ npm install webpagetest --save
 ```
 
 ```javascript
-var WebPageTest = require('WebPageTest')
-var wpt = new WebPageTest('https://www.webpagetest.org/', 'your-api-key')
+var WebPageTest = require("WebPageTest");
+var wpt = new WebPageTest("https://www.webpagetest.org/", "your-api-key");
 ```
 
 The `WebPageTest` constructor takes two parameters:
@@ -108,15 +109,19 @@ We're going to repeat the test we did before, but this time programmatically usi
 - An object containing a list of options to configure the test (see [here](https://github.com/marcelduran/webpagetest-api#options-1) for a list of all available options)
 
 ```javascript
-wpt.runTest('https://css-tricks.com', {
-  connectivity: 'Cable',
-  location: 'Dulles:Chrome',
-  firstViewOnly: false,
-  runs: 1,
-  video: true
-}, function processTestRequest(err, result) {
-  console.log(err || result)
-})
+wpt.runTest(
+  "https://css-tricks.com",
+  {
+    connectivity: "Cable",
+    location: "Dulles:Chrome",
+    firstViewOnly: false,
+    runs: 1,
+    video: true
+  },
+  function processTestRequest(err, result) {
+    console.log(err || result);
+  }
+);
 ```
 
 Remember that requesting a test puts you in a waiting list, so the response you'll get from running the code above is not the actual test result, but more of a receipt that you can use to check on the progress of the test and obtain the results when they're ready.
@@ -140,9 +145,9 @@ Remember that requesting a test puts you in a waiting list, so the response you'
 We're particularly interested in `data.testId`, as it contains a string that uniquely identifies our test. We can pass it to the `getTestStatus` method to check if the test is ready.
 
 ```javascript
-wpt.getTestStatus('160814_W7_960', function processTestStatus(err, result) {
-  console.log(err || result)
-})
+wpt.getTestStatus("160814_W7_960", function processTestStatus(err, result) {
+  console.log(err || result);
+});
 ```
 
 Eventually (depending on how busy the platform is) you'll get a response containing:
@@ -157,9 +162,9 @@ Eventually (depending on how busy the platform is) you'll get a response contain
 At this point, we know that the test results are ready and we can fetch them using `getTestResults`.
 
 ```javascript
-wpt.getTestResults('160814_W7_960', function processTestResult(err, result) {
-  console.log(err || result)
-})
+wpt.getTestResults("160814_W7_960", function processTestResult(err, result) {
+  console.log(err || result);
+});
 ```
 
 This method of getting results involves some manual work on our end, as we need to keep calling `getTestStatus` until we get a `200` response, and only then call `getTestResults`. There are two alternative (and more convenient) ways of doing this:
@@ -172,30 +177,52 @@ The following example (using option 2) is a combination of all the steps we've s
 I'm not going to include the full response here because it's massive (375KB of data!), but you can see it in its entirety [here](https://gist.github.com/eduardoboucas/f30ad56f2b7a8bae07f55e49a987dd5b). Instead, we'll see how we can drill down into it to find some of the metrics we described earlier.
 
 ```javascript
-wpt.runTest('https://css-tricks.com', {
-  connectivity: 'Cable',
-  location: 'Dulles:Chrome',
-  firstViewOnly: false,
-  runs: 1,
-  pollResults: 5,
-  video: true
-}, function processTestResult(err, result) {
-  // First view — use `repeatView` for repeat view
-  console.log('Load time:', result.data.average.firstView.loadTime)
-  console.log('First byte:', result.data.average.firstView.TTFB)
-  console.log('Start render:', result.data.average.firstView.render)
-  console.log('Speed Index:', result.data.average.firstView.SpeedIndex)
-  console.log('DOM elements:', result.data.average.firstView.domElements)
+wpt.runTest(
+  "https://css-tricks.com",
+  {
+    connectivity: "Cable",
+    location: "Dulles:Chrome",
+    firstViewOnly: false,
+    runs: 1,
+    pollResults: 5,
+    video: true
+  },
+  function processTestResult(err, result) {
+    // First view — use `repeatView` for repeat view
+    console.log("Load time:", result.data.average.firstView.loadTime);
+    console.log("First byte:", result.data.average.firstView.TTFB);
+    console.log("Start render:", result.data.average.firstView.render);
+    console.log("Speed Index:", result.data.average.firstView.SpeedIndex);
+    console.log("DOM elements:", result.data.average.firstView.domElements);
 
-  console.log('(Doc complete) Requests:', result.data.average.firstView.requestsDoc)
-  console.log('(Doc complete) Bytes in:', result.data.average.firstView.bytesInDoc)
+    console.log(
+      "(Doc complete) Requests:",
+      result.data.average.firstView.requestsDoc
+    );
+    console.log(
+      "(Doc complete) Bytes in:",
+      result.data.average.firstView.bytesInDoc
+    );
 
-  console.log('(Fully loaded) Time:', result.data.average.firstView.fullyLoaded)
-  console.log('(Fully loaded) Requests:', result.data.average.firstView.requestsFull)
-  console.log('(Fully loaded) Bytes in:', result.data.average.firstView.bytesIn)
+    console.log(
+      "(Fully loaded) Time:",
+      result.data.average.firstView.fullyLoaded
+    );
+    console.log(
+      "(Fully loaded) Requests:",
+      result.data.average.firstView.requestsFull
+    );
+    console.log(
+      "(Fully loaded) Bytes in:",
+      result.data.average.firstView.bytesIn
+    );
 
-  console.log('Waterfall view:', result.data.runs[1].firstView.images.waterfall)
-})
+    console.log(
+      "Waterfall view:",
+      result.data.runs[1].firstView.images.waterfall
+    );
+  }
+);
 ```
 
 ## Custom metrics
@@ -208,23 +235,27 @@ For example, we could be interested in tracking the performance impact caused by
 
 ```javascript
 var customMetrics = [
-  '[iframes]',
+  "[iframes]",
   'return document.getElementsByTagName("iframe").length',
-  '[ads]',
+  "[ads]",
   'return Array.prototype.slice.call(document.getElementsByTagName("a")).filter(function (node) { return node.getAttribute("href").indexOf("ad.doubleclick.net") !== -1 }).length'
-]
+];
 
-wpt.runTest('https://css-tricks.com', {
-  custom: customMetrics.join('\n'),
-  connectivity: 'Cable',
-  location: 'Dulles:Chrome',
-  firstViewOnly: false,
-  runs: 1,
-  pollResults: 5
-}, function processTestResult(err, result) {
-  console.log('Iframes:', result.data.average.firstView.iframes)
-  console.log('Ads:', result.data.average.firstView.ads)
-})
+wpt.runTest(
+  "https://css-tricks.com",
+  {
+    custom: customMetrics.join("\n"),
+    connectivity: "Cable",
+    location: "Dulles:Chrome",
+    firstViewOnly: false,
+    runs: 1,
+    pollResults: 5
+  },
+  function processTestResult(err, result) {
+    console.log("Iframes:", result.data.average.firstView.iframes);
+    console.log("Ads:", result.data.average.firstView.ads);
+  }
+);
 ```
 
 Each metric is defined as a block of JavaScript preceded by an identifier in square brackets, separated by a line break.
@@ -249,27 +280,34 @@ In the example below, we'll create a test that navigates to **https://css-tricks
 
 ```javascript
 var script = wpt.scriptToString([
-  {logData: 0},
-  {navigate: 'https://css-tricks.com'},
-  {setValue: ['id=q', 'flexbox']},
-  {logData: 1},
-  {submitForm: 'id=search-form'},
-  'waitForComplete'
-])
+  { logData: 0 },
+  { navigate: "https://css-tricks.com" },
+  { setValue: ["id=q", "flexbox"] },
+  { logData: 1 },
+  { submitForm: "id=search-form" },
+  "waitForComplete"
+]);
 
-wpt.runTest(script, {
-  location: 'Dulles:Chrome.Cable',
-  firstViewOnly: false,
-  runs: 1,
-  video: true
-}, function (err, result) {
-  console.log('Video frames:', result.data.runs[1].firstView.steps[0].videoFrames)
-})
+wpt.runTest(
+  script,
+  {
+    location: "Dulles:Chrome.Cable",
+    firstViewOnly: false,
+    runs: 1,
+    video: true
+  },
+  function(err, result) {
+    console.log(
+      "Video frames:",
+      result.data.runs[1].firstView.steps[0].videoFrames
+    );
+  }
+);
 ```
 
 ## Single point of failure testing
 
-It's pretty common for websites to rely on third-party sources to deliver key parts of its data, such as fonts or scripts, so it's important to account for the possibility that those services might fail at some point. 
+It's pretty common for websites to rely on third-party sources to deliver key parts of its data, such as fonts or scripts, so it's important to account for the possibility that those services might fail at some point.
 
 This is particularly important when the assets being loaded are render-blocking (i.e. not loaded asynchronously), as trying to load a file from an unavailable source could leave the site hanging for a while until the request times out. The video below shows the effect caused by an outage of the Twitter API on the load times of the Business Insider website.
 
@@ -277,27 +315,31 @@ This is particularly important when the assets being loaded are render-blocking 
 
 To make our tests account for this, it's important to get the failing mode right, as described by Patrick Meenan in [this article](http://blog.patrickmeenan.com/2011/10/testing-for-frontend-spof.html).
 
-Because unavailable services won't typically fail instantly with an error message, setting up a test that tries to load something from *a-host-that-doesnt-exist.com* isn't good enough, because it doesn't accurately reflect what happens in a real scenario.
+Because unavailable services won't typically fail instantly with an error message, setting up a test that tries to load something from _a-host-that-doesnt-exist.com_ isn't good enough, because it doesn't accurately reflect what happens in a real scenario.
 
-Instead, Patrick set up a special server on *blackhole.webpagetest.org*: as the name suggests, it routes any request made to it to absolutely nowhere. If we intercept all the requests made to the host we're trying to test and redirect them to this black hole server, we have a very good simulation of a real failure scenario.
+Instead, Patrick set up a special server on _blackhole.webpagetest.org_: as the name suggests, it routes any request made to it to absolutely nowhere. If we intercept all the requests made to the host we're trying to test and redirect them to this black hole server, we have a very good simulation of a real failure scenario.
 
-The example below shows how we could run a test that simulates a failure in *code.jquery.com*, which many sites use to load jQuery from. We could compare the results obtained with the ones from the normal test to have an idea of the impact this single point of failure would have on the various performance metrics.
+The example below shows how we could run a test that simulates a failure in _code.jquery.com_, which many sites use to load jQuery from. We could compare the results obtained with the ones from the normal test to have an idea of the impact this single point of failure would have on the various performance metrics.
 
 ```javascript
 var script = wpt.scriptToString([
   // Redirecting 'jquery.com' to the black hole server
-  {setDnsName: ['jquery.com', 'blackhole.webpagetest.org']},
-  {navigate: 'https://css-tricks.com'}
-])
+  { setDnsName: ["jquery.com", "blackhole.webpagetest.org"] },
+  { navigate: "https://css-tricks.com" }
+]);
 
-wpt.runTest(script, {
-  location: 'Dulles:Chrome.Cable',
-  firstViewOnly: false,
-  runs: 1,
-  video: true
-}, function (err, result) {
-  // Extract your metrics here
-})
+wpt.runTest(
+  script,
+  {
+    location: "Dulles:Chrome.Cable",
+    firstViewOnly: false,
+    runs: 1,
+    video: true
+  },
+  function(err, result) {
+    // Extract your metrics here
+  }
+);
 ```
 
 ## Wrapping up
@@ -306,4 +348,4 @@ This article isn't an attempt of a comprehensive guide on WebPageTest, since tha
 
 But extracting the data is just the start — it's what we do with it that can impact how our websites perform. I'll follow up soon with my take on using what I've shown here to build a bespoke performance monitoring tool, with the ability to visualise performance metrics over time, establish [performance budgets](https://timkadlec.com/2013/01/setting-a-performance-budget/) and receive alerts when they're not met.<!--tomb-->
 
-***Update**: Part II of this post is available [here](/blog/2016/10/17/speedtracker.html).*
+**\*Update**: Part II of this post is available [here](/blog/2016/10/17/speedtracker.html).\*

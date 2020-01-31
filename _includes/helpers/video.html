@@ -1,12 +1,14 @@
-{% assign pathNodes = page.inputPath | split: "/" %}
-{% assign fileName = pathNodes[2] %}
-{% assign assetPath = name | prepend: "/" | prepend: fileName | prepend: "/posts/" %}
+{% assign pathNodes = page.inputPath | split: "/" %} {% assign fileName =
+pathNodes[2] %} {% assign assetPath = name | prepend: "/" | prepend: fileName |
+prepend: "/posts/" %}
 
-<figure class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}">
-  <video autoplay loop>
-    <source src="{{ assetPath }}" type="video/mp4">
+<figure
+  class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}"
+>
+  <video autoplay class="figure__video" loop>
+    <source src="{{ assetPath }}" type="video/mp4" />
     Your browser does not support the video tag.
-  </video>  
+  </video>
 
   <figcaption class="figure__caption">{{ caption }}</figcaption>
 </figure>

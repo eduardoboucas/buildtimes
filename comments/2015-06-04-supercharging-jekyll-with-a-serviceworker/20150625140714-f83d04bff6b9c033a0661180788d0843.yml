@@ -1,6 +1,0 @@
-name: "Suguru Hirahara"
-date: 1435244820
-email: f83d04bff6b9c033a0661180788d0843
-message: "<p>Thanks for your tutorial!</p>
-<p>I'm just wondering if there is a way of caching files after (or at the same time) they are downloaded via browser (=transferring browser's cache to ServiceWorker). I just can't decide which files should be cached beforehand ;-)</p>
-<p>Thanks in advance!</p>"

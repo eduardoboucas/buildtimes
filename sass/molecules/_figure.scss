@@ -1,6 +1,6 @@
 .figure {
-	margin: ($post-vertical-rythm * 2) 10px;
-	text-align: center;
+  margin: ($post-vertical-rythm * 2) 10px;
+  text-align: center;
 }
 
 .figure--frame {
@@ -8,11 +8,15 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 40px;
-	background-color: $colour-light-grey;
   margin: ($post-vertical-rythm * 2) auto;
   max-width: 930px;
   min-height: 40px;
-	padding: 20px;
+  padding: 20px;
+}
+
+.figure__image,
+.figure__video {
+  border: 3px double $colour-primary;
 }
 
 .figure--loaded {
@@ -21,6 +25,5 @@
 }
 
 .figure__caption {
-	font-size: 0.7em;
-	margin-top: 10px;
+  font-size: 0.7em;
 }

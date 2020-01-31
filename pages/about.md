@@ -2,6 +2,9 @@
 layout: about
 permalink: /about/index.html
 ---
-Born in the north of Portugal, I'm a software engineer with camp set up in London, England. I am a firm supporter of an open, free and independent world-wide web, and an advocate of open source software. I'm a Principal Engineer at [DADI](https://dadi.cloud), making all-round awesome things with a strong focus on API-first back-end and front-end systems, and the principle of [COPE](https://dadi.cloud/en/knowledge/web-services/api-first-and-cope). I also maintain a few [open-source projects](/projects).
 
-This site is fully static, powered by [11ty](https://www.11ty.io/). Comments are powered by [Staticman](https://staticman.net). The source code is publicly available, so if you see something that's incorrect, please [submit a pull request](https://github.com/eduardoboucas/eduardoboucas.com/compare). *Obrigado!*<!--tomb-->
+Hello, fellow passenger of this incredible ride that is web development. I've been building websites since the turn of the century – I like to think that I've got the hang of it, but the content published here will most certainly indicate otherwise. You're reading *Build Times*, my modest collection of thoughts, experiments, ramblings and rants about the daily goings-on of an individual who gets paid to write gibberish at the computer (but the rants are on the house).
+
+I work at [Stackbit](https://stackbit.com) and I maintain several [open-source projects](https://github.com/eduardoboucas). I also [tweet](https://twitter.com/eduardoboucas) and occasionally [speak](https://speakerdeck.com/eduardoboucas).
+
+This site is fully static and it's built with [11ty](https://www.11ty.io/). The current homepage design was heavily inspired by a Codepen from [Silke V](https://codepen.io/silkine). The full source code is publicly available and you're free to copy and reuse it as you see fit. Thanks for reading. <!--tomb-->

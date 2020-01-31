@@ -1,9 +1,0 @@
-_id: b1cc5c30-52c3-11e7-9a0d-8950f936e6b2
-_parent: 2014-12-07-including-and-managing-images-in-jekyll
-name: Todd
-email: 41246865dae97c7a06440256059d9722
-url: ''
-address: ''
-message: "Many thanks for this post (& website). Teaching myself webdesign for fun, and being able to see these explanations and the GitHub material itself is incredibly helpful. \r\n\r\nI ran into errors the first time through this, but access to the source code solved everything. :)\r\n\r\n(My errors were related to imagePath, where I was trying to refer to the simplified names of the html/md files themselves, and not the complete *titles* I was assigning each post in the front matter. Derp.)"
-date: 1497638611
-data: '2017-06-16T18:43:31.732Z'

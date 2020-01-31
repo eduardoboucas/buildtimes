@@ -1,0 +1,12 @@
+.footer {
+  @include body-text();
+  
+  background-color: $colour-light-grey;
+  border-top: 1px solid #ddd;
+  color: #2222229e;
+  flex-shrink: 0;
+  font-family: $font-family-brand;
+  font-size: 13px;
+  padding: 30px 10px;
+  text-align: center;
+}

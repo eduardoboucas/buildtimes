@@ -2,12 +2,12 @@
 // Typography
 // --------------------------------------------------------------
 
-$font-family-primary: 'AdobeGaramond', Georgia, Times, serif;
-$font-family-secondary: 'AlternateGothicW01-No3', sans-serif;
-$font-family-tertiary: 'Helvetica', sans-serif;
-$font-family-monospace: 'Monaco','Consolas','Menlo', monospace;
-$font-family-quotes: Georgia, serif, Times;
-$font-family-brand: 'Freight Big W01 Black Regular', $font-family-primary;
+$font-family-primary: Times, serif;
+$font-family-secondary: "AlternateGothicW01-No3", sans-serif;
+$font-family-tertiary: "Helvetica", sans-serif;
+$font-family-monospace: "Monaco", "Consolas", "Menlo", monospace;
+$font-family-quotes: $font-family-primary;
+$font-family-brand: "Playfair Display", $font-family-primary;
 
 $font-weight-light: 300;
 $font-weight-normal: 400;
@@ -20,34 +20,19 @@ $font-size-large: 35px;
 
 $line-height-normal: 1.2;
 
-@font-face {
-	font-family: "AlternateGothicW01-No3";
-	src: url("/assets/fonts/d204d256-fb7f-488b-a5f2-57979585e00a.eot?#iefix");
-	src: url("/assets/fonts/d204d256-fb7f-488b-a5f2-57979585e00a.eot?#iefix") format("eot"),
-		 url("/assets/fonts/836ee743-8a38-45fb-8076-f78de89ed923.woff2") format("woff2"),
-		 url("/assets/fonts/6e86a433-85a2-40a6-8dc7-58cc16a6cb9b.woff") format("woff"),
-		 url("/assets/fonts/72fb6a94-41e4-4db6-b19b-88ad54f05d97.ttf") format("truetype"),
-		 url("/assets/fonts/e3670e54-4d1a-499a-a84b-cf19198f20a5.svg#e3670e54-4d1a-499a-a84b-cf19198f20a5") format("svg");
-}
-
-@font-face	{
-	font-family: "AdobeGaramond";
-	font-weight: $font-weight-normal;
-	src: url("/assets/fonts/73fe293c-69da-4927-80ce-773ee1a1879c.eot?#iefix");
-	src: url("/assets/fonts/73fe293c-69da-4927-80ce-773ee1a1879c.eot?#iefix") format("eot"),
-		 url("/assets/fonts/d5ca2f36-723d-4882-8658-9746fb0eea72.woff2") format("woff2"),
-		 url("/assets/fonts/859018fa-3c03-484b-8774-97bd6548d48d.woff") format("woff"),
-		 url("/assets/fonts/abb87b70-21d4-4ac2-bf9f-41548a67e564.ttf") format("truetype"),
-		 url("/assets/fonts/6e4e2084-ff69-479e-b179-92d90deb7885.svg#6e4e2084-ff69-479e-b179-92d90deb7885") format("svg");
-}
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap");
 
 @font-face {
-	font-family: "AdobeGaramond";
-	font-weight: $font-weight-bold;
-	src: url("/assets/fonts/a5240191-4466-40a5-9858-50ca14584e4a.eot?#iefix");
-	src: url("/assets/fonts/a5240191-4466-40a5-9858-50ca14584e4a.eot?#iefix") format("eot"),
-		 url("/assets/fonts/f81fa4ca-48c0-496c-a54f-5e1f69bc54a1.woff2") format("woff2"),
-		 url("/assets/fonts/cd40a899-1f96-413c-9d0b-725d91328946.woff") format("woff"),
-		 url("/assets/fonts/f3b3a415-75b2-4241-9867-da4e137d5dee.ttf") format("truetype"),
-		 url("/assets/fonts/f4c5fec8-4f38-4edc-b25b-295a90bf8e57.svg#f4c5fec8-4f38-4edc-b25b-295a90bf8e57") format("svg");
+  font-family: "AlternateGothicW01-No3";
+  src: url("/assets/fonts/d204d256-fb7f-488b-a5f2-57979585e00a.eot?#iefix");
+  src: url("/assets/fonts/d204d256-fb7f-488b-a5f2-57979585e00a.eot?#iefix")
+      format("eot"),
+    url("/assets/fonts/836ee743-8a38-45fb-8076-f78de89ed923.woff2")
+      format("woff2"),
+    url("/assets/fonts/6e86a433-85a2-40a6-8dc7-58cc16a6cb9b.woff")
+      format("woff"),
+    url("/assets/fonts/72fb6a94-41e4-4db6-b19b-88ad54f05d97.ttf")
+      format("truetype"),
+    url("/assets/fonts/e3670e54-4d1a-499a-a84b-cf19198f20a5.svg#e3670e54-4d1a-499a-a84b-cf19198f20a5")
+      format("svg");
 }

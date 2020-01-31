@@ -1,161 +1,179 @@
 @mixin post-body() {
-	margin-top: $post-vertical-rythm;
-	font-size: 21px;
-	line-height: 1.5;
+  margin-top: $post-vertical-rythm;
+  font-size: 21px;
+  line-height: 1.5;
 
-	p {
-		margin-bottom: $post-vertical-rythm;
-	}
+  p {
+    margin-bottom: $post-vertical-rythm;
+  }
 
-	a {
-		@include link(true);
-	}	
+  a {
+    @include link(true);
+  }
+}
+
+@mixin post-title-variation($variation) {
+  @include media(">=medium") {
+    font-family: $font-family-primary;
+    font-weight: normal;
+
+    @if $variation == 1 {
+      font-weight: bold;
+    }
+
+    @if $variation == 2 {
+      font-style: italic;
+    }
+
+    @if $variation == 3 {
+      font-family: $font-family-secondary;
+      font-size: 45px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    @if $variation == 4 {
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
 }
 
 .post {
-	position: relative;
-	display: block;
-	max-width: 100%;
+  position: relative;
+  display: block;
+  max-width: 100%;
+}
+
+.post__content {
+  > p:first-child {
+    @include drop-cap;
+  }
 }
 
 .post--small {
-	padding: 15px;
-	margin-bottom: 30px;
+  padding: 15px;
+  margin-bottom: 30px;
 
-	@include media('>=medium') {
-		margin-bottom: 60px;
-	}
+  @include media(">=medium") {
+    text-align: center;
+  }
 
-	.post__title {
-		@include post-title;
-	}
+  .post__title {
+    @include post-title;
+
+    .post-wrapper:nth-child(4n - 3) & {
+      @include post-title-variation(1);
+    }
+
+    .post-wrapper:nth-child(4n - 2) & {
+      @include post-title-variation(2);
+    }
+
+    .post-wrapper:nth-child(4n - 1) & {
+      @include post-title-variation(3);
+    }
+
+    .post-wrapper:nth-child(4n) & {
+      @include post-title-variation(4);
+    }
+  }
+
+  .post__body {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .post__meta {
+    display: inline-block;
+  }
 }
 
-.post--feature {
-	padding: 0 15px 15px 15px;
+a > .post--small {
+  @include transition(transform opacity);
 
-	@include media('<medium') {
-		margin-bottom: 30px;
-	}
+  &:hover {
+    transform: translateY(-3px);
+    opacity: 0.6;
 
-	.post__body {
-		font-size: 23px;
-
-		@include media('>=medium') {
-			-webkit-column-count: 2;
-			-webkit-column-gap: $post-gutter;
-			-moz-column-count: 2;
-			-moz-column-gap: $post-gutter;	
-		}
-	}
-}
-
-.tweet {
-	background-color: $colour-light-grey;
-}
-
-.tweet__icon {
-	position: absolute;
-	pointer-events: none;
-	opacity: 0.05;
-	right: -50px;	
-}
-
-a > .post--small,
-a > .post--feature {
-	@include transition(transform opacity);
-
-	&:hover {
-		transform: translateY(-3px);
-		opacity: 0.6;
-
-		.post__cta {
-			@include cta-hover;
-		}
-	}	
+    .post__cta {
+      @include cta-hover;
+    }
+  }
 }
 
 .post--room {
-	margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 .post--tint {
-	background-color: $colour-light-grey;
+  background-color: $colour-light-grey;
 }
 
 .post--full {
-	.constrain {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
+  .constrain {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .post__meta {
-	margin-top: 5px;
+  text-align: center;
+
+  @include media(">=medium") {
+    margin-top: 20px;
+  }
 }
 
 .post__meta-icon {
-	position: relative;
-	top: -2px;
-	margin-left: 10px;
-	width: 16px;
-	height: 16px;
-	vertical-align: middle;
+  position: relative;
+  top: -2px;
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
 }
 
 .post__cta {
-	margin-top: $post-vertical-rythm;
+  margin-top: $post-vertical-rythm;
 
-	& + & {
-		margin-left: 10px;
-	}
+  & + & {
+    margin-left: 10px;
+  }
 }
 
 .post__hero-wrapper {
-	padding: 0 5px;
+  padding: 0 5px;
 
-	&:first-child {
-		margin-left: -5px;
-	}
+  &:first-child {
+    margin-left: -5px;
+  }
 
-	&:last-child {
-		margin-right: -5px;
-	}
+  &:last-child {
+    margin-right: -5px;
+  }
 }
 
 .post__hero {
-	background-color: #eeeee5;
-	padding: 8px;
-	margin-top: 30px;
+  background-color: #eeeee5;
+  padding: 8px;
+  margin-top: 30px;
 
-	img {
-		display: block;
-		width: 100%;
-	}
+  img {
+    display: block;
+    width: 100%;
+  }
 
-	@include media('>=medium') {
-		padding: 20px;
-	}
+  @include media(">=medium") {
+    padding: 20px;
+  }
 }
 
 .post__body {
-	@include post-body;
-}
-
-.post__external-ribbon {
-	position: absolute;
-	top: 0;
-	right: 20px;
-	width: 34px;
-	height: 50px;
-	color: darksalmon;
-}
-
-.post__external-ribbon ~ .post__title {
-	padding-right: 50px;
+  @include post-body;
 }
 
 .post__external-info {
-	margin-top: $post-vertical-rythm * 2;
-	text-align: center;
+  margin-top: $post-vertical-rythm * 2;
+  text-align: center;
 }

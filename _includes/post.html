@@ -78,7 +78,9 @@ layout: default
           {% endif %}
         {% endif %}
         
-        {{ content | replace: '<!--tomb-->', ' &#8718;'}}
+        <div class="post__content">
+          {{ content | replace: '<!--tomb-->', ' &#8718;'}}
+        </div>
 
         {% if postInSeries and postInSeries.data.nextInSeries %}
           <p>
@@ -86,10 +88,6 @@ layout: default
           </p>
         {% endif %}
       </div>
-
-      {% if disable-comments != true %}
-        {% include partials/post-comments.html %}
-      {% endif %}
     </article>
   {% endif %}
 </main>

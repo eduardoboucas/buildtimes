@@ -1,8 +1,0 @@
-_id: 8d7515b0-a427-11e7-adb3-e700074bdbd8
-_parent: 2017-09-25-using-svg-clip-path-to-change-a-logo-s-colour-on-scroll
-name: Michael Koelewijn
-email: c44ddd7a4ef05c06dde57f44f8330d8e
-url: ''
-address: ''
-message: "Nice article and result! I bookmarked this.\r\nLooking at the updateLogo function i noticed the following piece of code:\r\n ```javascript\r\nvar logoStart = $logoMain.offset().top\r\nvar logoEnd = logoStart + logoDimensions.height\r\n```\r\n\r\nWhy is the logo offset getting calculated on each scroll? This value only changes on resize. Moving this piece of code makes it perform even smoother IMHO."
-date: 1506587544

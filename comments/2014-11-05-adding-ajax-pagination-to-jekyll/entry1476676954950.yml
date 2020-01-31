@@ -1,6 +1,0 @@
-name: Brad West
-email: 413d89148cb9d72d397438959e83b931
-url: 'https://bradonomics.com/'
-address: ''
-message: "I'm having some problems recreating this on my site. I've tried using the code you've demoed above, and got the below errors. If I copy the code from your [eduardoboucas/eduardoboucas.github.io](https://github.com/eduardoboucas/eduardoboucas.github.io/) repo I get a Liquid warning. In both cases the blog pagination pages (`/blog/page/2`, `/blog/page/3`, etc.) aren't being generated.\r\n\r\nI [setup a gist](https://gist.github.com/bradonomics/ab42dd473c602ceb713d6a56eeada2c1) to better show the problem. You can see the contents of my `/blog.html` file, my `/js/pagination.js` file, and the console error I'm getting when running the demo code above.\r\n\r\nIn my config file I've got:\r\n\r\n```yaml\r\npaginate: 3\r\npaginate_path: \"/blog/page/:num\"\r\n```\r\n\r\nAny ideas where I've gone wrong?"
-date: 1476676954
