@@ -1,9 +1,4 @@
 .figure {
-  margin: ($post-vertical-rythm * 2) 10px;
-  text-align: center;
-}
-
-.figure--frame {
   background-image: url(/assets/images/loading.gif);
   background-repeat: no-repeat;
   background-position: center center;
@@ -12,11 +7,12 @@
   max-width: 930px;
   min-height: 40px;
   padding: 20px;
+  text-align: center;
 }
 
-.figure__image,
-.figure__video {
-  border: 3px double $colour-primary;
+.figure--frame .figure__image,
+.figure--frame .figure__video {
+  border: 3px double $colour-primary;  
 }
 
 .figure--loaded {

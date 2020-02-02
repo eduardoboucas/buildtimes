@@ -46,7 +46,7 @@ Remember how we established in the opening paragraphs that you can easily host y
 
 This is the core principle behind fog computing, whereby the consumers of the network can also be the providers, lending their spare bandwidth and computational resources to the delivery of someone else’s content. This reestablishes the balance of a decentralised system and democratically redistributes the power by the members of the network.
 
-{% include helpers/image.html, name:"fog-computing.png", caption:"Illustration of fog computing" %}
+{% include helpers/image.html name:"fog-computing.png" caption:"Illustration of fog computing" %}
 
 As a result of the shorter distance between the resources and their consumers, data takes less time to be passed around, making room for real-time applications in the true sense of the term – as opposed to the questionable use of the terminology to describe applications which, depending on the conditions of the long network hops involved, may take a considerable amount to respond. 
 
