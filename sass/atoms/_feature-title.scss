@@ -10,10 +10,10 @@
 
   display: block;
 
-	@include media('>=medium') {
+	//@include media('>=medium') {
 		font-size: 0;
 		line-height: 0;
-	}
+	//}
 }
 
 .feature-title__part {
@@ -26,6 +26,6 @@
 	opacity: 0;
     
 	@include media('<medium') {
-		display: none !important;
+		//display: none !important;
 	}
 }

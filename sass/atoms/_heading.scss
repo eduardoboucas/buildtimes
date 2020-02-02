@@ -8,6 +8,8 @@
   }
 
   &:hover a.heading-anchor {
+    background: none;;
+    color: inherit;
     opacity: 1;
   }
 }
@@ -18,7 +20,9 @@
   line-height: 1.3;
   position: relative;
 
-  @include heading-anchor() @include media(">=medium") {
+  @include heading-anchor();
+  
+  @include media(">=medium") {
     font-size: 50px;
   }
 }
@@ -29,7 +33,9 @@
   line-height: 1.3;
   position: relative;
 
-  @include heading-anchor() @include media(">=medium") {
+  @include heading-anchor();
+  
+  @include media(">=medium") {
     font-size: 38px;
   }
 }
