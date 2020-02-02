@@ -198,4 +198,4 @@ Here's how it looks on the same version of Safari that was being problematic bef
 
 {% include helpers/video.html, name:"second-approach.mov", caption:"The result of animating the logos using SVG clip-path" %}
 
-You can see it live (and dissect the source) [here](https://fortblocks.com/).<!--tomb-->
+~~You can see it live (and dissect the source) here~~ (The site is no longer live, unfortunately.)<!--tomb-->
