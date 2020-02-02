@@ -23,6 +23,24 @@ module.exports = eleventyConfig => {
       })
       .reverse();
 
+    const internalPosts = posts.filter(post => post.data.layout === "post");
+
+    internalPosts.forEach((post, index) => {
+      if (internalPosts[index - 1]) {
+        post.data.page.next = {
+          title: internalPosts[index - 1].data.title,
+          url: internalPosts[index - 1].data.page.url
+        };
+      }
+      
+      if (internalPosts[index + 1]) {
+        post.data.page.previous = {
+          title: internalPosts[index + 1].data.title,
+          url: internalPosts[index + 1].data.page.url
+        };
+      }
+    });
+
     return posts;
   });
 
