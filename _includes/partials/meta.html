@@ -19,9 +19,9 @@
 
 <title>
 	{% if title %}
-		{{ config.title }} / {{ title }}
+		{{ config.title }} - {{ title }}
 	{% else %}
-		{{ config.title }} / {{ config.description }}
+		{{ config.title }} - {{ config.description }}
 	{% endif %}
 </title>
 <meta name="description" content="{{ description | truncate: 200, '...' }}">
