@@ -1,29 +1,22 @@
-{% if page.title %}
-	{% assign title = page.title %}
+{% if title %}
+	{% assign metaTitle = title %}
 {% else %}
-	{% assign title = config.title %}
+	{% assign metaTitle = config.title %}
 {% endif %}
 
-{% if page.excerpt %}
-	{% assign description = page.excerpt | strip_html | strip_newlines %}
+{% if page.metaTag %}
+	{% assign description = page.metaTag %}
 {% else %}
 	{% assign description = config.description | strip_html | strip_newlines %}
 {% endif %}
 
 {% assign url = page.url | replace:'index.html','' | prepend: config.url %}
-{% assign title = page.title | default: layout.title %}
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>
-	{% if title %}
-		{{ config.title }} - {{ title }}
-	{% else %}
-		{{ config.title }} - {{ config.description }}
-	{% endif %}
-</title>
+<title>{% if title %}{{ config.title }} - {{ metaTitle }}{% else %}{{ config.title }} - {{ config.description }}{% endif %}</title>
 <meta name="description" content="{{ description | truncate: 200, '...' }}">
 <link rel="manifest" href="/manifest.json">
 

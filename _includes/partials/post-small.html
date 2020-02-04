@@ -11,7 +11,7 @@ post.data.external-url %} {% else %} {% assign link = post.url %} {% endif %}
       {{ post.date | fullDate }}
     </p>
     <div class="post__body">
-      {{ post.templateContent | split: '<!--more-->' | first | strip_html }}
+      {{ post.templateContent | excerpt }}
     </div>
     <p class="cta post__cta">
       <span class="cta__inner">

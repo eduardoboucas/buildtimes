@@ -2,7 +2,20 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const moment = require("moment");
 const slugify = require("@sindresorhus/slugify");
+const striptags = require('striptags');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+function createExcerpt(value, maxLength) {
+  const bits = value.split('<!--more-->');
+
+  if (bits.length === 1) {
+    const terminator = value.length > maxLength ? '…' : '';
+
+    return value.substring(0, maxLength) + terminator;
+  }
+
+  return bits[0];
+}
 
 module.exports = eleventyConfig => {
   eleventyConfig.addCollection("homepage", collection => {
@@ -18,6 +31,10 @@ module.exports = eleventyConfig => {
         if (!data.tags.includes("blog")) {
           return false;
         }
+
+        item.data.page.metaTag = striptags(
+          createExcerpt(item.template.frontMatter.content, 200).replace(/\n/g, '')
+        );
 
         return true;
       })
@@ -111,11 +128,12 @@ module.exports = eleventyConfig => {
     return momentDate.format("MMMM Do, YYYY");
   });
 
-  let options = {
-    html: true,
-    breaks: true,
-    linkify: true
-  };
+  eleventyConfig.addLiquidFilter("excerpt", value => {
+    const allowedTags = ['code', 'em', 'strong'];
+    const excerpt = createExcerpt(value, 200);
+
+    return striptags(excerpt, allowedTags);
+  });
 
   const markdownItOptions = { html: true };
   const markdownItAnchorOptions = {

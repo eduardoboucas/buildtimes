@@ -3,6 +3,10 @@
   font-size: 21px;
   line-height: 1.5;
 
+  code {
+    font-family: $font-family-monospace;
+  }
+
   p {
     margin-bottom: $post-vertical-rythm;
   }
