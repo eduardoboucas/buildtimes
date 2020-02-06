@@ -6,10 +6,11 @@ prepend: "/posts/" %}
   class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}"
 >
   <img
+    alt="{{ caption }}"
     class="figure__image"
+    loading="lazy"
     onload="this.parentElement.classList += ' figure--loaded'"
     src="{{ assetPath }}"
-    alt="{{ caption }}"
     width="{{ width }}"
   />
 

@@ -2,10 +2,14 @@ pre[class^="language-"] {
   padding: 40px 0;
   font-family: $font-family-monospace;
   color: white;
-  font-size: 19px;
+  font-size: 16px;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   text-align: center;
+
+  @include media(">=medium") {
+    font-size: 19px;
+  }
 
   code {
     @include constrain;

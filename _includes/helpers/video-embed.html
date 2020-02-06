@@ -1,0 +1,15 @@
+{% assign width = width | times: 1.0 %}
+{% assign height = height | times: 1.0 %}
+{% assign paddingBottom = height | divided_by: width | times: 100 %}
+
+{% if youtubeId %}
+  {% assign url = youtubeId | prepend:"https://www.youtube.com/embed/" | append:"?controls=1&autoplay=1&loop=1&modestbranding=1" %}
+{% endif %}
+
+<div class="post-video-container">
+  <div class="post-video">
+    <div class="post-video__inner" style="padding-bottom: {{ paddingBottom }}%">
+      <iframe width="{{ width }}" height="{{ height }}" src="{{ url }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,3 @@
-.post-video-container {
-	background-color: black;
-}
-
 .post-video {
 	@include constrain(1200px, true);
 }

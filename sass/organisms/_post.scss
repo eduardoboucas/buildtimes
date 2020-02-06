@@ -18,6 +18,10 @@
   @include media(">=medium") {
     margin-top: $post-vertical-rythm;
   }
+
+  .video-embed {
+    margin: 0 auto;
+  }
 }
 
 @mixin post-title-variation($variation) {

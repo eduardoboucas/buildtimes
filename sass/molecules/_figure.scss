@@ -10,6 +10,10 @@
   text-align: center;
 }
 
+.figure > * {
+  max-width: 100%;
+}
+
 .figure--frame .figure__image,
 .figure--frame .figure__video {
   border: 3px double $colour-primary;  
