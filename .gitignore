@@ -3,3 +3,4 @@ _site/
 npm-debug.log
 node_modules/
 CNAME
+**/.DS_Store
