@@ -7,4 +7,4 @@ Hello, fellow passenger of this incredible ride that is web development. I've be
 
 I work at [Stackbit](https://stackbit.com) and I maintain several [open-source projects](https://github.com/eduardoboucas). I also [tweet](https://twitter.com/eduardoboucas) and occasionally [speak](https://speakerdeck.com/eduardoboucas).
 
-This site is fully static and it's built with [11ty](https://www.11ty.io/). The current homepage design was heavily inspired by a Codepen from [Silke V](https://codepen.io/silkine). The full source code is publicly available and you're free to copy and reuse it as you see fit. Thanks for reading. <!--tomb-->
+This site is fully static and it's built with [11ty](https://www.11ty.io/). The homepage design was inspired by [Silke V](https://codepen.io/silkine). The full source code is [publicly available](https://github.com/eduardoboucas). <!--tomb-->
