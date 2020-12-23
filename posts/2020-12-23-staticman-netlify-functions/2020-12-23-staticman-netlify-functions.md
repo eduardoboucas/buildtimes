@@ -12,6 +12,10 @@ In 2016, I started working on a tool to fill the gap in user-generated content o
 
 In this post, we'll use one of those primitives – serverless functions – to deploy Staticman without having to get anywhere near infrastructure configuration. In particular, I'll show you how to deploy an [Eleventy](https://www.11ty.dev/) blog with Staticman-powered comments with just a few clicks.
 
+## TL;DR
+
+Head to the [Eleventy blog template](https://github.com/eduardoboucas/eleventy-blog-staticman) and click [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/eduardoboucas/eleventy-blog-staticman).
+
 ## A brief history
 
 When Staticman was first released, it consisted of a Node application with an included web server. There was a free public instance available for anyone to use, but that wasn't a sustainable proposition for an open-source project (because money), so eventually people had to venture into deploying the application themselves.
@@ -44,11 +48,12 @@ I've forked the [Base Blog](https://github.com/11ty/eleventy-base-blog) starter 
 
 You can deploy it to a free [Netlify](https://netlify.com) site with just a few clicks, with all the Staticman configuration being taken care of automatically for you. Here's how:
 
-1. Go to https://github.com/11ty/eleventy-base-blog and click on [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/eduardoboucas/eleventy-blog-staticman) 
+1. Go to [https://github.com/eduardoboucas/eleventy-blog-staticman](https://github.com/eduardoboucas/eleventy-blog-staticman) and click on [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/eduardoboucas/eleventy-blog-staticman) 
 
 1. You'll be redirected to Netlify, where you can connect your GitHub account if you haven't done so before
 
 1. Fill in the following details:
+
     - **GitHub access token**: A GitHub Personal Access Token used by Staticman to push new comments to your repository on your behalf. See [this guide](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) on how to create one.
 
     - **Repository name**: The name of your GitHub repository, including your username or organization (e.g. `eduardoboucas/eleventy-blog-staticman`).
