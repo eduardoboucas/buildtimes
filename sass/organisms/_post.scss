@@ -11,6 +11,10 @@
     margin-bottom: $post-vertical-rythm;
   }
 
+  li p {
+    display: inline;
+  }
+
   a {
     @include link(true);
   }
