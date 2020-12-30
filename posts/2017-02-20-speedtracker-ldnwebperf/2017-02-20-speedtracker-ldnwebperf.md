@@ -12,6 +12,6 @@ Earlier this month, I gave [a talk](https://ldnwebperf.org/sessions/speedtracker
 
 A big shout out to [Perry](https://twitter.com/perrydyball) for organising the event, to [Simon](https://twitter.com/simonhearne) for his [amazing talk](https://ldnwebperf.org/sessions/optimising-for-25000-unique-devices/) and to everyone that attended. I'll leave you with the video and slides of my talk.<!--tomb-->
 
-{% include helpers/video.html url="https://www.youtube.com/embed/qYVhlsmFykI" width="560" height="315" %}
+{% include helpers/video-embed.html url:"https://www.youtube.com/embed/qYVhlsmFykI" width:"560" height:"315" %}
 
-{% include helpers/speakerdeck.html id="895f9c7cc24f4874be04c99f12ec7bc1" %}
+{% include helpers/speakerdeck.html id:"895f9c7cc24f4874be04c99f12ec7bc1" %}

@@ -3,8 +3,13 @@
 
 	flex: 1 0 auto;
 	margin-top: $post-vertical-rythm;
+	min-height: 100vh;
 	overflow: hidden;
 	width: 100%;
+}
+
+.main--homepage {
+	@include constrain($layout-max-width + (2 * $post-padding) + 12px, true);
 }
 
 .search-toggle:checked ~ .main,

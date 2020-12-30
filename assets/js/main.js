@@ -11,7 +11,11 @@ var eb = (function($) {
 
       // Init masonry
       $(".js-posts").masonry({
-        itemSelector: ".js-post"
+        itemSelector: ".js-post",
+        columnWidth: ".js-post-pivot",
+        horizontalOrder: false,
+        stagger: '0.04s',
+        transitionDuration: '0.2s'
       });
 
       // Loading content from previous pages
@@ -23,6 +27,8 @@ var eb = (function($) {
           var diff = $firstPost.offset().top - initialOffset;
 
           $(document).scrollTop(diff);
+
+          adjustFeatureWidth();
         }, true);
       }
     });
@@ -34,52 +40,6 @@ var eb = (function($) {
     $(document).ready(function() {
       // Lazy load images
       $(".js-lazyload").unveil();
-    });
-
-    $("#post-new-comment").submit(function() {
-      var formData = $(this).serializeArray();
-      var fieldsWithErrors = [];
-
-      $(formData).each(
-        function(index, element) {
-          var required = $(this)
-            .find('[name="' + element.name + '"]')
-            .attr("required");
-          var empty = element.value.trim().length === 0;
-
-          if (required && empty) {
-            fieldsWithErrors.push(element.name);
-          }
-        }.bind(this)
-      );
-
-      if (fieldsWithErrors.length === 0) {
-        var postUrl = $(this).attr("action");
-        var payload = $.param(formData);
-
-        $.ajax({
-          type: "POST",
-          url: postUrl,
-          data: payload,
-          success: function(response) {
-            var message = response.success
-              ? "Thanks for your comment. It will appear on the site shortly."
-              : "Oops! There was an error when submitting your comment. Please try again.";
-
-            toaster(message);
-          },
-          error: function(response) {
-            console.log("** ERROR!");
-            console.log(response);
-          }
-        });
-
-        $(this)
-          .get(0)
-          .reset();
-      }
-
-      return false;
     });
 
     $(".js-load-more-articles").click(function() {
@@ -94,6 +54,13 @@ var eb = (function($) {
       sendGAEvent("Articles", "Load more");
 
       return false;
+    });
+
+    $(window).on("keyup", function (event) {
+      if (event.key === "Escape") {
+        $("#search-toggle").prop("checked", false);
+        $("#search-input").val("");
+      }
     });
 
     $("#search-toggle").change(function() {
@@ -225,38 +192,6 @@ var eb = (function($) {
   }
 
   // --------------------------------------------------------------
-  // Toaster
-  // --------------------------------------------------------------
-
-  function toaster(message) {
-    $("#toaster").remove();
-
-    var html =
-      '<div id="toaster" class="toaster">' +
-      '<button type="button" class="toaster__close js-close-toaster">&times;</button>' +
-      "<p>" +
-      message +
-      "</p>" +
-      "</div>";
-
-    $("#main").append(html);
-
-    setTimeout(function() {
-      closeToaster();
-    }, 5000);
-  }
-
-  function closeToaster() {
-    $("#toaster").fadeOut(300, function() {
-      $(this).remove();
-    });
-  }
-
-  $("body").on("click", ".js-close-toaster", function() {
-    closeToaster();
-  });
-
-  // --------------------------------------------------------------
   // Initialisation
   // --------------------------------------------------------------
 
@@ -332,7 +267,6 @@ var eb = (function($) {
   // --------------------------------------------------------------
 
   return {
-    init: init,
-    toaster: toaster
+    init: init
   };
 })(jQuery);

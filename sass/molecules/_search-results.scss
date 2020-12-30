@@ -1,6 +1,7 @@
 .search-results {
-	@include constrain();
+	@include constrain($layout-max-width + 40px, true);
 
+	margin-top: 10px;
 	transition: max-height 0s linear 0s;
 	flex-shrink: 0;
 	overflow: hidden;

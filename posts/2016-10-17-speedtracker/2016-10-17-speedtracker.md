@@ -110,7 +110,7 @@ This means that all you need to get started is to install the Jekyll site on a G
 
 The screencast below can guide you through the process.
 
-{% include helpers/video.html url="https://www.youtube.com/embed/vANUHT0EKKE" width="560" height="315" %}
+{% include helpers/video-embed.html url:"https://www.youtube.com/embed/vANUHT0EKKE" width:"560" height:"315" %}
 
 ## Where to go from here
 

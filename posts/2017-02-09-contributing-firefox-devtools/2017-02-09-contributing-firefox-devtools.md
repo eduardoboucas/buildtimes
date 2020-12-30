@@ -26,7 +26,7 @@ One of the things I like the most about Mozilla is the community of people, both
 
 In fact, I think Mozilla should leverage this huge knowledge base as much as possible, by syndicating its content to various channels and integrating it with tools used daily by developers — Firefox itself, and DevTools in particular, is a perfect vehicle for that. An example of this is the error messages in the console that, since version 49 of the browser, are accompanied by a link to a relevant MDN page, offering developers extended information about the nature of the error, along with likely causes and possible solutions.
 
-{% include helpers/image.html, name:"console-error.png", caption:"Firefox Web Console showing an error" %}
+{% include helpers/image.html, frame:false name:"console-error.png", caption:"Firefox Web Console showing an error" %}
 
 To help with the effort of integrating MDN with DevTools, I started looking into [Bug 1320233](https://bugzilla.mozilla.org/show_bug.cgi?id=1320233). The idea was to add a *Learn More* button, similar to the one in the console, next to each HTTP header in the Network panel, with a link to the relevant documentation page in MDN.
 

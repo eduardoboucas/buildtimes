@@ -9,8 +9,6 @@ tags:
   - github
 ---
 
-**\*Update 03/10/2016**: I turned this concept into a service called [Staticman](https://staticman.net). It's free and open-source and you can read more about it in [this post](https://eduardoboucas.com/blog/2016/08/10/staticman.html).\*
-
 Last December I wrote [a post about building a bespoke commenting for Jekyll](/blog/2014/12/14/building-a-bespoke-commenting-system-for-a-static-site.html). I had been using Jekyll for a couple of months at the time, and not having an easy solution for a commenting system was the first big limitation of a static site I had to deal with. I didn’t want to use a third-party service, like Disqus, so I decided to build a bespoke solution because I knew what I wanted — or I thought I did.<!--more-->
 
 To sum it up, I used [Poole](http://pooleapp.com) to handle and store my comments data and then built a server-side middleman that would get the feed from Poole, convert the Markdown to HTML and return the comments in pure HTML, ready to be appended to the page. A bit of JavaScript would then make the call to this middleman on every post and append all the comments to the page.
@@ -122,7 +120,7 @@ Finally, it runs the comment through a Markdown parser and echoes back the HTML 
 
 <!--phpsyntax-->
 
-```
+```php
 <?php
 
 // (Autoloading dependencies and initialising Slim...)
@@ -344,3 +342,5 @@ It's important to note that all this is just a proof of concept and this solutio
 Regenerating the site every time someone adds a comment may seem too radical for some people, but do think that's what the future of static site generators looks like. In his talk at JekyllConf, Parker Moore mentioned that future versions of Jekyll will be able to do a selective regeneration of a site, using an internal dependency management system to determine which files are affected by every change, allowing the engine to regenerate those files only and not the entire site.
 
 Maybe that's a sign that this approach makes sense. Or maybe I'll write another post in a couple of months saying that I got it all wrong again. What are your thoughts?<!--tomb-->
+
+**\*Update 03/10/2016**: I turned this concept into a service called [Staticman](https://staticman.net). It's free and open-source and you can read more about it in [this post](https://eduardoboucas.com/blog/2016/08/10/staticman.html).\*

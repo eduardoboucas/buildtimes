@@ -5,17 +5,36 @@ layout: default
 {% include partials/post-navigation.html %}
 
 <main id="main" role="main" class="main">
-  <article class="post post--full">
-    <div class="constrain">
-      <h1 class="post__title feature-title">
-        {{ page.title | feature_title }}
-      </h1>
-      <p class="post-meta post-meta--emphasis">{{ page.date | fullDate }}</p>
-      <div class="post__external-info">
-        <a class="cta" href="{{ page.external-url }}"
-          >Read on {{ page.external-name }}</a
-        >
+  {% if page.queued == null %}
+    <article class="post post--full">
+      <div class="constrain--padding">
+      	<h1 class="post__title feature-title">
+          {{ title | feature_title }}
+        </h1>
+        <div class="post-meta post-meta--emphasis">
+          {% if external-date %}
+            <span>Originally published on {% if external-url %}<a href="{{ external-url }}">{% endif %}{{ external-name }}{% if external-url %}</a>{% endif %} on {{ external-date | fullDate }}</span>
+          {% else %}
+            <span>{{ page.date | fullDate }}</span>
+          {% endif %}
+        </div>
       </div>
-    </div>
-  </article>
+
+      <div class="post__body body-text">
+        <div class="post__content">
+          {{ content | replace: '<!--tomb-->', ' &#8718;'}}
+
+          <div class="post__external-cta-wrapper">
+            <a class="cta post__external-cta" href="{{ external-url }}" target="_blank">
+              <span class="cta__inner">Visit {{ external-name }}</span>
+              <svg class="cta__icon">
+                <use xlink:href="#icon-external"></use>
+              </svg>
+            </a>               
+          </div>
+        </div>
+      </div>
+    </article>
+  {% endif %}
 </main>
+

@@ -1,0 +1,51 @@
+$ribbon-width: 40px;
+$ribbon-bottom-height: 20px;
+
+.ribbon {
+  width: $ribbon-width;
+  padding: 20px 0;
+  position: absolute;
+  text-align: center;
+  border-top-left-radius: 3px;
+  background: currentColor;
+ }
+
+ .ribbon:before {
+  height: 0;
+  width: 0;
+  right: -5.5px;
+  top: 0.1px;
+  border-bottom: 6px solid currentColor;
+  border-right: 6px solid transparent;
+ }
+
+ .ribbon:before, .ribbon:after {
+   content: "";
+   position: absolute;
+ }
+
+ .ribbon:after {
+   height: 0;
+   width: 0;
+   bottom: -($ribbon-width / 2) + 0.5px;
+   left: 0;
+   border-left: ($ribbon-width / 2) solid currentColor;
+   border-right: ($ribbon-width / 2) solid currentColor;
+   border-bottom: ($ribbon-width / 2) solid transparent;
+ }
+
+.ribbon__content {
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.ribbon__icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}

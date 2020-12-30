@@ -21,7 +21,7 @@ But there's a lot more to it than just telling people it's okay to work from hom
 
 Fortunately for me, DADI is an example of a _remote-first_ company. Remote work and asynchronous communication is a fundamental part of [the company's identity](https://dadi.tech/careers/), and there's not even a physical office to begin with. Every process and tool used in the company has been chosen with remote workers in mind, so that philosophy has become second nature to everyone involved: directors, engineers, project managers and even clients. You don't feel like an outlaw that's sitting at home whilst everyone else is eating cake and telling jokes at the office.
 
-{% include helpers/image.html name:"dadi-slack.png" caption:"We use Slack a lot (not always for serious stuff)" %}
+{% include helpers/image.html frame:false name:"dadi-slack.png" caption:"We use Slack a lot (not always for serious stuff)" %}
 
 ## Working from home
 
