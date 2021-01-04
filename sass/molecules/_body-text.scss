@@ -60,8 +60,26 @@
     display: block;
   }
 
+  details {
+    summary {
+      > p {
+        display: inline;
+      }
+  
+      p {
+        padding: 0;
+      }
+    }
+
+    p {
+      padding-left: 26px;
+      padding-right: 0;
+    }
+  }
+
   p,
-  li {
+  li,
+  details {
     @include constrain($post-body-max-width, true);
 
     // Probably wrap in a media query

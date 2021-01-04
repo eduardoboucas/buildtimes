@@ -38,12 +38,13 @@
 }
 
 .about__copy {
-  p:first-of-type {
+  >p:first-of-type {
     @include drop-cap;
   }
 }
 
 .about__links {
+  margin-top: 60px;
   text-align: center;
 }
 

@@ -9,7 +9,7 @@
 }
 
 .main--homepage {
-	@include constrain($layout-max-width + (2 * $post-padding) + 12px, true);
+	@include constrain($layout-max-width + (2 * $post-padding) + 12px);
 }
 
 .search-toggle:checked ~ .main,
