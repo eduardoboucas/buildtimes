@@ -34,7 +34,7 @@ The various components that form each of these layers are then bundled together 
 
 Let’s imagine the system of a newspaper organisation built with this architecture, using a relational database as a data store. If we were to render a page with a particular news story along with all the user-generated comments associated with it, the application would query the Stories and Comments tables, using a SQL JOIN or similar, process and format the data as needed and display it back to the client. All this communication and processing happens using in-process calls, within the boundaries of a single application.
 
-{% include helpers/image.html, name:"monolith.png", caption:"Figure 1-1: Representation of a typical monolithic application" %}
+{% include helpers/image.html, frame:false, name:"monolith.png", caption:"Figure 1-1: Representation of a typical monolithic application" %}
 
 So what exactly are microservices and how do they differ from the monolithic paradigm? Whenever someone asks me that question or when I’m delivering a talk on the subject, I always refer to this quote from Martin Fowler:
 
@@ -44,6 +44,6 @@ With microservices, components don't live together inside the boundaries of a si
 
 Instead of having the application querying a single database for stories and comments, we could have a Stories service solely responsible for storing, managing and delivering stories. The service would run on its own process and any communications to and from it are established via network calls, processed by its own web server and using an API that is exposed to the outside world. If the service itself needs to make use of other services, this also happens over network calls (with the exception of a connection to a database, which may or may not be a direct in-process call). The same principles can also be applied to a Comments service, as illustrated in Figure 1-2.
 
-{% include helpers/image.html, name:"microservices.png", caption:"Figure 1-2: Representation of a microservices architecture" %}
+{% include helpers/image.html, frame:false, name:"microservices.png", caption:"Figure 1-2: Representation of a microservices architecture" %}
 
 We know that microservices are about building a system through composing multiple independent services, but what else defines this architectural style? We’ll cover the key principles of microservices, and the associated benefits they can bring to a system and organisation, in the next article in the series.<!--tomb-->

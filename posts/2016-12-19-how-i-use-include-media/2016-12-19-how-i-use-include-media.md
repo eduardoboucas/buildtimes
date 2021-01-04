@@ -12,7 +12,7 @@ I mentioned [include-media](http://include-media.com) quite a few times in vario
 
 You can watch the video below and try the demo for yourself using the embedded CodePen. If you want to give the plugins a try, you'll want [include-media](https://github.com/eduardoboucas/include-media), [include-media-columns](https://github.com/eduardoboucas/include-media-columns) and [include-media-export](https://github.com/eduardoboucas/include-media-export).
 
-{% include helpers/video.html url="https://www.youtube.com/embed/fy7q0klb0yI" width="560" height="315" %}
+{% include helpers/video-embed.html url:"https://www.youtube.com/embed/fy7q0klb0yI" width:"560" height:"315" %}
 
 <p data-height="361" data-theme-id="0" data-slug-hash="eBbByj" data-default-tab="result" data-user="eduardoboucas" data-embed-version="2" data-pen-title="How I use include-media in my projects" class="codepen">See the Pen <a href="http://codepen.io/eduardoboucas/pen/eBbByj/">How I use include-media in my projects</a> by Eduardo Bouças (<a href="http://codepen.io/eduardoboucas">@eduardoboucas</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

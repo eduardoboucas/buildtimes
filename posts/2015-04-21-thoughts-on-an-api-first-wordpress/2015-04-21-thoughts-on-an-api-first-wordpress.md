@@ -47,7 +47,7 @@ So let's start laying out the foundations for our plugin.
 
 <!--phpsyntax-->
 
-```
+```php
 class API {
   public function __construct() {
     add_action('template_redirect', array($this, 'hijackRequests'), -100);
@@ -124,7 +124,7 @@ The function `hijackRequests` can be modified to implement this feature.
 
 <!--phpsyntax-->
 
-```
+```php
 public function hijackRequests() {
   $usingBuckets = false;
   $buckets = array();
@@ -161,7 +161,7 @@ Our JSON representation of posts relies on the information returned by `get_post
 
 <!--phpsyntax-->
 
-```
+```php
 for ($i = 0, $numEntries = count($entries); $i < $numEntries; $i++) {
     $metaFields = get_post_meta($entries[$i]->ID);
 

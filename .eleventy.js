@@ -148,6 +148,8 @@ module.exports = eleventyConfig => {
     markdownItAnchorOptions
   );
 
+  eleventyConfig.addLiquidFilter("markdownify", text => markdownItPlugin.render(text));
+
   eleventyConfig.setLibrary("md", markdownItPlugin);
 
   eleventyConfig.addPassthroughCopy("assets");

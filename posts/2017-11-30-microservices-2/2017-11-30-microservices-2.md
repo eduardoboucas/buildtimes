@@ -79,7 +79,7 @@ When scaling a monolithic application, the entire system needs to scale as a who
 
 By having components as isolated services, you can scale specific parts of the system individually, as needed. For example, a cloud video provider would probably need to scale its video processing service a lot more and more frequently than its email delivery service, so they could just spin up more instances of that one service, leaving others untouched, as shown in Figure 1-3.
 
-{% include helpers/image.html, name:"scaling.png", caption:"Figure 1-3: Scaling a single service" %}
+{% include helpers/image.html, frame:false, name:"scaling.png", caption:"Figure 1-3: Scaling a single service" %}
 
 With the rise of elastic cloud computing environments like Amazon AWS, where it’s possible to automatically scale instances on demand, both vertically and horizontally, scalability on a micro level allows each component to dynamically scale up and down depending on its throughput, ensuring healthy performance metrics at all times.
 

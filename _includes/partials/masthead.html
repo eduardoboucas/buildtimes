@@ -1,17 +1,19 @@
-<header class="masthead constrain">
+{% capture title %}
+  <h1 class="masthead-title">BUILD TIMES</h1>
+{% endcapture %}
+
+<header class="masthead constrain--padding">
   <div class="masthead__wrapper">
     {% if page.url != '/' %}
-    <a href="/">
-      <h1 class="masthead-title">BUILD TIMES</h1>
-    </a>
+      <a href="/">{{ title }}</a>
     {% else %}
-    <h1 class="masthead-title">BUILD TIMES</h1>
+      {{ title }}
     {% endif %}
 
     <div class="masthead-bar">
       <div class="masthead-bar__face">
         <div>
-          <span class="masthead-bar__intro">A web development periodical </span>by <a href="/about">Eduardo Bouças</a>
+          <span class="masthead-bar__intro">A software development periodical </span>by <a href="/about">Eduardo Bouças</a>
         </div>
 
         <label

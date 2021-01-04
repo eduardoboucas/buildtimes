@@ -21,7 +21,7 @@ But if you want to deliver different crops of an image based on certain conditio
 
 Displaying a landscape image on a portrait device is a common challenge developers are faced with, as simply displaying the original image in full width often produces suboptimal results — the image looks tiny and detail is lost. We want to have multiple crops of the image and display the one that best fits the user's device.
 
-{% include helpers/image.html name:"responsive-images-demo.jpg" caption:"Showing different image crops based on screen aspect ratio" %}
+{% include helpers/image.html name:"responsive-images-demo.jpg" caption:"Showing different image crops based on screen aspect ratio" frame:false %}
 
 This can be achieved with the `<picture>` element, and the markup would look like this:
 

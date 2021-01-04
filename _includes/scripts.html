@@ -1,5 +1,12 @@
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script src="/assets/js/min/main.min.js"></script>
+{% if environment.isDevelopment %}
+  <script src="/assets/js/jquery.unveil.js"></script>
+  <script src="/assets/js/masonry.pkgd.js"></script>  
+  <script src="/assets/js/main.js"></script>
+{% else %}
+  <script src="/assets/js/min/main.min.js"></script>
+{% endif %}
+
 <script defer src="/assets/js/min/search.min.js"></script>
 
 <!-- Google Analytics -->

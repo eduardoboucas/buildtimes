@@ -43,7 +43,7 @@ git push origin dev
 
 To start using Netlify, go to [their website](https://netlify.com) and sign up with your GitHub account (it's [free for open-source projects](https://www.netlify.com/pricing/)). Click on `Add a new project`, choose GitHub and select the repository that contains your site.
 
-{% include helpers/image.html name:"netlify1.png" caption:"Netlify: Configuring the repository" %}
+{% include helpers/image.html frame:false name:"netlify1.png" caption:"Netlify: Configuring the repository" %}
 
 In the `Basic Settings` tab, select the staging branch you chose previously (e.g. `dev`). For a Jekyll installation, the default publish directory should be `_site` and the build command `jekyll build`. In the `Advanced Settings` tab, add an environment variable called `JEKYLL_ENV` with the value `stage` — this will be used to inform Jekyll of the environment the site is running on.
 
@@ -51,7 +51,7 @@ Next, click on `Build your site` and give it a few seconds. When the build proce
 
 You'll be attributed a random name, like `cartoonist-foreground-47121`, which you can change in the `Settings` panel. You can also define a custom domain on this page, which you'll need to configure the DNS for. If you set the name of your site to `dev-example-com`, you need a CNAME pointing to `dev-example-com.netlify.com`.
 
-{% include helpers/image.html name:"netlify2.png" caption:"Netlify: The Settings panel" %}
+{% include helpers/image.html frame:false name:"netlify2.png" caption:"Netlify: The Settings panel" %}
 
 ## Configuring Jekyll
 

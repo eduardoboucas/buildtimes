@@ -60,8 +60,8 @@ layout: pageSimple
 
 And then the text files with our content.
 
-```
-(aboutme.md)
+```yaml
+# aboutme.md
 ---
 layout: pageSimple
 title: About me
@@ -72,8 +72,8 @@ I'm a lonely boy
 Oh, oh-oh I got a love that keeps me waiting
 ```
 
-```
-(contactme.md)
+```yaml
+# contactme.md
 ---
 layout: pageSimple
 title: Contact me
@@ -92,14 +92,14 @@ In my case, I have structured the site using posts for the [Blog](http://eduardo
 
 All I had to do was add this to my configuration file (`_config.yml`):
 
-```
+```yaml
 collections:
   - projects
 ```
 
 And each portfolio project is represented by a Markdown file like this:
 
-```
+```yaml
 ---
 collection: projects
 order: 1
@@ -115,7 +115,7 @@ At Monocle I was responsible for maintaining the website, implementing new featu
 
 The front matter is pretty self-explanatory. Each project has a set of screenshots defined in the _images_ field. Additionally, I wanted to have the flexibility to order projects in the page exactly how I wanted and not just by date, so I'm using the _order_ field to do that:
 
-```
+```text
   {{ "{%" }} assign projects = site.projects | sort: 'order' %}
   {{ "{%" }} for project in projects %}
   // Display the project

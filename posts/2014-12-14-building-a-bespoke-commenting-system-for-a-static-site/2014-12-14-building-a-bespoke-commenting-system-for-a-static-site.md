@@ -65,7 +65,7 @@ Right away. I started by building my middleman, with PHP as my language of choic
 
 <!--phpsyntax-->
 
-```
+```php
 <?php
 
 require 'vendor/erusev/parsedown/Parsedown.php';

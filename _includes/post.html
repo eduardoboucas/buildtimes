@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-
 {% include partials/post-navigation.html %}
 
 <main id="main" role="main" class="main">
   {% if page.queued == null %}
     <article class="post post--full">
-      <div class="constrain">
+      <div class="constrain--padding">
       	<h1 class="post__title feature-title">
           {{ title | feature_title }}
         </h1>

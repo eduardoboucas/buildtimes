@@ -311,7 +311,7 @@ It's pretty common for websites to rely on third-party sources to deliver key pa
 
 This is particularly important when the assets being loaded are render-blocking (i.e. not loaded asynchronously), as trying to load a file from an unavailable source could leave the site hanging for a while until the request times out. The video below shows the effect caused by an outage of the Twitter API on the load times of the Business Insider website.
 
-{% include helpers/video.html url="https://www.youtube.com/embed/prToLDpjmPw" width="560" height="315" %}
+{% include helpers/video-embed.html url:"https://www.youtube.com/embed/prToLDpjmPw" width:"560" height:"315" %}
 
 To make our tests account for this, it's important to get the failing mode right, as described by Patrick Meenan in [this article](http://blog.patrickmeenan.com/2011/10/testing-for-frontend-spof.html).
 

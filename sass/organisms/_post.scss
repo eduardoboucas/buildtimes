@@ -1,3 +1,5 @@
+$post-background-gutter: 10px;
+
 @mixin post-body() {
   margin-top: 15px;
   font-size: 21px;
@@ -11,8 +13,15 @@
     margin-bottom: $post-vertical-rythm;
   }
 
-  li p {
-    display: inline;
+  li {
+    p {
+      display: inline;
+      padding: 0;
+    }
+
+    ol, ul {
+      margin-top: 10px;
+    }
   }
 
   a {
@@ -52,6 +61,15 @@
       font-weight: bold;
       font-style: italic;
     }
+
+    @if $variation == 5 {
+      letter-spacing: 3px;
+    }
+
+    @if $variation == 6 {
+      font-family: sans-serif;
+      font-weight: bold;
+    }
   }
 }
 
@@ -68,36 +86,52 @@
 }
 
 .post--small {
-  padding: 15px;
+  padding: $post-padding;
   margin-bottom: 30px;
 
-  @include media(">=medium") {
-    text-align: center;
+  &.post--headline {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
-  .post__title {
+  @include media(">=medium") {
+    text-align: justify;
+
+    .post__title {
+      text-align: center;
+    }
+  }
+
+  .post__title:not(.feature-title) {
     @include post-title;
 
-    .post-wrapper:nth-child(4n - 3) & {
+    .post-wrapper:nth-child(6n - 5) & {
       @include post-title-variation(1);
     }
 
-    .post-wrapper:nth-child(4n - 2) & {
+    .post-wrapper:nth-child(6n - 4) & {
       @include post-title-variation(2);
     }
 
-    .post-wrapper:nth-child(4n - 1) & {
+    .post-wrapper:nth-child(6n - 3) & {
       @include post-title-variation(3);
     }
 
-    .post-wrapper:nth-child(4n) & {
+    .post-wrapper:nth-child(6n - 2) & {
       @include post-title-variation(4);
+    }
+
+    .post-wrapper:nth-child(6n - 1) & {
+      @include post-title-variation(5);
+    }
+
+    .post-wrapper:nth-child(6n) & {
+      @include post-title-variation(3);
     }
   }
 
   .post__body {
     font-size: 18px;
-    text-align: left;
   }
 
   .post__meta {
@@ -114,6 +148,68 @@ a > .post--small {
 
     .post__cta {
       @include cta-hover;
+    }
+  }
+}
+
+.post--video {
+  filter: grayscale(1);
+
+  &:before {
+    content: '';
+    background: url(/assets/images/noise.gif) repeat;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.post--tweet {
+  padding: $post-background-gutter;
+  text-align: center;
+  
+  .post-inner-wrapper {
+    background-color: $colour-light-grey;
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 1, 0.25); 
+    padding: $post-padding - $post-background-gutter;
+  }
+  
+  .post__body {
+    filter: grayscale(0.6);
+    text-align: left;
+  }
+
+  .post__ribbon-wrapper {
+    position: relative;
+    right: 10px;
+    top: -$post-padding + $post-background-gutter - 5px;
+    width: 40px;
+    height: 60px;
+    float: right;
+    margin: 0 0 15px 15px;
+  }
+
+  .ribbon {
+    color: #78beee;
+
+    &:before {
+      color: #14669e;
+    }
+
+    .ribbon__icon {
+      fill: white;
+    }
+  }
+}
+
+.post--featured {
+  @include media(">=large") {
+    border: 1px solid #d4d4d3;
+
+    .post__body {
+      column-count: 2;
     }
   }
 }
@@ -192,4 +288,12 @@ a > .post--small {
 .post__external-info {
   margin-top: $post-vertical-rythm * 2;
   text-align: center;
+}
+
+.post__external-cta-wrapper {
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
 }
