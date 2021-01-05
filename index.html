@@ -10,6 +10,9 @@ permalink: "{% if pagination.pageNumber == 0 %}index.html{% else %}page/{{ pagin
 {% assign featuredOffset = 8 %}
 {% assign tweetInterval = 7 %}
 {% assign tweetOffset = 2 %}
+{% assign tweetsPerPage = pagination.size | divided_by: tweetInterval | floor %}
+{% assign tweetPageOffset = pagination.pageNumber | times: tweetsPerPage %}
+{% assign tweetIndex = tweetPageOffset %}
 
 <main
   id="main"
@@ -37,8 +40,8 @@ permalink: "{% if pagination.pageNumber == 0 %}index.html{% else %}page/{{ pagin
       {% endif %}
 
       {% if tweetCheck == "0" %}
-        {% assign tweetIndex = forloop.index | plus:tweetOffset | divided_by:tweetInterval | minus:1 %}
         {% assign tweet = tweets[tweetIndex] %}
+        {% assign tweetIndex = tweetIndex | plus:1 %}
 
         {% if tweet %}
           {% include partials/tweet.html tweet:tweet %}
