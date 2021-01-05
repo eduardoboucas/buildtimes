@@ -71,7 +71,7 @@ module.exports = () => {
         headers: {
           Authorization: `Bearer ${parsedBody.access_token}`
         },
-        url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${SCREEN_NAME}&exclude_replies=true&trim_user=true&count=20&tweet_mode=extended`
+        url: `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${SCREEN_NAME}&exclude_replies=true&trim_user=true&count=100&tweet_mode=extended`
       }, (err, response, body) => {
         const tweets = JSON.parse(body).filter(tweet => !tweet.retweeted_status)
         const oembeds = tweets.map(tweet => getOembed(SCREEN_NAME, tweet))
