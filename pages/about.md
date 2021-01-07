@@ -15,4 +15,6 @@ Thanks for dropping by. <!--tomb-->
 
 This site is built with [Eleventy](https://11ty.dev) and hosted on [Netlify](https://netlify.com). The source code is [publicly available](https://github.com/eduardoboucas/buildtimes).
 
-The fonts used are [Playfair Display](https://fonts.google.com/specimen/Playfair+Display), [Alternate Gothic W01 No. 3](https://www.onlinewebfonts.com/package/AlternateGothicW01-No3), Helvetica, and Times.
+Typography-wise, it uses [Playfair Display](https://fonts.google.com/specimen/Playfair+Display), [Alternate Gothic W01 No. 3](https://www.onlinewebfonts.com/package/AlternateGothicW01-No3), Helvetica, and Times.
+
+The [masthead illustration](/assets/images/masthead-logo-large.png) is an original piece by [Faizal Ganee](https://dribbble.com/fzlx_id).
