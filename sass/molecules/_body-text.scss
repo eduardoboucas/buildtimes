@@ -162,22 +162,22 @@
   }
 
   // Pull quote
-  > blockquote {
+  :not(blockquote) > blockquote {
     @include constrain($post-body-max-width, true);
 
     > p {
       font-style: italic;
       text-align: center;
       font-size: 32px;
-      border-width: 1px 0;
+      border-width: 0 0 0 2px;
+      border-style: solid;
       border-color: black;
-      //border-style: solid;
       margin: ($post-vertical-rythm * 3) 0;
     }
   }
 
   // Citations
-  > blockquote > blockquote {
+  blockquote > blockquote {
     @include constrain($post-body-max-width, true);
 
     position: relative;
