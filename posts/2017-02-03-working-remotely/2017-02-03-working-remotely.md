@@ -51,7 +51,7 @@ Part of the beauty of asynchronous/distributed teams is that everyone is able to
 
 In an office, you know you can just knock at someone's door or go to their desk whenever you need anything: you're there, they're there, everyone is working, otherwise they wouldn't be there. In a distributed team, things are a bit more difficult and it's actually part of _your_ job to ensure your peers can enjoy the flexibility they need.
 
-Try to understand the routines of the people you work the closest with and avoid contacting them outside their working hours unless you absolutely need to. Avoid sending messages to everyone (e.g. `@channel` in Slack) unless really necessary. If you keep getting messages after you've stopped working, you feel obliged to respond and next thing you know you're working a "double shift". Be strict with the routine you establish for yourself and respect everyone else's.
+Try to understand the routines of the people you work the closest with and avoid contacting them outside their working hours unless you absolutely need to. Avoid sending messages to everyone (e.g. `@channel` in Slack) unless really necessary. If you keep getting messages after you've stopped working, you feel pressured to respond and next thing you know you're working a "double shift". Be strict with the routine you establish for yourself and respect everyone else's.
 
 **Pro tip:** If you work with people from multiple timezones, a [world clock](https://itunes.apple.com/gb/app/status-clock/id552792489?mt=12) is a must have. I use it all the time to figure out if [Jim](https://github.com/jimlambie) is awake or not.
 
