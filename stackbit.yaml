@@ -1,0 +1,296 @@
+stackbitVersion: ~0.3.0
+ssgName: eleventy
+nodeVersion: '12'
+publishDir: _site
+dataDir: ''
+pagesDir: ''
+models:
+  page:
+    type: page
+    label: Page
+    folder: pages
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: permalink
+        label: Permalink
+  post:
+    type: page
+    label: Post
+    folder: posts
+    match:
+      - >-
+        2014-10-09-the-story-behind-my-website/2014-10-09-the-story-behind-my-website.md
+      - >-
+        2014-10-25-how-i-used-jekyll-on-my-backbonejs-website/2014-10-25-how-i-used-jekyll-on-my-backbonejs-website.md
+      - >-
+        2014-10-29-how-i-write-media-queries-in-sass/2014-10-29-how-i-write-media-queries-in-sass.md
+      - >-
+        2014-11-05-adding-ajax-pagination-to-jekyll/2014-11-05-adding-ajax-pagination-to-jekyll.md
+      - >-
+        2014-11-16-creating-a-tags-page-in-jekyll/2014-11-16-creating-a-tags-page-in-jekyll.md
+      - >-
+        2014-11-20-thoughts-on-serving-and-monitoring-a-feed/2014-11-20-thoughts-on-serving-and-monitoring-a-feed.md
+      - >-
+        2014-11-30-collapsing-code-snippets-on-mobile-devices/2014-11-30-collapsing-code-snippets-on-mobile-devices.md
+      - >-
+        2014-12-04-is-linkedin-ignoring-your-open-graph-meta-tags/2014-12-04-is-linkedin-ignoring-your-open-graph-meta-tags.md
+      - >-
+        2014-12-07-including-and-managing-images-in-jekyll/2014-12-07-including-and-managing-images-in-jekyll.md
+      - >-
+        2014-12-14-building-a-bespoke-commenting-system-for-a-static-site/2014-12-14-building-a-bespoke-commenting-system-for-a-static-site.md
+      - >-
+        2014-12-30-approaches-to-media-queries-in-sass/2014-12-30-approaches-to-media-queries-in-sass.md
+      - >-
+        2015-01-05-write-simple-elegant-and-maintainable-media-queries-with-sass/2015-01-05-write-simple-elegant-and-maintainable-media-queries-with-sass.md
+      - >-
+        2015-01-13-experimenting-with-sass-and-grids/2015-01-13-experimenting-with-sass-and-grids.md
+      - >-
+        2015-01-22-a-cautious-and-calculated-venture-into-flexbox/2015-01-22-a-cautious-and-calculated-venture-into-flexbox.md
+      - >-
+        2015-02-01-writing-media-queries-for-retina-devices-with-include-media/2015-02-01-writing-media-queries-for-retina-devices-with-include-media.md
+      - >-
+        2015-02-12-battling-with-ie8-html5-shiv-and-svg/2015-02-12-battling-with-ie8-html5-shiv-and-svg.md
+      - >-
+        2015-03-16-rapid-deployment-with-sass/2015-03-16-rapid-deployment-with-sass.md
+      - >-
+        2015-03-22-what-bem-did-to-my-css-specificity/2015-03-22-what-bem-did-to-my-css-specificity.md
+      - >-
+        2015-04-20-google-news-and-sponsored-content/2015-04-20-google-news-and-sponsored-content.md
+      - >-
+        2015-04-21-thoughts-on-an-api-first-wordpress/2015-04-21-thoughts-on-an-api-first-wordpress.md
+      - >-
+        2015-04-27-bem-wrappers-and-nesting-and-why-i-love-twitter/2015-04-27-bem-wrappers-and-nesting-and-why-i-love-twitter.md
+      - >-
+        2015-04-28-sharing-jekyll-posts-on-social-media-using-front-matter-and-ifttt/2015-04-28-sharing-jekyll-posts-on-social-media-using-front-matter-and-ifttt.md
+      - >-
+        2015-05-11-rethinking-the-commenting-system-for-my-jekyll-site/2015-05-11-rethinking-the-commenting-system-for-my-jekyll-site.md
+      - >-
+        2015-05-20-include-media-v1-2-released/2015-05-20-include-media-v1-2-released.md
+      - >-
+        2015-05-21-an-introduction-to-static-site-generators/2015-05-21-an-introduction-to-static-site-generators.md
+      - >-
+        2015-06-04-supercharging-jekyll-with-a-serviceworker/2015-06-04-supercharging-jekyll-with-a-serviceworker.md
+      - >-
+        2015-06-08-include-media-v1-3-released/2015-06-08-include-media-v1-3-released.md
+      - >-
+        2015-06-18-viewport-sized-typography-with-minimum-and-maximum-sizes/2015-06-18-viewport-sized-typography-with-minimum-and-maximum-sizes.md
+      - >-
+        2015-06-29-exporting-breakpoints-from-css-to-javascript-with-include-media/2015-06-29-exporting-breakpoints-from-css-to-javascript-with-include-media.md
+      - >-
+        2016-03-03-here-s-a-new-website-right-off-the-press/2016-03-03-here-s-a-new-website-right-off-the-press.md
+      - >-
+        2016-04-15-creating-modular-ui-components-with-dustjs/2016-04-15-creating-modular-ui-components-with-dustjs.md
+      - >-
+        2016-07-18-image-art-direction-using-html-picture-element-dadi-cdn/2016-07-18-image-art-direction-using-html-picture-element-dadi-cdn.md
+      - >-
+        2016-07-22-learning-to-cope-with-microservices/2016-07-22-learning-to-cope-with-microservices.md
+      - 2016-07-28-kindness/2016-07-28-kindness.md
+      - 2016-08-10-staticman/2016-08-10-staticman.md
+      - 2016-08-17-mdn/2016-08-17-mdn.md
+      - 2016-08-26-webpagetest-api/2016-08-26-webpagetest-api.md
+      - 2016-09-09-bragajs/2016-09-09-bragajs.md
+      - 2016-09-12-open-source-love/2016-09-12-open-source-love.md
+      - 2016-10-17-speedtracker/2016-10-17-speedtracker.md
+      - >-
+        2016-12-15-introducing-speedtracker/2016-12-15-introducing-speedtracker.md
+      - 2016-12-19-how-i-use-include-media/2016-12-19-how-i-use-include-media.md
+      - >-
+        2016-12-21-responsive-video-embeds-jekyll/2016-12-21-responsive-video-embeds-jekyll.md
+      - 2016-12-23-2016-year-review/2016-12-23-2016-year-review.md
+      - >-
+        2017-01-25-components-naming-convention-sass/2017-01-25-components-naming-convention-sass.md
+      - 2017-02-03-working-remotely/2017-02-03-working-remotely.md
+      - >-
+        2017-02-09-contributing-firefox-devtools/2017-02-09-contributing-firefox-devtools.md
+      - 2017-02-20-speedtracker-ldnwebperf/2017-02-20-speedtracker-ldnwebperf.md
+      - >-
+        2017-02-22-jekyll-staging-environment/2017-02-22-jekyll-staging-environment.md
+      - 2017-02-27-haiku/2017-02-27-haiku.md
+      - 2017-05-15-test-feature-requests/2017-05-15-test-feature-requests.md
+      - >-
+        2017-09-25-svg-clip-path-logo-colour/2017-09-25-svg-clip-path-logo-colour.md
+      - 2017-10-23-lazy-loading-dadi-cdn/2017-10-23-lazy-loading-dadi-cdn.md
+      - 2017-11-10-fog-computing/2017-11-10-fog-computing.md
+      - 2017-11-14-static-api-generator/2017-11-14-static-api-generator.md
+      - 2017-11-23-microservices-1/2017-11-23-microservices-1.md
+      - 2017-11-30-microservices-2/2017-11-30-microservices-2.md
+      - 2017-12-07-microservices-3/2017-12-07-microservices-3.md
+      - 2017-12-14-microservices-4/2017-12-14-microservices-4.md
+      - 2017-12-21-microservices-5/2017-12-21-microservices-5.md
+      - >-
+        2018-03-12-transforming-javascript-edge/2018-03-12-transforming-javascript-edge.md
+      - 2019-02-01-what-is-a-headless-cms/2019-02-01-what-is-a-headless-cms.md
+      - 2019-06-03-server-side-rendering/2019-06-03-server-side-rendering.md
+      - >-
+        2019-08-14-github-pages-blogging-platform/2019-08-14-github-pages-blogging-platform.md
+      - 2020-01-08-what-is-an-api/2020-01-08-what-is-an-api.md
+      - >-
+        2020-02-04-custom-json-serialisation-deserialisation/2020-02-04-custom-json-serialisation-deserialisation.md
+      - >-
+        2020-02-06-web-connected-traffic-light/2020-02-06-web-connected-traffic-light.md
+      - >-
+        2020-12-23-staticman-netlify-functions/2020-12-23-staticman-netlify-functions.md
+    fields:
+      - type: string
+        name: permalink
+        label: Permalink
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: string
+        name: external-url
+        label: External Url
+      - type: string
+        name: external-name
+        label: External Name
+      - type: date
+        name: external-date
+        label: External Date
+      - type: string
+        name: handle
+        label: Handle
+      - type: string
+        name: redirect_from
+        label: Redirect From
+      - type: string
+        name: categories
+        label: Categories
+      - type: string
+        name: visualTitle
+        label: Visual Title
+      - type: string
+        name: audio
+        label: Audio
+      - type: string
+        name: series
+        label: Series
+  post_1:
+    type: page
+    label: Post 1
+    folder: posts
+    match:
+      - 2018-02-01-compat-report/2018-02-01-compat-report.md
+      - >-
+        2020-03-18-sourcebit-smashing-podcast/2020-03-18-sourcebit-smashing-podcast.md
+      - >-
+        2021-03-03-shipping-nodejs-at-netlify/2021-03-03-shipping-nodejs-at-netlify.md
+    fields:
+      - type: string
+        name: permalink
+        label: Permalink
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: string
+        name: external-url
+        label: External Url
+      - type: string
+        name: external-name
+        label: External Name
+  include_media:
+    type: page
+    label: Include Media
+    folder: sass/vendor/include-media
+    match: '*'
+    fields: []
+  config:
+    type: data
+    label: Config
+    file: _data/config.json
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: url
+        label: Url
+      - type: string
+        name: googleAnalyticsId
+        label: Google Analytics Id
+      - type: string
+        name: staticmanUrl
+        label: Staticman Url
+  sache:
+    type: data
+    label: Sache
+    file: sass/vendor/include-media/sache.json
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: description
+        label: Description
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+  vendor:
+    type: data
+    label: Vendor
+    folder: sass/vendor
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: version
+        label: Version
+      - type: string
+        name: homepage
+        label: Homepage
+      - type: list
+        name: authors
+        label: Authors
+        items:
+          type: string
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: main
+        label: Main
+      - type: list
+        name: keywords
+        label: Keywords
+        items:
+          type: string
+      - type: object
+        name: dependencies
+        label: Dependencies
+        fields:
+          - type: string
+            name: include-media
+            label: Include Media
+      - type: string
+        name: license
+        label: License
+      - type: list
+        name: ignore
+        label: Ignore
+        items:
+          type: string
