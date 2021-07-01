@@ -5,7 +5,7 @@ permalink: /about/index.html
 
 Hello, fellow passenger of this incredible ride that is web development. I've been building websites since the turn of the century — I like to think that I've got the hang of it, but the content published here will most certainly indicate otherwise. You're reading *Build Times*, my modest collection of thoughts, experiments, ramblings and rants about the daily goings-on of an individual who gets paid to write gibberish at the computer — these posts are on the house, though.
 
-I'm a Senior Software Engineer at [Netlify](https://netlify.com) and I maintain several [open-source projects](https://github.com/eduardoboucas). I also [tweet](https://twitter.com/eduardoboucas) and occasionally [speak](https://speakerdeck.com/eduardoboucas).
+I'm a Senior Staff Software Engineer at [Netlify](https://netlify.com) and I maintain several [open-source projects](https://github.com/eduardoboucas). I also [tweet](https://twitter.com/eduardoboucas) and occasionally [speak](https://speakerdeck.com/eduardoboucas).
 
 Thanks for dropping by. <!--tomb-->
 
