@@ -104,7 +104,7 @@ If we write an edge function that imports our module, we can create a hosted ver
 
 _netlify/edge-functions/http.ts_
 
-```ts
+```typescript
 import { greet } from "../src/mod.ts";
 
 export default async (req: Request) => {
