@@ -65,7 +65,7 @@ To do this, open the Netlify dashboard and navigate to _Site settings_ > _Build 
 
 To test the release flow, make some changes to the module code, push a commit using the `feat:` prefix, and open a pull request. Once you merge it, Release Please will create a release pull request automatically. Merging it will complete the release.
 
-If you go to the _Deploys_ page of the Netlify dashboard, you'll see a new deploy in progress. Once it finishes, you'll see that `deno-greeter` now is available at https://1.0--deno-greeter.netlify.app/mod.ts — this is an immutable URL that points to version 1.0 of the module, and will be unaffected by future versions.
+If you go to the _Deploys_ page of the Netlify dashboard, you'll see a new deploy in progress. Once it finishes, you'll see that `deno-greeter` now is available at [https://1.0.0--deno-greeter.netlify.app/mod.ts](https://1.0.0--deno-greeter.netlify.app/mod.ts) — this is an immutable URL that points to version 1.0.0 of the module, and will be unaffected by future versions.
 
 This process will happen automatically for every new pull request that you merge. New versions of the module will respect [Semantic Versioning](https://semver.org/) and will be inferred automatically from the Conventional Commits convention prefixes used in your commits — `fix:` will generate a patch version, `feat:` will trigger a minor version, and `feat!:` signals a major version with breaking changes.
 
@@ -85,7 +85,7 @@ This protects your site with a username and password combination, leveraing [bas
 To use the module in their applications, consumers must set a `DENO_AUTH_TOKENS` environment variable with the right credentials when running Deno CLI commands.
 
 ```text
-DENO_AUTH_TOKENS=janedoe:supersecret123@1.0--deno-greeter.netlify.app
+DENO_AUTH_TOKENS=janedoe:supersecret123@1.0.0--deno-greeter.netlify.app
 ```
 
 You can read more about [private modules in Deno](https://deno.land/manual@v1.27.1/linking_to_external_code/private) and explore [more advanced authentication mechanisms](https://docs.netlify.com/visitor-access/role-based-access-control/) offered by Netlify.
@@ -94,7 +94,7 @@ You can read more about [private modules in Deno](https://deno.land/manual@v1.27
 
 Using a full-fledged website deployment platform to host your modules comes with a few more perks. For example, if you want to create a documentation site for your project, you don't need any additional configuration or tooling. You can place the HTML files in the `src` directory and Netlify will serve them on the same URL. If you want to use a framework like [Docusaurus](https://docusaurus.io/) to build your docs, you totally can.
 
-And because the site is deployed alongside the module's code, they will be versioned in the same way. So if someone is importing https://1.0--deno-greeter.netlify.app/mod.ts in their application, they can find the documentation for that specific version at https://1.0--deno-greeter.netlify.app.
+And because the site is deployed alongside the module's code, they will be versioned in the same way. So if someone is using version 1.0.0 of your module, they can find the documentation for that specific version at [https://1.0.0--deno-greeter.netlify.app](https://1.0.0--deno-greeter.netlify.app).
 
 ## Hosted version
 
@@ -107,7 +107,7 @@ import { greet } from "../src/mod.ts";
 
 export default async (req: Request) => {
   const url = new URL();
-  const name = url.searchParams.get("name");
+  const name = url.searchParams.get(name);
   const greeting = greet(name);
 
   return new Response(greeting);
