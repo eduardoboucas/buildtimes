@@ -38,7 +38,7 @@ Finally, we can change the site name to something a bit more memorable. You can 
 
 We're now ready to use the module in a Deno program.
 
-```
+```shell
 $ deno repl --eval "import { greet } from 'https://deno-greeter.netlify.app/mod.ts'"
 Download https://deno-greeter.netlify.app/mod.ts
 Download https://deno-greeter.netlify.app/greetings.ts
@@ -61,7 +61,7 @@ We can achieve this pretty easily with Netlify, as you can configure your site t
 
 To do this, open the Netlify dashboard and navigate to _Site settings_ > _Build & deploy_ > _Branches_ and select _All_.
 
-{% include helpers/image.html name:"deploy-configuration.jpg" caption:"Configuration of branch deploys in Netlify" %}
+{% include helpers/image.html name:"deploy-configuration.png" caption:"Configuration of branch deploys in Netlify" %}
 
 To test the release flow, make some changes to the module code, push a commit using the `feat:` prefix, and open a pull request. Once you merge it, Release Please will create a release pull request automatically. Merging it will complete the release.
 
@@ -75,7 +75,7 @@ The current setup works great for public modules, but you might restrict access 
 
 To do this, we can leverage Netlify's [password protection feature](https://docs.netlify.com/visitor-access/password-protection). We start by creating a `_headers` file in the `src` directory with the following contents.
 
-```
+```text
 /*
   Basic-Auth: janedoe:supersecret123
 ```
@@ -84,7 +84,7 @@ This protects your site with a username and password combination, leveraing [bas
 
 To use the module in their applications, consumers must set a `DENO_AUTH_TOKENS` environment variable with the right credentials when running Deno CLI commands.
 
-```
+```text
 DENO_AUTH_TOKENS=janedoe:supersecret123@1.0--deno-greeter.netlify.app
 ```
 
@@ -101,8 +101,6 @@ And because the site is deployed alongside the module's code, they will be versi
 All the Netlify primitives are at our disposal, including [Edge Functions](https://docs.netlify.com/edge-functions/overview/) (which are built on Deno themselves, as meta as it sounds).
 
 If we write an edge function that imports our module, we can create a hosted version of it, which applications can interact with by issuing an HTTP request. This can work as an alternative interface for applications that are using another JavaScript runtime or a different programming language entirely.
-
-_netlify/edge-functions/http.ts_
 
 ```typescript
 import { greet } from "../src/mod.ts";
