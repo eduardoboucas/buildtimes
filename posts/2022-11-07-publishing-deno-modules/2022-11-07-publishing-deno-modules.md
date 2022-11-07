@@ -26,6 +26,7 @@ The first step is to create a GitHub repository with a few things:
 
 - A JavaScript or TypeScript [entry point](https://github.com/eduardoboucas/deno-module-template/blob/044583aadf14e2842e098669fdc230fd139710dc/src/mod.ts) for the module. This is the file that people will import into their applications.
 - A [workflow file](https://github.com/eduardoboucas/deno-module-template/blob/044583aadf14e2842e098669fdc230fd139710dc/.github/workflows/release-please.yml) for Release Please, which will automate the release process using GitHub Actions.
+- A [Netlify Build Plugin](https://github.com/eduardoboucas/netlify-changelog-redirects) for generating redirects to version-locked URLs
 - A Netlify [configuration file](https://github.com/eduardoboucas/deno-module-template/blob/044583aadf14e2842e098669fdc230fd139710dc/netlify.toml), setting the right directories, build command, and response headers.
 
 Next, we [connect the repository to Netlify](https://docs.netlify.com/welcome/add-new-site/).
