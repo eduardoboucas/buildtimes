@@ -8,9 +8,9 @@ tags:
 - javascript
 - netlify
 ---
-Runtimes like Node.js rely on a package manager and a registry to install and distribute modules, but Deno has a different spin. It allows developers to import modules directly from a URL, which can be hosted on a CDN, your own server, or really anywhere on the web.<!--more-->
+Runtimes like Node.js rely on a package manager and a registry to install and distribute modules, but Deno has a different spin. It allows developers to import modules directly from a URL, which can be hosted on a CDN, your own server, or really anywhere on the web.
 
-This level of flexibility brings infinite options, so I started looking for the best workflow to release modules in this new paradigm. This article describes the solution I landed on, and it works for solo open-source developers or large development teams in the enterprise world.
+This level of flexibility brings infinite options, so I started looking for the best workflow to release modules in this new paradigm. This article describes the solution I landed on — one that works for solo open-source developers or large development teams in the enterprise world.<!--more-->
 
 Here's the gist of it:
 
