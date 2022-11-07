@@ -127,6 +127,6 @@ By deploying this edge function, `deno-greeter` can be accessed at [https://deno
 
 ## Parting thoughts
 
-This is admittedly not be the most impartial technical piece ever, since [I work at Netlify](/about). I did start from the premise of finding the best workflow _for me_, and I tend to favour the tools that I enjoy using. So while there are many options out there, I struggled to find one that packs this much functionality with such simplicity.
+This is admittedly not be the most impartial technical piece ever, since [I work at Netlify](/about). I did honestly start from the premise of finding the best workflow for _me_, which I decided to share. So while there are many options out there, I struggled to find one that packs this much functionality with such simplicity.
 
-With the "this is not a Netlify marketing piece" caveat out of the way, I would love to hear about the workflow that works for you. If you end up using the same as mine, definitely [hit me up](https://twitter.com/eduardoboucas!<!--tomb-->
+With the _«this is not a Netlify marketing piece»_ caveat out of the way, I would love to hear about the workflow that works for you. If you end up using the same as mine, definitely [hit me up](https://twitter.com/eduardoboucas)!<!--tomb-->
