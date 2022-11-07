@@ -26,7 +26,7 @@ The first step is to create a GitHub repository with a few things:
 
 - A JavaScript or TypeScript [entry point](https://github.com/eduardoboucas/deno-module-template/blob/044583aadf14e2842e098669fdc230fd139710dc/src/mod.ts) for the module. This is the file that people will import into their applications.
 - A [workflow file](https://github.com/eduardoboucas/deno-module-template/blob/044583aadf14e2842e098669fdc230fd139710dc/.github/workflows/release-please.yml) for Release Please, which will automate the release process using GitHub Actions.
-- A Netlify [configuration file](https://github.com/eduardoboucas/deno-module-template/blob/044583aadf14e2842e098669fdc230fd139710dc/netlify.toml). This is setting the right directories and content types.
+- A Netlify [configuration file](https://github.com/eduardoboucas/deno-module-template/blob/044583aadf14e2842e098669fdc230fd139710dc/netlify.toml), setting the right directories, build command, and response headers.
 
 Next, we [connect the repository to Netlify](https://docs.netlify.com/welcome/add-new-site/).
 
@@ -44,8 +44,8 @@ Download https://deno-greeter.netlify.app/mod.ts
 Download https://deno-greeter.netlify.app/greetings.ts
 Deno 1.24.3
 exit using ctrl+d or close()
-> greet("Jane Doe")
-"Good morning, Jane Doe!"
+> greet("Jane")
+"Good morning, Jane!"
 >
 ```
 
@@ -63,11 +63,15 @@ To do this, open the Netlify dashboard and navigate to _Site settings_ > _Build 
 
 {% include helpers/image.html name:"deploy-configuration.png" caption:"Configuration of branch deploys in Netlify" %}
 
-To test the release flow, make some changes to the module code, push a commit using the `feat:` prefix, and open a pull request. Once you merge it, Release Please will create a release pull request automatically. Merging it will complete the release.
+To test the release flow, make some changes to the module code, push a commit using the `feat:` prefix, and open a pull request. Once you merge it, Release Please will create [a release pull request](https://github.com/eduardoboucas/deno-greeter/pull/1) automatically. Merging it will complete the release.
 
-If you go to the _Deploys_ page of the Netlify dashboard, you'll see a new deploy in progress. Once it finishes, you'll see that `deno-greeter` now is available at [https://1.0.0--deno-greeter.netlify.app/mod.ts](https://1.0.0--deno-greeter.netlify.app/mod.ts) — this is an immutable URL that points to version 1.0.0 of the module, and will be unaffected by future versions.
+If you go to the _Deploys_ page of the Netlify dashboard, you'll see a new deploy in progress. Once it finishes, you'll see that `deno-greeter` now is available at [https://deno-greeter.netlify.app/1.0.0/mod.ts](https://deno-greeter.netlify.app/1.0.0/mod.ts) — this is an immutable URL that points to version 1.0.0 of the module, and will be unaffected by future versions.
 
-This process will happen automatically for every new pull request that you merge. New versions of the module will respect [Semantic Versioning](https://semver.org/) and will be inferred automatically from the Conventional Commits convention prefixes used in your commits — `fix:` will generate a patch version, `feat:` will trigger a minor version, and `feat!:` signals a major version with breaking changes.
+This process will happen automatically for every new pull request that you merge. New versions of the module will respect [Semantic Versioning](https://semver.org/) and will be inferred automatically from the Conventional Commits convention prefixes used in your commits: 
+
+- `fix:` will generate a patch version
+- `feat:` will trigger a minor version
+- `feat!:` signals a major version with breaking changes
 
 ## Private modules
 
@@ -85,7 +89,7 @@ This protects your site with a username and password combination, leveraing [bas
 To use the module in their applications, consumers must set a `DENO_AUTH_TOKENS` environment variable with the right credentials when running Deno CLI commands.
 
 ```text
-DENO_AUTH_TOKENS=janedoe:supersecret123@1.0.0--deno-greeter.netlify.app
+DENO_AUTH_TOKENS=janedoe:supersecret123@deno-greeter.netlify.app
 ```
 
 You can read more about [private modules in Deno](https://deno.land/manual@v1.27.1/linking_to_external_code/private) and explore [more advanced authentication mechanisms](https://docs.netlify.com/visitor-access/role-based-access-control/) offered by Netlify.
@@ -94,7 +98,7 @@ You can read more about [private modules in Deno](https://deno.land/manual@v1.27
 
 Using a full-fledged website deployment platform to host your modules comes with a few more perks. For example, if you want to create a documentation site for your project, you don't need any additional configuration or tooling. You can place the HTML files in the `src` directory and Netlify will serve them on the same URL. If you want to use a framework like [Docusaurus](https://docusaurus.io/) to build your docs, you totally can.
 
-And because the site is deployed alongside the module's code, they will be versioned in the same way. So if someone is using version 1.0.0 of your module, they can find the documentation for that specific version at [https://1.0.0--deno-greeter.netlify.app](https://1.0.0--deno-greeter.netlify.app).
+And because the site is deployed alongside the module's code, they will be versioned in the same way. So if someone is using version 1.0.0 of your module, they can find the documentation for that specific version at [https://deno-greeter.netlify.app/1.0.0](https://deno-greeter.netlify.app/1.0.0).
 
 ## Hosted version
 
@@ -103,13 +107,15 @@ All the Netlify primitives are at our disposal, including [Edge Functions](https
 If we write an edge function that imports our module, we can create a hosted version of it, which applications can interact with by issuing an HTTP request. This can work as an alternative interface for applications that are using another JavaScript runtime or a different programming language entirely.
 
 ```typescript
-import { greet } from "../src/mod.ts";
+import { greet } from "../../src/mod.ts";
 
 export default async (req: Request) => {
-  const url = new URL();
-  const name = url.searchParams.get(name);
+  const url = new URL(req.url);
+  const name = url.searchParams.get("name");
   const greeting = greet(name);
 
   return new Response(greeting);
 }
 ```
+
+By deploying this edge function, `deno-greeter` can be accessed at [https://deno-greeter.netlify.app/api?name=Jane](https://deno-greeter.netlify.app/api?name=Jane).
