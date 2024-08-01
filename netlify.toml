@@ -1,6 +1,6 @@
 [build]
 command = "echo Nothing to do here"
-publish = "."
+publish = "public"
 
 [[redirects]]
   from = "/*"
