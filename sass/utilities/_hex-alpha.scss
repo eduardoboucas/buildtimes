@@ -1,7 +1,0 @@
-@function hex-alpha($hex, $alpha) {
-	$red: red($hex);
-	$green: green($hex);
-	$blue: blue($hex);
-
-	@return rgba($red, $green, $blue, $alpha);
-}
