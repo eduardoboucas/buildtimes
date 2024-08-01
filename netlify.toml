@@ -1,3 +1,7 @@
+[build]
+command = "echo Nothing to do here"
+publish = "."
+
 [[redirects]]
   from = "/*"
   to = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ18YGfwDLk5IjsYRqFGaLjw_IoHiwVSM6ZtO0bFBV2ZA5NDwcEpKEJcYbAV8bN23x5Z7sApzDsZ"
