@@ -27,7 +27,7 @@ My goal is not to stop anyone from using Next.js, but to lay out as much informa
 
 Let me lead with a declaration of interest:
 
-- I have been working at [Netlify](https://www.netlify.com/) for over four years
+- I work at [Netlify](https://www.netlify.com/) and have done so for over four years
 - Netlify is a frontend cloud platform that supports Next.js and other web frameworks as part of its product offering
 - Netlify and Vercel are direct competitors
 
@@ -35,7 +35,7 @@ It's important for me to establish this for a few reasons.
 
 My job involves building the infrastructure and tooling needed to support the full feature set of Next.js on Netlify, which has exposed me to the internals of the framework in a way that most people won't see. Over the years, I have seen concerning patterns of tight coupling between the open-source framework and the infrastructure of the company that builds it.
 
-That job is also the reason why I bave always been very weary of voicing these concerns in public. As a Netlify employee, I don't really get to voice an objective concern about Next.js without people dismissing any claims as Netlify unleashing one of its minions to spread [FUD](https://en.wikipedia.org/wiki/Fear,_uncertainty,_and_doubt) about a competitor. 
+My employment is also the reason why I bave always been very weary of voicing these concerns in public. As a Netlify employee, I don't really get to voice an objective concern about Next.js without people dismissing my claims as Netlify unleashing one of its minions to spread [FUD](https://en.wikipedia.org/wiki/Fear,_uncertainty,_and_doubt) about a competitor. 
 
 I'm not keen on exposing myself and the company to that type of debate, so I have always chosen to work behind the scenes in supporting the developers who decide to deploy their sites on Netlify and shield them from all the complexity that goes into making that possible.
 
@@ -149,7 +149,7 @@ But that growth holds them to a high bar of standards that, in my opinion, they 
 
 _«If Vercel own Next.js, what incentive do they have to open it up to other providers?»_ is [a question I sometimes see](https://x.com/jamonholmgren/status/1904174718779072575) and which I find intriguing. What incentives does Redis have for opening up their software when they own Redis Cloud? Why make Grafana open when Grafana Cloud is owned by the same company? Or WordPress, ClickHouse and many others?
 
-Because their success is intrinsically associated with the promise of an open source and the freedom to choose whatever provider offers the service that meets your needs. It's a commitment towards the community that you willingly sign up for when you choose to publish software with this model as opposed to a closed, proprietary solution.
+The incentive is that they _have_ to do those things if they choose to publish their software as open-source and not as a closed, proprietary solution. Their success is intrinsically associated their users having the guarantee that they are free to choose whatever provider offers the service that meets your needs at any given time.
 
 ## Wrapping up
 
