@@ -15,7 +15,7 @@ The open-source software model is a fundamental answer to this. By using softwar
 
 This is the expectation with Next.js, an open-source web development framework created and [governed by Vercel](https://nextjs.org/governance), a cloud provider that offers managed hosting of Next.js as a service.<!--more-->
 
-There is nothing wrong with a company profiting from an open-source software it has created, especially when that helps fund the development of the project. In fact, there are plenty of examples of that model working successfully in our industry.
+There is nothing wrong with a company profiting from an open-source software it created, especially when that helps fund the development of the project. In fact, there are plenty of examples of that model working successfully in our industry.
 
 But I think that can only work sustainably if the boundaries between the company and the open-source project are abundantly clear, with well-defined expectations between the maintainers, the hosting providers and the users about how and where each feature of the framework can be used.
 
@@ -35,13 +35,13 @@ It's important for me to establish this for a few reasons.
 
 My job involves building the infrastructure and tooling needed to support the full feature set of Next.js on Netlify, which has exposed me to the internals of the framework in a way that most people won't see. Over the years, I have seen concerning patterns of tight coupling between the open-source framework and the infrastructure of the company that builds it.
 
-My employment is also the reason why I bave always been very weary of voicing these concerns in public. As a Netlify employee, I don't really get to voice an objective concern about Next.js without people dismissing my claims as Netlify unleashing one of its minions to spread [FUD](https://en.wikipedia.org/wiki/Fear,_uncertainty,_and_doubt) about a competitor. 
+My employment is also the reason why I have always been very wary of voicing these concerns in public. As a Netlify employee, I don't really get to voice an objective concern about Next.js without people dismissing my claims as Netlify unleashing one of its minions to spread [FUD](https://en.wikipedia.org/wiki/Fear,_uncertainty,_and_doubt) about a competitor. 
 
 I'm not keen on exposing myself and the company to that type of debate, so I have always chosen to work behind the scenes in supporting the developers who decide to deploy their sites on Netlify and shield them from all the complexity that goes into making that possible.
 
 But then something happened.
 
-Last weekend, Vercel has disclosed a critical security vulnerability with Next.js. This type of issue is normal, but the way Vercel chose to handle it was so poor, reckless and disrespectful to the community that it has exacerbated my concerns about the governance of the project.
+Last weekend, Vercel disclosed a critical security vulnerability with Next.js. This type of issue is normal, but the way Vercel chose to handle it was so poor, reckless and disrespectful to the community that it has exacerbated my concerns about the governance of the project.
 
 For me, things change once your decisions put other people at risk, so I felt the urge to speak up.
 
@@ -73,7 +73,7 @@ Vercel have built the Build Output API because they wanted their customers to le
 
 This means that any hosting providers other than Vercel must build on top of undocumented APIs that can introduce unannounced breaking changes in minor or patch releases. (And they have.)
 
-Late last year, [Cloudflare](https://blog.cloudflare.com/builder-day-2024-announcements/#cloudflare-joins-opennext) and [Netlify](https://www.netlify.com/blog/netlify-joins-opennext/) have joined [OpenNext](https://opennext.js.org/), a movement of different cloud providers that collaborate on open-source adapters for Next. Shortly after, Vercel have engaged with the movement and committed to building support for adapters. They haven't made any timeline commitments, but have [recently said they are actively working on it](https://x.com/feedthejim/status/1903837444648382758?s=46).
+Late last year, [Cloudflare](https://blog.cloudflare.com/builder-day-2024-announcements/#cloudflare-joins-opennext) and [Netlify](https://www.netlify.com/blog/netlify-joins-opennext/) have joined [OpenNext](https://opennext.js.org/), a movement of different cloud providers that collaborate on open-source adapters for Next.js. Shortly after, Vercel have engaged with the movement and committed to building support for adapters. They haven't made any timeline commitments, but have [recently said they are actively working on it](https://x.com/feedthejim/status/1903837444648382758?s=46).
 
 It's important to remember that it's been almost three years since the launch of the Build Output API, and to this day the framework still isn't portable. I'm cautiously optimistic about that actually changing this time.
 
@@ -87,7 +87,7 @@ One obvious answer to these requirements is serverless computing, as attested by
 
 >> Serverless allows for distributed points of failure, infinite scalability, and is incredibly affordable with a "pay for what you use" model.
 
-This clearly advantageous computing paradigm is precisely how Vercel has run Next.js sites in their own infrastructure for years. Given that Next.js is an open framework, it is reasonble to expect that you'd be able to use that same model in any serverless provider of your choice. But it's not that simple.
+This clearly advantageous computing paradigm is precisely how Vercel has run Next.js sites in their own infrastructure for years. Given that Next.js is an open framework, it is reasonable to expect that you'd be able to use that same model in any serverless provider of your choice. But it's not that simple.
 
 Next.js once had [a serverless mode](https://nextjs.org/blog/next-8#serverless-nextjs) that you could enable with a configuration property, but it was [removed without further explanation in October 2022](https://github.com/vercel/next.js/pull/41495). No equivalent mode was ever introduced.
 
@@ -117,7 +117,7 @@ As far as I know, Netlify is the only cloud provider to support the full feature
 
 So why is there a hidden door in Next.js for which only Vercel holds the key? I think it's expected that the framework maintainers regularly experiment with features before they're launched, but minimal mode isn't that. We're talking about entirely different operation mode for the framework, which has been in the code base for many years and which unlocks capabilities that are reserved for the for-profit company that owns the framework.
 
-If WordPress had a priviliged code path that was only accessible to sites deployed to Automattic properties, would it be trusted as a truly open project and would it have the dominance it has today?
+If WordPress had a privileged code path that was only accessible to sites deployed to Automattic properties, would it be trusted as a truly open project and would it have the dominance it has today?
 
 ## Security posture
 
@@ -125,9 +125,9 @@ Let's go back to the security incident. On Friday, March 21st at 10:17 AM (UTC),
 
 In essence, it was possible for anyone to completely bypass Next.js middleware by sending a specific header in the request. This is important because [authorisation was one of the flagship use cases of middleware](https://nextjs.org/blog/next-12#introducing-middleware), and this exploit meant that anyone could bypass the authentication layer and gain access to protected resources.
 
-As the incident unravelled, a few things became apparent. First of all, the vulnerability was [reported to the Next.js team on Febrary 27th](https://nextjs.org/blog/cve-2025-29927#timeline), but it wasn't until March 14th that the team started looking into it. Once they did, they started pushing fixes for [Next 14](https://github.com/vercel/next.js/commit/5fd3ae8f8542677c6294f32d18022731eab6fe48) and [Next 15](https://github.com/vercel/next.js/commit/52a078da3884efe6501613c7834a3d02a91676d2) within a couple of hours.
+As the incident unravelled, a few things became apparent. First of all, the vulnerability was [reported to the Next.js team on February 27th](https://nextjs.org/blog/cve-2025-29927#timeline), but it wasn't until March 14th that the team started looking into it. Once they did, they started pushing fixes for [Next 14](https://github.com/vercel/next.js/commit/5fd3ae8f8542677c6294f32d18022731eab6fe48) and [Next 15](https://github.com/vercel/next.js/commit/52a078da3884efe6501613c7834a3d02a91676d2) within a couple of hours.
 
-So by March 14th (at the latest), Vercel knew they had a serious incident on their hands. The responsible thing to do at that point would be immediately disclosing the vulnerability to other providers, so that they could assert the impact to their own customers and take any necessary actions to protect them as quickly as possible. At times like these, our duty to protect users should rise above any competition between companies.
+So by March 14th (at the latest), Vercel knew they had a serious incident on their hands. The responsible thing to do at that point would be immediately disclosing the vulnerability to other providers, so that they could assess the impact to their own customers and take any necessary actions to protect them as quickly as possible. At times like these, our duty to protect users should rise above any competition between companies.
 
 That is not what happened. It took Vercel 8 (eight) days to reach out to Netlify. In that time, they managed to push patches to Next.js, cut two releases, and even write a blog post that framed the incident as something that Vercel's firewall had _«proactively protected»_ their customers from (even though [their CTO later said](https://x.com/cramforce/status/1903648110863343871?s=46) that their firewall had nothing to do with it).
 
