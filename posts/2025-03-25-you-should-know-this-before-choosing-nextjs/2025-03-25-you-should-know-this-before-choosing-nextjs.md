@@ -163,6 +163,6 @@ As for me, I'll keep doing my job to help support the developers who chose to de
 
 ### Vercel's response
 
-_This is a placeholder where I commit to publishing any response from Vercel to this post._
+_This is a placeholder where I will share any response I receive from Vercel to this post._
 
 *Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem and [a section for Vercel's response](/#vercel-s-response).
