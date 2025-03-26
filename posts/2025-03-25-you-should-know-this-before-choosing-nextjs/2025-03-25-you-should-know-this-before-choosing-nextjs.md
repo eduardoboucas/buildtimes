@@ -135,6 +135,10 @@ I think it's incredibly disingenuous to spin a critical security vulnerability i
 
 After [being called out on social media](https://bsky.app/profile/eduardoboucas.com/post/3lky5uuo5os2o), Vercel have rewritten the blog post to remove any mention of their firewall and clarify which providers had been affected whether their customers had to take any action.
 
+<span id="update-1"></span>
+
+Vercel has then [released a postmortem](https://vercel.com/blog/postmortem-on-next-js-middleware-bypass#2025-03-21) where they said — for the first time — that on March 21st they were able to «_verify Netlify and Cloudflare Workers were not impacted_». This is directly contradicted by their staff [reaching out to Netlify on March 22nd](https://x.com/eduardoboucas/status/1904672921206865935) offering help to «_get a patch up_». If we were not impacted, what was there to patch?
+
 This lack of consideration for any users outside of Vercel has created unnecessary anxiety and confusion for a lot of people, leaving some providers scrambling to [find a solution](https://x.com/elithrar/status/1903411980070797691) and then having to [partially roll it back](https://x.com/elithrar/status/1903526240847331362), others [announcing that they were not vulnerable](https://x.com/ClerkDev/status/1903497002828120426) when in reality [they were](https://x.com/n2d4wastaken/status/1903748178874360024?s=46), etc.
 
 As you read this, it's impossible for anyone to know how many sites out there are still vulnerable to this exploit, many of which would've been safe if things were handled differently.
@@ -156,3 +160,9 @@ The incentive is that they _have_ to do those things if they choose to publish t
 It's not my business to say which framework you should use. If you like Next.js and you still think it's the best tool for the problem you need to solve, you should absolutely use it. But I hope that this information helps you feel more confident about your decision, whichever way you're leaning.
 
 As for me, I'll keep doing my job to help support the developers who chose to deploy their sites to Netlify, whatever their framework of choice is. And competition aside, I'm genuinely looking forward to help Vercel make Next.js more open and interoperable through the OpenNext movement.<!--tomb-->
+
+### Vercel's response
+
+_This is a placeholder where I commit to publishing any response from Vercel to this post._
+
+*Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem and [a section for Vercel's response](/#vercel-s-response).
