@@ -165,4 +165,4 @@ As for me, I'll keep doing my job to help support the developers who chose to de
 
 _This is a placeholder where I will share any response I receive from Vercel to this post. I have received none. If you would like to see these issues clarified, please consider soliciting a response from Vercel by [sharing this post on social media](https://x.com/eduardoboucas/status/1904606543376462052)._
 
-*Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem and [a section for Vercel's response](/#vercel-s-response).
+*Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem and [a section for Vercel's response](#vercel-s-response).
