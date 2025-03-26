@@ -67,7 +67,7 @@ In November 2023, the [Next.js documentation has been updated](https://github.co
 
 > > Next.js produces a standard deployment output used by managed and self-hosted Next.js. This ensures all features are supported across both methods of deployment. In the next major version, we will be transforming this output into our [Build Output API specification](https://vercel.com/docs/build-output-api/v3?utm_source=next-site&utm_medium=docs&utm_campaign=next-website).
 
-Next.js 15.0.0 was [released in October 2024](https://nextjs.org/blog/next-15) without support for the Build Output API
+Next.js 15.0.0 was [released in October 2024](https://nextjs.org/blog/next-15) without support for the Build Output API.
 
 Vercel have built the Build Output API because they wanted their customers to leverage the rich ecosystem of frameworks in the space, but their own framework doesn't support it to this day.
 
@@ -91,7 +91,7 @@ This clearly advantageous computing paradigm is precisely how Vercel has run Nex
 
 Next.js once had [a serverless mode](https://nextjs.org/blog/next-8#serverless-nextjs) that you could enable with a configuration property, but it was [removed without further explanation in October 2022](https://github.com/vercel/next.js/pull/41495). No equivalent mode was ever introduced.
 
-The official React documentation, which is [the Next.js team help maintain](https://github.com/vercel/next.js/pull/41495), says that Next.js can be [deployed to _any serverless hosting_](https://react.dev/learn/creating-a-react-app#nextjs-app-router), but there is no official documentation whatsoever for this.
+The official React documentation, which [the Next.js team help maintain](https://github.com/vercel/next.js/pull/41495), says that Next.js can be [deployed to _«any serverless hosting»_](https://react.dev/learn/creating-a-react-app#nextjs-app-router), but there is no official documentation whatsoever for this.
 
 This means that any providers who want to offer support for Next.js with the same computing model that the framework itself promotes must reverse-engineer their way to a custom implementation.
 
@@ -115,7 +115,7 @@ Netlify does support running middleware at the edge, but we've done it at the ex
 
 As far as I know, Netlify is the only cloud provider to support the full feature set of Next.js outside of Vercel, which doesn't make sense to me. With Next.js having such a sizeable share of the market, I would expect a lot more hosting options, which would foster competition and innovation across the board, ultimately benefitting users and the web.
 
-So why is there a hidden door in Next.js for which only Vercel holds the key? I think it's expected that the framework maintainers regularly experiment with features before they're launched, but minimal mode isn't that. We're talking about entirely different operation mode for the framework, which has been in the code base for many years and which unlocks capabilities that are reserved for the for-profit company that owns the framework.
+So why is there a hidden door in Next.js for which only Vercel holds the key? I think it's expected that the framework maintainers regularly experiment with features before they're launched, but minimal mode isn't that. We're talking about an entirely different operation mode for the framework, which has been in the code base for many years and which unlocks capabilities that are reserved for the for-profit company that owns the framework.
 
 If WordPress had a privileged code path that was only accessible to sites deployed to Automattic properties, would it be trusted as a truly open project and would it have the dominance it has today?
 
@@ -123,17 +123,17 @@ If WordPress had a privileged code path that was only accessible to sites deploy
 
 Let's go back to the security incident. On Friday, March 21st at 10:17 AM (UTC), Vercel published [a CVE for a critical security incident](https://github.com/advisories/GHSA-f82v-jwr5-mffw), ranked with a severity of 9.1 out of 10.
 
-In essence, it was possible for anyone to completely bypass Next.js middleware by sending a specific header in the request. This is important because [authorisation was one of the flagship use cases of middleware](https://nextjs.org/blog/next-12#introducing-middleware), and this exploit meant that anyone could bypass the authentication layer and gain access to protected resources.
+In essence, it was possible for anyone to completely bypass Next.js middleware by sending a specific header in the request. This is important because [authentication was one of the flagship use cases of middleware](https://nextjs.org/blog/next-12#introducing-middleware), and this exploit meant that anyone could bypass the authentication layer and gain access to protected resources.
 
 As the incident unravelled, a few things became apparent. First of all, the vulnerability was [reported to the Next.js team on February 27th](https://nextjs.org/blog/cve-2025-29927#timeline), but it wasn't until March 14th that the team started looking into it. Once they did, they started pushing fixes for [Next 14](https://github.com/vercel/next.js/commit/5fd3ae8f8542677c6294f32d18022731eab6fe48) and [Next 15](https://github.com/vercel/next.js/commit/52a078da3884efe6501613c7834a3d02a91676d2) within a couple of hours.
 
-So by March 14th (at the latest), Vercel knew they had a serious incident on their hands. The responsible thing to do at that point would be immediately disclosing the vulnerability to other providers, so that they could assess the impact to their own customers and take any necessary actions to protect them as quickly as possible. At times like these, our duty to protect users should rise above any competition between companies.
+So by March 14th (at the latest), Vercel knew they had a serious incident on their hands. The responsible thing to do at that point would be to immediately disclose the vulnerability to other providers, so that they could assess the impact to their own customers and take any necessary actions to protect them as quickly as possible. At times like these, our duty to protect users should rise above any competition between companies.
 
 That is not what happened. It took Vercel 8 (eight) days to reach out to Netlify. In that time, they managed to push patches to Next.js, cut two releases, and even write a blog post that framed the incident as something that Vercel's firewall had _«proactively protected»_ their customers from (even though [their CTO later said](https://x.com/cramforce/status/1903648110863343871?s=46) that their firewall had nothing to do with it).
 
 I think it's incredibly disingenuous to spin a critical security vulnerability in your open-source project as a strength of your product, with absolutely no consideration for whether users in other providers were also affected and what they should do to mitigate. In fact, they wouldn't even know this, because they hadn't even reached out to us at this point.
 
-After [being called out on social media](https://bsky.app/profile/eduardoboucas.com/post/3lky5uuo5os2o), Vercel have rewritten the blog post to remove any mention of their firewall and clarify which providers had been affected whether their customers had to take any action.
+After [being called out on social media](https://bsky.app/profile/eduardoboucas.com/post/3lky5uuo5os2o), Vercel have rewritten the blog post to remove any mention of their firewall and clarify which providers had been affected and whether their customers had to take any action.
 
 <span id="update-1"></span>
 
@@ -163,6 +163,6 @@ As for me, I'll keep doing my job to help support the developers who chose to de
 
 ### Vercel's response
 
-_This is a placeholder where I will share any response I receive from Vercel to this post._
+_This is a placeholder where I will share any response I receive from Vercel to this post. I have received none. If you would like to see these issues clarified, please consider soliciting a response from Vercel by [sharing this post on social media](https://x.com/eduardoboucas/status/1904606543376462052)._
 
 *Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem and [a section for Vercel's response](/#vercel-s-response).
