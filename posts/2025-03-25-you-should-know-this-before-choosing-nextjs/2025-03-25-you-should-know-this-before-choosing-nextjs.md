@@ -161,8 +161,6 @@ It's not my business to say which framework you should use. If you like Next.js 
 
 As for me, I'll keep doing my job to help support the developers who chose to deploy their sites to Netlify, whatever their framework of choice is. And competition aside, I'm genuinely looking forward to help Vercel make Next.js more open and interoperable through the OpenNext movement.<!--tomb-->
 
-### Vercel's response
+*Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem.
 
-_This is a placeholder where I will share any response I receive from Vercel to this post. I have received none. If you would like to see these issues clarified, please consider soliciting a response from Vercel by [sharing this post on social media](https://x.com/eduardoboucas/status/1904606543376462052)._
-
-*Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem and [a section for Vercel's response](#vercel-s-response).
+*Update (March 28th):* A representative from Vercel [has committed](https://x.com/feedthejim/status/1905741233907245315) _«to not introduce any new privileged code paths and to either remove or fully document the ones that exist today, such as minimal mode»_. As for timelines, they are _[«hoping to get it done this year»](https://x.com/feedthejim/status/1905777468835074095)_.
