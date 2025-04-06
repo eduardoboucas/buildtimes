@@ -10,7 +10,7 @@ Software generated entirely by AI is not an hypothetical future — it's [a real
 
 As a professional software engineer, I've been closely watching this change and taking my time to gather my thoughts on what this means for my profession and for the world. This is my first shot at putting those into words.<!--more-->
 
-## Identity
+## A question of identity
 
 Over 20 years ago, before my personality and view of the world were even fully formed, I came across something that would change my life forever: I started writing code. For the 13-year old me, programming had absolutely nothing to do with career aspirations or entrepreneurship — it was the raw joy of solving a puzzle, of pushing myself to learn something new, of bending a machine to my will and make it materialise an idea that didn't exist anywhere in the universe other than in my own imagination.
 
@@ -22,17 +22,17 @@ More than something I do, writing code is a big part of who I am.
 
 I take joy from different aspects of writing code on a daily basis: writing some tests and seeing them pass for the first time, dissecting the root cause of a gnarly bug, or coming up with an elegant solution for a seemingly impossible problem (and always patting myself on the back for it).
 
-The realisation that computers can now perform these tasks, in a fraction of time it takes me, is unsettling. It's impossible not to pose the question: will AI replace me?
+The realisation that computers can now perform these tasks in a fraction of the time it takes me is unsettling. It's impossible not to ask: will AI replace me?
 
-Well, one big difference between the 13-old me and who I am today is that I no longer view programming as just a puzzle. As I honed the craft of being a software engineer, I have developed other skills. I learned how to connect with people of different disciplines and translate their needs into technical requirements; how to solve a problem in alignment with the vision and strategy of an organisation; how to balance different priorities and use them to constantly adapt plans; how to coach team members and promote a culture of growth and knowledge sharing.
+Unlike the 13-year-old me, I no longer view programming as just a puzzle. As I honed the craft of being a software engineer, I developed other skills. I learned how to connect with people from different disciplines and translate their needs into technical requirements; how to solve problems in alignment with the vision and strategy of an organisation; how to balance competing priorities and adapt plans accordingly; and how to coach team members while promoting a culture of growth and knowledge sharing.
 
-> The emotional part of me felt a deep sense of preemptive nostalgia about something dear that may change forever
+> The emotional part of me feels a deep sense of preemptive nostalgia about something dear that is about to change forever
 
-My work reflects the sum of every problem I've solved as a human throughout my life, and I don't think AI will replace that just yet. 
+My work reflects the sum of every problem I've solved as a human throughout my life, and I don't think AI will replace that just yet.
 
-But some aspects of my job will likely change forever. As computers become incomparably better than me at performing specific tasks, I expect those little sparks of joy I mentioned earlier — the ones that got me hooked to this craft — to become few and far between.
+But there are aspects of my job that will likely change forever. As computers start writing more of the code, I expect the moments of joy I mentioned earlier to become few and far between.
 
-The emotional part of me felt a deep sense of preemptive nostalgia about something dear that may change forever, whereas my rational side sees this as a normal cycle of evolution and adaptation, being certain that I'll be able to find that joy in other places.
+The emotional part of me feels a deep sense of preemptive nostalgia about something dear that is about to change forever, whereas my rational side sees this shift as a normal cycle of evolution and adaptation — and trusts that I'll be able to find that joy in new places.
 
 ## Looking at the bigger picture
 
@@ -50,7 +50,7 @@ These are just a couple of examples of how community-built software can make a r
 
 ## The creator's funnel
 
-I kept thinking about these success stories and wondering how they came to life: how have these ideas materialised into something good for the world? Each project has a different origin story, but I think one can generalise the process into a few phases:
+I kept thinking about this side of software that I don't always think about. I started wondering how these ideas came to life, materialising into something positive for the world. Every project is different, but I think the process can be broadly broken down into the following phases:
 
 1. **Identify**: Identify a problem worth solving or an opportunity worth chasing
 1. **Conceptualise**: Plan and shape a viable solution to address the problem
@@ -69,12 +69,14 @@ This means that the amazing projects we see today don't represent all the creato
 
 What if AI can completely disrupt this? It's now possible to generate full applications simply by describing what it should look like and what it should do. No technical background, no budget, no need to assemble a cross-disciplinary team just to prove an idea. Within minutes — not days, weeks, or months — anyone can prompt their idea into existence.
 
-If this funnel is gone, creators from anywhere in the world and with any type of background suddenly have a shot at bringing their ideas to life. By reducing the distance from idea to reality, we have a unique opportunity to harness more human ingenuity than ever before.
+AI has the power to transform this funnel into a portal that everyone can walk through, democratising access to resources that were once completely unattainable for millions of creators with life-changing ideas waiting to be uncovered. By reducing the distance from idea to reality, we have a unique opportunity to harness more human ingenuity than ever before.
 
 ## Parting thoughts
 
-We're collectively embarking on a journey, with no clear idea of where it leads. Such a powerful change comes with uncertainty and risk. My job will change, and yours probably will too.
+We're collectively embarking on a journey with no clear idea of where it leads. Yes, my job will change in ways I still do not fully understand and some parts of it that I've grown to love may not be around for long.
 
-But I felt that by clinging to the joy of structuring an algorithm or writing a test I was missing the forest for the trees. Around 10 years ago, I shifted my career towards developer tooling because I fell in love with the idea of helping developers do their best work, which often means lowering the barrier of entry for tools and technologies. When I think of all the millions of developers that will now enter the conversation thanks to AI, it's hard not to feel excitement about the future.
+But I realised that by focusing on the small pleasures of writing code, I was missing the forest for the trees. I have been working on the developer tooling space for over a decade, because I fell in love with the idea of working for developers.
 
-[_Vibe coders_](https://x.com/karpathy/status/1886192184808149383), computer scientists, hackers, tinkerers and anyone in between all have something in common: they are all creators and I'm stoked to [play my part](https://www.netlify.com/agent-experience/) in helping them bring their ideas into the world.<!--tomb-->
+Lowering the barrier of entry for tools and technologies that empower them to do their best work has been a driver for me, so it's hard not to feel excited with the prospect of millions of people now being able to join the conversation.
+
+Welcome!<!--tomb-->
