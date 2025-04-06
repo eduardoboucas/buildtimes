@@ -50,7 +50,7 @@ These are just a couple of examples of how community-built software can make a r
 
 ## The creator's funnel
 
-I kept thinking about this side of software that I don't always think about. I started wondering how these ideas came to life, materialising into something positive for the world. Every project is different, but I think the process can be broadly broken down into the following phases:
+I kept thinking about this side of software that I don't always consider. I started wondering how these projects came to life, how the seed of an idea has actually materialised into something positive for the world. Every project is different, but I think the process can be broadly broken down into the following phases:
 
 1. **Identify**: Identify a problem worth solving or an opportunity worth chasing
 1. **Conceptualise**: Plan and shape a viable solution to address the problem
