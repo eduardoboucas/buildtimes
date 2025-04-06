@@ -48,9 +48,11 @@ The [Open Artificial Pancreas System](https://openaps.org/) (OpenAPS) is an open
 
 These are just a couple of examples of how community-built software can make a real, positive impact in people's lives. There are many other examples like this that apply to different conditions and situations — this is the story that hits closest to home for me, because as a type 1 diabetes patient I've experienced this impact firsthand.
 
+As I zoomed out from my own experience and thought of programming as a means to achieve a common goal, I started to consider how AI might come into play.
+
 ## The creator's funnel
 
-I kept thinking about this side of software that I don't always consider. I started wondering how these projects came to life, how the seed of an idea has actually materialised into something positive for the world. Every project is different, but I think the process can be broadly broken down into the following phases:
+I kept thinking about these amazing projects and started wondering how they came to life; how the seed of an idea actually materialised into something positive for the world. Every project is different, but I think the process can be broadly broken down into the following phases:
 
 1. **Identify**: Identify a problem worth solving or an opportunity worth chasing
 1. **Conceptualise**: Plan and shape a viable solution to address the problem
