@@ -67,7 +67,7 @@ This means that the amazing projects we see today don't represent all the creato
 
 > By reducing the distance from idea to reality, we have a unique opportunity to harness more human ingenuity than ever before.
 
-What if AI can completely disrupt this? It's now possible to generate full applications simply by describing what it should look like and what it should do. No technical background, no budget, no need to assemble a cross-disciplinary team just to prove an idea. Within minutes — not days, weeks, or months — anyone can prompt their idea into existence.
+What if AI can completely disrupt this? It's now possible to generate a fully working application simply by describing what it should look like and what it should do. No technical background, no budget, no need to assemble a cross-disciplinary team just to prove an idea. Within minutes — not days, weeks, or months — anyone can prompt their idea into existence.
 
 AI has the power to transform this funnel into a portal that everyone can walk through, democratising access to resources that were once completely unattainable for millions of creators with life-changing ideas waiting to be uncovered. By reducing the distance from idea to reality, we have a unique opportunity to harness more human ingenuity than ever before.
 
@@ -75,8 +75,8 @@ AI has the power to transform this funnel into a portal that everyone can walk t
 
 We're collectively embarking on a journey with no clear idea of where it leads. Yes, my job will change in ways I still do not fully understand and some parts of it that I've grown to love may not be around for long.
 
-But I realised that by focusing on the small pleasures of writing code, I was missing the forest for the trees. I have been working on the developer tooling space for over a decade, because I fell in love with the idea of working for developers.
+But I realised that by focusing on the small pleasures of writing code, I was missing the forest for the trees.
 
-Lowering the barrier of entry for tools and technologies that empower them to do their best work has been a driver for me, so it's hard not to feel excited with the prospect of millions of people now being able to join the conversation.
+I've been working in the developer tooling space for over a decade. I fell in love with the idea of building for developers, of lowering the barrier of entry for tools and technologies that empower them to do their best work.
 
-Welcome!<!--tomb-->
+From that lens, it's hard not to feel excited with the prospect of millions of people now being able to join the conversation. Welcome!<!--tomb-->
