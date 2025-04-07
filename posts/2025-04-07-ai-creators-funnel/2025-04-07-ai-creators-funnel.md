@@ -81,4 +81,6 @@ But I realised that by focusing on the small pleasures of writing code, I was mi
 
 I've been working in the developer tooling space for over a decade. I fell in love with the idea of building for developers, of lowering the barrier of entry for tools and technologies that empower them to do their best work.
 
-From that lens, it's hard not to feel excited with the prospect of millions of people now being able to join the conversation. Welcome!<!--tomb-->
+What better example of that than enabling millions of creators to add their voices to the conversation?
+
+Computer scientists, hackers, tinkerers, and vibe coders: it doesn't matter where you come from, I'm just excited to see what you build.<!--tomb-->
