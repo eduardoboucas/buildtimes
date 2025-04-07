@@ -11,9 +11,9 @@ tags:
 ---
 Picking the technology stack for a project is an important and consequential decision. In the enterprise space in particular, it often involves a multi-year commitment with long-lasting implications on the roadmap of the project, the pace of its development, the quality of the deliverables, and even the ability to assemble and maintain a happy team.
 
-The open-source software model is a fundamental answer to this. By using software that is developed in the open, anyone is free to extend it or modify it in whatever way fits their use case. More crucially, the portability of open-source software gives developers and organisations the freedom to move their infrastructure between different providers without fear of getting locked in to a specific vendor.
+The open-source software model is a fundamental answer to this.<!--more--> By using software that is developed in the open, anyone is free to extend it or modify it in whatever way fits their use case. More crucially, the portability of open-source software gives developers and organisations the freedom to move their infrastructure between different providers without fear of getting locked in to a specific vendor.
 
-This is the expectation with Next.js, an open-source web development framework created and [governed by Vercel](https://nextjs.org/governance), a cloud provider that offers managed hosting of Next.js as a service.<!--more-->
+This is the expectation with Next.js, an open-source web development framework created and [governed by Vercel](https://nextjs.org/governance), a cloud provider that offers managed hosting of Next.js as a service.
 
 There is nothing wrong with a company profiting from an open-source software it created, especially when that helps fund the development of the project. In fact, there are plenty of examples of that model working successfully in our industry.
 
