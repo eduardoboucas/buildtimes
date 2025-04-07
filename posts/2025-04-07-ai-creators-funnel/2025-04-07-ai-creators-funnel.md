@@ -2,9 +2,12 @@
 layout: post
 title: "AI and the creator's funnel"
 categories: blog
+description: My thoughts on how AI-generated code will change the software development industry and the world
 tags:
 - blog
 - ai
+- vibecoding
+- creators
 ---
 Software generated entirely by AI is not an hypothetical future — it's [a reality today](https://arstechnica.com/ai/2024/10/google-ceo-says-over-25-of-new-google-code-is-generated-by-ai/). I don't think it's an overstatement to say that this is the largest shift in the history of this industry, unravelling before our eyes at an astonishing pace.
 

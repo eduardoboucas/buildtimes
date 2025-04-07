@@ -4,11 +4,13 @@
 	{% assign metaTitle = config.title %}
 {% endif %}
 
-{% if page.metaTag %}
-	{% assign description = page.metaTag %}
-{% else %}
-	{% assign description = config.description | strip_html | strip_newlines %}
-{% endif %}
+{% unless description %}
+	{% if page.metaTag %}
+		{% assign description = page.metaTag | markdownify | strip_html | truncate: 200, '...'%}
+	{% else %}
+		{% assign description = config.description | strip_html | strip_newlines | truncate: 200, '...'%}
+	{% endif %}
+{% endunless %}
 
 {% assign url = page.url | replace:'index.html','' | prepend: config.url %}
 
@@ -17,7 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>{% if title %}{{ config.title }} - {{ metaTitle }}{% else %}{{ config.title }} by Eduardo Bouças{% endif %}</title>
-<meta name="description" content="{{ description | truncate: 200, '...' }}">
+<meta name="description" content="{{ description }}">
 <link rel="manifest" href="/manifest.json">
 
 {% if jekyll.environment == 'stage' or page.queued != null %}
@@ -36,7 +38,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="{{ url }}">
 <meta name="twitter:title" content="{{ title }}">
-<meta name="twitter:description" content="{{ description | truncate: 200, '...' }}">
+<meta name="twitter:description" content="{{ description }}">
 <meta name="twitter:image:src" content="{{ "/assets/images/logo-600x600.png" | prepend: config.url }}">
 
 <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
