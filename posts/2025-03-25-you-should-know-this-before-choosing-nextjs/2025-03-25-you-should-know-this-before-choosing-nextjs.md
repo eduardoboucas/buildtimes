@@ -163,4 +163,6 @@ As for me, I'll keep doing my job to help support the developers who chose to de
 
 *Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem.
 
-*Update (March 28th):* A representative from Vercel [has committed](https://x.com/feedthejim/status/1905741233907245315) _«to not introduce any new privileged code paths and to either remove or fully document the ones that exist today, such as minimal mode»_. As for timelines, they are _[«hoping to get it done this year»](https://x.com/feedthejim/status/1905777468835074095)_.
+*Update (March 28th):* Vercel [have committed](https://x.com/feedthejim/status/1905741233907245315) _«to not introduce any new privileged code paths and to either remove or fully document the ones that exist today, such as minimal mode»_. As for timelines, they are _[«hoping to get it done this year»](https://x.com/feedthejim/status/1905777468835074095)_.
+
+*Update (April 23rd):* I have [submitted a PR](https://github.com/reactjs/react.dev/pull/7771) to fix incorrect information about Next.js deployment options in the React documentation.
