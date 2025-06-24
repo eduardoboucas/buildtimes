@@ -153,7 +153,7 @@ But that growth holds them to a high bar of standards that, in my opinion, they 
 
 _«If Vercel own Next.js, what incentive do they have to open it up to other providers?»_ is [a question I sometimes see](https://x.com/jamonholmgren/status/1904174718779072575) and which I find intriguing. What incentives does Redis have for opening up their software when they own Redis Cloud? Why make Grafana open when Grafana Cloud is owned by the same company? Or WordPress, ClickHouse and many others?
 
-The incentive is that they _have_ to do those things if they choose to publish their software as open-source and not as a closed, proprietary solution. Their success is intrinsically associated their users having the guarantee that they are free to choose whatever provider offers the service that meets their needs at any given time.
+The incentive is that they _have_ to do those things if they choose to publish their software as open-source and not as a closed, proprietary solution. Their success is intrinsically associated with their users having the guarantee that they are free to choose whatever provider offers the service that meets their needs at any given time.
 
 ## Wrapping up
 
