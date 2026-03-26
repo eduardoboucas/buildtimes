@@ -161,8 +161,10 @@ It's not my business to say which framework you should use. If you like Next.js 
 
 As for me, I'll keep doing my job to help support the developers who chose to deploy their sites to Netlify, whatever their framework of choice is. And competition aside, I'm genuinely looking forward to help Vercel make Next.js more open and interoperable through the OpenNext movement.<!--tomb-->
 
-*Update (March 26th):* Added [a note](#update-1) about Vercel's most recent postmortem.
+*Update (2025-03-26):* Added [a note](#update-1) about Vercel's most recent postmortem.
 
-*Update (March 28th):* Vercel [have committed](https://x.com/feedthejim/status/1905741233907245315) _«to not introduce any new privileged code paths and to either remove or fully document the ones that exist today, such as minimal mode»_. As for timelines, they are _[«hoping to get it done this year»](https://x.com/feedthejim/status/1905777468835074095)_.
+*Update (2025-03-28):* Vercel [have committed](https://x.com/feedthejim/status/1905741233907245315) _«to not introduce any new privileged code paths and to either remove or fully document the ones that exist today, such as minimal mode»_. As for timelines, they are _[«hoping to get it done this year»](https://x.com/feedthejim/status/1905777468835074095)_.
 
-*Update (April 23rd):* I have [submitted a PR](https://github.com/reactjs/react.dev/pull/7771) to fix incorrect information about Next.js deployment options in the React documentation.
+*Update (2025-04-23):* I have [submitted a PR](https://github.com/reactjs/react.dev/pull/7771) to fix incorrect information about Next.js deployment options in the React documentation.
+
+*Update (2026-03-26):* Next.js 16.2 added a [stable Adapter API](https://nextjs.org/blog/nextjs-across-platforms).
