@@ -1,0 +1,5 @@
+{%- assign pathNodes = page.inputPath | split: "/" -%}
+{%- assign fileName = pathNodes[2] -%}
+{%- assign nameList = names | split: "~" -%}
+{%- assign captionList = captions | split: "~" -%}
+<div class="gallery">{%- for n in nameList -%}{%- assign src = n | strip | prepend: "/" | prepend: fileName | prepend: "/posts/" -%}{%- assign cap = captionList[forloop.index0] | strip -%}<figure class="gallery__item{% if frame %} gallery__item--frame{% endif %}"><a class="figure__link gallery__link" href="{{ src }}" target="_blank" rel="noopener" aria-label="View full image"><img class="gallery__image" loading="lazy" src="{{ src }}" alt="{{ cap }}" /></a>{% if cap != "" %}<figcaption class="gallery__caption">{{ cap }}</figcaption>{% endif %}</figure>{%- endfor -%}</div>

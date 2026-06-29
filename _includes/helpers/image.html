@@ -5,14 +5,16 @@ prepend: "/posts/" %}
 <figure
   class="figure {% if caption %}figure--caption{% endif %} {% if frame != false %}figure--frame{% endif %}"
 >
-  <img
-    alt="{{ caption }}"
-    class="figure__image"
-    loading="lazy"
-    onload="this.parentElement.classList += ' figure--loaded'"
-    src="{{ assetPath }}"
-    width="{{ width }}"
-  />
+  <a class="figure__link" href="{{ assetPath }}" target="_blank" rel="noopener" aria-label="View full image">
+    <img
+      alt="{{ caption }}"
+      class="figure__image"
+      loading="lazy"
+      onload="this.closest('.figure').classList.add('figure--loaded')"
+      src="{{ assetPath }}"
+      width="{{ width }}"
+    />
+  </a>
 
   <figcaption class="figure__caption">{{ caption }}</figcaption>
 </figure>

@@ -1,0 +1,45 @@
+// Grouped photos shown side by side at a reduced size. Each item is a
+// .figure__link (so it inherits the click-to-open + zoom-on-hover behaviour).
+// Items share the row width equally — two photos => ~50% each — and stack on
+// narrow screens.
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+  margin: ($post-vertical-rythm * 2) auto;
+  max-width: 930px;
+}
+
+.gallery__item {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.gallery__link {
+  display: block;
+  width: 100%;
+}
+
+.gallery__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery__item--frame .gallery__image {
+  border: 3px double $colour-primary;
+}
+
+.gallery__caption {
+  margin-top: 8px;
+  font-size: 0.7em;
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    flex-direction: column;
+  }
+}

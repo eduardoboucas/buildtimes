@@ -27,3 +27,11 @@
 .figure__caption {
   font-size: 0.7em;
 }
+
+// Clickable image: opens the full-size file in a new tab. The zoom-in cursor is
+// the only affordance needed. Shared by .gallery__link too.
+.figure__link {
+  display: inline-block;
+  max-width: 100%;
+  cursor: zoom-in;
+}
