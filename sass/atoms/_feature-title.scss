@@ -29,3 +29,11 @@
 		display: none !important;
 	}
 }
+
+// Underscores are drawn below the baseline, outside the tight line box
+// above, so they would overlap whatever follows the title. Lift them to
+// sit on the baseline instead.
+.feature-title__blank {
+	position: relative;
+	top: -0.125em;
+}

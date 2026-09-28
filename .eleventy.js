@@ -111,10 +111,9 @@ module.exports = eleventyConfig => {
       ${lines
         .map(
           line => `
-        <span aria-hidden="true" class="feature-title__part">${line.slice(
-          0,
-          -1
-        )}</span>
+        <span aria-hidden="true" class="feature-title__part">${line
+          .slice(0, -1)
+          .replace(/_+/g, '<span class="feature-title__blank">$&</span>')}</span>
       `
         )
         .join("")}
